@@ -105,7 +105,7 @@ st.session_state.pop("nav_default_page_once", None)
 
 # ---------- Render ----------
 if mode == "Timeline Map":
-    from pages.explore_map_timeline import app as timeline_app
+    from pages.explore_map_timeline import timeline_app as timeline_app
     timeline_app(MODULES, ALL_PAGES)  # pass for optional use
 else:
     run_page(st.session_state["nav_default_page"])
