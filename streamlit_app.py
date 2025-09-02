@@ -10,7 +10,6 @@ st.set_page_config(
 # === Custom CSS: Google Fonts + brand tokens ===
 st.markdown("""
 <style>
-
 /* 1) Load Canva fonts via Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
 /* 2) Design tokens—KEEP IN SYNC with .streamlit/config.toml */
@@ -47,6 +46,7 @@ a, .stMarkdown a {
 a:hover { text-decoration: underline; }
 
 """, unsafe_allow_html=True)
+
 import plotly.io as pio
 
 pio.templates["ecn101"] = dict(
@@ -69,8 +69,6 @@ pio.templates["ecn101"] = dict(
 )
 pio.templates.default = "ecn101"
 import streamlit as st
-
-st.set_page_config(page_title="ECN101 Models", page_icon="🌍", layout="wide")
 
 # ---------- Catalog ----------
 MODULES = {

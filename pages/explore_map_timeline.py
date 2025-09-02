@@ -130,10 +130,10 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
         # Show details + navigation button
         if selected:
             st.subheader(selected["title"])
-            st.caption(f"{selected['module']} • {selected['concept']} • {pretty_year(int(selected['year']))}")
+            st.caption(f"{pretty_year(int(selected['year']))} • {selected['concept']} • {selected['module']} ")
             st.write(selected.get("description", ""))
             st.write(f"**Region:** {selected.get('region', '—')}")
-            st.write(f"**Time Travel:** {selected.get('period', '—')}")
+            st.write(f"**Time Travel:** {selected.get('period')}")
     
 
             # Stash selection for the model page
