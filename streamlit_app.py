@@ -11,13 +11,15 @@ st.set_page_config(
 st.markdown("""
 <style>
 
+/* 1) Load Canva fonts via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
 /* 2) Design tokens—KEEP IN SYNC with .streamlit/config.toml */
 :root{
-  --brand-primary: #2B3A2E;         /* same as primaryColor */
-  --bg: #F7F3E9;                    /* same as backgroundColor */
-  --bg-2: #E9E3D5;                  /* same as secondaryBackgroundColor */
-  --text: #1E1B16;                  /* same as textColor */
-  --accent: #C49A6C;                /* optional: pick another Canva color */
+  --brand-primary: #71b273;         /* same as primaryColor */
+  --bg: #ededed;                    /* same as backgroundColor */
+  --bg-2: #e3d0ac;                  /* same as secondaryBackgroundColor */
+  --text: #1C1B1B;                  /* same as textColor */
+  --accent: #a69651;                /* optional: pick another Canva color */
   --font-heading: "Cormorant Garamond", serif;   /* Canva heading font */
   --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
@@ -53,14 +55,14 @@ pio.templates["ecn101"] = dict(
         plot_bgcolor="#F7F3E9",    # match --bg
         font=dict(family="DM Sans, sans-serif", color="#1E1B16"),
         colorway=[
-            "#2B3A2E",  # primary
+            "#1d511e",  # primary
             "#C49A6C",  # accent
             "#6C7A61",  # muted green
             "#8B6B4A",  # warm brown
-            "#3D4C3F",  # deep green
+            "#563b19",  # deep green
         ],
-        xaxis=dict(gridcolor="#E0D9C9", zerolinecolor="#E0D9C9"),
-        yaxis=dict(gridcolor="#E0D9C9", zerolinecolor="#E0D9C9"),
+        xaxis=dict(gridcolor="#e3d0ac", zerolinecolor="#E0D9C9"),
+        yaxis=dict(gridcolor="#e3d0ac", zerolinecolor="#E0D9C9"),
         legend=dict(borderwidth=0),
         margin=dict(l=40, r=20, t=40, b=40),
     )
