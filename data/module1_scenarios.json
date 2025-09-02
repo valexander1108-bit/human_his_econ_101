@@ -1,14 +1,14 @@
 [
   {
-    "id": "1-ur-mesopotamian-farmer-barley-vs-wool",
+    "id": "Academic Reference",
     "module": "Module 1: Economic Thought and Modeling",
     "scenario": 1,
-    "title": "Ur farmer: barley vs wool",
+    "title": "The Farmer of Ur",
     "concept": "Budget Constraint",
     "date": "2000 BCE",
     "region": "Mesopotamia",
-    "period": "Early Bronze Age",
-    "description": "A date seller budgets 30 shekels between barley and wool at the market in Ur.",
+    "period": "https://www.runningreality.org/#01/01/-350&18.5,-66.5&zoom=6",
+    "description": "A farmer receives a small payment of shekels from the temple after his work on the fields. At the city market, he must stretch this limited sum between barley — the staple grain his family depends on — and wool from the herders’ flocks, needed to prepare clothing for the coming winter.",
     "lat": 30.9640,
     "lon": 46.1030,
     "linked_model": "budget_line"

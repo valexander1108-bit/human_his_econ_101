@@ -1,6 +1,73 @@
 # streamlit_app.py
 import streamlit as st
 
+st.set_page_config(
+    page_title="ECN101 Models",
+    page_icon="📚",         # optional: replace with your favicon
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+# === Custom CSS: Google Fonts + brand tokens ===
+st.markdown("""
+<style>
+
+/* 2) Design tokens—KEEP IN SYNC with .streamlit/config.toml */
+:root{
+  --brand-primary: #2B3A2E;         /* same as primaryColor */
+  --bg: #F7F3E9;                    /* same as backgroundColor */
+  --bg-2: #E9E3D5;                  /* same as secondaryBackgroundColor */
+  --text: #1E1B16;                  /* same as textColor */
+  --accent: #C49A6C;                /* optional: pick another Canva color */
+  --font-heading: "Cormorant Garamond", serif;   /* Canva heading font */
+  --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+/* 5) Sidebar background to Canva card color */
+section[data-testid="stSidebar"] {
+  background: var(--bg-2) !important;
+}
+
+/* 6) Buttons */
+button[kind="primary"] {
+  background: var(--brand-primary) !important;
+  border: none !important;
+}
+button[kind="secondary"] {
+  color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+}
+
+/* 7) Links */
+a, .stMarkdown a {
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+""", unsafe_allow_html=True)
+import plotly.io as pio
+
+pio.templates["ecn101"] = dict(
+    layout=dict(
+        paper_bgcolor="#F7F3E9",   # match --bg
+        plot_bgcolor="#F7F3E9",    # match --bg
+        font=dict(family="DM Sans, sans-serif", color="#1E1B16"),
+        colorway=[
+            "#2B3A2E",  # primary
+            "#C49A6C",  # accent
+            "#6C7A61",  # muted green
+            "#8B6B4A",  # warm brown
+            "#3D4C3F",  # deep green
+        ],
+        xaxis=dict(gridcolor="#E0D9C9", zerolinecolor="#E0D9C9"),
+        yaxis=dict(gridcolor="#E0D9C9", zerolinecolor="#E0D9C9"),
+        legend=dict(borderwidth=0),
+        margin=dict(l=40, r=20, t=40, b=40),
+    )
+)
+pio.templates.default = "ecn101"
+import streamlit as st
+
 st.set_page_config(page_title="ECN101 Models", page_icon="🌍", layout="wide")
 
 # ---------- Catalog ----------

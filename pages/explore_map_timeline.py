@@ -97,7 +97,7 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
                 location=[row["lat"], row["lon"]],
                 tooltip=row["title"],
                 popup=folium.Popup(popup_html, max_width=320),
-                icon=folium.Icon(color="darkpurple", icon="book", prefix="fa")
+                icon=folium.Icon(color="green", icon="book", prefix="fa")
             ).add_to(m)
 
         # Capture map interactions (lat/lon of last click)
@@ -133,7 +133,8 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
             st.caption(f"{selected['module']} • {selected['concept']} • {pretty_year(int(selected['year']))}")
             st.write(selected.get("description", ""))
             st.write(f"**Region:** {selected.get('region', '—')}")
-            st.code(f"Scenario ID: {selected['id']}", language="text")
+            st.write(f"**Time Travel:** {selected.get('period', '—')}")
+    
 
             # Stash selection for the model page
             if st.button("Open model", type="primary", use_container_width=True):

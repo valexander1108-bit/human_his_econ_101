@@ -33,3 +33,27 @@
     "linked_model": "1_budget_constraint"
   }
 ]
+
+# csv_to_json.py
+import pandas as pd
+import json
+
+# === Step 1: Load your scenarios CSV ===
+# Replace 'scenarios.csv' with your actual file name
+df = pd.read_csv("scenarios.csv")
+
+# === Step 2: Convert to JSON ===
+# orient="records" makes it an array of objects [{...}, {...}]
+# indent=2 makes it human-readable
+json_data = df.to_json(orient="records", indent=2)
+
+# === Step 3: Save to file ===
+with open("scenarios.json", "w", encoding="utf-8") as f:
+    f.write(json_data)
+
+print("✅ scenarios.json created successfully!")
+
+if df[["lat","lon"]].isnull().any().any():
+    print("⚠️ Warning: Some scenarios are missing lat/lon!")
+
+python csv_to_json.py
