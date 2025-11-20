@@ -85,7 +85,7 @@ ALL_PAGES = [p for arr in MODULES.values() for p in arr]
 
 # ---------- Session defaults ----------
 DEFAULTS = {
-    "mode": "Home",                   # "Home" | "Course Syllabus" | "Historical Map" | "Economic Modules"
+    "mode": "Home",                   # "Home" | "Course Syllabus" | "Historical Map" | "Economic Models"
     "current_page": ALL_PAGES[0],
     "selected_scenario": None,
 }
@@ -138,22 +138,9 @@ def run_page(page_name: str):
 # ---------- Home ----------
 def render_home():
     st.title("ECON 101: Introduction to Microeconomics")
-    st.subheader("Course Hub — Alexander Velazquez")
+    st.subheader("Course Hub — Alexander R. Velazquez")
 
-    st.markdown("""
-Welcome! This app brings together three ways to explore **microeconomics** in this course:
-
-1. **Course Syllabus** – A structured, module-by-module knowledge base with:
-   - Intuition & big ideas  
-   - Tiered learning objectives  
-   - Slides, guided notes, activities, and practice  
-2. **Historical Map** – A global, interactive way to see how microeconomic ideas show up in:
-   - Ancient and modern societies  
-   - Real policies, institutions, and lived experience  
-3. **Economic Modules** – A microeconomic **model playground** where you can:
-   - Experiment with budget constraints, PPCs, supply & demand, elasticity, etc.  
-   - Use models for demos, review, or “just messing around” with no extra context
-    """)
+    st.markdown("""**Welcome!** This app brings together three ways to explore **microeconomics** with Professor Velazquez:""")
 
     st.markdown("---")
 
@@ -161,21 +148,28 @@ Welcome! This app brings together three ways to explore **microeconomics** in th
 
     with col1:
         st.markdown("### 1. Course Syllabus")
-        st.write("See the full course structure, objectives, and required materials in one place.")
+        st.write(""" A structured, module-by-module knowledge base with:
+   - Intuition & big ideas  
+   - Tiered learning objectives """)
         if st.button("Go to Syllabus"):
             st.session_state["mode"] = "Course Syllabus"
 
     with col2:
         st.markdown("### 2. Historical Map")
-        st.write("Explore global historical scenarios mapped to microeconomic concepts.")
+        st.write(""" A global, interactive way to see how microeconomic ideas show up in:
+   - Ancient and modern societies  
+   - Real policies, institutions, and lived experience""")
         if st.button("Go to Historical Map"):
             st.session_state["mode"] = "Historical Map"
 
     with col3:
-        st.markdown("### 3. Economic Modules")
-        st.write("Open the interactive model playground by module and concept.")
+        st.markdown("### 3. Economic Models")
+        st.write(""" A microeconomic **model playground** where you can:
+   - Experiment with budget constraints, PPCs, supply & demand, elasticity, and more!  
+   - Use models for demos, review, or “just messing around” with no extra context.
+    """)
         if st.button("Go to Model Playground"):
-            st.session_state["mode"] = "Economic Modules"
+            st.session_state["mode"] = "Economic Models"
 
     st.markdown("---")
     st.markdown("#### About Your Instructor")
@@ -189,7 +183,7 @@ You can mention office hours, email, or a link to your full syllabus/website if 
 with st.sidebar:
     st.subheader("Mode Selector")
 
-    mode_options = ["Home", "Course Syllabus", "Historical Map", "Economic Modules"]
+    mode_options = ["Home", "Course Syllabus", "Historical Map", "Economic Models"]
     current_mode = st.session_state.get("mode", "Home")
 
     mode = st.radio(
@@ -199,7 +193,7 @@ with st.sidebar:
         key="mode",
     )
 
-    if mode == "Economic Modules":
+    if mode == "Economic Models":
         # pick module/page; update single source of truth
         modules_list = list(MODULES.keys())
         module = st.selectbox("Module", modules_list, index=0)
@@ -221,5 +215,5 @@ elif mode == "Historical Map":
     from pages.explore_map_timeline import timeline_app
     timeline_app(MODULES, ALL_PAGES)
 
-elif mode == "Economic Modules":
+elif mode == "Economic Models":
     run_page(st.session_state["current_page"])

@@ -1,35 +1,66 @@
-# pages/course_syllabus.py
 import streamlit as st
 from modules_data import MICRO_MODULES
 
-def render_course_header():
+def render_course_header(): 
     st.title("ECON 101: Introduction to Microeconomics")
-    st.subheader("Course Syllabus & Knowledge Base")
-
-    st.markdown("""
-This view is your **central hub** for ECON 101.
-
-Scroll down to:
-
-- Read the course overview and learning outcomes
-- Open each module to see:
-  - Overview & Intuition
-  - Tier 1 – Formal Definitions
-  - Tier 2 – Solid Understanding (assessment tier)
-  - Tier 3 – Extensions (optional, except Module 8)
-  - All required materials: slides, notes, labs, interactive models, and practice links
-    """)
+    st.subheader("Choice, the Market, and Institutions Through Time")
 
     st.markdown("---")
+    st.markdown("### Learning Outcomes")
+    st.markdown("""
+_By the end of this course, students will be able to:_
 
+- **Explain** how core microeconomic thoeries and principles (scarcity, rational choice, marginal analysis, etc.) describe consumer and firm decision-making. 
+- **Represent and interpret** fundamental microeconomic models (e.g., budget constraint, PPC, supply and demand, perfectly competitive market model, and more). 
+- **Analyze** how markets coordinate choice through incentives and price signals.
+- **Identify** how economic outcomes vary when key neoclassical assumptions are altered. 
+- **Apply** microeconomic reasoning to historical and contemporary cases. 
+- **Evaluate** the limitations of standard models and **compare** these models to behavioral and institutional alternatives.
+""")
+    st.markdown("---")
     st.markdown("### Course Description")
-    st.markdown("_TODO: Paste your original course description here._")
+    st.markdown("""_ECON 101_ introduces the foundational tools economists use to analyze how individuals and firms make decisions under constraints, and how different institutional and historical environments have shaped and continue to shape these decisions.""")
+    with st.expander("Read the full description"):
+        st.markdown("""
+**Students learn to:**
+- Represent tradeoffs using microeconomic models  
+- Analyze how prices and quantities emerge from interactions between buyers and sellers  
+- Understand production, costs, and strategic behavior  
+- Examine how rules, norms, and institutions create different patterns of incentives  
+- Connect microeconomic theory to diverse historical and contemporary settings  
 
-    st.markdown("### Course Learning Outcomes")
-    st.markdown("_TODO: Paste your course-wide learning objectives here._")
+Throughout the course, economic models are presented as **analytical frameworks** rather than prescriptive systems. Historical cases are used descriptively—to illustrate how different economic environments shape, and are shaped by, human decision-making. Students learn to interpret theory, evaluate assumptions, and observe where models align with or diverge from real human behavior.
 
+The course ends with an overview of how individual decision-making relates to broader social outcomes, including distributional patterns and economic inequality.
+""")
+
+    st.markdown("---")
     st.markdown("### Assessment & Course Structure")
-    st.markdown("_TODO: Paste your grading breakdown & assessment overview here._")
+    st.markdown("""
+This course uses a _tiered learning structure_ to support a wide range of learners:
+- Baseline - Intution & Big Ideas
+- Tier 1 - Formal Definitions
+- Tier 2 - Solid Understanding
+- Tier 3 - Extension""")
+    with st.expander("Learn More"):
+        st.markdown("""
+
+**Baseline - Intuition & Big Ideas**  
+- A conceptual introduction that builds intuition before formal tools  
+
+**Tier 1 — Formal Definitions**  
+- Core vocabulary and basic theory  
+
+**Tier 2 — Solid Understanding (Assessed at this Tier)**  
+- Graphical, numerical, and applied reasoning using standard microeconomic models  
+
+**Tier 3 — Extensions (Optional, for the \"econ-nerd\")**  
+- Deeper exploration of historical, institutional, or behavioral topics  
+
+Course assessments focus on understanding, explanation, and application rather than memorization. 
+
+Students are encouraged to reference primary texts, historical sources, and contemporary data whenever relevant.
+""")
 
     st.markdown("---")
     st.markdown("## Modules")
