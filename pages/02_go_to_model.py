@@ -4,7 +4,7 @@ import inspect
 import streamlit as st
 
 st.set_page_config(page_title="Open Selected Model", layout="wide")
-st.title("Go to Model")
+st.title("Go to model")
 
 sel = st.session_state.get("selected_scenario")
 

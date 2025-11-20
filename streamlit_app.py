@@ -1,74 +1,53 @@
-# streamlit_app.py
+# streamlit_app.py — CLEAN
 import streamlit as st
 
 st.set_page_config(
-    page_title="ECN101 Models",
-    page_icon="📚",         # optional: replace with your favicon
+    page_title="Econ-Velazquez",
+    page_icon="📚",
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
 # === Custom CSS: Google Fonts + brand tokens ===
 st.markdown("""
 <style>
-/* 1) Load Canva fonts via Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
-/* 2) Design tokens—KEEP IN SYNC with .streamlit/config.toml */
+
 :root{
-  --brand-primary: #71b273;         /* same as primaryColor */
-  --bg: #ededed;                    /* same as backgroundColor */
-  --bg-2: #e3d0ac;                  /* same as secondaryBackgroundColor */
-  --text: #1C1B1B;                  /* same as textColor */
-  --accent: #a69651;                /* optional: pick another Canva color */
-  --font-heading: "Cormorant Garamond", serif;   /* Canva heading font */
+  --brand-primary: #71bb94;
+  --bg: #ededed;
+  --bg-2: #ebdbc9;
+  --text: #1C1B1B;
+  --accent: #a69651;
+  --font-heading: "Cormorant Garamond", serif;
   --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
 
-/* 5) Sidebar background to Canva card color */
-section[data-testid="stSidebar"] {
-  background: var(--bg-2) !important;
-}
+section[data-testid="stSidebar"] { background: var(--bg-2) !important; }
 
-/* 6) Buttons */
-button[kind="primary"] {
-  background: var(--brand-primary) !important;
-  border: none !important;
-}
-button[kind="secondary"] {
-  color: var(--brand-primary) !important;
-  border-color: var(--brand-primary) !important;
-}
+button[kind="primary"] { background: var(--brand-primary) !important; border: none !important; }
+button[kind="secondary"] { color: var(--brand-primary) !important; border-color: var(--brand-primary) !important; }
 
-/* 7) Links */
-a, .stMarkdown a {
-  color: var(--accent) !important;
-  text-decoration: none;
-}
+a, .stMarkdown a { color: var(--accent) !important; text-decoration: none; }
 a:hover { text-decoration: underline; }
-
+</style>
 """, unsafe_allow_html=True)
 
+# --- Plotly template (optional) ---
 import plotly.io as pio
-
 pio.templates["ecn101"] = dict(
     layout=dict(
-        paper_bgcolor="#F7F3E9",   # match --bg
-        plot_bgcolor="#F7F3E9",    # match --bg
-        font=dict(family="DM Sans, sans-serif", color="#1E1B16"),
-        colorway=[
-            "#1d511e",  # primary
-            "#C49A6C",  # accent
-            "#6C7A61",  # muted green
-            "#8B6B4A",  # warm brown
-            "#563b19",  # deep green
-        ],
-        xaxis=dict(gridcolor="#e3d0ac", zerolinecolor="#E0D9C9"),
-        yaxis=dict(gridcolor="#e3d0ac", zerolinecolor="#E0D9C9"),
+        paper_bgcolor="#555252",
+        plot_bgcolor="#ededed",
+        font=dict(family="DM Sans, sans-serif", color="#1C1B1B"),
+        colorway=["#1d511e", "#C49A6C", "#6C7A61", "#8B6B4A", "#563b19"],
+        xaxis=dict(gridcolor="#696867", zerolinecolor="#B5881F"),
+        yaxis=dict(gridcolor="#696867", zerolinecolor="#B38210"),
         legend=dict(borderwidth=0),
         margin=dict(l=40, r=20, t=40, b=40),
     )
 )
 pio.templates.default = "ecn101"
-import streamlit as st
 
 # ---------- Catalog ----------
 MODULES = {
@@ -104,7 +83,17 @@ MODULES = {
 }
 ALL_PAGES = [p for arr in MODULES.values() for p in arr]
 
-# ---------- Dispatch (lazy imports) ----------
+# ---------- Session defaults ----------
+DEFAULTS = {
+    "mode": "Historical Map",         # "Historical Map" | "Economic Modules"
+    "current_page": ALL_PAGES[0],     # single source of truth for which app page to run
+    "selected_scenario": None,
+}
+for k, v in DEFAULTS.items():
+    if k not in st.session_state:
+        st.session_state[k] = v
+
+# ---------- Lazy page dispatcher ----------
 def run_page(page_name: str):
     if page_name == "Budget Constraint":
         from apps.budget_line import app as bl_app; bl_app()
@@ -147,32 +136,30 @@ def run_page(page_name: str):
     else:
         st.info("Coming soon…")
 
-# ---------- Defaults (allow map deep-link) ----------
-default_page = st.session_state.get("nav_default_page", ALL_PAGES[0])
-default_module = next((m for m, pages in MODULES.items() if default_page in pages),
-                      list(MODULES.keys())[0])
-
-# ---------- Mode switch ----------
+# ---------- Sidebar ----------
 with st.sidebar:
-    st.subheader("Mode")
-    mode = st.radio("How should students start?",
-                    ["Timeline Map", "Module Navigator"],
-                    index=0, key="mode_radio")
+    st.subheader("Mode Selector")
+    mode = st.radio(
+        "How would you like to explore economics?",
+        ["Historical Map", "Economic Modules"],
+        index=0 if st.session_state["mode"] == "Historical Map" else 1,
+        key="mode",
+    )
 
-    if mode == "Module Navigator":
-        module = st.selectbox("Module", list(MODULES.keys()),
-                              index=list(MODULES.keys()).index(default_module))
-        page = st.selectbox("Page", MODULES[module],
-                            index=MODULES[module].index(default_page)
-                            if default_page in MODULES[module] else 0)
-        st.session_state["nav_default_page"] = page
-
-# consume one-shot defaults set by the map
-st.session_state.pop("nav_default_page_once", None)
+    if st.session_state["mode"] == "Economic Modules":
+        # pick module/page; update single source of truth
+        modules_list = list(MODULES.keys())
+        module = st.selectbox("Module", modules_list, index=0)
+        pages = MODULES[module]
+        page = st.selectbox("Page", pages, index=0)
+        st.session_state["current_page"] = page
 
 # ---------- Render ----------
-if mode == "Timeline Map":
-    from pages.explore_map_timeline import timeline_app as timeline_app
-    timeline_app(MODULES, ALL_PAGES)  # pass for optional use
+if st.session_state["mode"] == "Historical Map":
+    # make sure the import path matches your file location:
+    # if the file is in repo root: from explore_map_timeline import timeline_app
+    # if under pages/: from pages.explore_map_timeline import timeline_app
+    from pages.explore_map_timeline import timeline_app  # adjust if needed
+    timeline_app(MODULES, ALL_PAGES)
 else:
-    run_page(st.session_state["nav_default_page"])
+    run_page(st.session_state["current_page"])
