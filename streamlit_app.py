@@ -85,8 +85,8 @@ ALL_PAGES = [p for arr in MODULES.values() for p in arr]
 
 # ---------- Session defaults ----------
 DEFAULTS = {
-    "mode": "Historical Map",         # "Historical Map" | "Economic Modules"
-    "current_page": ALL_PAGES[0],     # single source of truth for which app page to run
+    "mode": "Home",                   # "Home" | "Course Syllabus" | "Historical Map" | "Economic Modules"
+    "current_page": ALL_PAGES[0],
     "selected_scenario": None,
 }
 for k, v in DEFAULTS.items():
@@ -135,18 +135,71 @@ def run_page(page_name: str):
         from apps.capital import app as cap_app; cap_app()
     else:
         st.info("Coming soon…")
+# ---------- Home ----------
+def render_home():
+    st.title("ECON 101: Introduction to Microeconomics")
+    st.subheader("Course Hub — Alexander Velazquez")
+
+    st.markdown("""
+Welcome! This app brings together three ways to explore **microeconomics** in this course:
+
+1. **Course Syllabus** – A structured, module-by-module knowledge base with:
+   - Intuition & big ideas  
+   - Tiered learning objectives  
+   - Slides, guided notes, activities, and practice  
+2. **Historical Map** – A global, interactive way to see how microeconomic ideas show up in:
+   - Ancient and modern societies  
+   - Real policies, institutions, and lived experience  
+3. **Economic Modules** – A microeconomic **model playground** where you can:
+   - Experiment with budget constraints, PPCs, supply & demand, elasticity, etc.  
+   - Use models for demos, review, or “just messing around” with no extra context
+    """)
+
+    st.markdown("---")
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown("### 1. Course Syllabus")
+        st.write("See the full course structure, objectives, and required materials in one place.")
+        if st.button("Go to Syllabus"):
+            st.session_state["mode"] = "Course Syllabus"
+
+    with col2:
+        st.markdown("### 2. Historical Map")
+        st.write("Explore global historical scenarios mapped to microeconomic concepts.")
+        if st.button("Go to Historical Map"):
+            st.session_state["mode"] = "Historical Map"
+
+    with col3:
+        st.markdown("### 3. Economic Modules")
+        st.write("Open the interactive model playground by module and concept.")
+        if st.button("Go to Model Playground"):
+            st.session_state["mode"] = "Economic Modules"
+
+    st.markdown("---")
+    st.markdown("#### About Your Instructor")
+    st.markdown("""
+_Placeholder: a short bio line about you here — your role, institution(s), and what you care about in teaching econ._
+
+You can mention office hours, email, or a link to your full syllabus/website if you want.
+    """)
 
 # ---------- Sidebar ----------
 with st.sidebar:
     st.subheader("Mode Selector")
+
+    mode_options = ["Home", "Course Syllabus", "Historical Map", "Economic Modules"]
+    current_mode = st.session_state.get("mode", "Home")
+
     mode = st.radio(
         "How would you like to explore economics?",
-        ["Historical Map", "Economic Modules"],
-        index=0 if st.session_state["mode"] == "Historical Map" else 1,
+        mode_options,
+        index=mode_options.index(current_mode),
         key="mode",
     )
 
-    if st.session_state["mode"] == "Economic Modules":
+    if mode == "Economic Modules":
         # pick module/page; update single source of truth
         modules_list = list(MODULES.keys())
         module = st.selectbox("Module", modules_list, index=0)
@@ -155,11 +208,18 @@ with st.sidebar:
         st.session_state["current_page"] = page
 
 # ---------- Render ----------
-if st.session_state["mode"] == "Historical Map":
-    # make sure the import path matches your file location:
-    # if the file is in repo root: from explore_map_timeline import timeline_app
-    # if under pages/: from pages.explore_map_timeline import timeline_app
-    from pages.explore_map_timeline import timeline_app  # adjust if needed
+mode = st.session_state.get("mode", "Home")
+
+if mode == "Home":
+    render_home()
+
+elif mode == "Course Syllabus":
+    from pages.course_syllabus import app as syllabus_app
+    syllabus_app()
+
+elif mode == "Historical Map":
+    from pages.explore_map_timeline import timeline_app
     timeline_app(MODULES, ALL_PAGES)
-else:
+
+elif mode == "Economic Modules":
     run_page(st.session_state["current_page"])
