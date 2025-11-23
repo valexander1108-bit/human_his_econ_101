@@ -1,6 +1,7 @@
 import numpy as np
 import streamlit as st
 import plotly.graph_objects as go
+from apps.common import apply_grid
 
 def app():
     st.subheader("Production Possibilities Curve (PPC)")
@@ -50,6 +51,7 @@ def app():
         yaxis=dict(range=[0, max(b, b_shift)], zeroline=False),
         height=520, margin=dict(l=40, r=20, t=20, b=40)
     )
+    apply_grid(fig)
     st.plotly_chart(fig, use_container_width=True,key="ppc_chart")
     st.caption(f"At X = {qx:.2f}, Y = {y1:.2f}.  Opportunity cost of 1 more X ≈ {oc_x:.3f} Y (rising as X increases when k>1).")
     show_adv = st.toggle("Advanced (show equations)", key="ppc_adv2")

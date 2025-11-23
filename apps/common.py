@@ -7,6 +7,16 @@ class Line:     # P = a + bQ
     a: float
     b: float
 
+# Consistent grid styling across all plots
+GRID_STYLE = dict(showgrid=True, gridwidth=1, gridcolor="rgba(0,0,0,0.18)")
+
+def apply_grid(fig):
+    """Apply a light gray grid to both axes and standardize backgrounds."""
+    fig.update_xaxes(**GRID_STYLE, zeroline=False)
+    fig.update_yaxes(**GRID_STYLE, zeroline=False)
+    fig.update_layout(plot_bgcolor="white", paper_bgcolor="white")
+    return fig
+
 def line_y(line: Line, q):
     return line.a + line.b*q
 
@@ -27,6 +37,7 @@ def base_fig(xmax=100, ymax=100, x_title="Quantity (Q)", y_title="Price (P)"):
         yaxis=dict(range=[0, ymax], zeroline=False),
         height=520,
     )
+    apply_grid(fig)
     return fig
 
 def add_line(fig, line: Line, name, q0=0, q1=100, dash=None):

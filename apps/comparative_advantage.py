@@ -1,6 +1,7 @@
 import numpy as np
 import streamlit as st
 import plotly.graph_objects as go
+from apps.common import apply_grid
 
 def app():
     st.subheader("Comparative Advantage — Linear PPCs for Two Producers")
@@ -78,6 +79,7 @@ def app():
         yaxis=dict(range=[0, Ymax_all], zeroline=False),
         height=520, margin=dict(l=40, r=20, t=20, b=40)
     )
+    apply_grid(fig)
     st.plotly_chart(fig, use_container_width=True,key="ca_chart")
 
     st.markdown(

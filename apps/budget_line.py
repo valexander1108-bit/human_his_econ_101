@@ -1,6 +1,7 @@
 import copy
 import streamlit as st
 import plotly.graph_objects as go
+from apps.common import apply_grid
 
 # ---------- helpers ----------
 def intercepts(M, px, py):
@@ -143,6 +144,7 @@ def app():
         margin=dict(l=10, r=10, t=10, b=10),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1.0)
     )
+    apply_grid(fig)
 
     st.plotly_chart(fig, use_container_width=True, key="budget_line_chart")
 

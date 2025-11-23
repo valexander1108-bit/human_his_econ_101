@@ -1,7 +1,7 @@
 # modules_data.py
 
 MICRO_MODULES = [
-    {
+{
     "id": 1,
     "title": "Economic Thought and Modeling",
     "short_desc": "Scarcity, opportunity cost, and the basic models economists use to represent choice.",
@@ -81,7 +81,7 @@ If you choose to explore Tier 3, you will:
 },
 {
     "id": 2,
-    "title": "Supply & Demand",
+    "title": "Supply x Demand",
     "short_desc": "How buyers and sellers interact to determine prices, quantities, and responses to shocks.",
 
     "overview_intuition": """
@@ -213,7 +213,7 @@ If you choose to explore Tier 3, you will:
 # --- MODULE 6: Choice ---
 {
     "id": 6,
-    "title": "Choice (*Asynchronous Alternative*)",
+    "title": "Choice (*Asynchronous*)",
     "short_desc": "Preferences, utility, and optimal bundles.",
     "overview_intuition": "### Overview & Intuition\n_Coming soon._",
     "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
@@ -269,7 +269,7 @@ If you choose to explore Tier 3, you will:
 # --- MODULE 11: Competition & Asymmetric Information ---
 {
     "id": 11,
-    "title": "Competition & Asymmetric Information",
+    "title": "Competition x Asymmetric Information",
     "short_desc": "Monopoly, oligopoly, and market power.",
     "overview_intuition": "### Overview & Intuition\n_Coming soon._",
     "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
@@ -281,43 +281,52 @@ If you choose to explore Tier 3, you will:
 # --- MODULE 12: Micro-Policy ---
 {
     "id": 12,
-    "title": "Micro-Policy",
+    "title": "Micro-Policy Perspectives ",
     "short_desc": "Externalities, public goods, and how policy fixes market misfires.",
     "overview_intuition": """
 ### Overview & Intuition
 
-Markets can miss the social sweet spot when spillover costs or benefits aren’t priced in. In plain language—no math or graphs—we’ll see why externalities arise, why some goods (parks, education, roads, fisheries) struggle without rules, and what governments try to correct with taxes, subsidies, and regulation.
+In this chapter, we follow what happens when markets get the price wrong and how societies try to fix it.
+
+We start with the **four types of goods** — private goods, club goods, common resources, and public goods — to see how rivalry and excludability shape incentives, cooperation problems, and why free riding or overuse shows up in the first place.
+
+We then meet **externalities** as missing prices: pollution that’s too cheap, education that’s underbought, or parks that are underfunded. Using plain language first, then graphs, we contrast the market outcome with the social outcome, measure the wedge between them, and see the deadweight loss that emerges.
+
+Finally, we walk through the **policy toolkit** — Pigouvian taxes and subsidies, permits, regulations, and public provision. Along the way we peek at **tax incidence** and how elasticity decides who actually bears the burden. Simple game-theory stories help us see why rules, enforcement, and institutions matter to steer behavior toward the social sweet spot.
 """,
     "tier1_definitions": """
 ### Tier 1 — Formal Definitions
 
-- **Private goods**, **public goods**, **common resources**, **club goods**
+By the end of Tier 1, you should be able to define:
+
+- **Private goods**, **club goods**, **common resources**, **public goods**
 - **Rivalry**, **excludability**, **free rider problem**, **tragedy of the commons**
-- **Externality**, **negative externality**, **positive externality**, **social marginal cost**, **social marginal benefit**
-- **Taxes**, **subsidies**, and market-correcting policy for externalities
-- **Tax incidence** (conceptual; introduced here only)
+- **Externality**, **negative/positive externality**, **marginal social cost (MSC)**, **marginal social benefit (MSB)**
+- **Pigouvian tax**, **Pigouvian subsidy**, **tradable permit**, **command-and-control regulation**
+- **Tax incidence** (conceptual) and how elasticity influences who pays
 """,
     "tier2_solid": """
 ### Tier 2 — Solid Understanding (Assessment Tier)
 
-- Model negative externalities as a leftward shift of supply (social cost)
-- Model positive externalities as a rightward shift of demand (social benefit)
-- Locate market vs. socially optimal equilibria on a graph
-- Calculate and interpret deadweight loss from externalities
-- Show how **Pigouvian taxes/subsidies** shift supply or demand
-- Analyze **tax incidence** graphically (first and only appearance)
-- Connect incidence to elasticity intuitively
-- Use simple game theory (dominant strategies, incentives) to interpret policy setups
-- Conduct structured cost–benefit analysis on a public policy case
-- Apply full micro reasoning (S&D, externalities, incentives, equilibrium, welfare) to a real policy decision
+By the end of Tier 2, you should be able to:
+
+- Classify a real-world example into the four goods categories and predict incentive problems
+- Graph and quantify **negative externalities** (supply with MSC) and **positive externalities** (demand with MSB)
+- Identify market vs. socially optimal quantity/price and compute **deadweight loss**
+- Design the **Pigouvian tax or subsidy** that closes the MSC–MPC or MSB–MPB gap
+- Show **tax incidence** on a graph and explain how elasticity splits the burden
+- Compare policy tools (tax, subsidy, permit, regulation, public provision) for efficiency and equity
+- Use simple payoff matrices or dominant strategies to explain cooperation and enforcement challenges
+- Run a basic **cost–benefit analysis** of a policy using the micro toolkit (S&D, externalities, incidence, welfare)
 """,
     "tier3_extensions": """
 ### Tier 3 — Extensions (Optional)
 
-- Historical, political, and institutional paths to public or regulated goods
-- Behavioral reasons for under- or over-consumption with externalities
-- Modern digital externalities (network effects, platforms)
-- Links from policy to long-run inequality, education, and mobility
+- Derive Pigouvian tax/subsidy formulas from marginal benefit/cost schedules and elasticity
+- Explore **Coasean bargaining** and transaction costs as alternative fixes to externalities
+- Model repeated-game or dynamic versions of commons and public-goods problems
+- Trace political economy: who designs the policy, who captures the rents, and how institutions evolve
+- Analyze modern digital externalities (platforms, network effects, data privacy) and their normative tradeoffs
 """,
     "materials": {},
 },

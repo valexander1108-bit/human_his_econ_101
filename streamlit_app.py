@@ -92,6 +92,16 @@ DEFAULTS = {
 for k, v in DEFAULTS.items():
     if k not in st.session_state:
         st.session_state[k] = v
+# Track when a non-radio action (e.g., a button) changed the canonical mode so we can sync the radio on the next run
+if "mode_sync_needed" not in st.session_state:
+    st.session_state["mode_sync_needed"] = False
+
+# The radio owns its own key; seed it once, and only resync when a button flagged it
+if "mode_radio" not in st.session_state:
+    st.session_state["mode_radio"] = st.session_state["mode"]
+if st.session_state["mode_sync_needed"]:
+    st.session_state["mode_radio"] = st.session_state["mode"]
+    st.session_state["mode_sync_needed"] = False
 
 # ---------- Lazy page dispatcher ----------
 def run_page(page_name: str):
@@ -153,6 +163,7 @@ def render_home():
    - Tiered learning objectives """)
         if st.button("Go to Syllabus"):
             st.session_state["mode"] = "Course Syllabus"
+            st.session_state["mode_sync_needed"] = True
 
     with col2:
         st.markdown("### 2. Historical Map")
@@ -161,6 +172,7 @@ def render_home():
    - Real policies, institutions, and lived experience""")
         if st.button("Go to Historical Map"):
             st.session_state["mode"] = "Historical Map"
+            st.session_state["mode_sync_needed"] = True
 
     with col3:
         st.markdown("### 3. Economic Models")
@@ -170,6 +182,7 @@ def render_home():
     """)
         if st.button("Go to Model Playground"):
             st.session_state["mode"] = "Economic Models"
+            st.session_state["mode_sync_needed"] = True
 
     st.markdown("---")
     st.markdown("#### About Your Instructor")
@@ -184,14 +197,14 @@ with st.sidebar:
     st.subheader("Mode Selector")
 
     mode_options = ["Home", "Course Syllabus", "Historical Map", "Economic Models"]
-    current_mode = st.session_state.get("mode", "Home")
-
     mode = st.radio(
         "How would you like to explore economics?",
         mode_options,
-        index=mode_options.index(current_mode),
-        key="mode",
+        key="mode_radio",
     )
+    # Single source of truth for mode; radio writes it here when changed
+    if mode != st.session_state["mode"]:
+        st.session_state["mode"] = mode
 
     if mode == "Economic Models":
         # pick module/page; update single source of truth
