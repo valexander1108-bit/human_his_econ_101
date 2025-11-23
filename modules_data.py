@@ -179,10 +179,45 @@ If you choose to explore Tier 3, you will:
     "id": 3,
     "title": "Elasticity",
     "short_desc": "Responsiveness of consumers and producers to price changes.",
-    "overview_intuition": "### Overview & Intuition\n_Coming soon._",
-    "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
-    "tier2_solid": "### Tier 2 — Solid Understanding (Assessment Tier)\n_Coming soon._",
-    "tier3_extensions": "### Tier 3 — Extensions (Optional)\n_Coming soon._",
+    "overview_intuition": """
+### Overview & Intuition
+
+In this module, we ask how sensitive buyers and sellers are to price changes and why it matters for revenue, policy, and growth.
+
+We start with **price elasticity of demand** to classify goods as elastic, inelastic, unit elastic, or perfectly elastic/inelastic. We connect elasticity to **total revenue**, substitutes/complements, and normal/inferior goods to see how firms and policymakers anticipate behavior.
+
+We then turn to **elasticity of supply**, highlighting time horizons and capacity constraints as drivers of responsiveness. Throughout, we anchor the math in real-life cases (gas, luxury goods, apps) and show how elasticity shapes who bears taxes, how markets adjust, and which goods boom or stagnate as economies grow.
+""",
+    "tier1_definitions": """
+### Tier 1 — Formal Definitions
+
+By the end of Tier 1, you should be able to define:
+
+- **Price elasticity of demand** (midpoint formula); **elastic**, **inelastic**, **unit elastic**, **perfectly elastic/inelastic**
+- **Total revenue** and the **revenue test**
+- **Cross-price elasticity** (substitutes vs. complements) and **income elasticity** (normal vs. inferior/luxury)
+- **Price elasticity of supply** and key determinants (time, capacity, inputs)
+""",
+    "tier2_solid": """
+### Tier 2 — Solid Understanding (Assessment Tier)
+
+By the end of Tier 2, you should be able to:
+
+- Calculate price elasticity of demand/supply with the midpoint method and classify goods
+- Use elasticity to predict **total revenue** changes from price moves
+- Interpret **cross-price** and **income** elasticities to label relationships and normal/inferior goods
+- Explain how time horizons shift supply and demand elasticities
+- Apply elasticity logic to policy: who bears a tax/subsidy burden when curves are steep vs. flat
+- Map elasticity concepts onto real markets (necessities vs. luxuries, apps vs. commodities)
+""",
+    "tier3_extensions": """
+### Tier 3 — Extensions (Optional)
+
+- Explore common functional forms (constant elasticity, log-log) and growth implications
+- Connect elasticity to market power and pricing strategy (markup rules)
+- Examine long-run vs. short-run elasticity differences in environmental or labor markets
+- Analyze historical cases where changing elasticities reshaped industries
+""",
     "materials": {},
 },
 
@@ -191,10 +226,44 @@ If you choose to explore Tier 3, you will:
     "id": 4,
     "title": "Welfare Economics and Government Intervention",
     "short_desc": "Consumer/producer surplus and the effects of taxes, price controls, and policies.",
-    "overview_intuition": "### Overview & Intuition\n_Coming soon._",
-    "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
-    "tier2_solid": "### Tier 2 — Solid Understanding\n_Coming soon._",
-    "tier3_extensions": "### Tier 3 — Extensions (Optional)\n_Coming soon._",
+    "overview_intuition": """
+### Overview & Intuition
+
+Here we measure who benefits in a market and what happens when policy steps in.
+
+We begin with **consumer and producer surplus** to see how equilibrium maximizes total surplus. Then we test **price controls** (floors and ceilings) and **taxes** to trace shortages, surpluses, and deadweight loss.
+
+Finally, we connect efficiency to equity and preview how market rules shape winners, losers, and incentives.
+""",
+    "tier1_definitions": """
+### Tier 1 — Formal Definitions
+
+By the end of Tier 1, you should be able to define:
+
+- **Consumer surplus (CS)**, **producer surplus (PS)**, **total surplus**
+- **Efficiency** vs. **deadweight loss (DWL)**
+- **Price ceiling**, **price floor**, **tax**, **subsidy**
+- **Tax incidence** (conceptual) and how it links to elasticity
+""",
+    "tier2_solid": """
+### Tier 2 — Solid Understanding
+
+By the end of Tier 2, you should be able to:
+
+- Compute CS, PS, and total surplus from a demand/supply graph
+- Show how ceilings and floors create shortages/surpluses and measure resulting DWL
+- Graph the effects of a per-unit tax or subsidy on equilibrium, surplus, and DWL
+- Explain who bears a tax given different elasticities (qualitative incidence)
+- Use a market model to judge when interventions help or hurt overall welfare
+""",
+    "tier3_extensions": """
+### Tier 3 — Extensions (Optional)
+
+- Explore surplus changes when demand or supply shifts over time
+- Analyze tax incidence quantitatively using elasticity formulas
+- Discuss equity-efficiency tradeoffs and the ethics of redistribution via market policy
+- Connect welfare analysis to real policies (rent control, minimum wage, sin taxes)
+""",
     "materials": {},
 },
 
@@ -203,10 +272,44 @@ If you choose to explore Tier 3, you will:
     "id": 5,
     "title": "Factors of Production ",
     "short_desc": "Land, labor, capital, and interdependencies across factor markets.",
-    "overview_intuition": "### Overview & Intuition\n_Coming soon._",
-    "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
-    "tier2_solid": "### Tier 2 — Solid Understanding\n_Coming soon._",
-    "tier3_extensions": "### Tier 3 — Extensions (Optional)\n_Coming soon._",
+    "overview_intuition": """
+### Overview & Intuition
+
+This module shifts from goods markets to the markets for **land, labor, and capital**—the inputs that make production possible.
+
+We start with the **Neoclassical view of income distribution**, where factor prices come from marginal productivity. We build supply and demand stories for **capital (credit/interest)** and **land (rents)**, then turn to **labor** to see how wages emerge and what shifts labor supply and demand.
+
+Throughout, we use marginal analysis to link firm choices to factor demand and explore how shocks to one factor market spill into others.
+""",
+    "tier1_definitions": """
+### Tier 1 — Formal Definitions
+
+By the end of Tier 1, you should be able to define:
+
+- **Factors of production**: land, labor, capital
+- **Derived demand**, **marginal product (MP)**, **marginal revenue product / value of marginal product (MRP/VMP)**
+- **Economic rent**, **interest rate**, **wage**
+- **Elasticity** in factor markets and determinants of factor supply/demand
+""",
+    "tier2_solid": """
+### Tier 2 — Solid Understanding
+
+By the end of Tier 2, you should be able to:
+
+- Model supply and demand for **capital** and analyze floors/ceilings on interest rates
+- Model supply and demand for **land** and discuss inelastic land supply over time
+- Build and interpret a **labor market** graph; identify shifts in labor supply and demand
+- Use **marginal analysis** (MRP = wage) to derive a firm’s labor demand
+- Explain how shocks in one factor market affect others (e.g., capital deepening on wages)
+""",
+    "tier3_extensions": """
+### Tier 3 — Extensions (Optional)
+
+- Examine historical cases of inelastic land supply and rent dynamics
+- Explore capital-labor substitution, automation, and implications for wages
+- Consider monopsony/union power and policy levers in factor markets
+- Discuss global factor mobility and distributional consequences
+""",
     "materials": {},
 },
 
@@ -215,10 +318,45 @@ If you choose to explore Tier 3, you will:
     "id": 6,
     "title": "Choice (*Asynchronous*)",
     "short_desc": "Preferences, utility, and optimal bundles.",
-    "overview_intuition": "### Overview & Intuition\n_Coming soon._",
-    "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
-    "tier2_solid": "### Tier 2 — Solid Understanding\n_Coming soon._",
-    "tier3_extensions": "### Tier 3 — Extensions (Optional)\n_Coming soon._",
+    "overview_intuition": """
+### Overview & Intuition
+
+This asynchronous module zooms in on individual choice—how people rank bundles, trade off time and money, and make decisions across today and tomorrow.
+
+We start with **utility and diminishing marginal utility** to see why variety matters. We map **budget constraints** against **indifference curves** to find optimal consumption. Then we extend the same logic to **labor vs. leisure** and **intertemporal choice** (borrowing/lending over time).
+
+Finally, we confront **bounded rationality** and behavioral limits to the tidy model, asking how real people depart from perfect optimization.
+""",
+    "tier1_definitions": """
+### Tier 1 — Formal Definitions
+
+By the end of Tier 1, you should be able to define:
+
+- **Utility**, **marginal utility**, **diminishing marginal utility**
+- **Indifference curve**, **marginal rate of substitution (MRS)**
+- **Budget constraint**, **feasible set** (work vs. free time), **optimal bundle**
+- **Intertemporal budget**, **interest rate**, **present value**
+- **Bounded rationality** and common behavioral limits
+""",
+    "tier2_solid": """
+### Tier 2 — Solid Understanding
+
+By the end of Tier 2, you should be able to:
+
+- Draw a budget line with indifference curves and locate the tangency optimal bundle
+- Build a labor–leisure feasible set and show how wages shift the work/consumption choice
+- Trace the effects of an interest rate change on borrowing/lending in an intertemporal model
+- Use marginal analysis (MU per dollar) to justify optimal consumption choices
+- Apply the choice toolkit to real decisions (saving, studying, working hours)
+""",
+    "tier3_extensions": """
+### Tier 3 — Extensions (Optional)
+
+- Explore behavioral models: heuristics, present bias, and time-inconsistent preferences
+- Compare exponential vs. hyperbolic discounting in intertemporal choice
+- Discuss revealed preference and how data uncovers underlying utility
+- Analyze policy nudges aimed at bounded rational decision makers
+""",
     "materials": {},
 },
 
@@ -247,10 +385,43 @@ If you choose to explore Tier 3, you will:
     "id": 9,
     "title": "Cost of Production",
     "short_desc": "Strategic interaction and equilibrium.",
-    "overview_intuition": "### Overview & Intuition\n_Coming soon._",
-    "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
-    "tier2_solid": "### Tier 2 — Solid Understanding\n_Coming soon._",
-    "tier3_extensions": "### Tier 3 — Extensions\n_Coming soon._",
+    "overview_intuition": """
+### Overview & Intuition
+
+We move inside the firm to link production, costs, and profits.
+
+First, we separate **accounting profit** from **economic profit** and map how different market structures shape firm choices. We study **short-run production** (total, average, marginal product) and translate inputs into costs.
+
+Then we build the **short-run cost curves** (TC, FC, VC, MC, ATC, AVC) and explore how scale and technology drive costs down or up. Real examples and a manager’s perspective ground the theory in organizational choices.
+""",
+    "tier1_definitions": """
+### Tier 1 — Formal Definitions
+
+By the end of Tier 1, you should be able to define:
+
+- **Accounting profit** vs. **economic profit**
+- **Total/average/marginal product**, **diminishing marginal returns**
+- **Total cost (TC)**, **fixed vs. variable cost (FC/VC)**, **ATC**, **AVC**, **MC**
+- **Economies of scale**, **short run** vs. **long run**
+""",
+    "tier2_solid": """
+### Tier 2 — Solid Understanding
+
+By the end of Tier 2, you should be able to:
+
+- Classify profits as accounting vs. economic in sample problems
+- Compute and interpret TP, AP, MP; connect diminishing returns to rising MC
+- Derive MC, ATC, and AVC from cost data and explain their shapes
+- Identify economies/diseconomies of scale and short-run vs. long-run cost differences
+- Relate market structure (perfect competition vs. other forms) to cost and output choices
+""",
+    "tier3_extensions": """
+### Tier 3 — Extensions
+
+- Analyze learning curves and technological change on long-run costs
+- Discuss sunk costs and real-world managerial decision pitfalls
+- Explore links between cost structure and market entry/exit dynamics
+""",
     "materials": {},
 },
 
@@ -259,10 +430,43 @@ If you choose to explore Tier 3, you will:
     "id": 10,
     "title": "Profit Maximization",
     "short_desc": "When markets fail and how societies respond.",
-    "overview_intuition": "### Overview & Intuition\n_Coming soon._",
-    "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
-    "tier2_solid": "### Tier 2 — Solid Understanding\n_Coming soon._",
-    "tier3_extensions": "### Tier 3 — Extensions\n_Coming soon._",
+    "overview_intuition": """
+### Overview & Intuition
+
+Now we pair cost with revenue to choose output levels in different market structures.
+
+We begin with **perfect competition**, using marginal analysis (MR = MC) to pick short-run output and decide when to shut down or exit long run. Then we repeat the exercise for **monopoly**, comparing pricing, output, and welfare to the competitive benchmark.
+
+The goal: a clear playbook for firm behavior across market types and a lens on why market power creates inefficiency.
+""",
+    "tier1_definitions": """
+### Tier 1 — Formal Definitions
+
+By the end of Tier 1, you should be able to define:
+
+- **Perfect competition**, **monopoly**
+- **Total revenue (TR)**, **marginal revenue (MR)**, **marginal cost (MC)**, **average variable cost (AVC)**
+- **Profit-maximizing rule** (MR = MC) and **shutdown rule** (P < AVC in short run)
+- **Long-run entry/exit** in perfect competition; monopoly pricing via the demand curve
+""",
+    "tier2_solid": """
+### Tier 2 — Solid Understanding
+
+By the end of Tier 2, you should be able to:
+
+- Given cost/revenue data, find the **profit-maximizing quantity and price** in perfect competition
+- Identify profits/losses and apply shutdown vs. continue in the short run; predict long-run entry/exit
+- For a monopoly, derive MR from demand, set MR = MC, and find the profit-maximizing price/quantity
+- Compare efficiency: show monopoly DWL relative to perfect competition
+- Use marginal analysis graphs to justify each decision rule
+""",
+    "tier3_extensions": """
+### Tier 3 — Extensions
+
+- Explore price discrimination types and effects on output and surplus
+- Examine natural monopoly logic and regulatory options
+- Discuss contestable markets and strategic pricing to deter entry
+""",
     "materials": {},
 },
 
@@ -271,10 +475,42 @@ If you choose to explore Tier 3, you will:
     "id": 11,
     "title": "Competition x Asymmetric Information",
     "short_desc": "Monopoly, oligopoly, and market power.",
-    "overview_intuition": "### Overview & Intuition\n_Coming soon._",
-    "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
-    "tier2_solid": "### Tier 2 — Solid Understanding\n_Coming soon._",
-    "tier3_extensions": "### Tier 3 — Extensions\n_Coming soon._",
+    "overview_intuition": """
+### Overview & Intuition
+
+We extend beyond perfect competition and monopoly to the messy middle: **oligopoly** and **monopolistic competition**, plus the role of information.
+
+We learn basic **game theory** (prisoner’s dilemma, dominant strategies, Nash equilibrium) to model strategic interaction among a few firms. We contrast that with many firms selling differentiated products in **monopolistic competition**, focusing on pricing, variety, and excess capacity. We close with policy and a hands-on business lab to apply the models.
+""",
+    "tier1_definitions": """
+### Tier 1 — Formal Definitions
+
+By the end of Tier 1, you should be able to define:
+
+- **Oligopoly**, **monopolistic competition**, **product differentiation**
+- **Payoff matrix**, **dominant strategy**, **Nash equilibrium**, **prisoner’s dilemma**
+- **Cartel/collusion**, **antitrust** (conceptual)
+- **Excess capacity** and long-run outcomes in monopolistic competition
+""",
+    "tier2_solid": """
+### Tier 2 — Solid Understanding
+
+By the end of Tier 2, you should be able to:
+
+- Solve simple payoff matrices to find dominant strategies and Nash equilibria
+- Use game-theory logic to explain oligopoly pricing/quantity outcomes and incentives to collude/cheat
+- Graph monopolistic competition in short run vs. long run (profits → entry → zero economic profit with variety)
+- Compare efficiency and consumer outcomes across perfect competition, monopolistic competition, oligopoly, and monopoly
+- Identify where policy (antitrust, regulation) enters to address market power
+""",
+    "tier3_extensions": """
+### Tier 3 — Extensions (Optional)
+
+- Explore repeated games, credible threats, and cooperation in oligopolies
+- Introduce asymmetric information topics (adverse selection, moral hazard) as seeds for further study
+- Analyze real-world antitrust cases and platform market power
+- Build richer business-lab scenarios that blend differentiation, strategy, and information
+""",
     "materials": {},
 },
 
