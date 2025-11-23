@@ -282,11 +282,43 @@ If you choose to explore Tier 3, you will:
 {
     "id": 12,
     "title": "Micro-Policy",
-    "short_desc": "Bringing together microeconomic reasoning across the entire course.",
-    "overview_intuition": "### Overview & Intuition\n_Coming soon._",
-    "tier1_definitions": "### Tier 1 — Formal Definitions\n_Coming soon._",
-    "tier2_solid": "### Tier 2 — Solid Understanding\n_Coming soon._",
-    "tier3_extensions": "### Tier 3 — Extensions\n_Coming soon._",
+    "short_desc": "Externalities, public goods, and how policy fixes market misfires.",
+    "overview_intuition": """
+### Overview & Intuition
+
+Markets can miss the social sweet spot when spillover costs or benefits aren’t priced in. In plain language—no math or graphs—we’ll see why externalities arise, why some goods (parks, education, roads, fisheries) struggle without rules, and what governments try to correct with taxes, subsidies, and regulation.
+""",
+    "tier1_definitions": """
+### Tier 1 — Formal Definitions
+
+- **Private goods**, **public goods**, **common resources**, **club goods**
+- **Rivalry**, **excludability**, **free rider problem**, **tragedy of the commons**
+- **Externality**, **negative externality**, **positive externality**, **social marginal cost**, **social marginal benefit**
+- **Taxes**, **subsidies**, and market-correcting policy for externalities
+- **Tax incidence** (conceptual; introduced here only)
+""",
+    "tier2_solid": """
+### Tier 2 — Solid Understanding (Assessment Tier)
+
+- Model negative externalities as a leftward shift of supply (social cost)
+- Model positive externalities as a rightward shift of demand (social benefit)
+- Locate market vs. socially optimal equilibria on a graph
+- Calculate and interpret deadweight loss from externalities
+- Show how **Pigouvian taxes/subsidies** shift supply or demand
+- Analyze **tax incidence** graphically (first and only appearance)
+- Connect incidence to elasticity intuitively
+- Use simple game theory (dominant strategies, incentives) to interpret policy setups
+- Conduct structured cost–benefit analysis on a public policy case
+- Apply full micro reasoning (S&D, externalities, incentives, equilibrium, welfare) to a real policy decision
+""",
+    "tier3_extensions": """
+### Tier 3 — Extensions (Optional)
+
+- Historical, political, and institutional paths to public or regulated goods
+- Behavioral reasons for under- or over-consumption with externalities
+- Modern digital externalities (network effects, platforms)
+- Links from policy to long-run inequality, education, and mobility
+""",
     "materials": {},
 },
 ]
