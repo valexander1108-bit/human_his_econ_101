@@ -3,7 +3,7 @@
 MICRO_MODULES = [
 {
     "id": 1,
-    "title": "Economic Thought and Modeling",
+    "title": "Economic Thought & Modeling",
     "short_desc": "Scarcity, opportunity cost, and the basic models economists use to represent choice.",
 
     "overview_intuition": """
@@ -67,11 +67,18 @@ If you choose to explore Tier 3, you will:
                 "url": "https://www.notion.so/Economic-Theory-Before-the-Wealth-of-Nations-2b04371a58ce817a880ffdf96c278b25?pvs=21"
             }
         ],
+        "readings": [
+            {
+                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
+                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
+            }
+        ],
+        "extensions": [],
 
         "models": [
-            {"label": "Budget Constraint Model", "url": "https://velazquez.streamlit.app/?page=Budget%20Constraint"},
-            {"label": "PPC Model", "url": "https://velazquez.streamlit.app/?page=PPC"},
-            {"label": "Comparative Advantage", "url": "https://velazquez.streamlit.app/?page=Comparative%20Advantage"},
+            {"label": "Budget Constraint", "url": "?model=Budget%20Constraint"},
+            {"label": "PPC", "url": "?model=PPC"},
+            {"label": "Comparative Advantage", "url": "?model=Comparative%20Advantage"},
         ],
 
         "khan": [],
@@ -81,7 +88,7 @@ If you choose to explore Tier 3, you will:
 },
 {
     "id": 2,
-    "title": "Supply x Demand",
+    "title": "Supply & Demand",
     "short_desc": "How buyers and sellers interact to determine prices, quantities, and responses to shocks.",
 
     "overview_intuition": """
@@ -154,13 +161,20 @@ If you choose to explore Tier 3, you will:
                 "url": "https://www.notion.so/Supply-and-Demand-Lab-e73b6326ebb24d48bb031bdd1978f8bb?pvs=21"
             }
         ],
+        "readings": [
+            {
+                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
+                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
+            }
+        ],
+        "extensions": [],
 
         "models": [
-            {"label": "Demand (Schedule → Curve)", "url": "https://velazquez.streamlit.app/?page=Demand%20(schedule%20%E2%86%92%20line)"},
-            {"label": "Supply (Schedule → Curve)", "url": "https://velazquez.streamlit.app/?page=Supply%20(schedule%20%E2%86%92%20line)"},
-            {"label": "Market Model", "url": "https://velazquez.streamlit.app/?page=Market%20Model%20(Supply%20%26%20Demand)"},
-            {"label": "Single Shifts", "url": "https://velazquez.streamlit.app/?page=Single%20Shifts"},
-            {"label": "Double Shifts", "url": "https://velazquez.streamlit.app/?page=Double%20Shifts"},
+            {"label": "Demand (schedule → line)", "url": "?model=Demand%20(schedule%20%E2%86%92%20line)"},
+            {"label": "Supply (schedule → line)", "url": "?model=Supply%20(schedule%20%E2%86%92%20line)"},
+            {"label": "Market Model (Supply & Demand)", "url": "?model=Market%20Model%20(Supply%20%26%20Demand)"},
+            {"label": "Single Shifts", "url": "?model=Single%20Shifts"},
+            {"label": "Double Shifts", "url": "?model=Double%20Shifts"},
         ],
 
         "khan": [
@@ -216,15 +230,32 @@ By the end of Tier 2, you should be able to:
 - Explore common functional forms (constant elasticity, log-log) and growth implications
 - Connect elasticity to market power and pricing strategy (markup rules)
 - Examine long-run vs. short-run elasticity differences in environmental or labor markets
-- Analyze historical cases where changing elasticities reshaped industries
+ - Analyze historical cases where changing elasticities reshaped industries
 """,
-    "materials": {},
+    "materials": {
+        "models": [
+            {"label": "Price Elasticity of Demand", "url": "?model=Price%20Elasticity%20of%20Demand"},
+            {"label": "Elasticity and Total Revenue", "url": "?model=Elasticity%20and%20Total%20Revenue"},
+            {"label": "Price Elasticity of Supply", "url": "?model=Price%20Elasticity%20of%20Supply"},
+        ],
+        "readings": [
+            {
+                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
+                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
+            }
+        ],
+        "extensions": [],
+        "labs": [],
+        "khan": [],
+        "videos": [],
+        "audio": [],
+    },
 },
 
 # --- MODULE 4: Welfare Economic & Government Intervention ---
 {
     "id": 4,
-    "title": "Welfare Economics and Government Intervention",
+    "title": "Welfare & Intervention",
     "short_desc": "Consumer/producer surplus and the effects of taxes, price controls, and policies.",
     "overview_intuition": """
 ### Overview & Intuition
@@ -259,12 +290,30 @@ By the end of Tier 2, you should be able to:
     "tier3_extensions": """
 ### Tier 3 — Extensions (Optional)
 
-- Explore surplus changes when demand or supply shifts over time
-- Analyze tax incidence quantitatively using elasticity formulas
-- Discuss equity-efficiency tradeoffs and the ethics of redistribution via market policy
-- Connect welfare analysis to real policies (rent control, minimum wage, sin taxes)
+ - Explore surplus changes when demand or supply shifts over time
+ - Analyze tax incidence quantitatively using elasticity formulas
+ - Discuss equity-efficiency tradeoffs and the ethics of redistribution via market policy
+ - Connect welfare analysis to real policies (rent control, minimum wage, sin taxes)
 """,
-    "materials": {},
+    "materials": {
+        "models": [
+            {"label": "Surplus", "url": "?model=Surplus"},
+            {"label": "Government Intervention: Price Floor", "url": "?model=Government%20Intervention:%20Price%20Floor"},
+            {"label": "Government Intervention: Price Ceiling", "url": "?model=Government%20Intervention:%20Price%20Ceiling"},
+            {"label": "Deadweight Loss", "url": "?model=Deadweight%20Loss"},
+        ],
+        "readings": [
+            {
+                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
+                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
+            }
+        ],
+        "extensions": [],
+        "labs": [],
+        "khan": [],
+        "videos": [],
+        "audio": [],
+    },
 },
 
 # --- MODULE 5: Factors of Production ---
@@ -308,15 +357,33 @@ By the end of Tier 2, you should be able to:
 - Examine historical cases of inelastic land supply and rent dynamics
 - Explore capital-labor substitution, automation, and implications for wages
 - Consider monopsony/union power and policy levers in factor markets
-- Discuss global factor mobility and distributional consequences
+ - Discuss global factor mobility and distributional consequences
 """,
-    "materials": {},
+    "materials": {
+        "models": [
+            {"label": "Interdependent Factors", "url": "?model=Interdependent%20Factors"},
+            {"label": "Land + Rent", "url": "?model=Land%20+%20Rent"},
+            {"label": "Labor + Wage", "url": "?model=Labor%20+%20Wage"},
+            {"label": "Capital + Interest", "url": "?model=Capital%20+%20Interest"},
+        ],
+        "readings": [
+            {
+                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
+                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
+            }
+        ],
+        "extensions": [],
+        "labs": [],
+        "khan": [],
+        "videos": [],
+        "audio": [],
+    },
 },
 
 # --- MODULE 6: Choice ---
 {
     "id": 6,
-    "title": "Choice (*Asynchronous*)",
+    "title": "Choice & Constraint (*Asynchronous*)",
     "short_desc": "Preferences, utility, and optimal bundles.",
     "overview_intuition": """
 ### Overview & Intuition
@@ -473,7 +540,7 @@ By the end of Tier 2, you should be able to:
 # --- MODULE 11: Competition & Asymmetric Information ---
 {
     "id": 11,
-    "title": "Competition x Asymmetric Information",
+    "title": "Competition & Information",
     "short_desc": "Monopoly, oligopoly, and market power.",
     "overview_intuition": """
 ### Overview & Intuition
@@ -517,7 +584,7 @@ By the end of Tier 2, you should be able to:
 # --- MODULE 12: Micro-Policy ---
 {
     "id": 12,
-    "title": "Micro-Policy Perspectives ",
+    "title": "Policy, Paradox & Human Perspective ",
     "short_desc": "Externalities, public goods, and how policy fixes market misfires.",
     "overview_intuition": """
 ### Overview & Intuition

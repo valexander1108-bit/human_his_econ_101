@@ -49,14 +49,14 @@ pio.templates["ecn101"] = dict(
 )
 pio.templates.default = "ecn101"
 
-# ---------- Catalog ----------
+# ---------- Catalog (match course syllabus modules) ----------
 MODULES = {
-    "Module 1 — Modeling Foundations": [
+    "Module 1 — Economic Thought and Modeling": [
         "Budget Constraint",
         "PPC",
         "Comparative Advantage",
     ],
-    "Module 2 — Supply & Demand": [
+    "Module 2 — Supply x Demand": [
         "Demand (schedule → line)",
         "Supply (schedule → line)",
         "Market Model (Supply & Demand)",
@@ -68,7 +68,7 @@ MODULES = {
         "Elasticity and Total Revenue",
         "Price Elasticity of Supply",
     ],
-    "Module 4 — Welfare Economics": [
+    "Module 4 — Welfare Economics and Government Intervention": [
         "Surplus",
         "Government Intervention: Price Floor",
         "Government Intervention: Price Ceiling",
@@ -80,6 +80,13 @@ MODULES = {
         "Labor + Wage",
         "Capital + Interest",
     ],
+    "Module 6 — Choice (*Asynchronous*)": [],
+    "Module 7 — *Capitilism* (*Optional Full-Group Extension*)": [],
+    "Module 8 — *Inequality* (*Optional Independent Extension*)": [],
+    "Module 9 — Cost of Production": [],
+    "Module 10 — Profit Maximization": [],
+    "Module 11 — Competition x Asymmetric Information": [],
+    "Module 12 — Micro-Policy Perspectives": [],
 }
 ALL_PAGES = [p for arr in MODULES.values() for p in arr]
 
@@ -95,6 +102,15 @@ for k, v in DEFAULTS.items():
 # Track when a non-radio action (e.g., a button) changed the canonical mode so we can sync the radio on the next run
 if "mode_sync_needed" not in st.session_state:
     st.session_state["mode_sync_needed"] = False
+
+# Honor deep links like ?model=Budget%20Constraint
+params = st.query_params
+if "model" in params:
+    target = params.get("model")
+    if target in ALL_PAGES:
+        st.session_state["mode"] = "Economic Models"
+        st.session_state["current_page"] = target
+        st.session_state["mode_sync_needed"] = True
 
 # The radio owns its own key; seed it once, and only resync when a button flagged it
 if "mode_radio" not in st.session_state:
@@ -209,10 +225,20 @@ with st.sidebar:
     if mode == "Economic Models":
         # pick module/page; update single source of truth
         modules_list = list(MODULES.keys())
-        module = st.selectbox("Module", modules_list, index=0)
+        current_page = st.session_state.get("current_page", ALL_PAGES[0])
+        current_module = next((m for m, pages in MODULES.items() if current_page in pages), modules_list[0])
+        module_index = modules_list.index(current_module) if current_module in modules_list else 0
+
+        module = st.selectbox("Module", modules_list, index=module_index)
         pages = MODULES[module]
-        page = st.selectbox("Page", pages, index=0)
-        st.session_state["current_page"] = page
+
+        if pages:
+            page_index = pages.index(current_page) if current_page in pages else 0
+            page = st.selectbox("Page", pages, index=page_index)
+            st.session_state["current_page"] = page
+        else:
+            st.info("No interactive models for this module yet.")
+            st.session_state["current_page"] = current_page
 
 # ---------- Render ----------
 mode = st.session_state.get("mode", "Home")

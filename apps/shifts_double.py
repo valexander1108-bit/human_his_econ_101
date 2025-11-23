@@ -47,19 +47,19 @@ def clip_line_to_box(m, b, xmin, xmax, ymin, ymax):
 
 def add_full_span_line(fig, alpha, beta, *, name, xmin, xmax, ymin, ymax, width=3, dash=None):
     """
-    Plot P = alpha + beta*Q as a segment that spans the current axes box.
-    Legends are disabled per-trace for a cleaner classroom view.
+    Plot P = alpha + beta*Q as a long segment that continues when you pan/zoom.
     """
-    seg = clip_line_to_box(beta, alpha, xmin, xmax, ymin, ymax)
-    if seg is None:
-        return
-    (x0, y0), (x1, y1) = seg
+    span = max(xmax - xmin, ymax - ymin, 10) * 100
+    x0 = -span
+    x1 = span
+    y0 = beta * x0 + alpha
+    y1 = beta * x1 + alpha
     fig.add_scatter(
         x=[x0, x1], y=[y0, y1],
         mode="lines",
         name=name,
-        showlegend=False,  # <— legend removed
-        line=dict(width=width, dash=dash) if dash else dict(width=width)),
+        showlegend=False,
+        line=dict(width=width, dash=dash) if dash else dict(width=width))
 
 
 def add_inline_label(fig, alpha, beta, *, text, xmax, ymin, ymax, pad=0.96, side="right"):

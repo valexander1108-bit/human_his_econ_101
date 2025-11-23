@@ -42,12 +42,13 @@ def clip_line_to_box(m, b, xmin, xmax, ymin, ymax):
 
 def add_full_span_line(fig, alpha, beta, *, name, xmin, xmax, ymin, ymax, width=3, dash=None, legendgroup=None):
     """
-    Plot P = alpha + beta*Q as a segment that spans the current axes box.
+    Plot P = alpha + beta*Q as a long segment that continues when you pan/zoom.
     """
-    seg = clip_line_to_box(beta, alpha, xmin, xmax, ymin, ymax)
-    if seg is None:
-        return
-    (x0, y0), (x1, y1) = seg
+    span = max(xmax - xmin, ymax - ymin, 10) * 100
+    x0 = -span
+    x1 = span
+    y0 = beta * x0 + alpha
+    y1 = beta * x1 + alpha
     fig.add_scatter(
         x=[x0, x1], y=[y0, y1],
         mode="lines",

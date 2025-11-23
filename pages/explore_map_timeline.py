@@ -8,6 +8,7 @@ from typing import Any, Dict, Optional, Tuple
 import pandas as pd
 import streamlit as st
 import folium
+from folium.plugins import MarkerCluster, MiniMap, Fullscreen, HeatMap, TimestampedGeoJson
 from streamlit_folium import st_folium
 
 
@@ -215,6 +216,14 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
     modules = ["All"] + sorted([m for m in df.get("module", pd.Series(dtype=str)).dropna().unique().tolist()])
     module_sel = st.sidebar.selectbox("Module", modules, index=0)
 
+    st.sidebar.header("Map Layers")
+    show_heat = st.sidebar.checkbox("Show heat/density", value=False)
+    show_time = st.sidebar.checkbox(
+        "Show time slider",
+        value=False,
+        help="Animate pins over time; can be slow with many points",
+    )
+
     f = df[(df["year_num"] >= year_min) & (df["year_num"] <= year_max)]
     if concept_sel != "All" and "concept" in f.columns:
         f = f[f["concept"] == concept_sel]
@@ -222,13 +231,14 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
         f = f[f["module"] == module_sel]
 
     # ---------- Layout ----------
-    left, right = st.columns([2, 1], vertical_alignment="top")
+    left, right = st.columns([2, 1])
 
     with left:
         st.markdown(
             f"### Historical Map "
             f"from **{pretty_year(year_min)}** to **{pretty_year(year_max)}**"
         )
+        st.caption(f"{len(f)} scenario(s) shown.")
 
         if not f.empty and {"lat", "lon"}.issubset(f.columns):
             center_lat, center_lon = f["lat"].mean(), f["lon"].mean()
@@ -236,30 +246,79 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
         else:
             center_lat, center_lon, zoom_start = 20, 0, 2
 
-        # Clean academic basemap
+        # Standard light basemap
         m = folium.Map(
             location=[center_lat, center_lon],
             zoom_start=zoom_start,
-            tiles="CartoDB positron"
+            tiles="OpenStreetMap",
+            control_scale=False,
         )
+        Fullscreen(position="topleft").add_to(m)
+        MiniMap(toggle_display=True, position="bottomleft").add_to(m)
 
-        # Add clickable markers
+        bounds = []
         if not f.empty and {"lat", "lon"}.issubset(f.columns):
+            cluster = MarkerCluster(name="Scenarios", disableClusteringAtZoom=7)
+            heat_points = []
             for _, row in f.iterrows():
                 if pd.isna(row.get("lat")) or pd.isna(row.get("lon")):
                     continue
+                bounds.append((row["lat"], row["lon"]))
+                heat_points.append([row["lat"], row["lon"], 1])
+                desc_snip = (row.get("description") or row.get("Narrative") or "")
+                if len(desc_snip) > 140:
+                    desc_snip = desc_snip[:140] + "..."
                 popup_html = f"""
-                <b>{row.get('title','Untitled')}</b> • {pretty_year(int(row['year_num']))}<br>
-                {row.get('concept','—')} • {row.get('module','—')}<br>
+                <div style="font-size:14px; line-height:1.4;">
+                    <b>{row.get('title','Untitled')}</b><br>
+                    <span style="color:#71bb94;">{pretty_year(int(row['year_num']))}</span><br>
+                    <i>{row.get('concept','—')} • {row.get('module','—')}</i><br>
+                    <div style="margin-top:4px; font-size:12px;">{desc_snip}</div>
+                </div>
                 """
                 folium.Marker(
                     location=[row["lat"], row["lon"]],
                     tooltip=row.get("title", "Scenario"),
-                    popup=folium.Popup(popup_html, max_width=320),
-                    icon=folium.Icon(color="green", icon="book", prefix="fa")  # FontAwesome icon
-                ).add_to(m)
+                    popup=folium.Popup(popup_html, max_width=300),
+                    icon=folium.Icon(color="green", icon="book", prefix="fa")
+                ).add_to(cluster)
+            cluster.add_to(m)
 
-        # Capture interactions (lat/lon of last click)
+            if show_heat and heat_points:
+                HeatMap(heat_points, radius=18, blur=24, min_opacity=0.3, name="Density").add_to(m)
+
+            if show_time:
+                if len(f) > 400:
+                    st.warning("Time slider disabled (too many points for smooth playback). Filter more or turn off.")
+                else:
+                    features = []
+                    for _, row in f.iterrows():
+                        if pd.isna(row.get("lat")) or pd.isna(row.get("lon")):
+                            continue
+                        year_label = pretty_year(int(row["year_num"]))
+                    feat = {
+                        "type": "Feature",
+                        "geometry": {"type": "Point", "coordinates": [row["lon"], row["lat"]]},
+                        "properties": {
+                            "time": f"{int(row['year_num'])}",
+                            "popup": f"{row.get('title','Untitled')} — {year_label} — {row.get('concept','—')} • {row.get('module','—')}",
+                        },
+                    }
+                    features.append(feat)
+                if features:
+                    TimestampedGeoJson(
+                        {"type": "FeatureCollection", "features": features},
+                        transition_time=500,
+                        loop=False,
+                        add_last_point=True,
+                        period="PT1S",
+                        auto_play=False,
+                        time_slider_drag_update=True,
+                    ).add_to(m)
+
+            if bounds:
+                m.fit_bounds(bounds, padding=(20, 20))
+
         map_state = st_folium(m, width=None, height=620)
 
     with right:
@@ -267,11 +326,10 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
 
         selected = None
 
-        # 1) If the user clicked the map, pick the nearest scenario in the filtered set
+        # 1) If the user clicked the map, pick nearest scenario in filtered set
         last = map_state.get("last_object_clicked", None) if isinstance(map_state, dict) else None
         if last and "lat" in last and "lng" in last and not f.empty and {"lat", "lon"}.issubset(f.columns):
             lat_clicked, lon_clicked = last["lat"], last["lng"]
-            # simple L1 distance to nearest pin
             idx = ((f["lat"] - lat_clicked).abs() + (f["lon"] - lon_clicked).abs()).idxmin()
             selected = f.loc[idx].to_dict()
 
