@@ -172,17 +172,8 @@ If you choose to explore Tier 3, you will:
         "guided_notes": "https://www.canva.com/design/DAGxSH8hCHk/I2kj289MFKsKjWqFfBHeUA/view?utm_content=DAGxSH8hCHk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb3c9693bc0",
 
         "labs": [
-            {
-                "label": "Supply & Demand Lab",
-                "url": "https://www.notion.so/Supply-and-Demand-Lab-e73b6326ebb24d48bb031bdd1978f8bb?pvs=21"
-            }
-        ],
-        "readings": [
-            {
-                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
-                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
-            }
-        ],
+],
+        "readings": [],
         "extensions": [],
 
         "models": [
@@ -192,9 +183,7 @@ If you choose to explore Tier 3, you will:
             {"label": "Single Shifts", "url": "?model=Single%20Shifts"},
             {"label": "Double Shifts", "url": "?model=Double%20Shifts"},
         ],
-
         "khan": [],
-
         "videos": [],
         "audio": []
     },
@@ -249,12 +238,7 @@ By the end of Tier 2, you should be able to:
             {"label": "Elasticity and Total Revenue", "url": "?model=Elasticity%20and%20Total%20Revenue"},
             {"label": "Price Elasticity of Supply", "url": "?model=Price%20Elasticity%20of%20Supply"},
         ],
-        "readings": [
-            {
-                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
-                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
-            }
-        ],
+        "readings": [],
         "extensions": [],
         "labs": [],
         "khan": [],
@@ -262,7 +246,6 @@ By the end of Tier 2, you should be able to:
         "audio": [],
     },
 },
-
 # --- MODULE 4: Welfare Economic & Government Intervention ---
 {
     "id": 4,
@@ -381,10 +364,10 @@ By the end of Tier 2, you should be able to:
     },
 },
 
-# --- MODULE 6: Choice ---
+# --- MODULE 6: Choices & Constraints ---
 {
     "id": 6,
-    "title": "Choice & Constraint (*Asynchronous*)",
+    "title": "Choices & Constraints (*Asynchronous*)",
     "short_desc": "Preferences, utility, and optimal bundles.",
     "overview_intuition": """
 ### Module 6 Learning
@@ -647,12 +630,7 @@ By the end of Tier 2, you should be able to:
             {"label": "Externality: Social Cost (Pigouvian Tax)", "url": "?model=Externality:%20Social%20Cost%20(Pigouvian%20Tax)"},
             {"label": "Externality: Social Benefit (Pigouvian Subsidy)", "url": "?model=Externality:%20Social%20Benefit%20(Pigouvian%20Subsidy)"}
         ],
-        "khan": [
-            {
-                "label": "Quiz 1 - Market Failure and the Role of Government - Externalities & Types of Goods ",
-                "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/ap-consumer-producer-surplus/public-and-private-goods/quiz/ap-consumer-producer-surplus-quiz-1"
-            }
-        ],
+        "khan": [],
         "readings": [],
         "extensions": [],
         "videos": [],
@@ -743,7 +721,14 @@ for module in MICRO_MODULES:
 
 
 # --- Ingest course links CSV to fill module resources ---
-COURSE_LINKS_CSV = Path(__file__).parent / "dev_materials" / "Course Links & Resources 6d6e76ec5670407fb399d4ec39993f2c_all.csv"
+COURSE_LINKS_FILENAME = "Course Links & Resources 6d6e76ec5670407fb399d4ec39993f2c_all.csv"
+_BASE_DIR = Path(__file__).resolve().parent
+_COURSE_LINKS_CANDIDATES = [
+    _BASE_DIR / "data" / COURSE_LINKS_FILENAME,          # new canonical location
+    _BASE_DIR / "dev_materials" / COURSE_LINKS_FILENAME, # legacy location (fallback)
+]
+
+COURSE_LINKS_CSV = next((p for p in _COURSE_LINKS_CANDIDATES if p.exists()), _COURSE_LINKS_CANDIDATES[0])
 
 
 def _parse_module_id(module_str: str):

@@ -54,28 +54,32 @@ _This course uses a **tiered learning structure** to support a wide range of lea
 
 - **Tier 3 — _Extensions (Optional, for the \"econ-nerd\")_** — Deeper exploration of historical, institutional, or behavioral topics  
 """)
-
+    
     with st.expander("Required Materials", expanded=False):
         st.markdown("""
 **Classroom Materials**  
-- Notebook and laptop each class.
-
-**Accessing Materials**  
-- Course website and updates: Notion  
-- Assignments/submissions: Canvas
-
+- Notebook and laptop each class - PHONES IN BAGS - I will direct laptop usage. 
+                    
 **Primary Text**  
 - *OpenStax – Principles of Microeconomics 3e*  
   https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach
 
+**Material Access**
+- Main "Knowledge Base": Streamlit app designed by Prof. Velazquez
+- Slides and Guided Notes: Canva
+- Interactive assignments: Notion 
+- Independent Practice: Khan Academy & Physical Notebook             
+- Assignments/submissions: Canvas
+                                      
 **Additional Texts**  
-- The course draws on multiple texts and articles (e.g., McConnell, Brue & Finn 19e) to deepen selected topics.
+- The course draws on my own learning experiences with multiple economics texts (e.g. Mankiw, McConnell, Brue & Finn 19e, corECON) to deepen selected topics and ensure alignment to cannonical economic coursework. 
 """)
     st.markdown("---")
 def render_module_block(module: dict):
     title = f"Module {module['id']}: {module['title']}"
     with st.expander(title, expanded=False):
         openstax_optional = module.get("openstax", {}).get("optional", [])
+        
         # Module 8 (and any future untiered modules)
         if module.get("is_untiered", False):
             st.markdown(module.get("untiered_markdown", "_Coming soon._"))
@@ -206,29 +210,29 @@ def app():
         st.markdown("[**Overview**](#overview)")
         st.markdown("[**Objectives**](#objectives)")
         st.markdown("[**Content**](#content)")
-        st.markdown("[1 - Economic Thought & Modeling](#module-1-learning)")
+        st.markdown("[**1 - Economic Thought & Modeling**](#module-1-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🧭 *explore content*](#module-1-course-materials)")
-        st.markdown("[2 - Supply & Demand](#module-2-learning)")
+        st.markdown("[**2 - Supply & Demand**](#module-2-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[❌ *explore content*](#module-2-course-materials)")
-        st.markdown("[3 - Elasticity](#module-3-learning)")
+        st.markdown("[**3 - Elasticity**](#module-3-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🧲 *explore content*](#module-3-course-materials)")
-        st.markdown("[4 - Welfare & Intervention](#module-4-learning)")
+        st.markdown("[**4 - Welfare & Intervention**](#module-4-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[⚖️ *explore content*](#module-4-course-materials)")
-        st.markdown("[5 - Factors of Production](#module-5-learning)")
+        st.markdown("[**5 - Factors of Production**](#module-5-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🏭 *explore content*](#module-5-course-materials)")
-        st.markdown("[6 - Choices & Constraints](#module-6-learning)")
+        st.markdown("[**6 - Choices & Constraints**](#module-6-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🎯 *explore content*](#module-6-course-materials)")
-        st.markdown("[7 - Capitalism](#module-7-learning)")
+        st.markdown("[**7 - Capitalism**](#module-7-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🌍 *explore content*](#module-7-course-materials)")
-        st.markdown("[8 - Inequality](#module-8-learningt)")
+        st.markdown("[**8 - Inequality**](#module-8-learningt)")
         st.markdown("&nbsp;&nbsp;&nbsp;[📊 *explore content*](#module-8-course-materials)")
-        st.markdown("[9 - Cost of Production](#module-9-learning)")
+        st.markdown("[**9 - Cost of Production**](#module-9-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🧮 *explore content*](#module-9-course-materials)")
-        st.markdown("[10 - Profit Maximization](#module-10-learning)")
+        st.markdown("[**10 - Profit Maximization**](#module-10-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[💹 *explore content*](#module-10-course-materials)")
-        st.markdown("[11 - Competition & Information](#module-11-learning)")
+        st.markdown("[**11 - Competition & Information**](#module-11-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🎲 *explore content*](#module-11-course-materials)")
-        st.markdown("[12- Policy, Paradox & Human Perspective](#module-12-learning)")
+        st.markdown("[**12- Policy, Paradox & Human Perspective**](#module-12-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🛠️ *explore content*](#module-12-course-materials)")
         st.markdown("[**Grades**](#grades)")
         st.markdown("[**Policies**](#policies)")
@@ -245,15 +249,18 @@ Students engage directly with core microeconomic theory, primary economic texts,
 
     with st.expander("Math Prerequisites", expanded=False):
         st.markdown("""
-This course introduces consumer and firm behavior through core micro models.
+Economics leans on proportional reasoning, linear relationships on a quadrant plane, and marginal thinking. We build these skills in tiers so every student has a clear path into the math economists use.
 
-**Math Prerequisite**  
-You should be comfortable with algebra and graphing; a Khan Academy algebra diagnostic helps target support. Economics is an opportunity to shore up math skills—use office hours and the Learning Resource Center if needed.
+**Tiered objectives (choose your lane)**
+- **Tier 1 — Building comfort (not confident yet):** solidify ratios/percents/decimals/fractions; read the coordinate plane; connect slope to “rise over run”; use simple tables to see how small changes create marginal effects; explore straight-line growth to preview marginal analysis.
+- **Tier 2 — Solid footing (okay with math):** apply proportional and linear relationships to demand/supply/cost lines; use midpoint/percent change with graphs; visualize marginal analysis with common growth shapes (linear, concave, convex) and link slopes to “how fast” outcomes change.
+- **Tier 3 — Confident/strong:** bring algebra and intro calculus intuition to quantify marginal changes; compute slopes from data and simple derivatives; use visuals and computation to interpret real settings (cost curves, revenue, surplus, externalities); compare discrete vs. continuous marginal analysis.
 
-**Modules 1–7:** Economic decision-making and modeling (PPC, S&D, factor markets for land, labor, capital) with attention to technology and innovation.  
-**Weeks 9–11:** Firm behavior, costs, competition, and information as foundations for supply and demand.  
-**Week 12:** Regulation and public policy for externalities.  
-**Extension (Module 8):** Optional inequality economics empirical project (Excel-based).
+**Where it shows up**
+- Modules 1–4: slopes, intercepts, and 2×2 systems for equilibrium; triangle/rectangle areas for surplus and DWL; percent changes for shocks.
+- Modules 5–6: ratios and marginal-per-dollar in factor markets; optional intertemporal choice with simple growth/discounting.
+- Modules 9–11: turning tables into MC/ATC/AVC, MR = MC decisions, profit boxes.
+- Module 12: wedge diagrams for externalities, triangle areas for DWL, elasticity logic for tax incidence.
 """)
         st.caption("All practice materials and assessments align to these objectives. Recommended prerequisite: Algebra 1.")
 
