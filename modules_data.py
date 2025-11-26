@@ -1,4 +1,8 @@
 # modules_data.py
+import csv
+import re
+from pathlib import Path
+
 from data.openstax_plan import MODULE_OPENSTAX_MAP, OPENSTAX_CHAPTERS
 from data.canonical_texts import CANONICAL_TEXTS, MODULE_CANONICAL_MAP
 
@@ -189,12 +193,7 @@ If you choose to explore Tier 3, you will:
             {"label": "Double Shifts", "url": "?model=Double%20Shifts"},
         ],
 
-        "khan": [
-            {
-                "label": "Khan Academy: Supply and Demand Basics",
-                "url": "https://www.khanacademy.org/economics-finance-domain/microeconomics/supply-demand-equilibrium"
-            }
-        ],
+        "khan": [],
 
         "videos": [],
         "audio": []
@@ -314,12 +313,7 @@ By the end of Tier 2, you should be able to:
             {"label": "Government Intervention: Price Ceiling", "url": "?model=Government%20Intervention:%20Price%20Ceiling"},
             {"label": "Deadweight Loss", "url": "?model=Deadweight%20Loss"},
         ],
-        "readings": [
-            {
-                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
-                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
-            }
-        ],
+        "readings": [],
         "extensions": [],
         "labs": [],
         "khan": [],
@@ -378,12 +372,7 @@ By the end of Tier 2, you should be able to:
             {"label": "Labor + Wage", "url": "?model=Labor%20+%20Wage"},
             {"label": "Capital + Interest", "url": "?model=Capital%20+%20Interest"},
         ],
-        "readings": [
-            {
-                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
-                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
-            }
-        ],
+        "readings": [],
         "extensions": [],
         "labs": [],
         "khan": [],
@@ -751,3 +740,91 @@ for module in MICRO_MODULES:
     existing_urls = {itm.get("url") for itm in existing}
     merged = existing + [itm for itm in new_items if itm["url"] not in existing_urls]
     materials["primary_texts"] = merged
+
+
+# --- Ingest course links CSV to fill module resources ---
+COURSE_LINKS_CSV = Path(__file__).parent / "dev_materials" / "Course Links & Resources 6d6e76ec5670407fb399d4ec39993f2c_all.csv"
+
+
+def _parse_module_id(module_str: str):
+    match = re.search(r"(\d+)", module_str or "")
+    return int(match.group(1)) if match else None
+
+
+def _merge_unique(existing, new):
+    merged = list(existing or [])
+    seen = {item.get("url") for item in merged if isinstance(item, dict)}
+    for item in new or []:
+        url = item.get("url")
+        if url and url not in seen:
+            merged.append(item)
+            seen.add(url)
+    return merged
+
+
+def _load_course_links(csv_path: Path):
+    if not csv_path.exists():
+        return {}
+
+    by_module = {}
+    with csv_path.open(newline="", encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            module_id = _parse_module_id(row.get("Module", ""))
+            if not module_id:
+                continue
+
+            url = (row.get("document url") or "").strip()
+            resource_type = (row.get("Resource Type 1") or "").strip().lower()
+            title = (row.get("Link Title") or row.get("\ufeffLink Title") or "").strip()
+            desc = (row.get("Description") or "").strip()
+            label = title or desc or "Resource"
+
+            if not url or not resource_type:
+                continue
+
+            record = by_module.setdefault(
+                module_id,
+                {"quizzes": [], "required_readings": [], "optional_readings": []},
+            )
+
+            if resource_type == "lecture slides":
+                record["slides"] = url
+            elif resource_type == "guided notes":
+                record["guided_notes"] = url
+            elif resource_type == "quiz":
+                record["quizzes"].append({"label": label, "url": url})
+            elif resource_type == "required reading - textbook":
+                record["required_readings"].append({"label": label, "url": url})
+            elif resource_type == "optional reading - textbook":
+                record["optional_readings"].append({"label": label, "url": url})
+
+    return by_module
+
+
+COURSE_LINKS_BY_MODULE = _load_course_links(COURSE_LINKS_CSV)
+
+for module in MICRO_MODULES:
+    links = COURSE_LINKS_BY_MODULE.get(module.get("id"))
+    if not links:
+        continue
+
+    materials = module.setdefault("materials", {})
+
+    if links.get("slides"):
+        materials["slides"] = links["slides"]
+    if links.get("guided_notes"):
+        materials["guided_notes"] = links["guided_notes"]
+    if links.get("quizzes"):
+        materials["khan"] = _merge_unique(materials.get("khan", []), links["quizzes"])
+
+    if links.get("required_readings"):
+        materials["readings"] = _merge_unique(
+            materials.get("readings", []), links["required_readings"]
+        )
+
+    if links.get("optional_readings"):
+        openstax_links = module.setdefault("openstax", {})
+        openstax_links["optional"] = _merge_unique(
+            openstax_links.get("optional", []), links["optional_readings"]
+        )

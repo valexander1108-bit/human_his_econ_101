@@ -120,12 +120,18 @@ def render_module_block(module: dict):
                 return url
             if "canva.com" in url:
                 if "/edit" in url:
-                    return url.replace("/edit", "/view?embed")
+                    base = url.replace("/edit", "/view")
+                    return f"{base}{'&' if '?' in base else '?'}embed"
                 if "/view" in url and "embed" not in url:
-                    return url + "?embed"
+                    return f"{url}{'&' if '?' in url else '?'}embed"
             if "docs.google.com/presentation" in url:
                 # Use the clean embed endpoint to avoid letterboxing bars
-                return url.replace("/preview", "/embed")
+                clean = url.split("#", 1)[0].split("?", 1)[0]
+                if "/preview" in clean:
+                    return clean.replace("/preview", "/embed")
+                if "/edit" in clean:
+                    return clean.replace("/edit", "/embed")
+                return clean
             return url
 
         # Embed slides when available
