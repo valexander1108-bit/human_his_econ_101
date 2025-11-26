@@ -1,5 +1,15 @@
 # streamlit_app.py — CLEAN
+import sys
+
 import streamlit as st
+
+# Guard against partially-initialized pandas (can break Plotly template validation)
+try:
+    import pandas as pd  # noqa: F401
+    if not hasattr(pd, "Series"):
+        sys.modules.pop("pandas", None)
+except Exception:
+    sys.modules.pop("pandas", None)
 
 st.set_page_config(
     page_title="Econ-Velazquez",
@@ -51,12 +61,12 @@ pio.templates.default = "ecn101"
 
 # ---------- Catalog (match course syllabus modules) ----------
 MODULES = {
-    "Module 1 — Economic Thought and Modeling": [
+    "Module 1 — Economic Thought & Modeling": [
         "Budget Constraint",
         "PPC",
         "Comparative Advantage",
     ],
-    "Module 2 — Supply x Demand": [
+    "Module 2 — Supply & Demand": [
         "Demand (schedule → line)",
         "Supply (schedule → line)",
         "Market Model (Supply & Demand)",
@@ -68,7 +78,7 @@ MODULES = {
         "Elasticity and Total Revenue",
         "Price Elasticity of Supply",
     ],
-    "Module 4 — Welfare Economics and Government Intervention": [
+    "Module 4 — Welfare & Intervention": [
         "Surplus",
         "Government Intervention: Price Floor",
         "Government Intervention: Price Ceiling",
@@ -80,13 +90,16 @@ MODULES = {
         "Labor + Wage",
         "Capital + Interest",
     ],
-    "Module 6 — Choice (*Asynchronous*)": [],
-    "Module 7 — *Capitilism* (*Optional Full-Group Extension*)": [],
-    "Module 8 — *Inequality* (*Optional Independent Extension*)": [],
+    "Module 6 — Choices & Constraints": [],
+    "Module 7 — Capitalism": [],
+    "Module 8 — Inequality": [],
     "Module 9 — Cost of Production": [],
     "Module 10 — Profit Maximization": [],
-    "Module 11 — Competition x Asymmetric Information": [],
-    "Module 12 — Micro-Policy Perspectives": [],
+    "Module 11 — Competition & Information": [],
+    "Module 12 — Policy, Paradox & Human Perspective": [
+        "Externality: Social Cost (Pigouvian Tax)",
+        "Externality: Social Benefit (Pigouvian Subsidy)",
+    ],
 }
 ALL_PAGES = [p for arr in MODULES.values() for p in arr]
 
@@ -151,6 +164,10 @@ def run_page(page_name: str):
         from apps.gov_int_p_ceiling import app as cei_app; cei_app()
     elif page_name == "Deadweight Loss":
         from apps.deadweight_loss import app as dl_app; dl_app()
+    elif page_name == "Externality: Social Cost (Pigouvian Tax)":
+        from apps.externality_tax import app as ext_tax_app; ext_tax_app()
+    elif page_name == "Externality: Social Benefit (Pigouvian Subsidy)":
+        from apps.externality_subsidy import app as ext_sub_app; ext_sub_app()
     elif page_name == "Interdependent Factors":
         from apps.all_factors import app as af_app; af_app()
     elif page_name == "Land + Rent":

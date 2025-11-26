@@ -6,9 +6,18 @@ def render_course_header():
     st.title("ECON 101: Introduction to Microeconomics")
     st.subheader("Choices, Markets, and Institutions in Time and Space")
     st.markdown("---")
-    st.markdown("## Course Description")
+    st.markdown("## Overview")
     st.markdown("""_ECON 101_ introduces the foundational tools economists use to analyze how individuals and firms make decisions under constraints, and how different institutional and historical environments have shaped and continue to shape these decisions.""")
-    with st.expander("Read the full description"):
+    with st.expander("Course Information", expanded=False):
+        st.markdown("""
+- **Class Location:** _TBD_  
+- **Class Hours:** _TBD_  
+- **Instructor:** Prof. Alexander Velazquez  
+- **Email:** av663411@sju.edu  
+- **Office Hours:** _TBD_  
+- **Course Website:** Canvas (materials and updates)  
+""")
+    with st.expander("Full Description"):
         st.markdown("""
 **Students learn to:**
 - Represent tradeoffs using microeconomic models  
@@ -22,7 +31,7 @@ Throughout the course, economic models are presented as **analytical frameworks*
 The course ends with an overview of how individual decision-making relates to broader social outcomes, including distributional patterns and economic inequality.
 """)
     st.markdown("---")
-    st.markdown("## Learning Outcomes")
+    st.markdown("## Objectives")
     st.markdown("""_By the end of this course, students will be able to:_
 - **Explain** how core microeconomic thoeries and principles (scarcity, rational choice, marginal analysis, etc.) describe consumer and firm decision-making. 
 - **Represent and interpret** fundamental microeconomic models (e.g., budget constraint, PPC, supply and demand, perfectly competitive market model, and more). 
@@ -33,7 +42,7 @@ The course ends with an overview of how individual decision-making relates to br
 """)
 
     st.markdown("---")
-    st.markdown("## Modules")
+    st.markdown("## Content")
     st.markdown("""
 _This course uses a **tiered learning structure** to support a wide range of learners._
 
@@ -45,24 +54,52 @@ _This course uses a **tiered learning structure** to support a wide range of lea
 
 - **Tier 3 — _Extensions (Optional, for the \"econ-nerd\")_** — Deeper exploration of historical, institutional, or behavioral topics  
 """)
+
+    with st.expander("Required Materials", expanded=False):
+        st.markdown("""
+**Classroom Materials**  
+- Notebook and laptop each class.
+
+**Accessing Materials**  
+- Course website and updates: Notion  
+- Assignments/submissions: Canvas
+
+**Primary Text**  
+- *OpenStax – Principles of Microeconomics 3e*  
+  https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach
+
+**Additional Texts**  
+- The course draws on multiple texts and articles (e.g., McConnell, Brue & Finn 19e) to deepen selected topics.
+""")
     st.markdown("---")
 def render_module_block(module: dict):
     title = f"Module {module['id']}: {module['title']}"
     with st.expander(title, expanded=False):
+        openstax_optional = module.get("openstax", {}).get("optional", [])
         # Module 8 (and any future untiered modules)
         if module.get("is_untiered", False):
             st.markdown(module.get("untiered_markdown", "_Coming soon._"))
         else:
-            st.markdown(module.get("overview_intuition", "### Overview & Intuition\n_Coming soon._"))
+            st.markdown(module.get("overview_intuition", "### Intuition\n_Coming soon._"))
+            primary_texts = module.get("materials", {}).get("primary_texts", [])
             readings = module.get("materials", {}).get("readings", [])
             if readings:
-                st.markdown("#### Required Reading")
-                for rd in readings:
-                    st.markdown(f"- [{rd['label']}]({rd['url']})")
+                with st.expander("Textbook Readings", expanded=False):
+                    for rd in readings:
+                        st.markdown(f"- [{rd['label']}]({rd['url']})")
             st.markdown("---")
             st.markdown(module.get("tier1_definitions", "### Tier 1 – Formal Definitions\n_Coming soon._"))
             st.markdown(module.get("tier2_solid", "### Tier 2 – Solid Understanding (Assessment Tier)\n_Coming soon._"))
             st.markdown(module.get("tier3_extensions", "### Tier 3 – Extensions (Optional)\n_Coming soon._"))
+            if primary_texts:
+                with st.expander("Primary Literature Readings", expanded=False):
+                    st.markdown("_If you want the source texts behind these ideas, start here._")
+                    for pt in primary_texts:
+                        note = pt.get("note")
+                        meta_parts = [pt.get("tradition"), pt.get("era")]
+                        meta = f" ({', '.join([m for m in meta_parts if m])})" if any(meta_parts) else ""
+                        note_suffix = f" — {note}" if note else ""
+                        st.markdown(f"- [{pt['label']}]({pt['url']}){note_suffix}{meta}")
 
         st.markdown("---")
         st.markdown(f"### Module {module['id']} Course Materials")
@@ -86,27 +123,32 @@ def render_module_block(module: dict):
                     return url.replace("/edit", "/view?embed")
                 if "/view" in url and "embed" not in url:
                     return url + "?embed"
+            if "docs.google.com/presentation" in url:
+                # Use the clean embed endpoint to avoid letterboxing bars
+                return url.replace("/preview", "/embed")
             return url
 
-        # Optional slide embed for Module 1
-        if module.get("id") == 1 and slides:
+        # Embed slides when available
+        if slides:
             st.markdown("#### Lecture Slides")
             components.html(
-                f'<iframe src="{_embed_url(slides)}" width="100%" height="640" style="border:1px solid #ccc; border-radius:6px;" allowfullscreen></iframe>',
+                f'<iframe src="{_embed_url(slides)}" width="100%" height="640" style="border:0; background:transparent;" allowfullscreen></iframe>',
                 height=660,
             )
+            st.markdown(f"[Open in new tab]({slides})")
             st.markdown("---")
 
         # Consistent two-column layout for all modules
         col_left, col_right = st.columns(2)
 
         with col_left:
-            if module.get("id") == 1 and notes:
+            if notes:
                 st.markdown("#### Guided Notes")
                 components.html(
-                    f'<iframe src="{_embed_url(notes)}" width="100%" height="640" style="border:1px solid #ccc; border-radius:6px;" allowfullscreen></iframe>',
+                    f'<iframe src="{_embed_url(notes)}" width="100%" height="640" style="border:0; background:transparent;" allowfullscreen></iframe>',
                     height=660,
                 )
+                st.markdown(f"[Open in new tab]({notes})")
             else:
                 st.markdown("#### Guided Notes")
                 if notes:
@@ -115,17 +157,33 @@ def render_module_block(module: dict):
                     st.markdown("_No guided notes provided._")
 
         with col_right:
-            if models or labs:
-                st.markdown("#### Interactive Materials")
+            if models:
+                st.markdown("#### Economic Models")
                 for model in models:
                     st.markdown(f"- [📊 {model['label']}]({model['url']})")
+
+            if labs:
+                st.markdown("#### Activities")
                 for lab in labs:
                     st.markdown(f"- [🧪 {lab['label']}]({lab['url']})")
 
+            st.markdown("#### Independent Practice")
             if khan:
-                st.markdown("#### Independent Practice")
                 for item in khan:
                     st.markdown(f"- [📘 {item['label']}]({item['url']})")
+            else:
+                st.markdown("_No independent practice links added yet._")
+
+            if openstax_optional:
+                st.markdown("#### Read Ahead")
+                for rd in openstax_optional:
+                    st.markdown(f"- [📖 {rd['label']}]({rd['url']})")
+
+            background = materials.get("background", [])
+            if background:
+                st.markdown("#### Background Knowledge")
+                for item in background:
+                    st.markdown(f"- [{item['label']}]({item['url']})")
 
             if extensions or videos or audio:
                 st.markdown("#### Deeper Meanings")
@@ -136,36 +194,48 @@ def render_module_block(module: dict):
                 for a in audio:
                     st.markdown(f"- [🎧 {a['label']}]({a['url']})")
 
-        st.caption("You are expected to engage with all required materials listed above for this module.")
-
 def app():
     # Sidebar table of contents for quick jumps (uses header anchors)
-    with st.sidebar.expander("Table of Contents", expanded=True):
-        st.markdown("- [Course Description](#course-description)")
-        st.markdown("- [Learning Outcomes](#learning-outcomes)")
-        st.markdown("- [Modules](#modules)")
-        st.markdown("- [Course & Assessment Structure](#course-and-assessment-structure)")
-        st.markdown("  - [Course and University Policies](#course-and-university-policies)")
-        st.markdown("  - [University Resources](#university-resources)")
+    with st.sidebar.expander("**Table of Contents**", expanded=True):
+        st.markdown("[**Overview**](#overview)")
+        st.markdown("[**Objectives**](#objectives)")
+        st.markdown("[**Content**](#content)")
+        st.markdown("[1 - Economic Thought & Modeling](#module-1-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[🧭 *explore content*](#module-1-course-materials)")
+        st.markdown("[2 - Supply & Demand](#module-2-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[❌ *explore content*](#module-2-course-materials)")
+        st.markdown("[3 - Elasticity](#module-3-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[🧲 *explore content*](#module-3-course-materials)")
+        st.markdown("[4 - Welfare & Intervention](#module-4-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[⚖️ *explore content*](#module-4-course-materials)")
+        st.markdown("[5 - Factors of Production](#module-5-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[🏭 *explore content*](#module-5-course-materials)")
+        st.markdown("[6 - Choices & Constraints](#module-6-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[🎯 *explore content*](#module-6-course-materials)")
+        st.markdown("[7 - Capitalism](#module-7-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[🌍 *explore content*](#module-7-course-materials)")
+        st.markdown("[8 - Inequality](#module-8-learningt)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[📊 *explore content*](#module-8-course-materials)")
+        st.markdown("[9 - Cost of Production](#module-9-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[🧮 *explore content*](#module-9-course-materials)")
+        st.markdown("[10 - Profit Maximization](#module-10-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[💹 *explore content*](#module-10-course-materials)")
+        st.markdown("[11 - Competition & Information](#module-11-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[🎲 *explore content*](#module-11-course-materials)")
+        st.markdown("[12- Policy, Paradox & Human Perspective](#module-12-learning)")
+        st.markdown("&nbsp;&nbsp;&nbsp;[🛠️ *explore content*](#module-12-course-materials)")
+        st.markdown("[**Grades**](#grades)")
+        st.markdown("[**Policies**](#policies)")
+        st.markdown("[**Resources**](#resources)")
 
     render_course_header()
     for module in MICRO_MODULES:
         render_module_block(module)
     st.markdown("---")
-    st.markdown("## Course & Assessment Structure")
+    st.markdown("## Grades")
     st.markdown("""Course assessments focus on the understanding, explanation, and application of microeconomics concepts rather than rope quantification or memorization . 
 
 Students engage directly with core microeconomic theory, primary economic texts, a variety of historical sources, and various sizes of contemporary data through lectures, guided notes, thought experiments, online independent practice, group lab activites, formative assessments, summative assessments and item analysis.""")
-
-    with st.expander("Course Information", expanded=False):
-        st.markdown("""
-- **Class Location:** _TBD_  
-- **Class Hours:** _TBD_  
-- **Instructor:** Prof. Alexander Velazquez  
-- **Email:** av663411@sju.edu  
-- **Office Hours:** _TBD_  
-- **Course Website:** Canvas (materials and updates)  
-""")
 
     with st.expander("Math Prerequisites", expanded=False):
         st.markdown("""
@@ -181,24 +251,7 @@ You should be comfortable with algebra and graphing; a Khan Academy algebra diag
 """)
         st.caption("All practice materials and assessments align to these objectives. Recommended prerequisite: Algebra 1.")
 
-    with st.expander("Course Materials", expanded=False):
-        st.markdown("""
-**Classroom Materials**  
-- Notebook and laptop each class.
-
-**Accessing Materials**  
-- Course website and updates: Notion  
-- Assignments/submissions: Canvas
-
-**Primary Text**  
-- *OpenStax – Principles of Microeconomics 3e*  
-  https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach
-
-**Additional Texts**  
-- The course draws on multiple texts and articles (e.g., McConnell, Brue & Finn 19e) to deepen selected topics.
-""")
-
-    with st.expander("Course Grades"):
+    with st.expander("Assignments"):
         st.markdown("""
 **Graded Work**
 - **Independent Practice (HW 1–5): 10%** — Khan Academy problems, show work by hand and upload.
@@ -242,7 +295,7 @@ You should be comfortable with algebra and graphing; a Khan Academy algebra diag
 - Exam accommodations per university guidelines; travel plans are not grounds for changes.
 """)
     st.markdown("---")
-    st.markdown("### Course and University Policies")
+    st.markdown("### Policies")
     with st.expander("Inclusive Learning"):
         st.markdown("""Source: Dr. Cecilia M. Orphan, University of  Denver
 
@@ -287,7 +340,7 @@ Finally, a note about your humanity: our job as humans is to experience the worl
                     """)
     
     st.markdown("---")
-    st.markdown("### University Resources")
+    st.markdown("### Resources")
     with st.expander("Office of Learning Resources (OLR)"):
         st.markdown("""Want to strengthen your approach in this class or fine-tune your learning strategies?  The Saint Joseph’s University Office of Learning Resources (OLR) empowers students to make a smooth transition to the university and to hone their skills in order to study more efficiently and effectively. For course-based support, they offer undergraduate-level peer tutoring in a wide range of subjects.  If you are an undergraduate or graduate student seeking to strengthen your learning strategies (time management, textbook reading, test taking, etc.), they offer one-on-one appointments with professional staff members.  Most services are free, unless otherwise noted, and online students may access services via Zoom. The OLR is located in Bellarmine G10.  For more information or to make an appointment, please visit their website at https://www.sju.edu/offices/student-life/learning-resources. 
                     """)

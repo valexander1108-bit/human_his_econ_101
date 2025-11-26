@@ -1,4 +1,6 @@
 # modules_data.py
+from data.openstax_plan import MODULE_OPENSTAX_MAP, OPENSTAX_CHAPTERS
+from data.canonical_texts import CANONICAL_TEXTS, MODULE_CANONICAL_MAP
 
 MICRO_MODULES = [
 {
@@ -7,7 +9,7 @@ MICRO_MODULES = [
     "short_desc": "Scarcity, opportunity cost, and the basic models economists use to represent choice.",
 
     "overview_intuition": """
-### Overview & Intuition
+### Module 1 Learning
 
 In this first module, we explore how economists think about the world and how they turn real choices into models.
 
@@ -67,12 +69,7 @@ If you choose to explore Tier 3, you will:
                 "url": "https://www.notion.so/Economic-Theory-Before-the-Wealth-of-Nations-2b04371a58ce817a880ffdf96c278b25?pvs=21"
             }
         ],
-        "readings": [
-            {
-                "label": "OpenStax — Principles of Microeconomics 3e (relevant section)",
-                "url": "https://openstax.org/books/principles-microeconomics-3e/pages/2-3-confronting-objections-to-the-economic-approach"
-            }
-        ],
+        "readings": [],
         "extensions": [],
 
         "models": [
@@ -81,7 +78,22 @@ If you choose to explore Tier 3, you will:
             {"label": "Comparative Advantage", "url": "?model=Comparative%20Advantage"},
         ],
 
-        "khan": [],
+        "khan": [
+            {
+                "label": "Kahn - Quiz 1 - Basic Economic Concepts - Scarcity & Econ Systems",
+                "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/basic-economic-concepts/resource-allocation-and-economic-systems/quiz/basic-economic-concepts-quiz-1"
+            },
+            {
+                "label": "Kahn - Quiz 2 - Basic Economic Concepts - PPC and Trade",
+                "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/basic-economic-concepts/comparative-advantage-and-trade/quiz/basic-economic-concepts-quiz-2"
+            },
+            {
+                "label": "Kahn - Quiz 3 - Basic Economic Concepts - Cost-Benefit Analysis (Utility) ",
+                "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/basic-economic-concepts/16/quiz/basic-economic-concepts-quiz-3"
+            },
+
+            
+        ],
         "videos": [],
         "audio": []
     },
@@ -92,7 +104,7 @@ If you choose to explore Tier 3, you will:
     "short_desc": "How buyers and sellers interact to determine prices, quantities, and responses to shocks.",
 
     "overview_intuition": """
-### Overview & Intuition
+### Module 2 Learning
 
 In this module, we study how markets bring buyers and sellers together.
 
@@ -152,8 +164,8 @@ If you choose to explore Tier 3, you will:
 """,
 
     "materials": {
-        "slides": "https://www.canva.com/design/DAGwfg6_fC4/G92LFFFXnjivu2rtuX6JhA/view",
-        "guided_notes": "https://www.canva.com/design/DAGkceAqddU/ycnKcBnBvTaC-VPFTr6-0A/edit",
+        "slides": "https://www.canva.com/design/DAGu3QAnbyo/X4tBmSFNVLX_Wjotx8TuKg/view?utm_content=DAGu3QAnbyo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h17f367ac75",
+        "guided_notes": "https://www.canva.com/design/DAGxSH8hCHk/I2kj289MFKsKjWqFfBHeUA/view?utm_content=DAGxSH8hCHk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb3c9693bc0",
 
         "labs": [
             {
@@ -194,7 +206,7 @@ If you choose to explore Tier 3, you will:
     "title": "Elasticity",
     "short_desc": "Responsiveness of consumers and producers to price changes.",
     "overview_intuition": """
-### Overview & Intuition
+### Module 3 Learning
 
 In this module, we ask how sensitive buyers and sellers are to price changes and why it matters for revenue, policy, and growth.
 
@@ -258,7 +270,7 @@ By the end of Tier 2, you should be able to:
     "title": "Welfare & Intervention",
     "short_desc": "Consumer/producer surplus and the effects of taxes, price controls, and policies.",
     "overview_intuition": """
-### Overview & Intuition
+### Module 4 Learning
 
 Here we measure who benefits in a market and what happens when policy steps in.
 
@@ -322,7 +334,7 @@ By the end of Tier 2, you should be able to:
     "title": "Factors of Production ",
     "short_desc": "Land, labor, capital, and interdependencies across factor markets.",
     "overview_intuition": """
-### Overview & Intuition
+### Module 5 Learning
 
 This module shifts from goods markets to the markets for **land, labor, and capital**—the inputs that make production possible.
 
@@ -386,7 +398,7 @@ By the end of Tier 2, you should be able to:
     "title": "Choice & Constraint (*Asynchronous*)",
     "short_desc": "Preferences, utility, and optimal bundles.",
     "overview_intuition": """
-### Overview & Intuition
+### Module 6 Learning
 
 This asynchronous module zooms in on individual choice—how people rank bundles, trade off time and money, and make decisions across today and tomorrow.
 
@@ -453,7 +465,7 @@ By the end of Tier 2, you should be able to:
     "title": "Cost of Production",
     "short_desc": "Strategic interaction and equilibrium.",
     "overview_intuition": """
-### Overview & Intuition
+### Module 9 Learning
 
 We move inside the firm to link production, costs, and profits.
 
@@ -498,7 +510,7 @@ By the end of Tier 2, you should be able to:
     "title": "Profit Maximization",
     "short_desc": "When markets fail and how societies respond.",
     "overview_intuition": """
-### Overview & Intuition
+### Module 10 Learning
 
 Now we pair cost with revenue to choose output levels in different market structures.
 
@@ -543,7 +555,7 @@ By the end of Tier 2, you should be able to:
     "title": "Competition & Information",
     "short_desc": "Monopoly, oligopoly, and market power.",
     "overview_intuition": """
-### Overview & Intuition
+### Module 11 Learning
 
 We extend beyond perfect competition and monopoly to the messy middle: **oligopoly** and **monopolistic competition**, plus the role of information.
 
@@ -581,21 +593,23 @@ By the end of Tier 2, you should be able to:
     "materials": {},
 },
 
-# --- MODULE 12: Micro-Policy ---
+# --- MODULE 12: Policy, Paradox, & Human Perspective ---
 {
     "id": 12,
     "title": "Policy, Paradox & Human Perspective ",
     "short_desc": "Externalities, public goods, and how policy fixes market misfires.",
     "overview_intuition": """
-### Overview & Intuition
+### Module 12 Learning
 
-In this chapter, we follow what happens when markets get the price wrong and how societies try to fix it.
+In this chapter, we think about the paradox of price and explore what happens when markets get prices wrong. We uncover how societies have intervened in their economic fates throughout history, and continue to address common economic contradictions today. 
 
-We start with the **four types of goods** — private goods, club goods, common resources, and public goods — to see how rivalry and excludability shape incentives, cooperation problems, and why free riding or overuse shows up in the first place.
+First, we develop clear definitions for the **four types of goods** — private goods, club goods, common resources, and public goods — to see how rivalry and excludability shape incentives, cooperation problems, and more specifically - free riding and overuse.
 
-We then meet **externalities** as missing prices: pollution that’s too cheap, education that’s underbought, or parks that are underfunded. Using plain language first, then graphs, we contrast the market outcome with the social outcome, measure the wedge between them, and see the deadweight loss that emerges.
+Through forming an understanding of **externalities** as "missing prices": pollution that’s too cheap, education that’s underbought, or parks that are underfunded - we calculate and contrast market outcomes with socially efficienct outcomes, and measure the wedge between them to understand deadweight loss. 
 
-Finally, we walk through the **policy toolkit** — Pigouvian taxes and subsidies, permits, regulations, and public provision. Along the way we peek at **tax incidence** and how elasticity decides who actually bears the burden. Simple game-theory stories help us see why rules, enforcement, and institutions matter to steer behavior toward the social sweet spot.
+Finally, we walk through the **policy toolkit** — Pigouvian taxes and subsidies, permits, regulations, and public provision. 
+
+Along the way we peek at how elasticity influences **tax incidence** and who actually bears the tax burdens, while also exploring simple game-theory narratives to support our understanding of how rules, enforcement, and institutions coagulate within market outcomes.  
 """,
     "tier1_definitions": """
 ### Tier 1 — Formal Definitions
@@ -628,9 +642,112 @@ By the end of Tier 2, you should be able to:
 - Derive Pigouvian tax/subsidy formulas from marginal benefit/cost schedules and elasticity
 - Explore **Coasean bargaining** and transaction costs as alternative fixes to externalities
 - Model repeated-game or dynamic versions of commons and public-goods problems
-- Trace political economy: who designs the policy, who captures the rents, and how institutions evolve
-- Analyze modern digital externalities (platforms, network effects, data privacy) and their normative tradeoffs
+    - Trace political economy: who designs the policy, who captures the rents, and how institutions evolve
+    - Analyze modern digital externalities (platforms, network effects, data privacy) and their normative tradeoffs
 """,
-    "materials": {},
+    "materials": {
+        "slides": "https://docs.google.com/presentation/d/1Uvmyw3XTlZEOnrqcMVwBTYPUu5DPrSwn/preview",
+        "guided_notes": "https://www.canva.com/design/DAGj-XcXXCQ/HqFSA-Y9C1A6335ZWD98EQ/view?embed",
+        "labs": [
+            {
+                "label": "Urban Micro-Policy Lab: Education Subsidies (Philadelphia)",
+                "url": "https://shy-plane-8b3.notion.site/Urban-Micro-Policy-Lab-Education-Subsidies-in-Philadelphia-2b04371a58ce81549beec6cc94388503?source=copy_link"
+            }
+        ],
+        "models": [
+            {"label": "Externality: Social Cost (Pigouvian Tax)", "url": "?model=Externality:%20Social%20Cost%20(Pigouvian%20Tax)"},
+            {"label": "Externality: Social Benefit (Pigouvian Subsidy)", "url": "?model=Externality:%20Social%20Benefit%20(Pigouvian%20Subsidy)"}
+        ],
+        "khan": [
+            {
+                "label": "Quiz 1 - Market Failure and the Role of Government - Externalities & Types of Goods ",
+                "url": "https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/ap-consumer-producer-surplus/public-and-private-goods/quiz/ap-consumer-producer-surplus-quiz-1"
+            }
+        ],
+        "readings": [],
+        "extensions": [],
+        "videos": [],
+        "audio": []
+    },
 },
 ]
+
+# --- Link OpenStax chapters to modules (core + optional) ---
+def _build_openstax_item(chapter_num: int):
+    chapter = OPENSTAX_CHAPTERS.get(chapter_num)
+    if not chapter:
+        return None
+    return {
+        "chapter": chapter_num,
+        "label": f"OpenStax Ch {chapter_num}: {chapter['title']}",
+        "url": chapter["url"],
+    }
+
+
+_PLAN_BY_MODULE = {m["module"]: m for m in MODULE_OPENSTAX_MAP}
+
+for module in MICRO_MODULES:
+    mapping = _PLAN_BY_MODULE.get(module.get("id"))
+    if not mapping:
+        continue
+
+    core_items = []
+    optional_items = []
+
+    for num in mapping.get("core_openstax", []):
+        item = _build_openstax_item(num)
+        if item:
+            core_items.append(item)
+
+    for num in mapping.get("optional_openstax", []):
+        item = _build_openstax_item(num)
+        if item:
+            optional_items.append(item)
+
+    if not core_items and not optional_items:
+        continue
+
+    module.setdefault("openstax", {})
+    if core_items:
+        module["openstax"]["core"] = core_items
+    if optional_items:
+        module["openstax"]["optional"] = optional_items
+
+    # Put core OpenStax links into required readings (avoid duplicates)
+    materials = module.setdefault("materials", {})
+    existing_readings = materials.get("readings", [])
+    seen_urls = {item["url"] for item in core_items}
+    deduped_existing = [r for r in existing_readings if r.get("url") not in seen_urls]
+    materials["readings"] = core_items + deduped_existing
+
+# --- Link Primary/Canonical texts (classic + contemporary) to modules ---
+def _build_canonical_item(key: str):
+    item = CANONICAL_TEXTS.get(key)
+    if not item:
+        return None
+    return {
+        "label": item["label"],
+        "url": item["url"],
+        "era": item["era"],
+        "tradition": item["tradition"],
+        "note": item.get("note", ""),
+    }
+
+
+for module in MICRO_MODULES:
+    keys = MODULE_CANONICAL_MAP.get(module.get("id"), [])
+    if not keys:
+        continue
+    new_items = []
+    for k in keys:
+        built = _build_canonical_item(k)
+        if built:
+            new_items.append(built)
+    if not new_items:
+        continue
+
+    materials = module.setdefault("materials", {})
+    existing = materials.get("primary_texts", [])
+    existing_urls = {itm.get("url") for itm in existing}
+    merged = existing + [itm for itm in new_items if itm["url"] not in existing_urls]
+    materials["primary_texts"] = merged

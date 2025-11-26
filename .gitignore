@@ -32,3 +32,4 @@ dist/
 *.lock
 poetry.lock
 Pipfile.lock
+dev_materials/
