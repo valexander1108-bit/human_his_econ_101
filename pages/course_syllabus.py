@@ -46,13 +46,13 @@ The course ends with an overview of how individual decision-making relates to br
     st.markdown("""
 _This course uses a **tiered learning structure** to support a wide range of learners._
 
-- **Baseline — _Intuition & Big Ideas_** — A conceptual introduction that builds intuition before formal tools  
+- **Baseline — _Intuition & Big Ideas_** — A conceptual introduction that builds economic intuition before formal tools.  
 
-- **Tier 1 — _Formal Definitions_** — Core vocabulary and basic theory  
-
-- **Tier 2 — _Solid Understanding (Assessed at this Tier)_** — Graphical, numerical, and applied reasoning using standard microeconomic models  
-
-- **Tier 3 — _Extensions (Optional, for the \"econ-nerd\")_** — Deeper exploration of historical, institutional, or behavioral topics  
+- **Tier 1 — _Formal Definitions_** — Core  economic vocabulary and basic  theory.   
+                
+- **Tier 2 — _Solid Understanding (Assessed at this Tier)_** — Graphical, numerical, and applied reasoning using standard economic models and real-world scenarios from global history. 
+                
+- **Tier 3 — _Extensions (Optional, for the \"econ-nerd\")_** — Deeper exploration of quantitative, historical, institutional, and behavioral topics  
 """)
     
     with st.expander("Required Materials", expanded=False):
@@ -224,7 +224,7 @@ def app():
         st.markdown("&nbsp;&nbsp;&nbsp;[🎯 *explore content*](#module-6-course-materials)")
         st.markdown("[**7 - Capitalism**](#module-7-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🌍 *explore content*](#module-7-course-materials)")
-        st.markdown("[**8 - Inequality**](#module-8-learningt)")
+        st.markdown("[**8 - Inequality**](#module-8-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[📊 *explore content*](#module-8-course-materials)")
         st.markdown("[**9 - Cost of Production**](#module-9-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🧮 *explore content*](#module-9-course-materials)")
@@ -243,7 +243,7 @@ def app():
         render_module_block(module)
     st.markdown("---")
     st.markdown("## Grades")
-    st.markdown("""Course assessments focus on the understanding, explanation, and application of microeconomics concepts rather than rope quantification or memorization . 
+    st.markdown("""Course assessments focus on the understanding, explanation, and application of microeconomics concepts rather than rote quantification or memorization . 
 
 Students engage directly with core microeconomic theory, primary economic texts, a variety of historical sources, and various sizes of contemporary data through lectures, guided notes, thought experiments, online independent practice, group lab activites, formative assessments, summative assessments and item analysis.""")
 
@@ -348,7 +348,7 @@ Finally, a note about your humanity: our job as humans is to experience the worl
     with st.expander("Covid-19 Safety"):
         st.markdown("""We must work together to keep our community as safe and active as possible. Please review the current guidance and requirements on the Student Health Center website https://www.sju.edu/offices/student-life/student-health-center and know they are subject to change, particularly when recommended by the Philadelphia Department of Public Health (PDPH). While the COVID vaccine is not required, it is recommended that students, faculty and staff be up-to-date on their vaccine status as recommended by the CDC https://www.cdc.gov/coronavirus/2019-ncov/vaccines/stay-up-to-date.html .
                     """)
-    with st.expander("Religious Accomodation"):
+    with st.expander("Religious Accommodation"):
         st.markdown("""As a Jesuit, Catholic institution, days of religious observance may be noted on the course schedule as class not meeting. However, it is noted that not all students identify as Catholic or with similar Christian beliefs. In response, students may be granted excused absences from class or other organized activities or observance of religious holy days, unless the accommodation would create an undue hardship. Students must notify the instructor by the end of the first week of classes to discuss any conflicts that may require an absence. It is the student’s responsibility to arrange with the instructor in advance to make up any missed work or class material. For more information about religious accommodations, please contact the Office of Title IX & Equity Compliance at 610-660-1145 or titleix@sju.edu / bias@sju.edu. 
                     """)
     

@@ -87,9 +87,9 @@ def app():
     if show_msc:
         add_full_span_line(fig, as_ + ext_cost, bs, name="Social Cost (MSC)", xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax, dash="dash", color="#d62728")
 
-    # Wedge shading (DWL between Q_soc and Q_priv)
-    if show_msc and show_dwl and q_priv == q_priv and q_soc == q_soc and q_priv > q_soc:
-        add_wedge(fig, S_private, S_social, q_soc, q_priv, name="DWL (under-taxed)", color="rgba(214, 39, 40, 0.22)")
+    # Wedge shading (DWL between Q_soc and Q_priv, inside PMB/PMC)
+    if show_dwl and q_priv == q_priv and q_soc == q_soc and q_priv > q_soc:
+        add_wedge(fig, S_private, D, q_soc, q_priv, name="DWL (under-taxed)", color="rgba(214, 39, 40, 0.22)")
 
     # Equilibria markers
     from math import isnan
@@ -118,5 +118,6 @@ def app():
     st.markdown("""
 - Private outcome: Demand (PMB) intersects Supply (PMC).
 - Socially efficient outcome: Demand (PMB) intersects MSC = PMC + external cost.
+- DWL shown between PMB and PMC from Q_social to Q_private (overproduction).
 - A Pigouvian tax equal to the external cost per unit at Q_social shifts the market to the efficient quantity and removes the DWL wedge.
     """)

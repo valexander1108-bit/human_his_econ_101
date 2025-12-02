@@ -15,16 +15,18 @@ MICRO_MODULES = [
     "overview_intuition": """
 ### Module 1 Learning
 
-In this first module, we explore how economists think about the world and how they turn real choices into models.
+In this first module, we explore how economists think about the world around us and how they turn everyday choices into quantifiable models.
 
-We begin with **economic thought**: three core principles — scarcity, rational choice, and marginal analysis — and how they emerge from broader philosophical and historical debates about human behavior and resources.
+We begin by defining three core principiples guiding past and present _economic thought_: **scarcity**, **rational choice**, and **marginal analysis**. 
 
-We then move into **economic modeling**, using two foundational tools:
+Throughout this lecture we dive deep into how economic themes emerge from broader philosophical and historical discourse on how human's behave and allocate resources.
+
+We anchor this conversation in the development of  _economic models_, using two foundational tools:
 
 - the **budget constraint** to represent how an individual makes decisions under income constraints, and  
 - the **Production Possibilities Curve (PPC)** to represent how producers and societies face tradeoffs and opportunity cost.
 
-Finally, we use the PPCs of two countries to explore **comparative advantage** and think about how trade and marginal analysis can increase total production and growth over time.
+Finally, we use the PPCs of two countries for deeper analysis - exploring **comparative advantage** or how marginal analysis and cooperation through trade can increase total production and growth over time.
 """,
 
     "tier1_definitions": """
@@ -110,15 +112,30 @@ If you choose to explore Tier 3, you will:
     "overview_intuition": """
 ### Module 2 Learning
 
-In this module, we study how markets bring buyers and sellers together.
+In this second module, we expand upon the modeling skills explored in Module 1 - taking a first step in developing a core microeconomic model for **supply**, **demand** and **the market** using tabular data. 
 
-We begin with **demand**, shaped by income, preferences, and related goods.
+We begin with the **demand curve**: 
 
-We then develop **supply**, representing producers’ willingness to sell at various prices.
+- **P = a + (-B)Q**
 
-Where these two forces meet, we find the **equilibrium price and quantity**.
+_where a is the y-intercept or "price when quantity is zero" and,_
 
-Finally, we examine **market shocks** (e.g., income, technology, input costs) and **government interventions** (price ceilings and floors) to understand how institutional rules shape market outcomes.
+_B is the slope or "negative tradeoff between Price or Quantity."_ 
+
+Using classroom models, we introduce how a linear expression for demand can be derived from its **demand schedule**.
+
+We then refine our ability to visualize proportional relationships by understanding key differences between movement along the curve (changes to **quantity demanded**), versus movement of demand itself (changes to demand).  
+
+Next, using similar methods we explore the **supply curve**: 
+- **P = a + (B)Q**
+
+_where a is the y-intercept or "price when quantity is zero" and,_
+
+_B is the slope or "positive tradeoff between Price or Quantity."_ 
+
+Where these two social forces meet - **the market** is formed - and we find **market price and quantity**.
+
+Finally, we examine **market shocks** (e.g., income, technology, input costs, and more) to understand how these market outcomes shift throughout time.
 """,
 
     "tier1_definitions": """
@@ -130,11 +147,11 @@ By the end of Tier 1, you should be able to define:
 - **Supply** and the **Law of Supply**  
 - **Quantity demanded vs. demand**  
 - **Quantity supplied vs. supply**  
+- **Shifts** vs. **movements along curves**
 - **Normal** vs. **inferior** goods  
 - **Substitutes** vs. **complements**  
-- **Market equilibrium**  
-- **Shortage** and **surplus**  
-- **Shifts** vs. **movements along curves**
+- **Market Price**
+- **Market Quantity**
 """,
 
     "tier2_solid": """
@@ -151,8 +168,7 @@ By the end of Tier 2, you should be able to:
   - technology  
   - input costs  
   - number of buyers/sellers  
-- Analyze market adjustments when out of equilibrium  
-- Evaluate the effects of **ceilings** and **floors** on price and quantity  
+- Analyze market adjustments when out of equilibrium
 """,
 
     "tier3_extensions": """
@@ -196,11 +212,13 @@ If you choose to explore Tier 3, you will:
     "overview_intuition": """
 ### Module 3 Learning
 
-In this module, we ask how sensitive buyers and sellers are to price changes and why it matters for revenue, policy, and growth.
+In the third module, we follow this line of intution presented in Module 2 and ask how sensitive buyers and sellers are to price changes and why it matters for revenue, policy, and growth.
 
-We start with **price elasticity of demand** to classify goods as elastic, inelastic, unit elastic, or perfectly elastic/inelastic. We connect elasticity to **total revenue**, substitutes/complements, and normal/inferior goods to see how firms and policymakers anticipate behavior.
+We start with **price elasticity of demand** to classify goods as elastic, inelastic, unit elastic, or perfectly elastic/inelastic. We connect elasticity to **total revenue**, substitutes/complements, and normal/inferior goods to see how firms and policymakers use elasticity as a tool to anticipate behavior .
 
-We then turn to **elasticity of supply**, highlighting time horizons and capacity constraints as drivers of responsiveness. Throughout, we anchor the math in real-life cases (gas, luxury goods, apps) and show how elasticity shapes who bears taxes, how markets adjust, and which goods boom or stagnate as economies grow.
+We then turn to **elasticity of supply**, highlighting time horizons and capacity constraints as drivers of responsiveness. 
+
+Throughout, this unit we anchor the math in real-life cases (gas, luxury goods, apps) and show how elasticity shapes how markets adjust, and which goods boom or stagnate as economies grow.
 """,
     "tier1_definitions": """
 ### Tier 1 — Formal Definitions
@@ -254,11 +272,13 @@ By the end of Tier 2, you should be able to:
     "overview_intuition": """
 ### Module 4 Learning
 
-Here we measure who benefits in a market and what happens when policy steps in.
+Here we measure who benefits in a market and what happens when governments intervene. 
 
-We begin with **consumer and producer surplus** to see how equilibrium maximizes total surplus. Then we test **price controls** (floors and ceilings) and **taxes** to trace shortages, surpluses, and deadweight loss.
+We begin with a discussion on **equilibrium** - a term often used by economist when refering to the itersecting point of price and quantity within a market. 
 
-Finally, we connect efficiency to equity and preview how market rules shape winners, losers, and incentives.
+We unpack how economist use total surplus - or discrete measurements of **consumer and producer surplus** to analyze how equilibrium conditions maximizes total surplus.
+ 
+To explore this further,  we test **price controls** (floors and ceilings) to trace shortages & surpluses - learning how deadweight loss is used to analyze the efficiency losess of a given market or intervention.  
 """,
     "tier1_definitions": """
 ### Tier 1 — Formal Definitions
@@ -267,8 +287,7 @@ By the end of Tier 1, you should be able to define:
 
 - **Consumer surplus (CS)**, **producer surplus (PS)**, **total surplus**
 - **Efficiency** vs. **deadweight loss (DWL)**
-- **Price ceiling**, **price floor**, **tax**, **subsidy**
-- **Tax incidence** (conceptual) and how it links to elasticity
+- **Price ceiling**, **price floor**,
 """,
     "tier2_solid": """
 ### Tier 2 — Solid Understanding
@@ -313,7 +332,7 @@ By the end of Tier 2, you should be able to:
     "overview_intuition": """
 ### Module 5 Learning
 
-This module shifts from goods markets to the markets for **land, labor, and capital**—the inputs that make production possible.
+This module shifts our thinking from goods markets to the markets for **land, labor, and capital**—the inputs that make production possible.
 
 We start with the **Neoclassical view of income distribution**, where factor prices come from marginal productivity. We build supply and demand stories for **capital (credit/interest)** and **land (rents)**, then turn to **labor** to see how wages emerge and what shifts labor supply and demand.
 
@@ -376,7 +395,7 @@ This asynchronous module zooms in on individual choice—how people rank bundles
 
 We start with **utility and diminishing marginal utility** to see why variety matters. We map **budget constraints** against **indifference curves** to find optimal consumption. Then we extend the same logic to **labor vs. leisure** and **intertemporal choice** (borrowing/lending over time).
 
-Finally, we confront **bounded rationality** and behavioral limits to the tidy model, asking how real people depart from perfect optimization.
+Finally, we confront **bounded rationality** and behavioral limits to the tidy-data model, asking how real people depart from perfect optimization.
 """,
     "tier1_definitions": """
 ### Tier 1 — Formal Definitions
@@ -411,13 +430,13 @@ By the end of Tier 2, you should be able to:
     "materials": {},
 },
 
-# --- MODULE 7: Capitilism (UNTIERED) ---
+# --- MODULE 7: Capitalism (UNTIERED) ---
 {
     "id": 7,
-    "title": "*Capitilism* (*Optional Full-Group Extension*)",
-    "short_desc": "Capitlism Today using corECON.",
+    "title": "*Capitalism* (*Optional Full-Group Extension*)",
+    "short_desc": "Capitalism today using corECON.",
     "is_untiered": True,
-    "untiered_markdown": "## Module 7 — Capitilism\n_Coming soon._",
+    "untiered_markdown": "## Module 7 — Capitalism\n_Coming soon._",
     "materials": {}
 },
 
@@ -441,9 +460,11 @@ By the end of Tier 2, you should be able to:
 
 We move inside the firm to link production, costs, and profits.
 
-First, we separate **accounting profit** from **economic profit** and map how different market structures shape firm choices. We study **short-run production** (total, average, marginal product) and translate inputs into costs.
+First, we separate **accounting profit** from **economic profit** and map how different market structures shape firm choices. We study **short-run production** (total, average, marginal product) and begin to translate inputs into costs.
 
-Then we build the **short-run cost curves** (TC, FC, VC, MC, ATC, AVC) and explore how scale and technology drive costs down or up. Real examples and a manager’s perspective ground the theory in organizational choices.
+Then we build the **short-run cost curves** (TC, FC, VC, MC, ATC, AVC) and explore how scale and technology drive costs down or up. 
+
+Real-world examples and a manager’s perspective from a large tech firm ground the theory of this chapter in organizational choice.
 """,
     "tier1_definitions": """
 ### Tier 1 — Formal Definitions
@@ -484,11 +505,13 @@ By the end of Tier 2, you should be able to:
     "overview_intuition": """
 ### Module 10 Learning
 
-Now we pair cost with revenue to choose output levels in different market structures.
+Now, we explore the cornerstone of modern economics - how we pair cost with revenue to choose optimal output levels in different market structures that optimize profits _or_  what economist call **Profit Maximization**.
 
-We begin with **perfect competition**, using marginal analysis (MR = MC) to pick short-run output and decide when to shut down or exit long run. Then we repeat the exercise for **monopoly**, comparing pricing, output, and welfare to the competitive benchmark.
+To simplfy our understanding, we begin by developing a visual model for **perfect competition**. Using the principles of marginal analysis (MR = MC), we  pick optimal outputs for a firm and predict where  firms should shut down or exit the market in the long run.
 
-The goal: a clear playbook for firm behavior across market types and a lens on why market power creates inefficiency.
+Then we repeat these exercise for **monopoly**, comparing pricing, output, and welfare to the competitive benchmark. Through isolated study of each of these models and later comparision we can think of competition "in a vacuum state" -  providing a clear lens to explore how market power creates inefficiency. 
+
+
 """,
     "tier1_definitions": """
 ### Tier 1 — Formal Definitions
@@ -529,9 +552,13 @@ By the end of Tier 2, you should be able to:
     "overview_intuition": """
 ### Module 11 Learning
 
-We extend beyond perfect competition and monopoly to the messy middle: **oligopoly** and **monopolistic competition**, plus the role of information.
+We extend beyond perfect competition and monopoly to the messy middle: **oligopoly** and **monopolistic competition**, emphasizing the role of information and coordination within these more common market structures. 
 
-We learn basic **game theory** (prisoner’s dilemma, dominant strategies, Nash equilibrium) to model strategic interaction among a few firms. We contrast that with many firms selling differentiated products in **monopolistic competition**, focusing on pricing, variety, and excess capacity. We close with policy and a hands-on business lab to apply the models.
+To deepen our knowledge of the impact that  **Assymetric Information** has on these markets, we learn basic **game theory** (prisoner’s dilemma, dominant strategies, Nash equilibrium) to model strategic interaction among a few firms.
+
+We then contrast our understanding of competition in the previous three firms with **monopolistic competition** - many firms selling differentiated products, focusing on pricing, variety, and excess capacity. 
+
+This leads us to a conversation on how governments often attempt to regulate competition through legal regulation, ending with a hands-on business lab to apply and reason with markets models.
 """,
     "tier1_definitions": """
 ### Tier 1 — Formal Definitions

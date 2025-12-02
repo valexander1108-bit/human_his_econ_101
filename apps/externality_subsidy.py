@@ -87,9 +87,9 @@ def app():
         add_full_span_line(fig, ad + ext_benefit, bd, name="Social Benefit (SMB)", xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax, dash="dash", color="#2ca02c")
     add_full_span_line(fig, as_, bs, name="Supply (PMC)", xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax, color="#ff7f0e")
 
-    # Wedge shading (DWL between Q_priv and Q_soc)
-    if show_smb and show_dwl and q_soc == q_soc and q_priv == q_priv and q_soc > q_priv:
-        add_wedge(fig, D_private, D_social, q_priv, q_soc, name="DWL (under-provided)", color="rgba(44, 160, 44, 0.22)")
+    # Wedge shading (DWL between Q_priv and Q_soc, inside PMB/PMC)
+    if show_dwl and q_soc == q_soc and q_priv == q_priv and q_soc > q_priv:
+        add_wedge(fig, S, D_private, q_priv, q_soc, name="DWL (under-provided)", color="rgba(44, 160, 44, 0.22)")
 
     # Equilibria markers
     from math import isnan
@@ -118,5 +118,6 @@ def app():
     st.markdown("""
 - Private outcome: Demand (PMB) intersects Supply (PMC).
 - Socially efficient outcome: SMB = PMB + external benefit intersects Supply.
+- DWL shown between PMB and PMC from Q_private to Q_social (underproduction).
 - A Pigouvian subsidy equal to the external benefit per unit at Q_social shifts the market to the efficient quantity and removes the DWL wedge.
     """)
