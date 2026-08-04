@@ -88,17 +88,45 @@ MODULES = {
         "Interdependent Factors",
         "Land + Rent",
         "Labor + Wage",
+        "Labor Market Policy",
         "Capital + Interest",
     ],
-    "Module 6 — Choices & Constraints": [],
-    "Module 7 — Capitalism": [],
-    "Module 8 — Inequality": [],
-    "Module 9 — Cost of Production": [],
-    "Module 10 — Profit Maximization": [],
-    "Module 11 — Competition & Information": [],
+    "Module 6 — Choices & Constraints": [
+        "Utility",
+        "Income and Substitution Effects",
+        "Optimal Choice",
+        "Intertemporal Choice",
+    ],
+    "Module 7 — Capitalism": [
+        "Capitalism and Climate Change",
+        "Capitalism and Global Inequality",
+    ],
+    "Module 8 — Inequality": [
+        "Global Inequality Model",
+        "Competition and Fairness",
+    ],
+    "Module 9 — Cost of Production": [
+        "Cost of Production",
+        "Economies of Scale",
+    ],
+    "Module 10 — Profit Maximization": [
+        "Perfect Competition: Profit Maximization",
+        "Perfect Competition: Shutdown Point",
+        "Long-Run Equilibrium and Firm Exit",
+        "Monopoly and Monopolistic Competition",
+    ],
+    "Module 11 — Competition & Information": [
+        "Game Theory",
+        "Types of Goods",
+        "Public Goods and Common Resources",
+        "Competition, Information, and Fairness",
+    ],
     "Module 12 — Policy, Paradox & Human Perspective": [
+        "Policy: Public Goods and Common Resources",
+        "Externalities: Positive and Negative",
         "Externality: Social Cost (Pigouvian Tax)",
         "Externality: Social Benefit (Pigouvian Subsidy)",
+        "Climate Policy and Capitalism",
     ],
 }
 ALL_PAGES = [p for arr in MODULES.values() for p in arr]
@@ -174,8 +202,46 @@ def run_page(page_name: str):
         from apps.land import app as lan_app; lan_app()
     elif page_name == "Labor + Wage":
         from apps.labor import app as lab_app; lab_app()
+    elif page_name == "Labor Market Policy":
+        from apps.priority_models import labor_policy_app; labor_policy_app()
     elif page_name == "Capital + Interest":
         from apps.capital import app as cap_app; cap_app()
+    elif page_name == "Utility":
+        from apps.utility import app as util_app; util_app()
+    elif page_name == "Income and Substitution Effects":
+        from apps.priority_models import income_substitution_app; income_substitution_app()
+    elif page_name == "Optimal Choice":
+        from apps.optimal_choice import app as oc_app; oc_app()
+    elif page_name == "Intertemporal Choice":
+        from apps.intertemporal_choice import app as ic_app; ic_app()
+    elif page_name == "Capitalism and Climate Change":
+        from apps.remaining_models import capitalism_climate_app; capitalism_climate_app()
+    elif page_name in ("Capitalism and Global Inequality", "Global Inequality Model"):
+        from apps.remaining_models import capitalism_inequality_app; capitalism_inequality_app()
+    elif page_name == "Cost of Production":
+        from apps.remaining_models import cost_production_app; cost_production_app()
+    elif page_name == "Perfect Competition: Profit Maximization":
+        from apps.remaining_models import pc_profit_app; pc_profit_app()
+    elif page_name == "Perfect Competition: Shutdown Point":
+        from apps.remaining_models import shutdown_app; shutdown_app()
+    elif page_name == "Long-Run Equilibrium and Firm Exit":
+        from apps.remaining_models import long_run_exit_app; long_run_exit_app()
+    elif page_name == "Economies of Scale":
+        from apps.remaining_models import economies_scale_app; economies_scale_app()
+    elif page_name == "Monopoly and Monopolistic Competition":
+        from apps.remaining_models import imperfect_competition_app; imperfect_competition_app()
+    elif page_name == "Game Theory":
+        from apps.remaining_models import game_theory_app; game_theory_app()
+    elif page_name == "Types of Goods":
+        from apps.remaining_models import types_goods_app; types_goods_app()
+    elif page_name in ("Public Goods and Common Resources", "Policy: Public Goods and Common Resources"):
+        from apps.priority_models import public_goods_common_resources_app; public_goods_common_resources_app()
+    elif page_name == "Externalities: Positive and Negative":
+        from apps.remaining_models import externalities_combined_app; externalities_combined_app()
+    elif page_name in ("Competition and Fairness", "Competition, Information, and Fairness"):
+        from apps.remaining_models import competition_fairness_app; competition_fairness_app()
+    elif page_name == "Climate Policy and Capitalism":
+        from apps.remaining_models import capitalism_climate_app; capitalism_climate_app()
     else:
         st.info("Coming soon…")
 # ---------- Home ----------

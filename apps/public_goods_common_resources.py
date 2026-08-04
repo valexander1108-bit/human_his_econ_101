@@ -1,0 +1,1 @@
+from apps.priority_models import public_goods_common_resources_app as app
