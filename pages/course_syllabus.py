@@ -381,8 +381,6 @@ def app():
         st.session_state["syllabus_open_module"] = None
 
     render_course_header()
-    for module in MICRO_MODULES:
-        render_module_block(module, open_module_id)
     st.markdown("---")
     st.markdown("## Grades")
     st.markdown("""Course assessments focus on the understanding, explanation, and application of microeconomics concepts rather than rote quantification or memorization . 
@@ -540,3 +538,8 @@ Behavioral health is a key part of your overall well-being. A brief screening is
 - Campus Ministry: https://sites.sju.edu/campusministry/
 - SJU’s [Collegiate Recovery Program](https://www.sju.edu/CRP) is a supportive, inclusive community for students in recovery from Substance Use Disorder (SUD). The CRP also offers a space for Allies of Recovery to collaborate in breaking the stigma around SUD and to create a recovery friendly campus community. All are welcome and encouraged to inquire about the CRP, especially those who are in recovery from SUD, have been affected by SUD, or are looking to explore their behaviors/relationship with substances. The CRP offers a community space and Recovery Residence, an on-campus housing option for those in recovery from SUD who prefer to live in an abstinence based community environment. For more information, contact [recovery@sju.edu](mailto:recovery@sju.edu) or visit [sju.edu/CRP](http://sju.edu/CRP). 
                     """)
+
+    st.markdown("---")
+    st.markdown("## Modules")
+    for module in MICRO_MODULES:
+        render_module_block(module, open_module_id)
