@@ -1,7 +1,7 @@
 MODULE_SUMMARIES = {
     1: {
         "summary": (
-            "We begin by asking what economics is actually trying to do. This module treats economics as a way "
+            "This module treats economics as a way "
             "to reason carefully about scarcity, tradeoffs, evidence, and human behavior. Students learn that a "
             "model is not the world itself; it is a map that helps us isolate one relationship at a time. The math "
             "starts with tables, budget constraints, slopes, feasible sets, and production possibilities. The bigger "

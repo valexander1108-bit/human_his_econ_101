@@ -91,7 +91,7 @@ _This course uses a **tiered learning structure** to support a wide range of lea
 - The course draws on my own learning experiences with multiple economics texts (e.g. Mankiw, McConnell, Brue & Finn 19e, corECON) to deepen selected topics and ensure alignment to cannonical economic coursework. 
 """)
     st.markdown("---")
-def render_module_block(module: dict):
+def render_module_block(module: dict, open_module_id: int | None = None):
     format_label = module.get("format")
     format_suffix = ""
     if format_label == "ASYNC":
@@ -99,7 +99,8 @@ def render_module_block(module: dict):
     elif format_label == "BRIDGE":
         format_suffix = " [BRIDGE]"
     title = f"Module {module['id']}: {module['title']}{format_suffix}"
-    with st.expander(title, expanded=False):
+    st.markdown(f"<span id='module-{module['id']}-learning'></span>", unsafe_allow_html=True)
+    with st.expander(title, expanded=(module["id"] == open_module_id)):
         openstax_optional = module.get("openstax", {}).get("optional", [])
         if format_label == "ASYNC":
             st.info("ASYNC MODULE: recorded lecture, worksheet, and independent application task.")
@@ -316,42 +317,58 @@ def render_module_block(module: dict):
                     st.markdown(f"- [🎧 {a['label']}]({a['url']})")
 
 def app():
+    raw_open_module = st.query_params.get("open_module")
+    try:
+        open_module_id = int(raw_open_module) if raw_open_module else None
+    except (TypeError, ValueError):
+        open_module_id = None
+
     # Sidebar table of contents for quick jumps (uses header anchors)
     with st.sidebar.expander("**Table of Contents**", expanded=True):
+        def _toc_module(module_id: int, title: str):
+            st.markdown(f"[**{module_id} - {title}**](?open_module={module_id}#module-{module_id}-learning)")
+
+        def _toc_materials(module_id: int):
+            st.markdown(
+                f"<div style='margin:-0.55rem 0 0.2rem 0.75rem;font-size:0.86rem;'>"
+                f"<a href='?open_module={module_id}#module-{module_id}-course-materials'>materials</a></div>",
+                unsafe_allow_html=True,
+            )
+
         st.markdown("[**Overview**](#overview)")
         st.markdown("[**Objectives**](#objectives)")
         st.markdown("[**Content**](#content)")
-        st.markdown("[**1 - Economic Thought & Modeling**](#module-1-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[🧭 *explore content*](#module-1-course-materials)")
-        st.markdown("[**2 - Choice**](#module-2-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[❌ *explore content*](#module-2-course-materials)")
-        st.markdown("[**3 - Supply and Demand**](#module-3-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[🧲 *explore content*](#module-3-course-materials)")
-        st.markdown("[**4 - Market Analysis: Elasticity & Efficiency**](#module-4-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[⚖️ *explore content*](#module-4-course-materials)")
-        st.markdown("[**5 - Factor Markets**](#module-5-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[🏭 *explore content*](#module-5-course-materials)")
-        st.markdown("[**6 - Bridge: Markets, History & Global Economy**](#module-6-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[🎯 *explore content*](#module-6-course-materials)")
-        st.markdown("[**7 - Structural Inequality: Core + Game Theory Preview**](#module-7-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[🌍 *explore content*](#module-7-course-materials)")
-        st.markdown("[**8 - Structural Inequality: Extensions**](#module-8-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[📊 *explore content*](#module-8-course-materials)")
-        st.markdown("[**9 - Firms & Cost of Production**](#module-9-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[🧮 *explore content*](#module-9-course-materials)")
-        st.markdown("[**10 - Profit Maximization**](#module-10-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[💹 *explore content*](#module-10-course-materials)")
-        st.markdown("[**11 - Imperfect Competition & Game Theory**](#module-11-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[🎲 *explore content*](#module-11-course-materials)")
-        st.markdown("[**12 - Policy, Paradox & Human Perspectives**](#module-12-learning)")
-        st.markdown("&nbsp;&nbsp;&nbsp;[🛠️ *explore content*](#module-12-course-materials)")
+        _toc_module(1, "Economic Thought & Modeling")
+        _toc_materials(1)
+        _toc_module(2, "Choice")
+        _toc_materials(2)
+        _toc_module(3, "Supply and Demand")
+        _toc_materials(3)
+        _toc_module(4, "Market Analysis: Elasticity & Efficiency")
+        _toc_materials(4)
+        _toc_module(5, "Factor Markets")
+        _toc_materials(5)
+        _toc_module(6, "Bridge: Markets, History & Global Economy")
+        _toc_materials(6)
+        _toc_module(7, "Structural Inequality: Core + Game Theory Preview")
+        _toc_materials(7)
+        _toc_module(8, "Structural Inequality: Extensions")
+        _toc_materials(8)
+        _toc_module(9, "Firms & Cost of Production")
+        _toc_materials(9)
+        _toc_module(10, "Profit Maximization")
+        _toc_materials(10)
+        _toc_module(11, "Imperfect Competition & Game Theory")
+        _toc_materials(11)
+        _toc_module(12, "Policy, Paradox & Human Perspectives")
+        _toc_materials(12)
         st.markdown("[**Grades**](#grades)")
         st.markdown("[**Policies**](#policies)")
         st.markdown("[**Resources**](#resources)")
 
     render_course_header()
     for module in MICRO_MODULES:
-        render_module_block(module)
+        render_module_block(module, open_module_id)
     st.markdown("---")
     st.markdown("## Grades")
     st.markdown("""Course assessments focus on the understanding, explanation, and application of microeconomics concepts rather than rote quantification or memorization . 
