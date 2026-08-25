@@ -1,17 +1,18 @@
 MODULE_SUMMARIES = {
     1: {
         "summary": (
-            "This module treats economics as a way "
-            "to reason carefully about scarcity, tradeoffs, evidence, and human behavior. Students learn that a "
-            "model is not the world itself; it is a map that helps us isolate one relationship at a time. The math "
-            "starts with tables, budget constraints, slopes, feasible sets, and production possibilities. The bigger "
-            "point is philosophical: every model includes assumptions, and every assumption decides what the model can "
-            "see and what it leaves out."
+            "Economics begins with a simple problem: people want more than the world can immediately provide. "
+            "This module introduces scarcity, opportunity cost, marginal thinking, and the habit of separating "
+            "testable claims from value judgments. Students learn how economists move between words, tables, "
+            "equations, and graphs, then use the budget constraint, the production possibilities model, and "
+            "comparative advantage to explain tradeoffs. The main lesson is that a model is a useful map: it "
+            "simplifies reality so we can see one relationship clearly, but it also depends on assumptions."
         ),
         "history_research": (
-            "The historical cases move from Mesopotamian farmers to Olmec production, Saladoid settlements, Maurya "
-            "India, Hellenistic Greece, Egypt, and Rome. These examples make the first course thesis visible: scarcity "
-            "is universal, but institutions, geography, technology, and power shape the actual choices people face."
+            "Historical examples show that scarcity is not new. Farmers, merchants, households, and states have "
+            "always had to decide how to use limited land, labor, capital, and time. The course begins by asking "
+            "how different societies solved distribution problems and what those choices reveal about efficiency, "
+            "equality, need, merit, and power."
         ),
         "vocabulary": [
             "scarcity", "opportunity cost", "marginal analysis", "positive statement",
@@ -21,18 +22,18 @@ MODULE_SUMMARIES = {
     },
     2: {
         "summary": (
-            "This module moves from scarcity in general to choice in lived time. Students study how people allocate "
-            "labor, leisure, present consumption, future consumption, and limited attention. The math introduces "
-            "utility schedules, marginal utility, indifference curves, feasible frontiers, optimal bundles, and "
-            "two-period budget constraints. The economic theory gives students the clean optimization benchmark, then "
-            "immediately asks whether real human beings actually behave that way when they face stress, limited "
-            "information, institutional constraints, or unequal access to credit."
+            "This module studies choice when people face limits on income, time, attention, and the future. Students "
+            "first learn how production functions and marginal product describe what can be made from limited inputs. "
+            "They then study utility, marginal utility, indifference curves, labor-leisure choice, and intertemporal "
+            "choice. These models explain how economists represent an optimal decision. The module also asks a more "
+            "human question: what happens when people face stress, limited information, weak access to credit, or "
+            "institutions that narrow the choices available to them?"
         ),
         "history_research": (
-            "The history in this module connects ancient subsistence choices, labor constraints, credit access, and "
-            "behavioral economics. Research from Simon, Kahneman and Tversky, Mullainathan and Shafir, and Sen helps "
-            "students see that choice is not just preference; it is preference operating inside a constraint someone "
-            "else may have helped build."
+            "The materials connect consumer theory to behavioral economics and real constraints. Ideas such as bounded "
+            "rationality, loss aversion, hyperbolic discounting, and the capabilities approach help students see that "
+            "choice is not only about preference. It is also about the feasible set people inherit and the tradeoffs "
+            "they are actually able to make."
         ),
         "vocabulary": [
             "utility", "marginal utility", "diminishing marginal utility", "indifference curve",
@@ -43,17 +44,17 @@ MODULE_SUMMARIES = {
     },
     3: {
         "summary": (
-            "This module builds the market model from the ground up. Students move from demand and supply schedules "
-            "to equations, slopes, intercepts, graphs, and algebraic equilibrium. The goal is not to memorize a diagram; "
-            "the goal is to understand how decentralized price signals coordinate buyers and sellers, and why that "
-            "coordination can be powerful without being perfect. Students practice movements along curves, shifts of "
-            "curves, and double-shift reasoning where the price or quantity effect may be ambiguous."
+            "This module builds the supply and demand model step by step. Students begin with consumer and producer "
+            "data, turn schedules into linear equations, graph the curves, and solve for equilibrium. The model shows "
+            "how prices can coordinate many buyers and sellers without one person directing the whole market. Students "
+            "also learn the difference between a movement along a curve and a shift of the curve, then practice cases "
+            "where demand and supply move at the same time."
         ),
         "history_research": (
-            "Silk Road trade, Carolingian production, Abbasid market records, Kilwa commerce, the Black Death, COVID "
-            "supply chains, and the OPEC oil shock show that supply and demand is not a modern abstraction. It is a "
-            "language for organizing historical shocks while still asking what the model leaves out: coercion, disease, "
-            "empire, logistics, and social power."
+            "The market model becomes easier to understand when it is attached to real trade. The course materials use "
+            "examples such as Silk Road exchange, market records, supply shocks, and global logistics to show how prices "
+            "respond to changing tastes, costs, technology, policy, and disruption. The same diagram can organize many "
+            "historical stories, but the model still needs context."
         ),
         "vocabulary": [
             "law of demand", "law of supply", "quantity demanded", "quantity supplied",
@@ -63,18 +64,18 @@ MODULE_SUMMARIES = {
     },
     4: {
         "summary": (
-            "This module asks how much market outcomes change when prices, policies, and constraints change. Students "
-            "learn elasticity first because responsiveness determines everything that follows: revenue, tax burdens, "
-            "price-control effects, and deadweight loss. The math becomes more precise: percent changes, midpoint "
-            "formulas, rectangles, triangles, consumer surplus, producer surplus, and welfare areas. The theory introduces "
-            "a core tension in the course: competitive markets can create large gains from exchange, but those gains can "
-            "be distorted by policy design, market power, scarcity, and uneven bargaining positions."
+            "This module asks how strongly buyers and sellers respond when conditions change. Elasticity measures that "
+            "responsiveness with percentages, which lets students compare very different markets. Students use elasticity "
+            "to predict total revenue, understand the effects of price controls, and explain who bears more of a tax. "
+            "The module then introduces welfare economics: consumer surplus, producer surplus, total surplus, and "
+            "deadweight loss. These tools show when a market creates gains from exchange and when policy or market "
+            "conditions reduce those gains."
         ),
         "history_research": (
-            "Nutmeg, spice routes, Isfahan household accounts, Bengali weaving, Kano caravans, Philadelphia grain, Paris "
-            "bread, Fiji copra, and Ottoman taxation turn elasticity and welfare analysis into historical evidence. "
-            "Students see why the same tax or price control can produce different outcomes depending on the market's "
-            "structure and the time horizon."
+            "The slides and worksheets use historical markets such as nutmeg, grain, bread, textiles, and taxed trade to "
+            "show why elasticity matters. A tax or price control does not have one universal effect. Its impact depends "
+            "on substitutes, necessities, time to adjust, production limits, and which side of the market can respond "
+            "more easily."
         ),
         "vocabulary": [
             "price elasticity of demand", "price elasticity of supply", "midpoint method",
@@ -85,17 +86,18 @@ MODULE_SUMMARIES = {
     },
     5: {
         "summary": (
-            "This module shifts attention from product markets to factor markets: land, labor, capital, and innovation. "
-            "Students learn how income is generated before it is spent, and why wages, rent, and interest are not random "
-            "prices. The math centers on derived demand, marginal product, value of marginal product, supply and demand "
-            "for factors, and loanable funds. The philosophical question is direct: when does a market price reflect what "
-            "someone contributes, and when do ownership, exclusion, monopsony, discrimination, or institutions break that "
-            "link?"
+            "This module turns from markets for goods to markets for the resources used to produce them. Students study "
+            "factor markets for land, labor, and capital. The central idea is derived demand: firms demand workers, land, "
+            "and capital because those inputs help produce goods that can be sold. Students learn the value of marginal "
+            "product formula, VMP = P x MP, and use it to explain hiring, wages, rent, and interest. The module also asks "
+            "when factor prices reflect productivity and when ownership, exclusion, discrimination, monopsony, or credit "
+            "limits break that link."
         ),
         "history_research": (
-            "Florentine cloth, the Industrial Revolution, Bengal, English enclosure, the Great Migration, and the mortgage "
-            "boom show factor markets in motion. These cases help students connect productivity to distribution while "
-            "keeping an eye on property rights, migration constraints, credit markets, and who has the power to set terms."
+            "Historical cases such as Florentine cloth production, the Industrial Revolution, land enclosure, migration, "
+            "and credit markets show how factor markets shape distribution. The module connects productivity to income, "
+            "but it also shows that wages and wealth depend on institutions, property rights, bargaining power, and access "
+            "to capital."
         ),
         "vocabulary": [
             "factor market", "product market", "derived demand", "marginal product",
@@ -105,18 +107,18 @@ MODULE_SUMMARIES = {
     },
     6: {
         "summary": (
-            "This bridge module pauses the technical sequence and asks what the first-half toolkit can explain when we "
-            "place it inside the long sweep of human history. Students revisit choice, supply, demand, elasticity, welfare, "
-            "and factor markets, then test those tools against growth, divergence, inequality, GDP, wellbeing, and climate. "
-            "The math includes growth graphs, productivity relationships, Kuznets-style reasoning, and externality diagrams. "
-            "This is where the course thesis becomes explicit: markets are powerful institutions for coordination and growth, "
-            "but they systematically fail when important costs, benefits, people, or time horizons are outside the market."
+            "This bridge module pauses to connect the first half of the course. Students bring together scarcity, choice, "
+            "supply and demand, elasticity, surplus, and factor markets, then use them to think about long-run economic "
+            "history. The module asks why living standards stayed low for most of human history, why growth accelerated "
+            "in the last two centuries, and why that growth was uneven across the world. Students study the Malthusian "
+            "trap, demographic transition, capital deepening, technological change, GDP, poverty, wellbeing, and climate "
+            "externalities."
         ),
         "history_research": (
-            "Malthus, the Industrial Revolution, the Great Divergence, colonial extraction, GDP per capita, wellbeing, and "
-            "the social cost of carbon give students a historical stress test for economic theory. The point is not to throw "
-            "out the model; it is to learn when the model is useful, when it is incomplete, and what evidence would force us "
-            "to revise the story."
+            "The course materials frame markets as social institutions: powerful tools for coordination and allocation, "
+            "but incomplete when costs, benefits, people, or future damages fall outside the transaction. Malthus, the "
+            "Industrial Revolution, the Great Divergence, poverty measurement, the Kuznets curve, and the social cost of "
+            "carbon all serve as tests of what the microeconomic toolkit can and cannot explain."
         ),
         "vocabulary": [
             "Malthusian trap", "demographic transition", "economic growth", "technology",
@@ -126,17 +128,18 @@ MODULE_SUMMARIES = {
     },
     7: {
         "summary": (
-            "This module studies inequality as a structure, not just an outcome. Students use economic models to explain "
-            "why poverty can persist even when individuals make reasonable choices. The math includes Lorenz curves, Gini "
-            "coefficients, wage gaps, VMP comparisons, and the first payoff-matrix logic of game theory. The theory pushes "
-            "against a shallow interpretation of markets: if credit, education, labor power, information, and bargaining "
-            "are unequally distributed, then the market outcome may reproduce the constraint rather than reward merit."
+            "This module studies inequality as a system of constraints, not simply as a set of individual outcomes. "
+            "Students use poverty traps, Lorenz curves, Gini coefficients, wage gaps, monopsony, discrimination, and "
+            "principal-agent problems to explain why unequal outcomes can persist over time. The module also introduces "
+            "game theory with payoff matrices, dominant strategies, Nash equilibrium, and collective action problems. "
+            "The main question is how markets behave when people enter them with unequal credit, education, information, "
+            "mobility, and bargaining power."
         ),
         "history_research": (
-            "Research on poverty traps, monopsony, discrimination, principal-agent problems, and strategic interaction gives "
-            "students a way to talk about unequal opportunity without reducing it to individual virtue or failure. History "
-            "matters here because today's feasible set often reflects yesterday's laws, investments, exclusions, and market "
-            "design."
+            "The readings and worksheets connect economic models to intergenerational mobility, labor power, statistical "
+            "discrimination, moral hazard, adverse selection, and public-goods problems. Students learn to ask whether a "
+            "market outcome reflects effort alone or whether it also reflects inherited constraints and rules built before "
+            "the current choice was made."
         ),
         "vocabulary": [
             "poverty trap", "structural inequality", "Lorenz curve", "Gini coefficient",
@@ -147,16 +150,17 @@ MODULE_SUMMARIES = {
     },
     8: {
         "summary": (
-            "This module extends the inequality toolkit into the digital economy, algorithmic systems, and climate burden. "
-            "Students analyze how markets can use new technology while carrying forward old patterns of exclusion. The math "
-            "and data work include access tables, group comparisons, proxy variables, algorithmic error, and distributional "
-            "climate evidence. The economic theory is that information can improve allocation, but biased information can "
-            "also become a market failure when it prices, ranks, screens, or excludes people through inherited inequality."
+            "This module extends the inequality framework to technology, algorithms, platform work, and climate burdens. "
+            "Students study the digital divide, access gaps, digital literacy, algorithmic bias, proxy discrimination, "
+            "and disparate impact. They also connect climate change to distributional injustice by asking who benefits "
+            "from production, who bears environmental costs, and who has the least power to adapt. The module treats data "
+            "and technology as economic systems that can improve allocation, but can also reproduce older inequalities."
         ),
         "history_research": (
-            "Digital divide research, platform labor studies, redlining and credit-scoring evidence, environmental racism, "
-            "and climate justice connect contemporary data to historical causes. Students learn to ask not only whether a "
-            "system is efficient, but whose data trained it, whose risk it shifts, and who bears the cost of the transition."
+            "The materials connect contemporary topics to historical patterns of exclusion, including redlining, unequal "
+            "credit access, environmental racism, sacrifice zones, regulatory failure, and the labor-market effects of a "
+            "green transition. Students learn that efficiency questions and fairness questions often have to be answered "
+            "together."
         ),
         "vocabulary": [
             "digital divide", "platform economy", "algorithmic bias", "proxy discrimination",
@@ -167,17 +171,18 @@ MODULE_SUMMARIES = {
     },
     9: {
         "summary": (
-            "This module enters the firm. Students learn how production becomes cost, and how cost shapes every later "
-            "decision a firm makes. The math is intentionally concrete: total product, marginal product, average product, "
-            "fixed cost, variable cost, total cost, average cost, marginal cost, and economies of scale. The theory separates "
-            "accounting profit from economic profit so students can see opportunity cost inside business decisions, not just "
-            "consumer decisions."
+            "This module opens up the firm. Earlier modules used the supply curve; now students learn where that curve "
+            "comes from. The module begins with profit, including the difference between accounting profit and economic "
+            "profit. It then builds the cost structure of the firm from production: total product, marginal product, "
+            "average product, fixed cost, variable cost, total cost, average total cost, and marginal cost. Students use "
+            "these tools to understand short-run and long-run decisions, economies of scale, and the point at which a "
+            "firm produces at lowest average cost."
         ),
         "history_research": (
-            "Detroit, Flint, Toyota, Pittsburgh steel, NAFTA, and changing production systems show that firms are historical "
-            "institutions, not just curves on a graph. Cost models help explain why capital moves, why workers are displaced, "
-            "why some plants close even when accounting numbers look acceptable, and why short-run decisions can create "
-            "long-run path dependence."
+            "Cases involving auto production, steel, oil shocks, and changing production systems show that firms are not "
+            "just curves on a graph. They are organizations that make decisions under cost pressure, technology change, "
+            "manager-worker information problems, and competition from other places. Cost models help explain why firms "
+            "expand, contract, relocate, or shut down."
         ),
         "vocabulary": [
             "accounting profit", "economic profit", "explicit cost", "implicit cost",
@@ -188,16 +193,17 @@ MODULE_SUMMARIES = {
     },
     10: {
         "summary": (
-            "This module answers the firm's central question: how much should be produced? Students use MR = MC as the "
-            "profit-maximizing rule, then apply it under perfect competition, shutdown conditions, long-run entry and exit, "
-            "monopoly, and price discrimination. The math uses revenue schedules, marginal revenue, marginal cost, ATC, AVC, "
-            "profit rectangles, and deadweight loss. The theoretical point is precise: the same profit rule can generate "
-            "different social outcomes depending on market structure."
+            "This module adds revenue to the firm's cost curves and answers a central business question: how much should "
+            "the firm produce? Students learn the profit-maximization rule, MR = MC, and apply it to perfect competition, "
+            "short-run losses, shutdown decisions, entry, exit, long-run equilibrium, monopoly, and price discrimination. "
+            "The same basic rule appears across market structures, but the social outcome changes when firms have pricing "
+            "power instead of taking the market price as given."
         ),
         "history_research": (
-            "Corn markets, monopoly communications, oil shocks, business shutdown decisions, and pricing power show students "
-            "that competition is not a slogan; it is a set of conditions. When those conditions fail, firms may still act "
-            "rationally, but the result can be higher prices, restricted output, and lost social surplus."
+            "The course materials use examples such as food carts, competitive markets, shutdown decisions, oil shocks, "
+            "and monopoly pricing to show how theory becomes a decision tool. Students learn why perfect competition "
+            "forces price to equal marginal revenue, why firms may keep operating while losing money in the short run, "
+            "and why monopoly can create deadweight loss."
         ),
         "vocabulary": [
             "perfect competition", "price taker", "total revenue", "marginal revenue",
@@ -208,16 +214,18 @@ MODULE_SUMMARIES = {
     },
     11: {
         "summary": (
-            "This module studies markets where firms are not anonymous price takers. Students analyze market power, product "
-            "differentiation, concentration, oligopoly, and strategic behavior. The math includes HHI, concentration ratios, "
-            "payoff matrices, dominant strategies, Nash equilibrium, and repeated games. The theory gives students a more "
-            "realistic picture of competition: firms watch each other, anticipate each other, and sometimes find that the "
-            "privately rational move creates a collectively worse result."
+            "This module studies the markets between perfect competition and pure monopoly. Students examine monopolistic "
+            "competition, oligopoly, product differentiation, concentration, and strategic behavior. They measure market "
+            "power with concentration ratios and the Herfindahl-Hirschman Index, then use game theory to study firms that "
+            "must think about each other's choices. Payoff matrices, dominant strategies, Nash equilibrium, prisoner's "
+            "dilemmas, repeated games, collusion, and cartels help explain why firms sometimes compete fiercely and other "
+            "times try to cooperate."
         ),
         "history_research": (
-            "Airlines, Google, food markets, OPEC, Boeing and Airbus, antitrust law, and cartel stability connect formal "
-            "game theory to real institutional settings. Students learn that market power is not only about one firm being "
-            "large; it is about barriers, information, strategy, law, and the rules that define the game."
+            "Examples from airlines, technology markets, food markets, OPEC, Boeing and Airbus, antitrust law, and cartel "
+            "stability show that competition depends on rules and institutions. The module emphasizes that market power "
+            "is not only about firm size. It also depends on entry barriers, information, product differences, strategy, "
+            "and legal enforcement."
         ),
         "vocabulary": [
             "monopolistic competition", "oligopoly", "market power", "antitrust",
@@ -228,19 +236,18 @@ MODULE_SUMMARIES = {
     },
     12: {
         "summary": (
-            "The final module returns to the question that has been underneath the whole course: when do markets fail, and "
-            "what should be done about it? Students build a taxonomy of private goods, public goods, common resources, "
-            "externalities, information problems, behavioral failures, and government failure. The math and models include "
-            "PMB, PMC, SMB, SMC, Pigouvian taxes and subsidies, deadweight loss, tax incidence, public-goods games, and "
-            "wellbeing comparisons beyond GDP. The goal is not to say markets are good or bad. The goal is to make a disciplined "
-            "argument about which failure exists, which intervention fits it, what tradeoffs remain, and what economics itself "
-            "cannot decide for us."
+            "The final module brings the course back to market failure and policy. Students classify goods by rivalry "
+            "and excludability, then study externalities, public goods, common resources, asymmetric information, "
+            "behavioral failures, and government failure. The module matches each problem to possible policy tools, "
+            "including Pigouvian taxes and subsidies, the Coase theorem, cap-and-trade, public provision, taxation, "
+            "carbon pricing, and carbon dividends. The goal is not to memorize a list of policies. The goal is to make "
+            "a careful argument about what failed, why it failed, which tool fits, and what tradeoffs remain."
         ),
         "history_research": (
-            "Climate policy, cap-and-trade, carbon taxes, public goods, behavioral policy, the financial crisis, HDI, and "
-            "the limits of welfare economics bring the course thesis to its final form: markets are powerful institutions "
-            "for coordination, but they systematically fail when costs, benefits, information, power, or human wellbeing fall "
-            "outside the price system."
+            "The course closes by connecting welfare economics to climate policy, public goods, financial instability, "
+            "wellbeing, GDP limits, and human development. Students return to the course thesis in its final form: markets "
+            "are powerful coordination systems, but they are incomplete when prices leave out costs, benefits, information, "
+            "power, distribution, or human flourishing."
         ),
         "vocabulary": [
             "market failure", "private good", "public good", "common resource",
