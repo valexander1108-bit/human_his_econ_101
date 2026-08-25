@@ -147,7 +147,9 @@ for k, v in DEFAULTS.items():
 if "mode_sync_needed" not in st.session_state:
     st.session_state["mode_sync_needed"] = False
 
-# Honor deep links like ?model=Budget%20Constraint
+# Honor deep links like ?model=Budget%20Constraint or ?view=syllabus.
+# Query params are processed once per URL state so they do not keep
+# overriding the sidebar mode selector after initial navigation.
 params = st.query_params
 VIEW_MODES = {
     "home": "Home",
@@ -155,20 +157,25 @@ VIEW_MODES = {
     "map": "Historical Map",
     "models": "Economic Models",
 }
-requested_view = params.get("view")
-if requested_view in VIEW_MODES:
-    st.session_state["mode"] = VIEW_MODES[requested_view]
-    st.session_state["mode_sync_needed"] = True
-elif "open_module" in params:
-    st.session_state["mode"] = "Course Syllabus"
-    st.session_state["mode_sync_needed"] = True
-
-if "model" in params:
-    target = params.get("model")
-    if target in ALL_PAGES:
-        st.session_state["mode"] = "Economic Models"
-        st.session_state["current_page"] = target
+query_snapshot = tuple(sorted((key, str(value)) for key, value in params.items()))
+if query_snapshot and query_snapshot != st.session_state.get("last_query_nav"):
+    requested_view = params.get("view")
+    if requested_view in VIEW_MODES:
+        st.session_state["mode"] = VIEW_MODES[requested_view]
         st.session_state["mode_sync_needed"] = True
+    elif "open_module" in params:
+        st.session_state["mode"] = "Course Syllabus"
+        st.session_state["mode_sync_needed"] = True
+
+    if "model" in params:
+        target = params.get("model")
+        if target in ALL_PAGES:
+            st.session_state["mode"] = "Economic Models"
+            st.session_state["current_page"] = target
+            st.session_state["mode_sync_needed"] = True
+    st.session_state["last_query_nav"] = query_snapshot
+elif not query_snapshot:
+    st.session_state["last_query_nav"] = None
 
 # The radio owns its own key; seed it once, and only resync when a button flagged it
 if "mode_radio" not in st.session_state:
@@ -300,6 +307,9 @@ def render_home():
         if st.button("Go to Syllabus"):
             st.session_state["mode"] = "Course Syllabus"
             st.session_state["mode_sync_needed"] = True
+            st.session_state["syllabus_open_module"] = None
+            st.session_state["last_query_nav"] = None
+            st.query_params.clear()
 
     with col2:
         st.markdown("### 2. Historical Map")
@@ -309,6 +319,9 @@ def render_home():
         if st.button("Go to Historical Map"):
             st.session_state["mode"] = "Historical Map"
             st.session_state["mode_sync_needed"] = True
+            st.session_state["syllabus_open_module"] = None
+            st.session_state["last_query_nav"] = None
+            st.query_params.clear()
 
     with col3:
         st.markdown("### 3. Economic Models")
@@ -319,6 +332,9 @@ def render_home():
         if st.button("Go to Model Playground"):
             st.session_state["mode"] = "Economic Models"
             st.session_state["mode_sync_needed"] = True
+            st.session_state["syllabus_open_module"] = None
+            st.session_state["last_query_nav"] = None
+            st.query_params.clear()
 
     st.markdown("---")
     st.markdown("#### About Your Instructor")
@@ -343,6 +359,10 @@ with st.sidebar:
     # Single source of truth for mode; radio writes it here when changed
     if mode != st.session_state["mode"]:
         st.session_state["mode"] = mode
+        st.session_state["last_query_nav"] = None
+        if mode != "Course Syllabus":
+            st.session_state["syllabus_open_module"] = None
+        st.query_params.clear()
 
     if mode == "Economic Models":
         # pick module/page; update single source of truth
