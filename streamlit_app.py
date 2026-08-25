@@ -309,9 +309,11 @@ def render_home():
     st.markdown("---")
     st.markdown("#### About Your Instructor")
     st.markdown("""
-_Placeholder: a short bio line about you here — your role, institution(s), and what you care about in teaching econ._
+Prof. Alexander Velazquez's academic and professional work focuses on personal finance, public policy, and community-based organizing.
 
-You can mention office hours, email, or a link to your full syllabus/website if you want.
+Prof. Velazquez grew up in South Jersey, graduated from Saint Joseph's University with an AB in Economics in 2020, and began teaching with Teach For America in Philadelphia at Boys' Latin Middle School. He later earned an MSEd in Urban Education from the University of Pennsylvania in 2022.
+
+After teaching Special Education and Math in West Philadelphia for three years, Prof. Velazquez moved into personal finance, working as a tax specialist with H&R Block and as a financial specialist with ECS, a community-based nonprofit focused on ending intergenerational poverty for BIPOC communities.
     """)
 
 # ---------- Sidebar ----------
