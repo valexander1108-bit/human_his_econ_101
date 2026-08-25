@@ -43,11 +43,11 @@ def render_course_header():
     st.markdown("""_ECON 101_ introduces the foundational tools economists use to analyze how individuals and firms make decisions under constraints, and how different institutional and historical environments have shaped and continue to shape these decisions.""")
     with st.expander("Course Information", expanded=False):
         st.markdown("""
-- **Class Location:** _TBD_  
-- **Class Hours:** _TBD_  
+- **Class Location:** Connelly Hall 120  
+- **Class Hours:** Section D01 at 5:00 PM; Section D02 at 6:30 PM  
 - **Instructor:** Prof. Alexander Velazquez  
 - **Email:** av663411@sju.edu  
-- **Office Hours:** _TBD_  
+- **Office Hours:** [Schedule an appointment](https://calendly.com/alexanderv-ecsfs/econ-office-hours)  
 - **Course Website:** Canvas (materials and updates)  
 """)
     with st.expander("Full Description"):
