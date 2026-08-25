@@ -195,7 +195,7 @@ def economic_accounting_profit_app():
 
 
 def capitalism_climate_app():
-    st.subheader("Capitalism and Climate Change: A Micro Externality Model")
+    st.subheader("Climate Externality and the Atmosphere Commons")
     demand_intercept = st.sidebar.slider("Willingness-to-pay intercept", 20.0, 200.0, 110.0, 5.0)
     demand_slope = st.sidebar.slider("Demand slope", 0.10, 2.00, 0.55, 0.05)
     private_cost = st.sidebar.slider("Private marginal cost intercept", 0.0, 100.0, 20.0, 2.0)
@@ -203,11 +203,12 @@ def capitalism_climate_app():
     emissions_intensity = st.sidebar.slider("Emissions per unit", 0.10, 3.00, 1.00, 0.05)
     climate_damage = st.sidebar.slider("Marginal climate damage per emission unit", 0.0, 50.0, 18.0, 1.0)
     carbon_price = st.sidebar.slider("Carbon price / emissions fee", 0.0, 100.0, 15.0, 1.0)
+    stock_factor = st.sidebar.slider("Stock pollutant multiplier", 1.0, 5.0, 2.0, 0.25)
 
     q = np.linspace(0, 160, 400)
     demand = demand_intercept - demand_slope * q
     mpc = private_cost + cost_slope * q
-    external_cost = emissions_intensity * climate_damage
+    external_cost = emissions_intensity * climate_damage * stock_factor
     msc = mpc + external_cost
     taxed_mpc = mpc + carbon_price * emissions_intensity
 
@@ -236,45 +237,52 @@ def capitalism_climate_app():
     c2.metric("Efficient Q", f"{q_social:.1f}")
     c3.metric("Policy Q", f"{q_policy:.1f}")
     c4.metric("DWL without policy", f"{dwl:.1f}")
+    st.caption("The stock multiplier represents the Module 6 claim that CO2 is harder than a normal externality because damages persist and accumulate.")
     if st.toggle("Full analysis", value=False, key="climate_analysis"):
         st.markdown(
-            "This is the microeconomics of climate change: the private market ignores damages imposed on others, so the private outcome overproduces carbon-intensive output. A carbon price works by moving the private marginal cost closer to the social marginal cost."
+            "This is Climate Arc Part 1. The private market prices extraction and production costs, but not the climate damage imposed on third parties. Because the atmosphere is a commons and CO2 is a stock pollutant, market-recorded surplus overstates welfare and the static externality diagram understates the coordination problem."
         )
         st.latex(r"MSC = MPC + \text{marginal climate damage}")
         st.latex(r"\text{efficient quantity: } MB = MSC")
 
 
 def capitalism_inequality_app():
-    st.subheader("Capitalism and Global Inequality")
-    n = 100
-    capital_share = st.sidebar.slider("Capital income share", 0.10, 0.60, 0.35, 0.05)
-    skill_premium = st.sidebar.slider("Skill premium", 1.0, 5.0, 2.2, 0.1)
-    globalization = st.sidebar.slider("Global integration", 0.0, 1.0, 0.55, 0.05)
-    redistribution = st.sidebar.slider("Redistribution strength", 0.0, 0.6, 0.20, 0.05)
+    st.subheader("Three Engines and the Great Divergence")
+    years = np.arange(1700, 1901, 10)
+    t = (years - years[0]) / 10
+    britain_tfp = st.sidebar.slider("Britain technology growth", 0.000, 0.060, 0.030, 0.005)
+    britain_capital = st.sidebar.slider("Britain capital deepening", 0.000, 0.060, 0.025, 0.005)
+    extractive_drag = st.sidebar.slider("Extractive-institution drag", 0.000, 0.050, 0.020, 0.005)
+    colonial_shock = st.sidebar.slider("Colonial/deindustrialization shock", 0.0, 0.60, 0.25, 0.05)
 
-    people = np.linspace(0.01, 1, n)
-    market_income = (people ** (1.9 + globalization)) * (1 + capital_share * 3) + (people > 0.75) * skill_premium
-    market_income = market_income / market_income.sum()
-    equal_share = np.ones(n) / n
-    post_income = (1 - redistribution) * market_income + redistribution * equal_share
-    lorenz_market = np.r_[0, np.cumsum(np.sort(market_income))]
-    lorenz_post = np.r_[0, np.cumsum(np.sort(post_income))]
-    pop = np.linspace(0, 1, n + 1)
-    gini_market = 1 - 2 * np.trapz(lorenz_market, pop)
-    gini_post = 1 - 2 * np.trapz(lorenz_post, pop)
+    britain = 100 * (1 + britain_tfp + britain_capital) ** t
+    china = 105 * (1 + max(britain_tfp * 0.30 - extractive_drag * 0.25, -0.02)) ** t
+    india = 100 * (1 + max(britain_tfp * 0.18 - extractive_drag, -0.03)) ** t
+    africa = 85 * (1 + max(britain_tfp * 0.15 - extractive_drag * 0.8, -0.03)) ** t
+    shock_path = np.linspace(0, colonial_shock, len(years))
+    india *= (1 - shock_path)
+    africa *= (1 - shock_path * 0.55)
 
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=pop, y=pop, name="Perfect equality", line=dict(dash="dash", color=SAGE)))
-    fig.add_trace(go.Scatter(x=pop, y=lorenz_market, name="Market income", line=dict(width=3, color=RED)))
-    fig.add_trace(go.Scatter(x=pop, y=lorenz_post, name="After redistribution", line=dict(width=3, color=GREEN)))
-    fig.update_xaxes(title="Cumulative population")
-    fig.update_yaxes(title="Cumulative income")
-    st.plotly_chart(styled(fig), use_container_width=True, key="capitalism_inequality")
-    c1, c2 = st.columns(2)
-    c1.metric("Market Gini", f"{gini_market:.2f}")
-    c2.metric("Post-policy Gini", f"{gini_post:.2f}")
+    for series, name, color in [
+        (britain, "Britain: technology + capital deepening", GREEN),
+        (china, "China: constrained accumulation", GOLD),
+        (india, "India/Bengal: deindustrialization shock", RED),
+        (africa, "Sub-Saharan Africa: extraction drag", BLUE),
+    ]:
+        fig.add_trace(go.Scatter(x=years, y=series, name=name, line=dict(width=3, color=color)))
+    fig.update_xaxes(title="Year")
+    fig.update_yaxes(title="Income per person index")
+    st.plotly_chart(styled(fig), use_container_width=True, key="great_divergence")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Britain 1900 index", f"{britain[-1]:.0f}")
+    c2.metric("India/Bengal 1900 index", f"{india[-1]:.0f}")
+    c3.metric("Britain vs India ratio", f"{britain[-1] / max(india[-1], 1):.1f}x")
     if st.toggle("Full analysis", value=False, key="ineq_analysis"):
-        st.markdown("The Lorenz curve shows how income is distributed across the population. Capital ownership, skill premia, and global integration can pull income toward the top; redistribution and public investment can partially offset that pattern.")
+        st.markdown(
+            "This model maps to Module 6 Parts 3 and 4. The hockey stick begins when technology becomes continuous and capital deepening raises labor productivity. The Great Divergence asks why those engines activated unevenly: institutions, geography, colonial extraction, and technological accidents are competing explanations, not mutually exclusive sliders."
+        )
+        st.latex(r"Y=A\cdot K^{\alpha}\cdot L^{1-\alpha}")
 
 
 def cost_production_app():
@@ -712,14 +720,18 @@ def labor_leisure_app():
 
 
 def malthus_growth_app():
-    st.subheader("Malthus, Technology, and the Growth Hockey Stick")
+    st.subheader("Malthusian Trap and Demographic Transition")
     years = np.arange(0, 201)
     tech_growth = st.sidebar.slider("Technology growth", 0.000, 0.040, 0.010, 0.002)
-    population_response = st.sidebar.slider("Population response", 0.000, 0.050, 0.018, 0.002)
+    population_response = st.sidebar.slider("Baseline population response", 0.000, 0.050, 0.018, 0.002)
+    transition_strength = st.sidebar.slider("Demographic transition strength", 0.0, 1.0, 0.45, 0.05)
+    transition_year = st.sidebar.slider("Transition begins", 20, 180, 95, 5)
     shock_year = st.sidebar.slider("Shock year", 20, 180, 70, 5)
     shock_size = st.sidebar.slider("Population shock", 0.0, 0.8, 0.35, 0.05)
     technology = (1 + tech_growth) ** years
-    population = (1 + population_response) ** years
+    transition = 1 / (1 + np.exp(-(years - transition_year) / 12))
+    effective_pop_response = population_response * (1 - transition_strength * transition)
+    population = np.cumprod(1 + effective_pop_response)
     population = population * np.where(years >= shock_year, 1 - shock_size, 1)
     income_pc = 100 * technology / np.maximum(population ** 0.55, 1e-9)
     fig = go.Figure()
@@ -729,29 +741,56 @@ def malthus_growth_app():
     fig.update_xaxes(title="Years")
     fig.update_yaxes(title="Index")
     st.plotly_chart(styled(fig), use_container_width=True, key="malthus_growth")
-    st.metric("Final income per person index", f"{income_pc[-1]:.1f}")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Final income per person", f"{income_pc[-1]:.1f}")
+    c2.metric("Final technology index", f"{100 * technology[-1]:.1f}")
+    c3.metric("Final population index", f"{100 * population[-1] / population[0]:.1f}")
     if st.toggle("Full analysis", value=False, key="malthus_analysis"):
-        st.markdown("Malthusian pressure appears when population growth absorbs productivity gains. Sustained technological progress can break the trap and produce the hockey-stick pattern in income per person.")
+        st.markdown(
+            "Malthusian pressure appears when population growth absorbs productivity gains and returns living standards toward subsistence. Escape requires continuous productivity growth plus the demographic transition: as child mortality falls, schooling expands, and women's opportunity cost rises, higher income can lead to fewer, more-invested-in children."
+        )
 
 
 def gdp_wellbeing_app():
-    st.subheader("GDP and Wellbeing Limits")
+    st.subheader("Poverty, GDP, and the Kuznets Curve")
     gdp = st.sidebar.slider("GDP per person index", 20.0, 200.0, 100.0, 5.0)
     inequality = st.sidebar.slider("Inequality", 0.0, 1.0, 0.35, 0.05)
+    redistribution = st.sidebar.slider("Redistribution / public investment", 0.0, 1.0, 0.30, 0.05)
     unpaid_work = st.sidebar.slider("Unpaid work / care value", 0.0, 80.0, 20.0, 2.0)
     pollution = st.sidebar.slider("Pollution damage", 0.0, 80.0, 25.0, 2.0)
     leisure = st.sidebar.slider("Leisure and health value", 0.0, 80.0, 25.0, 2.0)
     adjusted = gdp * (1 - 0.35 * inequality) + unpaid_work + leisure - pollution
-    fig = go.Figure(go.Bar(
-        x=["GDP/person", "Inequality penalty", "Unpaid work", "Leisure/health", "Pollution cost", "Adjusted wellbeing"],
-        y=[gdp, -gdp * 0.35 * inequality, unpaid_work, leisure, -pollution, adjusted],
-        marker_color=[GREEN, RED, BLUE, SAGE, RED, POINT],
-    ))
-    fig.update_yaxes(title="Index contribution")
-    st.plotly_chart(styled(fig), use_container_width=True, key="gdp_wellbeing")
-    st.metric("Adjusted wellbeing index", f"{adjusted:.1f}", f"{adjusted - gdp:.1f} vs GDP")
+    income = np.linspace(20, 200, 200)
+    kuznets = 0.18 + 0.45 * np.exp(-((income - 95) / 45) ** 2)
+    policy_path = kuznets * (1 - redistribution * 0.55)
+    absolute_poverty = max(0.0, 100 - gdp) * (1 - redistribution * 0.45)
+    relative_poverty = max(0.0, inequality * 100 - redistribution * 25)
+
+    tab1, tab2 = st.tabs(["GDP limits", "Kuznets and poverty"])
+    with tab1:
+        fig = go.Figure(go.Bar(
+            x=["GDP/person", "Inequality penalty", "Unpaid work", "Leisure/health", "Pollution cost", "Adjusted wellbeing"],
+            y=[gdp, -gdp * 0.35 * inequality, unpaid_work, leisure, -pollution, adjusted],
+            marker_color=[GREEN, RED, BLUE, SAGE, RED, POINT],
+        ))
+        fig.update_yaxes(title="Index contribution")
+        st.plotly_chart(styled(fig), use_container_width=True, key="gdp_wellbeing")
+    with tab2:
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=income, y=kuznets, name="Kuznets hypothesis", line=dict(width=3, color=RED)))
+        fig.add_trace(go.Scatter(x=income, y=policy_path, name="With redistribution/public investment", line=dict(width=3, color=GREEN)))
+        fig.add_trace(go.Scatter(x=[gdp], y=[inequality], mode="markers+text", text=["Current"], textposition="top center", marker=dict(size=12, color=POINT), name="Current economy"))
+        fig.update_xaxes(title="GDP per person index")
+        fig.update_yaxes(title="Inequality index", range=[0, 0.75])
+        st.plotly_chart(styled(fig), use_container_width=True, key="kuznets_poverty")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Adjusted wellbeing", f"{adjusted:.1f}", f"{adjusted - gdp:.1f} vs GDP")
+    c2.metric("Absolute poverty pressure", f"{absolute_poverty:.1f}")
+    c3.metric("Relative poverty pressure", f"{relative_poverty:.1f}")
     if st.toggle("Full analysis", value=False, key="gdp_analysis"):
-        st.markdown("GDP measures market production, not welfare. It misses distribution, unpaid work, leisure, health, environmental damage, and whether growth expands real capabilities.")
+        st.markdown(
+            "This model maps to Module 6 Part 5. GDP per person helps measure absolute poverty, but it does not tell us how income is distributed or whether people have real capabilities. The Kuznets hypothesis says inequality may first rise and then fall with development; the policy question is whether 'grow first, redistribute later' treats avoidable deprivation as temporary."
+        )
 
 
 def price_discrimination_app():
@@ -818,21 +857,142 @@ def tax_incidence_app():
     params = st.session_state.get("selected_model_params", {})
     if params.get("worksheet_note"):
         st.info(params["worksheet_note"])
-    demand_elasticity = st.sidebar.slider("|Demand elasticity|", 0.05, 3.00, abs(float(params.get("demand_elasticity", 0.30))), 0.05)
-    supply_elasticity = st.sidebar.slider("Supply elasticity", 0.05, 3.00, float(params.get("supply_elasticity", 0.80)), 0.05)
-    tax = st.sidebar.slider("Tax per unit", 1.0, 100.0, float(params.get("tax", 20.0)), 1.0)
-    consumer_share = supply_elasticity / (supply_elasticity + demand_elasticity)
-    producer_share = demand_elasticity / (supply_elasticity + demand_elasticity)
-    consumer_burden = tax * consumer_share
-    producer_burden = tax * producer_share
-    fig = go.Figure(go.Bar(x=["Consumers", "Producers"], y=[consumer_burden, producer_burden], marker_color=[GREEN, RED]))
-    fig.update_yaxes(title="Tax burden per unit")
+
+    st.sidebar.markdown("**Starting market**")
+    q0 = st.sidebar.slider("Pre-tax equilibrium quantity", 20.0, 200.0, float(params.get("q0", 100.0)), 5.0)
+    p0 = st.sidebar.slider("Pre-tax equilibrium price", 5.0, 100.0, float(params.get("p0", 40.0)), 1.0)
+    tax = st.sidebar.slider("Supply-side tax per unit", 0.0, 80.0, float(params.get("tax", 12.0)), 1.0)
+
+    st.sidebar.markdown("**Elasticity at the pre-tax equilibrium**")
+    demand_elasticity = st.sidebar.slider("|Demand elasticity|", 0.10, 5.00, abs(float(params.get("demand_elasticity", 0.60))), 0.05)
+    supply_elasticity = st.sidebar.slider("Supply elasticity", 0.10, 5.00, float(params.get("supply_elasticity", 1.20)), 0.05)
+    show_pre_tax_surplus = st.sidebar.toggle("Show pre-tax surplus", value=False, key="tax_show_pre_surplus")
+
+    demand_slope = p0 / (demand_elasticity * q0)
+    supply_slope = p0 / (supply_elasticity * q0)
+    demand_intercept = p0 + demand_slope * q0
+    supply_intercept = p0 - supply_slope * q0
+
+    q_tax = max(0.0, (demand_intercept - supply_intercept - tax) / (demand_slope + supply_slope))
+    pc = demand_intercept - demand_slope * q_tax
+    pp = pc - tax
+
+    consumer_burden = max(0.0, pc - p0)
+    producer_burden = max(0.0, p0 - pp)
+    consumer_share = consumer_burden / tax if tax else 0.0
+    producer_share = producer_burden / tax if tax else 0.0
+
+    pre_cs = max(0.0, 0.5 * (demand_intercept - p0) * q0)
+    pre_ps = max(0.0, 0.5 * (p0 - supply_intercept) * q0)
+    post_cs = max(0.0, 0.5 * (demand_intercept - pc) * q_tax)
+    post_ps = max(0.0, 0.5 * (pp - supply_intercept) * q_tax)
+    tax_revenue = tax * q_tax
+    deadweight_loss = max(0.0, 0.5 * tax * (q0 - q_tax))
+
+    xmax = max(q0 * 1.35, q_tax * 1.35, 50)
+    ymax = max(demand_intercept, pc + tax * 0.35, p0 + tax * 1.2, 20) * 1.08
+    q = np.linspace(0, xmax, 300)
+    demand = demand_intercept - demand_slope * q
+    supply = supply_intercept + supply_slope * q
+    supply_tax = supply + tax
+
+    fig = go.Figure()
+    if show_pre_tax_surplus:
+        fig.add_trace(go.Scatter(
+            x=[0, q0, 0],
+            y=[p0, p0, demand_intercept],
+            mode="lines",
+            fill="toself",
+            name="Pre-tax consumer surplus",
+            line=dict(width=0),
+            fillcolor="rgba(51,101,138,0.16)",
+            hoverinfo="skip",
+        ))
+        fig.add_trace(go.Scatter(
+            x=[0, q0, 0],
+            y=[supply_intercept, p0, p0],
+            mode="lines",
+            fill="toself",
+            name="Pre-tax producer surplus",
+            line=dict(width=0),
+            fillcolor="rgba(196,154,108,0.18)",
+            hoverinfo="skip",
+        ))
+
+    if q_tax > 0:
+        fig.add_trace(go.Scatter(
+            x=[0, q_tax, 0],
+            y=[pc, pc, demand_intercept],
+            mode="lines",
+            fill="toself",
+            name="Consumer surplus after tax",
+            line=dict(width=0),
+            fillcolor="rgba(51,101,138,0.24)",
+            hoverinfo="skip",
+        ))
+        fig.add_trace(go.Scatter(
+            x=[0, q_tax, 0],
+            y=[supply_intercept, pp, pp],
+            mode="lines",
+            fill="toself",
+            name="Producer surplus after tax",
+            line=dict(width=0),
+            fillcolor="rgba(196,154,108,0.30)",
+            hoverinfo="skip",
+        ))
+        fig.add_trace(go.Scatter(
+            x=[0, q_tax, q_tax, 0],
+            y=[pp, pp, pc, pc],
+            mode="lines",
+            fill="toself",
+            name="Tax revenue",
+            line=dict(width=0),
+            fillcolor="rgba(179,130,16,0.30)",
+            hoverinfo="skip",
+        ))
+    if deadweight_loss > 0:
+        fig.add_trace(go.Scatter(
+            x=[q_tax, q0, q_tax],
+            y=[pp, p0, pc],
+            mode="lines",
+            fill="toself",
+            name="Deadweight loss",
+            line=dict(width=0),
+            fillcolor="rgba(178,63,53,0.26)",
+            hoverinfo="skip",
+        ))
+
+    visible = demand >= 0
+    fig.add_trace(go.Scatter(x=q[visible], y=demand[visible], name="Demand", line=dict(width=3, color=GREEN)))
+    fig.add_trace(go.Scatter(x=q, y=supply, name="Supply before tax", line=dict(width=3, color=SAGE, dash="dash")))
+    fig.add_trace(go.Scatter(x=q, y=supply_tax, name="Supply plus tax", line=dict(width=3, color=GOLD)))
+    fig.add_trace(go.Scatter(x=[q0], y=[p0], mode="markers+text", text=["Pre-tax"], textposition="top center", marker=dict(size=11, color=BLUE), name="Pre-tax equilibrium"))
+    fig.add_trace(go.Scatter(x=[q_tax], y=[pc], mode="markers+text", text=["Consumer price"], textposition="top center", marker=dict(size=12, color=POINT), name="Price paid by buyers"))
+    fig.add_trace(go.Scatter(x=[q_tax], y=[pp], mode="markers+text", text=["Producer price"], textposition="bottom center", marker=dict(size=12, color=RED), name="Price received by sellers"))
+    fig.add_shape(type="line", x0=q_tax, x1=q_tax, y0=pp, y1=pc, line=dict(width=4, color=POINT))
+    fig.add_shape(type="line", x0=0, x1=q_tax, y0=pc, y1=pc, line=dict(width=1, dash="dot", color=POINT))
+    fig.add_shape(type="line", x0=0, x1=q_tax, y0=pp, y1=pp, line=dict(width=1, dash="dot", color=RED))
+    fig.update_xaxes(title="Quantity", range=[0, xmax])
+    fig.update_yaxes(title="Price", range=[max(0, min(supply_intercept, pp) * 0.95), ymax])
+    fig.update_layout(legend=dict(orientation="h", y=1.16, x=0))
     st.plotly_chart(styled(fig), use_container_width=True, key="tax_incidence")
-    c1, c2 = st.columns(2)
-    c1.metric("Consumer burden", f"{consumer_burden:.2f}", f"{consumer_share:.0%}")
-    c2.metric("Producer burden", f"{producer_burden:.2f}", f"{producer_share:.0%}")
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Consumer burden", f"{consumer_burden:.2f}", f"{consumer_share:.0%}" if tax else "0%")
+    c2.metric("Producer burden", f"{producer_burden:.2f}", f"{producer_share:.0%}" if tax else "0%")
+    c3.metric("Quantity change", f"{q_tax - q0:.1f}")
+    c4.metric("Tax revenue", f"{tax_revenue:.1f}")
+
+    c5, c6, c7, c8 = st.columns(4)
+    c5.metric("Consumer surplus", f"{post_cs:.1f}", f"{post_cs - pre_cs:.1f}")
+    c6.metric("Producer surplus", f"{post_ps:.1f}", f"{post_ps - pre_ps:.1f}")
+    c7.metric("Deadweight loss", f"{deadweight_loss:.1f}")
+    c8.metric("Total surplus after tax", f"{post_cs + post_ps + tax_revenue:.1f}")
+
     if st.toggle("Full analysis", value=False, key="incidence_analysis"):
-        st.markdown("The less elastic side of the market bears more of the tax because it has fewer good alternatives. Legal responsibility for remitting the tax does not determine economic burden.")
+        st.markdown(
+            "The supply-side tax shifts the supply curve up by the tax amount, creating a wedge between the price buyers pay and the price sellers receive. The less elastic side bears more of that wedge because it changes quantity less in response to price. When demand is relatively inelastic, buyers absorb more of the tax through a higher consumer price. When supply is relatively inelastic, sellers absorb more through a lower producer price."
+        )
 
 
 def behavioral_policy_app():

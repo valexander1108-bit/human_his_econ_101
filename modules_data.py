@@ -134,13 +134,12 @@ MICRO_MODULES = [{'id': 1,
                       'optimization with present-biased behavior.',
   'materials': {'models': [{'label': 'Production Function and Marginal Product',
                             'url': '?model=Production%20Function%20and%20Marginal%20Product'},
-                           {'label': 'Utility', 'url': '?model=Utility'},
-                           {'label': 'Optimal Choice', 'url': '?model=Optimal%20Choice'},
                            {'label': 'Labor-Leisure Choice',
                             'url': '?model=Labor-Leisure%20Choice'},
+                           {'label': 'Utility', 'url': '?model=Utility'},
+                           {'label': 'Optimal Choice', 'url': '?model=Optimal%20Choice'},
                            {'label': 'Intertemporal Choice',
-                            'url': '?model=Intertemporal%20Choice'},
-                           {'label': 'Behavioral Policy', 'url': '?model=Behavioral%20Policy'}],
+                            'url': '?model=Intertemporal%20Choice'}],
                 'readings': [{'chapter': 2,
                               'label': 'OpenStax Ch 2: Choice in a World of Scarcity',
                               'url': 'https://openstax.org/books/principles-microeconomics-3e/pages/2-introduction-to-choice-in-a-world-of-scarcity'},
@@ -496,13 +495,14 @@ MICRO_MODULES = [{'id': 1,
                       'toolkit cannot represent.\n'
                       '- Simulate Malthusian dynamics, external costs, or climate damages to test '
                       'the bridge thesis rigorously.',
-  'materials': {'models': [{'label': 'Malthus and Growth', 'url': '?model=Malthus%20and%20Growth'},
-                           {'label': 'Capitalism and Global Inequality',
-                            'url': '?model=Capitalism%20and%20Global%20Inequality'},
-                           {'label': 'GDP and Wellbeing Limits',
-                            'url': '?model=GDP%20and%20Wellbeing%20Limits'},
-                           {'label': 'Capitalism and Climate Change',
-                            'url': '?model=Capitalism%20and%20Climate%20Change'}],
+  'materials': {'models': [{'label': 'Malthusian Trap and Demographic Transition',
+                            'url': '?model=Malthusian%20Trap%20and%20Demographic%20Transition'},
+                           {'label': 'Three Engines and the Great Divergence',
+                            'url': '?model=Three%20Engines%20and%20the%20Great%20Divergence'},
+                           {'label': 'Poverty, GDP, and the Kuznets Curve',
+                            'url': '?model=Poverty,%20GDP,%20and%20the%20Kuznets%20Curve'},
+                           {'label': 'Climate Externality and the Atmosphere Commons',
+                            'url': '?model=Climate%20Externality%20and%20the%20Atmosphere%20Commons'}],
                 'readings': [],
                 'extensions': [],
                 'labs': [],
@@ -1140,16 +1140,19 @@ for module in MICRO_MODULES:
 
 # --- Ingest course links workbook/CSV to fill module resources ---
 COURSE_LINKS_FILENAME = "Course Links & Resources 6d6e76ec5670407fb399d4ec39993f2c_all.csv"
+COURSE_LINKS_UPDATED_FILENAME = "Course Links-Table 1.csv"
 COURSE_LINKS_WORKBOOK = "ECN101_Course_Links_Resources_Updated.xlsx"
 _BASE_DIR = Path(__file__).resolve().parent
-FINAL_BUILD_DIR = _BASE_DIR / "data" / "Running Materials" / "Final Build"
+_RUNNING_MATERIALS_DIR = _BASE_DIR / "data" / "Running Materials"
+FINAL_BUILD_DIR = _RUNNING_MATERIALS_DIR / "Final Build"
 _COURSE_LINKS_CANDIDATES = [
-    _BASE_DIR / "data" / "Running Materials" / COURSE_LINKS_WORKBOOK,
+    _RUNNING_MATERIALS_DIR / COURSE_LINKS_UPDATED_FILENAME, # current updated syllabus source
+    _RUNNING_MATERIALS_DIR / COURSE_LINKS_WORKBOOK,
     _BASE_DIR / "data" / COURSE_LINKS_FILENAME,          # new canonical location
     _BASE_DIR / "dev_materials" / COURSE_LINKS_FILENAME, # legacy location (fallback)
 ]
 
-COURSE_LINKS_PATH = next((p for p in _COURSE_LINKS_CANDIDATES if p.exists()), _COURSE_LINKS_CANDIDATES[0])
+COURSE_LINKS_PATH = next((p for p in _COURSE_LINKS_CANDIDATES if p.exists()), _RUNNING_MATERIALS_DIR / COURSE_LINKS_UPDATED_FILENAME)
 
 
 def _parse_module_id(module_str: str):
@@ -1221,7 +1224,8 @@ def _load_course_links(source_path: Path):
         resource_type = str(row.get("Resource Type") or row.get("Resource Type 1") or "").strip().lower()
         title = str(row.get("Link Title") or row.get("\ufeffLink Title") or "").strip()
         desc = str(row.get("Description") or "").strip()
-        label = title or desc or "Resource"
+        module_title = str(row.get("New Module Title") or row.get("Module Title") or "").strip()
+        label = title or desc or module_title or "Resource"
 
         if not url or not resource_type:
             continue
@@ -1230,6 +1234,9 @@ def _load_course_links(source_path: Path):
             module_id,
             {"slides": [], "guided_notes": [], "quizzes": [], "required_readings": [], "optional_readings": []},
         )
+
+        if label == module_title and resource_type in {"lecture slides", "guided notes"}:
+            label = f"{module_title} {'Slides' if resource_type == 'lecture slides' else 'Guided Notes'}"
 
         item = {"label": label, "url": url}
         if resource_type == "lecture slides":
@@ -1258,9 +1265,9 @@ for module in MICRO_MODULES:
     materials = module.setdefault("materials", {})
 
     if links.get("slides"):
-        materials["slides"] = links["slides"][0]["url"] if len(links["slides"]) == 1 else links["slides"]
+        materials["slides"] = links["slides"]
     if links.get("guided_notes"):
-        materials["guided_notes"] = links["guided_notes"][0]["url"] if len(links["guided_notes"]) == 1 else links["guided_notes"]
+        materials["guided_notes"] = links["guided_notes"]
     if links.get("labs"):
         materials["labs"] = links["labs"]
     materials["khan"] = links.get("quizzes", [])

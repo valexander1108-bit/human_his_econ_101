@@ -392,13 +392,13 @@ Coding, calculus, linear algebra, simulations, proofs, and nonlinear derivations
 | --- | --- | --- | --- | --- |
 | 1 | Economics Pretest | Khan Academy Course Challenge | Khan Academy (keep scratch) | Participation |
 | 1 | Math Diagnostic | Khan Academy Middle/HS Math | Khan Academy (keep scratch) | Participation |
-| 3 | Independent Practice - Notebook 1 | Khan Academy Basic Economic Concepts | Khan + upload to Canvas | 2% |
-| 4 | Formative 1 | Modules 1 & 2 | In-class | ~3.33% |
-| 5 | Independent Practice - Notebook 2 | Khan Academy Supply & Demand | Khan + upload to Canvas | 2% |
+| 2 | Independent Practice - Notebook 1 | Khan Academy Basic Economic Concepts | Khan + upload to Canvas | 2% |
+| 3 | Formative 1 | Modules 1, 2, 3 | In-class | ~3.33% |
+| 5 | Independent Practice - Notebook 2 | Khan Academy Supply & Demand / Factor Markets | Khan + upload to Canvas | 2% |
 | 6 | Formative 2 | Modules 4, 5, 6 | In-class | ~3.33% |
 | 7 | Summative 1 (Midterm) | Modules 1–6 | In-class | 20% |
-| 8 | Participation (First Half) | Discussions/tutorials | Instructor entered | 2% |
-| 10 | Independent Practice - Notebook 3 | Khan Academy Cost/PC | Khan + upload to Canvas | 2% |
+| 8 | Participation (First Half) | Classroom and Online Activities | Instructor entered | 2% |
+| 10 | Independent Practice - Notebook 3 | Khan Academy Production and Cost | Khan + upload to Canvas | 2% |
 | 10 | Formative 3 | Midterm 2 Study Guide covering Modules 7–10 | Hand-in | ~3.33% |
 | 12 | Independent Practice - Notebook 4 | Khan Academy Imperfect Competition | Khan + upload to Canvas | 2% |
 | 12 | Summative 2 (Midterm) | Modules 9–12 | In-person | 20% |
@@ -406,7 +406,7 @@ Coding, calculus, linear algebra, simulations, proofs, and nonlinear derivations
 | 15 | Economics Posttest | Khan Academy Course Challenge | In-person | Participation |
 | 15 | Independent Practice - Notebook 5 | Midterm Item Analysis | Online | 2% |
 | — | Cumulative Final | All material | In-person | 30% |
-| — | Participation (Second Half) | — | Instructor entered | 2% |
+| — | Participation (Second Half) | Classroom and Online Activities| Instructor entered | 2% |
 """)
 
     with st.expander("Late & Missed Work"):

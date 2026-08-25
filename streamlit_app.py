@@ -69,11 +69,10 @@ MODULES = {
     ],
     "Module 2 — ASYNC — Choice": [
         "Production Function and Marginal Product",
+        "Labor-Leisure Choice",
         "Utility",
         "Optimal Choice",
-        "Labor-Leisure Choice",
         "Intertemporal Choice",
-        "Behavioral Policy",
     ],
     "Module 3 — Supply and Demand": [
         "Demand (schedule → line)",
@@ -100,10 +99,10 @@ MODULES = {
         "Capital + Interest",
     ],
     "Module 6 — BRIDGE — Markets, History & Global Economy": [
-        "Malthus and Growth",
-        "Capitalism and Global Inequality",
-        "GDP and Wellbeing Limits",
-        "Capitalism and Climate Change",
+        "Malthusian Trap and Demographic Transition",
+        "Three Engines and the Great Divergence",
+        "Poverty, GDP, and the Kuznets Curve",
+        "Climate Externality and the Atmosphere Commons",
     ],
     "Module 7 — ASYNC — Structural Inequality: Core + Game Theory Preview": [
         "Structural Inequality Model",
@@ -236,13 +235,13 @@ def run_page(page_name: str):
         from apps.intertemporal_choice import app as ic_app; ic_app()
     elif page_name == "Behavioral Policy":
         from apps.remaining_models import behavioral_policy_app; behavioral_policy_app()
-    elif page_name == "Malthus and Growth":
+    elif page_name in ("Malthus and Growth", "Malthusian Trap and Demographic Transition"):
         from apps.remaining_models import malthus_growth_app; malthus_growth_app()
-    elif page_name == "GDP and Wellbeing Limits":
+    elif page_name in ("GDP and Wellbeing Limits", "Poverty, GDP, and the Kuznets Curve"):
         from apps.remaining_models import gdp_wellbeing_app; gdp_wellbeing_app()
-    elif page_name == "Capitalism and Climate Change":
+    elif page_name in ("Capitalism and Climate Change", "Climate Externality and the Atmosphere Commons"):
         from apps.remaining_models import capitalism_climate_app; capitalism_climate_app()
-    elif page_name in ("Capitalism and Global Inequality", "Global Inequality Model", "Structural Inequality Model"):
+    elif page_name in ("Capitalism and Global Inequality", "Global Inequality Model", "Structural Inequality Model", "Three Engines and the Great Divergence"):
         from apps.remaining_models import capitalism_inequality_app; capitalism_inequality_app()
     elif page_name == "Lorenz Curve and Gini Coefficient":
         from apps.remaining_models import lorenz_gini_app; lorenz_gini_app()
