@@ -335,20 +335,50 @@ def app():
         open_module_id = int(raw_open_module) if raw_open_module else None
     except (TypeError, ValueError):
         open_module_id = None
+    if open_module_id is not None:
+        st.session_state["syllabus_open_module"] = open_module_id
+    elif "syllabus_open_module" not in st.session_state:
+        st.session_state["syllabus_open_module"] = None
+    open_module_id = st.session_state["syllabus_open_module"]
 
-    # Sidebar table of contents for quick jumps (uses header anchors)
+    def _show_full_syllabus():
+        st.session_state["syllabus_open_module"] = None
+        st.query_params["view"] = "syllabus"
+        if "open_module" in st.query_params:
+            del st.query_params["open_module"]
+        st.rerun()
+
+    def _show_module(module_id: int):
+        st.session_state["syllabus_open_module"] = module_id
+        st.query_params["view"] = "syllabus"
+        st.query_params["open_module"] = str(module_id)
+        st.rerun()
+
+    # Sidebar table of contents. Buttons keep users inside the Streamlit app
+    # instead of relying on browser fragment navigation.
     with st.sidebar.expander("**Table of Contents**", expanded=True):
-        st.markdown("[**Overview**](?view=syllabus#overview)")
-        st.markdown("[**Objectives**](?view=syllabus#objectives)")
-        st.markdown("[**Content**](?view=syllabus#content)")
+        if st.button("Full Syllabus", use_container_width=True):
+            _show_full_syllabus()
         for module in MICRO_MODULES:
             module_id = module["id"]
             title = _module_display_title(module)
-            anchor = _module_anchor(title)
-            st.markdown(f"[**{title}**](?view=syllabus&open_module={module_id}#{anchor})")
-        st.markdown("[**Grades**](?view=syllabus#grades)")
-        st.markdown("[**Policies**](?view=syllabus#policies)")
-        st.markdown("[**Resources**](?view=syllabus#resources)")
+            is_current = module_id == open_module_id
+            label = f"{'Selected: ' if is_current else ''}{title}"
+            if st.button(
+                label,
+                key=f"toc_module_{module_id}",
+                use_container_width=True,
+                disabled=is_current,
+            ):
+                _show_module(module_id)
+
+    if open_module_id is not None:
+        selected_module = next((module for module in MICRO_MODULES if module["id"] == open_module_id), None)
+        if selected_module:
+            st.title("Course Syllabus")
+            render_module_block(selected_module, open_module_id)
+            return
+        st.session_state["syllabus_open_module"] = None
 
     render_course_header()
     for module in MICRO_MODULES:
