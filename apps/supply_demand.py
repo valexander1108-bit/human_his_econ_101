@@ -108,9 +108,9 @@ def app(scenario=None, **params):
     fig.update_yaxes(range=[ymin, ymax], title="Price (P)")
 
     # Grid + background (clean & readable)
-    fig.update_xaxes(showgrid=show_grid, gridwidth=1, gridcolor="rgba(0,0,0,0.12)", zeroline=False, ticks="outside")
-    fig.update_yaxes(showgrid=show_grid, gridwidth=1, gridcolor="rgba(0,0,0,0.12)", zeroline=False, ticks="outside")
-    fig.update_layout(plot_bgcolor="white", paper_bgcolor="white")
+    fig.update_xaxes(showgrid=show_grid, gridwidth=1, gridcolor="rgba(128,128,128,0.28)", zeroline=False, ticks="outside")
+    fig.update_yaxes(showgrid=show_grid, gridwidth=1, gridcolor="rgba(128,128,128,0.28)", zeroline=False, ticks="outside")
+    fig.update_layout(plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)")
 
     # Full-span lines (touch edges)
     if not hide_d:

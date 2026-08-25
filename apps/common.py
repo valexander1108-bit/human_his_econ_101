@@ -7,14 +7,15 @@ class Line:     # P = a + bQ
     a: float
     b: float
 
-# Consistent grid styling across all plots
-GRID_STYLE = dict(showgrid=True, gridwidth=1, gridcolor="rgba(0,0,0,0.18)")
+# Consistent grid styling across all plots. Neutral opacity works on both
+# Streamlit light and dark themes.
+GRID_STYLE = dict(showgrid=True, gridwidth=1, gridcolor="rgba(128,128,128,0.28)")
 
 def apply_grid(fig):
-    """Apply a light gray grid to both axes and standardize backgrounds."""
+    """Apply a neutral grid and transparent chart backgrounds."""
     fig.update_xaxes(**GRID_STYLE, zeroline=False)
     fig.update_yaxes(**GRID_STYLE, zeroline=False)
-    fig.update_layout(plot_bgcolor="white", paper_bgcolor="white")
+    fig.update_layout(plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)")
     return fig
 
 def line_y(line: Line, q):

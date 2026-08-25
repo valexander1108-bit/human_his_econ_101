@@ -8,6 +8,23 @@ from modules_data import MICRO_MODULES
 from data.module_summaries import MODULE_SUMMARIES
 
 
+def _module_display_title(module: dict) -> str:
+    format_label = module.get("format")
+    format_suffix = ""
+    if format_label == "ASYNC":
+        format_suffix = " [ASYNC]"
+    elif format_label == "BRIDGE":
+        format_suffix = " [BRIDGE]"
+    return f"Module {module['id']}: {module['title']}{format_suffix}"
+
+
+def _module_anchor(display_title: str) -> str:
+    anchor_text = display_title
+    slug = re.sub(r"[^a-z0-9\s-]", "", anchor_text.lower())
+    slug = re.sub(r"\s+", "-", slug).strip("-")
+    return slug
+
+
 def render_module_summary(module: dict):
     summary = MODULE_SUMMARIES.get(module["id"])
     if not summary:
@@ -93,14 +110,10 @@ _This course uses a **tiered learning structure** to support a wide range of lea
     st.markdown("---")
 def render_module_block(module: dict, open_module_id: int | None = None):
     format_label = module.get("format")
-    format_suffix = ""
-    if format_label == "ASYNC":
-        format_suffix = " [ASYNC]"
-    elif format_label == "BRIDGE":
-        format_suffix = " [BRIDGE]"
-    title = f"Module {module['id']}: {module['title']}{format_suffix}"
-    st.markdown(f"<span id='module-{module['id']}-learning'></span>", unsafe_allow_html=True)
-    with st.expander(title, expanded=(module["id"] == open_module_id)):
+    title = _module_display_title(module)
+    st.markdown("---")
+    st.markdown(f"## {title}")
+    with st.expander("Learning Plan and Course Materials", expanded=(module["id"] == open_module_id)):
         openstax_optional = module.get("openstax", {}).get("optional", [])
         if format_label == "ASYNC":
             st.info("ASYNC MODULE: recorded lecture, worksheet, and independent application task.")
@@ -325,43 +338,14 @@ def app():
 
     # Sidebar table of contents for quick jumps (uses header anchors)
     with st.sidebar.expander("**Table of Contents**", expanded=True):
-        def _toc_module(module_id: int, title: str):
-            st.markdown(f"[**{module_id} - {title}**](?open_module={module_id}#module-{module_id}-learning)")
-
-        def _toc_materials(module_id: int):
-            st.markdown(
-                f"<div style='margin:-0.55rem 0 0.2rem 0.75rem;font-size:0.86rem;'>"
-                f"<a href='?open_module={module_id}#module-{module_id}-course-materials'>materials</a></div>",
-                unsafe_allow_html=True,
-            )
-
         st.markdown("[**Overview**](#overview)")
         st.markdown("[**Objectives**](#objectives)")
         st.markdown("[**Content**](#content)")
-        _toc_module(1, "Economic Thought & Modeling")
-        _toc_materials(1)
-        _toc_module(2, "Choice")
-        _toc_materials(2)
-        _toc_module(3, "Supply and Demand")
-        _toc_materials(3)
-        _toc_module(4, "Market Analysis: Elasticity & Efficiency")
-        _toc_materials(4)
-        _toc_module(5, "Factor Markets")
-        _toc_materials(5)
-        _toc_module(6, "Bridge: Markets, History & Global Economy")
-        _toc_materials(6)
-        _toc_module(7, "Structural Inequality: Core + Game Theory Preview")
-        _toc_materials(7)
-        _toc_module(8, "Structural Inequality: Extensions")
-        _toc_materials(8)
-        _toc_module(9, "Firms & Cost of Production")
-        _toc_materials(9)
-        _toc_module(10, "Profit Maximization")
-        _toc_materials(10)
-        _toc_module(11, "Imperfect Competition & Game Theory")
-        _toc_materials(11)
-        _toc_module(12, "Policy, Paradox & Human Perspectives")
-        _toc_materials(12)
+        for module in MICRO_MODULES:
+            module_id = module["id"]
+            title = _module_display_title(module)
+            anchor = _module_anchor(title)
+            st.markdown(f"[**{title}**](?open_module={module_id}#{anchor})")
         st.markdown("[**Grades**](#grades)")
         st.markdown("[**Policies**](#policies)")
         st.markdown("[**Resources**](#resources)")

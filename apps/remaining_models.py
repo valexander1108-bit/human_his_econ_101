@@ -22,8 +22,8 @@ def styled(fig, height=540):
         height=height,
         margin=dict(l=40, r=20, t=30, b=40),
         legend=dict(orientation="h", y=1.08, x=0),
-        plot_bgcolor="white",
-        paper_bgcolor="white",
+        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="rgba(0,0,0,0)",
     )
     apply_grid(fig)
     return fig

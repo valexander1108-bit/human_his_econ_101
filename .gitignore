@@ -28,7 +28,8 @@ dist/
 .eggs/
 *.manifest
 *.spec
-.streamlit/
+.streamlit/*
+!.streamlit/config.toml
 *.lock
 poetry.lock
 Pipfile.lock

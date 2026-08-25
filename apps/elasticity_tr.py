@@ -146,7 +146,7 @@ def app():
     fig.update_yaxes(range=[0, ymax], title_text="Price (P)", row=1, col=1)
     fig.update_xaxes(range=[0, xmax], title_text="Quantity (Q)", row=1, col=2)
     fig.update_yaxes(range=[0, tr_ymax], title_text="Total revenue", row=1, col=2)
-    fig.update_layout(height=560, plot_bgcolor="white", paper_bgcolor="white", legend=dict(orientation="h", y=1.12, x=0))
+    fig.update_layout(height=560, plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)", legend=dict(orientation="h", y=1.12, x=0))
     apply_grid(fig)
 
     st.plotly_chart(fig, use_container_width=True, key="elasticity_tr_chart")

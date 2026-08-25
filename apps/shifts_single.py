@@ -126,15 +126,15 @@ def app(scenario=None, **params):
     )
     fig.update_xaxes(
         range=[xmin, xmax], title="Quantity (Q)",
-        showgrid=show_grid, gridwidth=1, gridcolor="rgba(0,0,0,0.12)",
+        showgrid=show_grid, gridwidth=1, gridcolor="rgba(128,128,128,0.28)",
         zeroline=False, ticks="outside"
     )
     fig.update_yaxes(
         range=[ymin, y_needed], title="Price (P)",
-        showgrid=show_grid, gridwidth=1, gridcolor="rgba(0,0,0,0.12)",
+        showgrid=show_grid, gridwidth=1, gridcolor="rgba(128,128,128,0.28)",
         zeroline=False, ticks="outside"
     )
-    fig.update_layout(plot_bgcolor="white", paper_bgcolor="white")
+    fig.update_layout(plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)")
 
     # Baseline lines (ghost, dashed)
     if show_baseline:

@@ -44,8 +44,8 @@ def app():
             yaxis=dict(title="Total product"),
             yaxis2=dict(title="AP and MP", overlaying="y", side="right"),
             legend=dict(orientation="h", y=1.08, x=0),
-            plot_bgcolor="white",
-            paper_bgcolor="white",
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
         )
         fig.update_xaxes(title="Labor")
         apply_grid(fig)
@@ -58,7 +58,7 @@ def app():
         fig.add_trace(go.Scatter(x=[hire_labor], y=[wage], mode="markers+text", text=["hire until MRP=w"], textposition="top center", marker=dict(size=12, color="#B38210"), name="Hiring rule"))
         fig.update_xaxes(title="Labor")
         fig.update_yaxes(title="Dollars")
-        fig.update_layout(height=540, legend=dict(orientation="h", y=1.08, x=0), plot_bgcolor="white", paper_bgcolor="white")
+        fig.update_layout(height=540, legend=dict(orientation="h", y=1.08, x=0), plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)")
         apply_grid(fig)
         st.plotly_chart(fig, use_container_width=True, key="factors_mrp_chart")
 

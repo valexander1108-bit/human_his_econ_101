@@ -119,19 +119,19 @@ def make_pane(title, D0, S0, xmax, ymax, which, *, hide_d, hide_s, show_baseline
     # Axes styling + grid; automargins to avoid label clipping
     fig.update_xaxes(
         range=[xmin, xmax], title="Quantity (Q)",
-        showgrid=show_grid, gridwidth=1, gridcolor="rgba(0,0,0,0.12)",
+        showgrid=show_grid, gridwidth=1, gridcolor="rgba(128,128,128,0.28)",
         zeroline=False, ticks="outside", automargin=True
     )
     fig.update_yaxes(
         range=[ymin, y_needed], title="Price (P)",
-        showgrid=show_grid, gridwidth=1, gridcolor="rgba(0,0,0,0.12)",
+        showgrid=show_grid, gridwidth=1, gridcolor="rgba(128,128,128,0.28)",
         zeroline=False, ticks="outside", automargin=True
     )
 
     # Global layout tweaks for better rendering & stability
     fig.update_layout(
-        plot_bgcolor="white",
-        paper_bgcolor="white",
+        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="rgba(0,0,0,0)",
         height=560,
         margin=dict(l=40, r=24, t=24, b=40),
         uirevision="shifts-double",  # keep zoom/pan state while sliders move

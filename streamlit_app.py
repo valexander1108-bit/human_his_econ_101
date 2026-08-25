@@ -18,28 +18,18 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# === Custom CSS: Google Fonts + brand tokens ===
+# === Custom CSS: typography only; colors come from .streamlit/config.toml ===
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
 
-:root{
-  --brand-primary: #71bb94;
-  --bg: #ededed;
-  --bg-2: #ebdbc9;
-  --text: #1C1B1B;
-  --accent: #a69651;
-  --font-heading: "Cormorant Garamond", serif;
-  --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+:root {
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
-section[data-testid="stSidebar"] { background: var(--bg-2) !important; }
-
-button[kind="primary"] { background: var(--brand-primary) !important; border: none !important; }
-button[kind="secondary"] { color: var(--brand-primary) !important; border-color: var(--brand-primary) !important; }
-
-a, .stMarkdown a { color: var(--accent) !important; text-decoration: none; }
-a:hover { text-decoration: underline; }
+h1, h2, h3 { font-family: var(--font-heading); }
+body, p, div, span, label { font-family: var(--font-body); }
 </style>
 """, unsafe_allow_html=True)
 
@@ -48,12 +38,12 @@ import plotly.io as pio
 
 pio.templates["ecn101"] = dict(
     layout=dict(
-        paper_bgcolor="#555252",
-        plot_bgcolor="#ededed",
-        font=dict(family="DM Sans, sans-serif", color="#1C1B1B"),
-        colorway=["#1d511e", "#C49A6C", "#6C7A61", "#8B6B4A", "#563b19"],
-        xaxis=dict(gridcolor="#696867", zerolinecolor="#B5881F"),
-        yaxis=dict(gridcolor="#696867", zerolinecolor="#B38210"),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(family="DM Sans, sans-serif"),
+        colorway=["#2f6f4e", "#b08b3e", "#4f6f8f", "#9a5b45", "#6f5d8c"],
+        xaxis=dict(gridcolor="rgba(128,128,128,0.28)", zerolinecolor="rgba(128,128,128,0.45)"),
+        yaxis=dict(gridcolor="rgba(128,128,128,0.28)", zerolinecolor="rgba(128,128,128,0.45)"),
         legend=dict(borderwidth=0),
         margin=dict(l=40, r=20, t=40, b=40),
     )
