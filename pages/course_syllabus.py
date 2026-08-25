@@ -112,7 +112,7 @@ def render_module_block(module: dict, open_module_id: int | None = None):
     format_label = module.get("format")
     title = _module_display_title(module)
     st.markdown("---")
-    st.markdown(f"## {title}")
+    st.header(title, anchor=_module_anchor(title))
     with st.expander("Learning Plan and Course Materials", expanded=(module["id"] == open_module_id)):
         openstax_optional = module.get("openstax", {}).get("optional", [])
         if format_label == "ASYNC":
@@ -338,17 +338,17 @@ def app():
 
     # Sidebar table of contents for quick jumps (uses header anchors)
     with st.sidebar.expander("**Table of Contents**", expanded=True):
-        st.markdown("[**Overview**](#overview)")
-        st.markdown("[**Objectives**](#objectives)")
-        st.markdown("[**Content**](#content)")
+        st.markdown("[**Overview**](?view=syllabus#overview)")
+        st.markdown("[**Objectives**](?view=syllabus#objectives)")
+        st.markdown("[**Content**](?view=syllabus#content)")
         for module in MICRO_MODULES:
             module_id = module["id"]
             title = _module_display_title(module)
             anchor = _module_anchor(title)
-            st.markdown(f"[**{title}**](?open_module={module_id}#{anchor})")
-        st.markdown("[**Grades**](#grades)")
-        st.markdown("[**Policies**](#policies)")
-        st.markdown("[**Resources**](#resources)")
+            st.markdown(f"[**{title}**](?view=syllabus&open_module={module_id}#{anchor})")
+        st.markdown("[**Grades**](?view=syllabus#grades)")
+        st.markdown("[**Policies**](?view=syllabus#policies)")
+        st.markdown("[**Resources**](?view=syllabus#resources)")
 
     render_course_header()
     for module in MICRO_MODULES:

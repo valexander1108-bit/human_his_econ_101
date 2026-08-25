@@ -149,6 +149,20 @@ if "mode_sync_needed" not in st.session_state:
 
 # Honor deep links like ?model=Budget%20Constraint
 params = st.query_params
+VIEW_MODES = {
+    "home": "Home",
+    "syllabus": "Course Syllabus",
+    "map": "Historical Map",
+    "models": "Economic Models",
+}
+requested_view = params.get("view")
+if requested_view in VIEW_MODES:
+    st.session_state["mode"] = VIEW_MODES[requested_view]
+    st.session_state["mode_sync_needed"] = True
+elif "open_module" in params:
+    st.session_state["mode"] = "Course Syllabus"
+    st.session_state["mode_sync_needed"] = True
+
 if "model" in params:
     target = params.get("model")
     if target in ALL_PAGES:
