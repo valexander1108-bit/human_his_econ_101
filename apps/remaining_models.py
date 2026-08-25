@@ -40,6 +40,160 @@ def cost_values(q, fc, vc_base, vc_slope, vc_curve):
     return vc, tc, afc, avc, atc, mc
 
 
+def production_function_mp_app():
+    st.subheader("Production Function and Marginal Product")
+    st.caption("Supports Module 2's production-function and diminishing marginal product worksheet prompt.")
+
+    max_input = st.sidebar.slider("Maximum input units", 4, 20, 10, 1)
+    productivity = st.sidebar.slider("Productivity scale", 0.5, 8.0, 3.0, 0.25)
+    curvature = st.sidebar.slider("Diminishing-returns strength", 0.20, 0.95, 0.55, 0.05)
+
+    labor = np.arange(0, max_input + 1)
+    total_product = productivity * np.power(labor, curvature)
+    total_product[0] = 0
+    marginal_product = np.r_[np.nan, np.diff(total_product)]
+    average_product = np.divide(total_product, labor, out=np.zeros_like(total_product), where=labor > 0)
+
+    table = pd.DataFrame(
+        {
+            "Input": labor,
+            "Total product": np.round(total_product, 2),
+            "Marginal product": np.round(marginal_product, 2),
+            "Average product": np.round(average_product, 2),
+        }
+    )
+    st.dataframe(table, use_container_width=True, hide_index=True)
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=labor, y=total_product, name="Total product", line=dict(width=3, color=GREEN)))
+    fig.add_trace(go.Bar(x=labor[1:], y=marginal_product[1:], name="Marginal product", marker_color=GOLD, yaxis="y2", opacity=0.65))
+    fig.update_layout(yaxis=dict(title="Total product"), yaxis2=dict(title="Marginal product", overlaying="y", side="right"))
+    fig.update_xaxes(title="Input units")
+    st.plotly_chart(styled(fig), use_container_width=True, key="production_function_mp")
+
+    if st.toggle("Full analysis", value=False, key="production_function_mp_analysis"):
+        st.markdown(
+            "A production function maps inputs into output. Marginal product is the extra output from one more input. "
+            "Diminishing marginal product means total product can keep rising while each additional input adds less than the previous one."
+        )
+        st.latex(r"MP=\Delta TP/\Delta L")
+
+
+def vmp_derived_demand_app():
+    st.subheader("Derived Demand and VMP Hiring Rule")
+    st.caption("Matches the Module 5 Florentine cloth merchant problem: VMP = output price x marginal product.")
+
+    output_price = st.sidebar.slider("Price per unit of output", 1.0, 30.0, 8.0, 0.5)
+    wage = st.sidebar.slider("Weekly wage", 1.0, 100.0, 24.0, 1.0)
+    mp_values = [10, 8, 6, 3, 2]
+    workers = np.arange(1, len(mp_values) + 1)
+    vmp = output_price * np.array(mp_values)
+    hire = vmp >= wage
+    optimal_workers = int(workers[hire][-1]) if hire.any() else 0
+
+    table = pd.DataFrame(
+        {
+            "Workers": workers,
+            "MP": mp_values,
+            "VMP = P x MP": np.round(vmp, 2),
+            "Wage": wage,
+            "Hire?": ["Yes" if h else "No" for h in hire],
+        }
+    )
+    st.dataframe(table, use_container_width=True, hide_index=True)
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=workers, y=vmp, name="VMP / labor demand", mode="lines+markers", line=dict(width=3, color=GREEN)))
+    fig.add_trace(go.Scatter(x=workers, y=np.full_like(workers, wage, dtype=float), name="Wage", line=dict(width=3, color=GOLD, dash="dash")))
+    fig.update_xaxes(title="Workers")
+    fig.update_yaxes(title="Florins per week")
+    st.plotly_chart(styled(fig), use_container_width=True, key="vmp_derived_demand")
+
+    c1, c2 = st.columns(2)
+    c1.metric("Optimal workers", optimal_workers)
+    c2.metric("Rule", "Hire while VMP >= W")
+    if st.toggle("Full analysis", value=False, key="vmp_derived_demand_analysis"):
+        st.markdown(
+            "Factor demand is derived from product demand. The firm hires another worker only when the dollar value of that worker's extra output is at least as large as the wage."
+        )
+        st.latex(r"VMP=P_{output}\times MP,\qquad hire\ while\ VMP\ge W")
+
+
+def lorenz_gini_app():
+    st.subheader("Lorenz Curve and Gini Coefficient")
+    st.caption("Uses the Module 7 worksheet quintile shares by default.")
+
+    default_shares = [4.0, 9.0, 15.0, 23.0, 49.0]
+    shares = []
+    st.sidebar.markdown("**Income shares by quintile**")
+    for idx, default in enumerate(default_shares, 1):
+        shares.append(st.sidebar.number_input(f"Quintile {idx} share (%)", 0.0, 100.0, default, 0.5))
+
+    total = sum(shares)
+    normalized = np.array(shares) / total if total else np.array(default_shares) / 100
+    cumulative_income = np.r_[0, np.cumsum(normalized)]
+    cumulative_population = np.linspace(0, 1, len(cumulative_income))
+    gini = 1 - 2 * np.trapz(cumulative_income, cumulative_population)
+
+    table = pd.DataFrame(
+        {
+            "Quintile": ["Lowest 20%", "Second 20%", "Third 20%", "Fourth 20%", "Top 20%"],
+            "Share of total income (%)": np.round(normalized * 100, 2),
+            "Cumulative income share (%)": np.round(cumulative_income[1:] * 100, 2),
+            "Perfectly equal (%)": [20, 40, 60, 80, 100],
+        }
+    )
+    st.dataframe(table, use_container_width=True, hide_index=True)
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=cumulative_population, y=cumulative_population, name="Perfect equality", line=dict(width=2, dash="dash", color=SAGE)))
+    fig.add_trace(go.Scatter(x=cumulative_population, y=cumulative_income, name="Lorenz curve", fill="tonexty", line=dict(width=3, color=RED)))
+    fig.update_xaxes(title="Cumulative population share", tickformat=".0%")
+    fig.update_yaxes(title="Cumulative income share", tickformat=".0%")
+    st.plotly_chart(styled(fig), use_container_width=True, key="lorenz_gini")
+
+    st.metric("Approximate Gini coefficient", f"{gini:.3f}")
+    if st.toggle("Full analysis", value=False, key="lorenz_gini_analysis"):
+        st.markdown(
+            "The Lorenz curve plots cumulative income against cumulative population. The Gini coefficient is the area between the equality line and the Lorenz curve divided by the total area under equality."
+        )
+
+
+def economic_accounting_profit_app():
+    st.subheader("Economic vs Accounting Profit")
+    st.caption("Supports Module 9's Detroit/Flint profit problems: explicit costs are visible; implicit costs are opportunity costs.")
+
+    revenue = st.sidebar.number_input("Total revenue", 0.0, 10000000.0, 35000.0, 1000.0)
+    rent = st.sidebar.number_input("Rent or operating cost", 0.0, 10000000.0, 8000.0, 500.0)
+    materials = st.sidebar.number_input("Inventory / materials", 0.0, 10000000.0, 10000.0, 500.0)
+    foregone_wage = st.sidebar.number_input("Foregone wage or salary", 0.0, 10000000.0, 12000.0, 500.0)
+    savings = st.sidebar.number_input("Capital or savings invested", 0.0, 10000000.0, 20000.0, 1000.0)
+    alt_return = st.sidebar.slider("Alternative return on capital", 0.0, 20.0, 5.0, 0.5) / 100
+
+    explicit_costs = rent + materials
+    implicit_costs = foregone_wage + savings * alt_return
+    accounting_profit = revenue - explicit_costs
+    economic_profit = revenue - explicit_costs - implicit_costs
+
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Accounting profit", f"{accounting_profit:,.2f}")
+    c2.metric("Implicit costs", f"{implicit_costs:,.2f}")
+    c3.metric("Economic profit", f"{economic_profit:,.2f}")
+
+    fig = go.Figure()
+    fig.add_bar(x=["Revenue"], y=[revenue], name="Revenue", marker_color=GREEN)
+    fig.add_bar(x=["Explicit costs", "Implicit costs"], y=[explicit_costs, implicit_costs], name="Costs", marker_color=[GOLD, RED])
+    fig.update_yaxes(title="Dollars")
+    st.plotly_chart(styled(fig), use_container_width=True, key="economic_accounting_profit")
+
+    if st.toggle("Full analysis", value=False, key="economic_accounting_profit_analysis"):
+        st.markdown(
+            "Accounting profit subtracts explicit costs only. Economic profit subtracts explicit and implicit costs, so it asks whether the choice beats the next-best alternative."
+        )
+        st.latex(r"Accounting\ Profit=TR-Explicit\ Costs")
+        st.latex(r"Economic\ Profit=TR-Explicit\ Costs-Implicit\ Costs")
+
+
 def capitalism_climate_app():
     st.subheader("Capitalism and Climate Change: A Micro Externality Model")
     demand_intercept = st.sidebar.slider("Willingness-to-pay intercept", 20.0, 200.0, 110.0, 5.0)
@@ -158,8 +312,37 @@ def cost_production_app():
 
 def pc_profit_app():
     st.subheader("Perfect Competition: Profit Maximization")
-    fc = st.sidebar.slider("Fixed cost", 0.0, 500.0, 120.0, 10.0, key="pc_fc")
-    price = st.sidebar.slider("Market price", 1.0, 200.0, 70.0, 1.0, key="pc_p")
+    params = st.session_state.get("selected_model_params", {})
+    if params.get("worksheet_note"):
+        st.info(params["worksheet_note"])
+    if params.get("mc_schedule"):
+        schedule = pd.DataFrame(params["mc_schedule"], columns=["Q", "MC"])
+        price = st.sidebar.slider("Market price", 0.1, 200.0, float(params.get("price", 70.0)), 0.1, key="pc_p_schedule")
+        atc_at_q = float(params.get("atc_at_q", 0.0))
+        avc_at_q = float(params.get("avc_at_q", 0.0))
+        q_star = float(schedule.iloc[(schedule["MC"] - price).abs().idxmin()]["Q"])
+        mc_star = float(schedule.iloc[(schedule["Q"] - q_star).abs().idxmin()]["MC"])
+        profit = (price - atc_at_q) * q_star if atc_at_q else 0.0
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=schedule["Q"], y=schedule["MC"], mode="lines+markers", name="MC", line=dict(width=3, color=GREEN)))
+        fig.add_trace(go.Scatter(x=schedule["Q"], y=np.full(len(schedule), price), name="MR = P", line=dict(width=3, color=GOLD)))
+        if atc_at_q:
+            fig.add_trace(go.Scatter(x=[q_star], y=[atc_at_q], mode="markers+text", name="ATC at Q*", text=["ATC"], textposition="bottom center", marker=dict(size=11, color=RED)))
+        if avc_at_q:
+            fig.add_trace(go.Scatter(x=[q_star], y=[avc_at_q], mode="markers+text", name="AVC at Q*", text=["AVC"], textposition="bottom center", marker=dict(size=11, color=BLUE)))
+        fig.add_trace(go.Scatter(x=[q_star], y=[mc_star], mode="markers+text", name="MR = MC", text=["MR=MC"], textposition="top center", marker=dict(size=12, color=POINT)))
+        fig.update_xaxes(title="Output Q")
+        fig.update_yaxes(title="Dollars per unit")
+        st.plotly_chart(styled(fig), use_container_width=True, key="pc_profit_schedule")
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Profit-max Q", f"{q_star:.0f}")
+        c2.metric("Economic profit", f"{profit:.2f}")
+        c3.metric("Produce?", "Yes" if not avc_at_q or price >= avc_at_q else "Shut down")
+        return
+
+    max_fc = max(500.0, float(params.get("fixed_cost", 120.0)))
+    fc = st.sidebar.slider("Fixed cost", 0.0, max_fc, float(params.get("fixed_cost", 120.0)), 10.0, key="pc_fc")
+    price = st.sidebar.slider("Market price", 1.0, 200.0, float(params.get("price", 70.0)), 1.0, key="pc_p")
     q = np.linspace(1, 100, 500)
     vc, tc, afc, avc, atc, mc = cost_values(q, fc, 8.0, 0.55, 0.010)
     q_star = q[np.argmin(np.abs(mc - price))]
@@ -294,6 +477,85 @@ def game_theory_app():
         st.markdown("A Nash equilibrium occurs when each player is choosing a best response to the other player's strategy. Different games emphasize dominance, coordination, credibility, and repeated interaction.")
 
 
+def game_theory_preview_app():
+    st.subheader("Game Theory Preview: Players, Strategies, and Payoffs")
+    scenario = st.sidebar.selectbox(
+        "Preview scenario",
+        ["Marcus and coworkers ask for a raise", "Two food carts choose price posture"],
+    )
+    if scenario.startswith("Marcus"):
+        matrix = pd.DataFrame(
+            {
+                "Coworker asks": ["4, 4", "1, 5"],
+                "Coworker stays silent": ["5, 1", "2, 2"],
+            },
+            index=["Marcus asks", "Marcus stays silent"],
+        )
+        lesson = (
+            "This preview focuses on the structure: each worker's payoff depends on the "
+            "other worker's action. The collectively stronger outcome may be individually risky."
+        )
+    else:
+        matrix = pd.DataFrame(
+            {
+                "Ray keeps price high": ["3, 3", "5, 1"],
+                "Ray cuts price": ["1, 5", "2, 2"],
+            },
+            index=["Marcus keeps price high", "Marcus cuts price"],
+        )
+        lesson = (
+            "The point is strategic interdependence: Marcus's best move cannot be judged "
+            "without Ray's possible move. Formal Nash equilibrium comes later in Module 11."
+        )
+    st.dataframe(matrix, use_container_width=True)
+    st.info(lesson)
+    if st.toggle("Full analysis", value=False, key="game_preview_analysis"):
+        st.markdown(
+            "Module 7 should name players, strategies, and payoffs, and should let students see the prisoner's-dilemma structure. It should not require formal Nash-equilibrium analysis yet."
+        )
+
+
+def credit_exclusion_labor_power_app():
+    st.subheader("Credit Exclusion and Labor Power")
+    monthly_income = st.sidebar.slider("Monthly income", 800.0, 6000.0, 2000.0, 100.0)
+    repair_need = st.sidebar.slider("Emergency expense", 100.0, 3000.0, 500.0, 50.0)
+    low_apr = st.sidebar.slider("Credit-union APR", 0.0, 36.0, 6.0, 0.5)
+    high_apr = st.sidebar.slider("Payday APR", 40.0, 500.0, 300.0, 10.0)
+    months = st.sidebar.slider("Repayment horizon (months)", 1, 24, 6, 1)
+    ray_wage = st.sidebar.slider("Ray warehouse wage", 8.0, 40.0, 15.0, 0.5)
+    vmp = st.sidebar.slider("Marcus VMP", 8.0, 60.0, 24.0, 0.5)
+
+    def payoff(apr):
+        monthly_rate = apr / 100 / 12
+        if monthly_rate == 0:
+            return repair_need / months
+        return repair_need * monthly_rate / (1 - (1 + monthly_rate) ** (-months))
+
+    low_payment = payoff(low_apr)
+    high_payment = payoff(high_apr)
+    wage_gap = max(vmp - ray_wage, 0)
+    hours_needed_low = low_payment / max(ray_wage, 1e-9)
+    hours_needed_high = high_payment / max(ray_wage, 1e-9)
+
+    fig = go.Figure()
+    fig.add_bar(x=["Credit union", "Payday lender"], y=[low_payment, high_payment], name="Monthly payment", marker_color=[GREEN, RED])
+    fig.add_bar(x=["Ray wage", "Marcus VMP"], y=[ray_wage, vmp], name="Hourly value", marker_color=[GOLD, BLUE], yaxis="y2")
+    fig.update_layout(
+        yaxis=dict(title="Monthly loan payment"),
+        yaxis2=dict(title="Dollars per hour", overlaying="y", side="right"),
+    )
+    st.plotly_chart(styled(fig), use_container_width=True, key="credit_exclusion_labor_power")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Extra monthly credit burden", f"{high_payment - low_payment:.2f}")
+    c2.metric("Extra work hours/month", f"{hours_needed_high - hours_needed_low:.1f}")
+    c3.metric("VMP-wage gap", f"{wage_gap:.2f}/hr")
+    if st.toggle("Full analysis", value=False, key="credit_exclusion_analysis"):
+        st.markdown(
+            "Credit exclusion compresses the feasible set even when income is unchanged. Labor power matters at the same time: if Marcus is paid below VMP, he has less monthly income available to absorb shocks or finance exit from Ray's warehouse."
+        )
+        st.latex(r"\text{monthly loan payment}=\frac{Lr}{1-(1+r)^{-n}}")
+
+
 def types_goods_app():
     st.subheader("Types of Goods")
     rivalry = st.sidebar.slider("Rivalry", 0.0, 1.0, 0.50, 0.05)
@@ -360,3 +622,237 @@ def competition_fairness_app():
     st.metric("Fairness risk", f"{fairness_risk:.2f}", "higher means weaker competitive discipline")
     if st.toggle("Full analysis", value=False, key="fairness_analysis"):
         st.markdown("Competition can promote fairness by limiting market power, but outcomes can still be unfair when entry is blocked, information is unequal, or bargaining power is imbalanced. Policy choices define which forms of competition society treats as legitimate.")
+
+
+def technology_ai_climate_inequality_app():
+    st.subheader("Technology, AI Bias, and Climate Inequality")
+    years = np.arange(0, 21)
+    high_access_speed = st.sidebar.slider("High-income adoption speed", 0.10, 1.00, 0.45, 0.05)
+    low_access_speed = st.sidebar.slider("Low-income adoption speed", 0.05, 0.80, 0.22, 0.05)
+    skill_complement = st.sidebar.slider("Skill-complement payoff", 0.0, 2.0, 0.75, 0.05)
+    proxy_bias = st.sidebar.slider("AI proxy bias", 0.0, 0.6, 0.22, 0.02)
+    climate_exposure = st.sidebar.slider("Climate exposure gap", 0.0, 0.6, 0.25, 0.02)
+
+    high_adopt = 1 / (1 + np.exp(-high_access_speed * (years - 8)))
+    low_adopt = 1 / (1 + np.exp(-low_access_speed * (years - 11)))
+    high_mrp = 20 + 18 * high_adopt * (1 + skill_complement)
+    low_mrp = 20 + 18 * low_adopt * (1 + skill_complement) * (1 - proxy_bias) * (1 - climate_exposure)
+
+    tab1, tab2 = st.tabs(["Diffusion", "MRP gap"])
+    with tab1:
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=years, y=high_adopt, name="High-access group", line=dict(width=4, color=GREEN)))
+        fig.add_trace(go.Scatter(x=years, y=low_adopt, name="Low-access group", line=dict(width=4, color=RED)))
+        fig.update_xaxes(title="Years after new technology")
+        fig.update_yaxes(title="Adoption share", range=[0, 1])
+        st.plotly_chart(styled(fig), use_container_width=True, key="tech_diffusion")
+    with tab2:
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=years, y=high_mrp, name="High-access MRP", line=dict(width=4, color=GREEN)))
+        fig.add_trace(go.Scatter(x=years, y=low_mrp, name="Low-access MRP after bias/exposure", line=dict(width=4, color=RED)))
+        fig.update_xaxes(title="Years after new technology")
+        fig.update_yaxes(title="Estimated MRP")
+        st.plotly_chart(styled(fig), use_container_width=True, key="tech_mrp_gap")
+    st.metric("Final MRP gap", f"{high_mrp[-1] - low_mrp[-1]:.2f}")
+    if st.toggle("Full analysis", value=False, key="tech_ai_climate_analysis"):
+        st.markdown(
+            "The S-curve shows technology diffusion. Access gaps create early MRP gaps; skill complementarity can amplify them. Proxy bias and climate exposure can then make the final labor-market outcome even more unequal."
+        )
+
+
+def climate_distributional_injustice_app():
+    st.subheader("Climate as Distributional Injustice")
+    rich_emissions = st.sidebar.slider("High-income emissions responsibility", 0.10, 0.90, 0.70, 0.05)
+    low_emissions = 1 - rich_emissions
+    rich_exposure = st.sidebar.slider("High-income climate exposure", 0.05, 0.70, 0.25, 0.05)
+    low_exposure = 1 - rich_exposure
+    adaptation = st.sidebar.slider("Adaptation capacity gap", 0.0, 0.80, 0.45, 0.05)
+    land_mp = st.sidebar.slider("Baseline MP of exposed land/labor", 10.0, 100.0, 50.0, 1.0)
+
+    rich_damage = rich_exposure * (1 - adaptation) * land_mp
+    low_damage = low_exposure * (1 + adaptation) * land_mp
+    fig = go.Figure()
+    fig.add_bar(x=["High-income group", "Low-income group"], y=[rich_emissions, low_emissions], name="Emissions share", marker_color=BLUE)
+    fig.add_bar(x=["High-income group", "Low-income group"], y=[rich_exposure, low_exposure], name="Exposure share", marker_color=GOLD)
+    fig.add_bar(x=["High-income group", "Low-income group"], y=[rich_damage / land_mp, low_damage / land_mp], name="Productivity damage index", marker_color=RED)
+    fig.update_yaxes(title="Share / index")
+    st.plotly_chart(styled(fig), use_container_width=True, key="climate_distribution")
+    c1, c2 = st.columns(2)
+    c1.metric("High-income MP loss", f"{rich_damage:.1f}")
+    c2.metric("Low-income MP loss", f"{low_damage:.1f}")
+    if st.toggle("Full analysis", value=False, key="climate_distribution_analysis"):
+        st.markdown(
+            "The distributional injustice is the mismatch between responsibility and exposure. Climate shocks also operate through factor markets by lowering the marginal product of land and labor in exposed communities."
+        )
+
+
+def labor_leisure_app():
+    st.subheader("Labor-Leisure Choice")
+    hours = np.linspace(0, 16, 250)
+    wage = st.sidebar.slider("Wage", 1.0, 80.0, 18.0, 1.0)
+    nonlabor_income = st.sidebar.slider("Non-labor income", 0.0, 300.0, 40.0, 5.0)
+    preference_leisure = st.sidebar.slider("Preference for leisure", 0.10, 0.90, 0.45, 0.05)
+    total_time = st.sidebar.slider("Available hours", 8.0, 24.0, 16.0, 1.0)
+    leisure = total_time - hours
+    consumption = nonlabor_income + wage * hours
+    utility = (np.maximum(leisure, 0.01) ** preference_leisure) * (consumption ** (1 - preference_leisure))
+    i = int(np.argmax(utility))
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=leisure, y=consumption, name="Feasible frontier", line=dict(width=3, color=GREEN)))
+    fig.add_trace(go.Scatter(x=[leisure[i]], y=[consumption[i]], mode="markers+text", text=["Choice"], textposition="top center", marker=dict(size=12, color=POINT), name="Best bundle"))
+    fig.update_xaxes(title="Leisure hours")
+    fig.update_yaxes(title="Consumption")
+    st.plotly_chart(styled(fig), use_container_width=True, key="labor_leisure")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Work hours", f"{hours[i]:.1f}")
+    c2.metric("Leisure hours", f"{leisure[i]:.1f}")
+    c3.metric("Consumption", f"{consumption[i]:.2f}")
+    if st.toggle("Full analysis", value=False, key="labor_leisure_analysis"):
+        st.markdown("The wage is the opportunity cost of leisure. A higher wage rotates the feasible frontier and creates both substitution and income effects.")
+
+
+def malthus_growth_app():
+    st.subheader("Malthus, Technology, and the Growth Hockey Stick")
+    years = np.arange(0, 201)
+    tech_growth = st.sidebar.slider("Technology growth", 0.000, 0.040, 0.010, 0.002)
+    population_response = st.sidebar.slider("Population response", 0.000, 0.050, 0.018, 0.002)
+    shock_year = st.sidebar.slider("Shock year", 20, 180, 70, 5)
+    shock_size = st.sidebar.slider("Population shock", 0.0, 0.8, 0.35, 0.05)
+    technology = (1 + tech_growth) ** years
+    population = (1 + population_response) ** years
+    population = population * np.where(years >= shock_year, 1 - shock_size, 1)
+    income_pc = 100 * technology / np.maximum(population ** 0.55, 1e-9)
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=years, y=income_pc, name="Income per person", line=dict(width=4, color=GREEN)))
+    fig.add_trace(go.Scatter(x=years, y=100 * technology, name="Technology", line=dict(width=3, color=BLUE)))
+    fig.add_trace(go.Scatter(x=years, y=100 * population / population[0], name="Population", line=dict(width=3, color=RED)))
+    fig.update_xaxes(title="Years")
+    fig.update_yaxes(title="Index")
+    st.plotly_chart(styled(fig), use_container_width=True, key="malthus_growth")
+    st.metric("Final income per person index", f"{income_pc[-1]:.1f}")
+    if st.toggle("Full analysis", value=False, key="malthus_analysis"):
+        st.markdown("Malthusian pressure appears when population growth absorbs productivity gains. Sustained technological progress can break the trap and produce the hockey-stick pattern in income per person.")
+
+
+def gdp_wellbeing_app():
+    st.subheader("GDP and Wellbeing Limits")
+    gdp = st.sidebar.slider("GDP per person index", 20.0, 200.0, 100.0, 5.0)
+    inequality = st.sidebar.slider("Inequality", 0.0, 1.0, 0.35, 0.05)
+    unpaid_work = st.sidebar.slider("Unpaid work / care value", 0.0, 80.0, 20.0, 2.0)
+    pollution = st.sidebar.slider("Pollution damage", 0.0, 80.0, 25.0, 2.0)
+    leisure = st.sidebar.slider("Leisure and health value", 0.0, 80.0, 25.0, 2.0)
+    adjusted = gdp * (1 - 0.35 * inequality) + unpaid_work + leisure - pollution
+    fig = go.Figure(go.Bar(
+        x=["GDP/person", "Inequality penalty", "Unpaid work", "Leisure/health", "Pollution cost", "Adjusted wellbeing"],
+        y=[gdp, -gdp * 0.35 * inequality, unpaid_work, leisure, -pollution, adjusted],
+        marker_color=[GREEN, RED, BLUE, SAGE, RED, POINT],
+    ))
+    fig.update_yaxes(title="Index contribution")
+    st.plotly_chart(styled(fig), use_container_width=True, key="gdp_wellbeing")
+    st.metric("Adjusted wellbeing index", f"{adjusted:.1f}", f"{adjusted - gdp:.1f} vs GDP")
+    if st.toggle("Full analysis", value=False, key="gdp_analysis"):
+        st.markdown("GDP measures market production, not welfare. It misses distribution, unpaid work, leisure, health, environmental damage, and whether growth expands real capabilities.")
+
+
+def price_discrimination_app():
+    st.subheader("Price Discrimination")
+    demand_intercept = st.sidebar.slider("Demand intercept", 50.0, 200.0, 120.0, 5.0)
+    demand_slope = st.sidebar.slider("Demand slope", 0.2, 3.0, 1.0, 0.1)
+    mc = st.sidebar.slider("Marginal cost", 0.0, 100.0, 25.0, 1.0)
+    degree = st.sidebar.selectbox("Type", ["Single monopoly price", "First-degree", "Third-degree"])
+    q = np.linspace(0, demand_intercept / demand_slope, 300)
+    demand = demand_intercept - demand_slope * q
+    mr = demand_intercept - 2 * demand_slope * q
+    if degree == "First-degree":
+        q_star = max((demand_intercept - mc) / demand_slope, 0)
+        profit = 0.5 * (demand_intercept - mc) * q_star
+    else:
+        q_star = max((demand_intercept - mc) / (2 * demand_slope), 0)
+        p_star = demand_intercept - demand_slope * q_star
+        profit = (p_star - mc) * q_star
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=q, y=demand, name="Demand", line=dict(width=3, color=GREEN)))
+    fig.add_trace(go.Scatter(x=q, y=mr, name="MR", line=dict(width=3, color=GOLD)))
+    fig.add_trace(go.Scatter(x=q, y=np.full_like(q, mc), name="MC", line=dict(width=3, color=RED)))
+    fig.add_trace(go.Scatter(x=[q_star], y=[mc if degree == "First-degree" else demand_intercept - demand_slope * q_star], mode="markers+text", text=[degree], textposition="top center", marker=dict(size=12, color=POINT), name="Output"))
+    fig.update_xaxes(title="Quantity")
+    fig.update_yaxes(title="Price")
+    st.plotly_chart(styled(fig), use_container_width=True, key="price_discrimination")
+    st.metric("Output", f"{q_star:.1f}")
+    st.metric("Producer surplus/profit area", f"{profit:.1f}")
+    if st.toggle("Full analysis", value=False, key="pd_analysis"):
+        st.markdown("Price discrimination changes who captures surplus. First-degree discrimination converts consumer surplus into producer surplus; third-degree discrimination charges different groups different prices based on elasticities.")
+
+
+def hhi_antitrust_app():
+    st.subheader("Antitrust: HHI and Merger Analysis")
+    base = {
+        "American": 17, "Delta": 17, "United": 15, "Southwest": 17,
+        "Spirit": 5, "Alaska": 5, "JetBlue": 5, "Frontier": 3, "Other": 16,
+    }
+    acquirer = st.sidebar.selectbox("Acquirer", list(base), index=3)
+    target = st.sidebar.selectbox("Target", [k for k in base if k != acquirer], index=3)
+    shares = base.copy()
+    hhi_before = sum(v * v for v in shares.values())
+    shares[acquirer] += shares[target]
+    shares.pop(target)
+    hhi_after = sum(v * v for v in shares.values())
+    delta = hhi_after - hhi_before
+    fig = go.Figure()
+    fig.add_bar(x=list(base), y=list(base.values()), name="Before", marker_color=BLUE)
+    fig.add_bar(x=list(shares), y=list(shares.values()), name="After", marker_color=GOLD)
+    fig.update_yaxes(title="Market share (%)")
+    st.plotly_chart(styled(fig), use_container_width=True, key="hhi_antitrust")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("HHI before", f"{hhi_before:.0f}")
+    c2.metric("HHI after", f"{hhi_after:.0f}")
+    c3.metric("ΔHHI", f"{delta:.0f}")
+    st.info("DOJ/FTC screen: markets above 1,800 HHI are highly concentrated; a large positive ΔHHI raises concern.")
+    if st.toggle("Full analysis", value=False, key="hhi_analysis"):
+        st.latex(r"HHI=\sum_i s_i^2")
+        st.markdown("HHI is sensitive to mergers because combining two firms removes rivalry between them and squares the combined market share.")
+
+
+def tax_incidence_app():
+    st.subheader("Tax Incidence")
+    params = st.session_state.get("selected_model_params", {})
+    if params.get("worksheet_note"):
+        st.info(params["worksheet_note"])
+    demand_elasticity = st.sidebar.slider("|Demand elasticity|", 0.05, 3.00, abs(float(params.get("demand_elasticity", 0.30))), 0.05)
+    supply_elasticity = st.sidebar.slider("Supply elasticity", 0.05, 3.00, float(params.get("supply_elasticity", 0.80)), 0.05)
+    tax = st.sidebar.slider("Tax per unit", 1.0, 100.0, float(params.get("tax", 20.0)), 1.0)
+    consumer_share = supply_elasticity / (supply_elasticity + demand_elasticity)
+    producer_share = demand_elasticity / (supply_elasticity + demand_elasticity)
+    consumer_burden = tax * consumer_share
+    producer_burden = tax * producer_share
+    fig = go.Figure(go.Bar(x=["Consumers", "Producers"], y=[consumer_burden, producer_burden], marker_color=[GREEN, RED]))
+    fig.update_yaxes(title="Tax burden per unit")
+    st.plotly_chart(styled(fig), use_container_width=True, key="tax_incidence")
+    c1, c2 = st.columns(2)
+    c1.metric("Consumer burden", f"{consumer_burden:.2f}", f"{consumer_share:.0%}")
+    c2.metric("Producer burden", f"{producer_burden:.2f}", f"{producer_share:.0%}")
+    if st.toggle("Full analysis", value=False, key="incidence_analysis"):
+        st.markdown("The less elastic side of the market bears more of the tax because it has fewer good alternatives. Legal responsibility for remitting the tax does not determine economic burden.")
+
+
+def behavioral_policy_app():
+    st.subheader("Behavioral Policy: Biases and Fixes")
+    bias = st.sidebar.selectbox("Behavioral failure", ["Present bias", "Loss aversion", "Framing effect", "Overconfidence"])
+    stakes = st.sidebar.slider("Stakes", 1.0, 100.0, 50.0, 1.0)
+    bias_strength = st.sidebar.slider("Bias strength", 0.0, 1.0, 0.45, 0.05)
+    policy_strength = st.sidebar.slider("Policy design strength", 0.0, 1.0, 0.50, 0.05)
+    rational_choice = stakes
+    biased_choice = stakes * (1 - bias_strength)
+    policy_choice = biased_choice + (rational_choice - biased_choice) * policy_strength
+    fig = go.Figure(go.Bar(x=["Rational benchmark", "Biased choice", "With policy design"], y=[rational_choice, biased_choice, policy_choice], marker_color=[GREEN, RED, BLUE]))
+    fig.update_yaxes(title="Effective decision value")
+    st.plotly_chart(styled(fig), use_container_width=True, key="behavioral_policy")
+    st.metric("Policy recovery", f"{policy_choice - biased_choice:.1f}")
+    if st.toggle("Full analysis", value=False, key="behavioral_policy_analysis"):
+        fixes = {
+            "Present bias": "defaults, commitment devices, automatic enrollment",
+            "Loss aversion": "insurance framing, gradual transitions, loss-offset rebates",
+            "Framing effect": "standardized disclosure and plain-language comparison",
+            "Overconfidence": "stress tests, independent audits, and delayed compensation",
+        }
+        st.markdown(f"Policy response: {fixes[bias]}. Behavioral policy changes the choice architecture without assuming people optimize perfectly.")

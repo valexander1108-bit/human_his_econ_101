@@ -17,13 +17,18 @@ from apps.market_common import (
 
 def app():
     st.subheader("Deadweight Loss")
+    params = st.session_state.get("selected_model_params", {})
+    if params.get("worksheet_note"):
+        st.info(params["worksheet_note"])
 
     xmax, ymax, demand, supply = market_inputs("dwl")
     q_eq, p_eq = equilibrium(demand, supply)
-    policy = st.sidebar.selectbox("Policy source", ["Per-unit tax", "Quantity restriction", "Price floor", "Price ceiling"])
+    policies = ["Per-unit tax", "Quantity restriction", "Price floor", "Price ceiling"]
+    default_policy = params.get("policy", "Per-unit tax")
+    policy = st.sidebar.selectbox("Policy source", policies, index=policies.index(default_policy) if default_policy in policies else 0)
 
     if policy == "Per-unit tax":
-        tax = st.sidebar.slider("Tax per unit", 0.0, float(ymax), 10.0, 1.0)
+        tax = st.sidebar.slider("Tax per unit", 0.0, float(ymax), float(params.get("tax", 10.0)), 1.0)
         taxed_supply = type(supply)(supply.a + tax, supply.b)
         q_policy, buyer_price = equilibrium(demand, taxed_supply)
         seller_price = buyer_price - tax
@@ -31,16 +36,16 @@ def app():
         policy_price = buyer_price
     elif policy == "Quantity restriction":
         max_q = q_eq if is_valid_point(q_eq, p_eq) else xmax * 0.6
-        q_traded = st.sidebar.slider("Allowed quantity", 0.0, float(xmax), float(max_q * 0.7), 1.0)
+        q_traded = st.sidebar.slider("Allowed quantity", 0.0, float(xmax), float(params.get("quantity_restriction", max_q * 0.7)), 1.0)
         buyer_price = line_y(demand, q_traded)
         seller_price = line_y(supply, q_traded)
         policy_price = buyer_price
     elif policy == "Price floor":
-        floor = st.sidebar.slider("Price floor", 0.0, float(ymax), float(min((p_eq if is_valid_point(q_eq, p_eq) else 35) + 8, ymax)), 1.0)
+        floor = st.sidebar.slider("Price floor", 0.0, float(ymax), float(min(params.get("price_floor", (p_eq if is_valid_point(q_eq, p_eq) else 35) + 8), ymax)), 1.0)
         q_traded = min(max(0.0, quantity_at_price(demand, floor)), max(0.0, quantity_at_price(supply, floor))) if floor > p_eq else q_eq
         buyer_price = seller_price = policy_price = floor if floor > p_eq else p_eq
     else:
-        ceiling = st.sidebar.slider("Price ceiling", 0.0, float(ymax), float(max((p_eq if is_valid_point(q_eq, p_eq) else 35) - 8, 0)), 1.0)
+        ceiling = st.sidebar.slider("Price ceiling", 0.0, float(ymax), float(max(params.get("price_ceiling", (p_eq if is_valid_point(q_eq, p_eq) else 35) - 8), 0)), 1.0)
         q_traded = min(max(0.0, quantity_at_price(demand, ceiling)), max(0.0, quantity_at_price(supply, ceiling))) if ceiling < p_eq else q_eq
         buyer_price = seller_price = policy_price = ceiling if ceiling < p_eq else p_eq
 

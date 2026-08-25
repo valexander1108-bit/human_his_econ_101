@@ -58,26 +58,29 @@ def add_full_span_line(fig, alpha, beta, name, xmin, xmax, ymin, ymax, width=3):
 
 
 # ---------- App ----------
-def app():
+def app(scenario=None, **params):
     st.subheader("Market Model")
+    params = {**st.session_state.get("selected_model_params", {}), **params}
+    if params.get("worksheet_note"):
+        st.info(params["worksheet_note"])
 
     # ---- Axes bounds (define the visible 'box' we will clip to) ----
-    xmax = st.sidebar.number_input("Max Q", 10, 1000, 200, 10)
-    ymax = st.sidebar.number_input("Max P", 10, 1000, 50, 5)
+    xmax = st.sidebar.number_input("Max Q", 10, 1000, int(params.get("xmax", 200)), 10)
+    ymax = st.sidebar.number_input("Max P", 10, 1000, int(params.get("ymax", 50)), 5)
     xmin, ymin = 0.0, 0.0  # we teach in the non-negative quadrant
 
     # ---- Demand inputs ----
     st.sidebar.markdown("**DEMAND**")
-    ad = st.sidebar.number_input("α (intercept)", value=float(st.session_state.get("alpha_d", 30.0)),
+    ad = st.sidebar.number_input("α (intercept)", value=float(params.get("demand_intercept", st.session_state.get("alpha_d", 30.0))),
                                  step=1.0)
-    bd = st.sidebar.number_input("β (negative slope)", value=float(st.session_state.get("beta_d", -0.2)),
+    bd = st.sidebar.number_input("β (negative slope)", value=float(params.get("demand_slope", st.session_state.get("beta_d", -0.2))),
                                  step=0.05, format="%.3f")
 
     # ---- Supply inputs ----
     st.sidebar.markdown("**SUPPLY**")
-    as_ = st.sidebar.number_input("α (intercept)", value=float(st.session_state.get("alpha_s", 5.0)),
+    as_ = st.sidebar.number_input("α (intercept)", value=float(params.get("supply_intercept", st.session_state.get("alpha_s", 5.0))),
                                   step=1.0)
-    bs  = st.sidebar.number_input("β (positive slope)", value=float(st.session_state.get("beta_s", 0.1)),
+    bs  = st.sidebar.number_input("β (positive slope)", value=float(params.get("supply_slope", st.session_state.get("beta_s", 0.1))),
                                   step=0.05, format="%.3f")
 
     # Build Line objects for algebraic utilities / intersection

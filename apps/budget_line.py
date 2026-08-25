@@ -36,14 +36,20 @@ def apply_shift(cur, shift_type, mode, delta):
 
 
 # ---------- main app ----------
-def app():
+def app(scenario=None, **params):
     st.subheader("Budget Constraint - A Choice Between Two Quantities")
+    params = {**st.session_state.get("selected_model_params", {}), **params}
+    note = params.get("worksheet_note")
+    x_label = params.get("x_label", "Good X")
+    y_label = params.get("y_label", "Good Y")
+    if note:
+        st.info(note)
 
     # ---- Sidebar: 1) Baseline inputs ----
     with st.sidebar.expander("1) Baseline (starting inputs)", expanded=False):
-        base_M  = st.number_input("Income M", min_value=0.01, value=30.0, step=1.0, format="%.2f", key="bl_base_M")
-        base_px = st.number_input("Price of X (pₓ)", min_value=0.01, value=1.0, step=0.1, format="%.2f", key="bl_base_px")
-        base_py = st.number_input("Price of Y (pᵧ)", min_value=0.01, value=1.0, step=0.1, format="%.2f", key="bl_base_py")
+        base_M  = st.number_input("Income M", min_value=0.01, value=float(params.get("income", 30.0)), step=1.0, format="%.2f", key="bl_base_M")
+        base_px = st.number_input(f"Price of X ({x_label})", min_value=0.01, value=float(params.get("price_x", 1.0)), step=0.1, format="%.2f", key="bl_base_px")
+        base_py = st.number_input(f"Price of Y ({y_label})", min_value=0.01, value=float(params.get("price_y", 1.0)), step=0.1, format="%.2f", key="bl_base_py")
 
         colA, colB = st.columns([1, 1])
         with colA:
@@ -71,6 +77,11 @@ def app():
         ymax = st.number_input("Max Y-axis", min_value=10.0, value=40.0, step=5.0, format="%.0f")
 
     # ---- Session state bootstrapping ----
+    preset_key = (scenario or {}).get("id") or params.get("worksheet_note")
+    if preset_key and st.session_state.get("bl_preset_key") != preset_key:
+        st.session_state.bl_current = {"M": base_M, "px": base_px, "py": base_py}
+        st.session_state.bl_baseline = None
+        st.session_state.bl_preset_key = preset_key
     if "bl_current" not in st.session_state:
         st.session_state.bl_current = {"M": base_M, "px": base_px, "py": base_py}
     if "bl_baseline" not in st.session_state:
@@ -137,8 +148,8 @@ def app():
     x_max_auto = max(xmax, cur_xi, bl_xi or 0)
     y_max_auto = max(ymax, cur_yi, bl_yi or 0)
 
-    fig.update_xaxes(range=[0, x_max_auto], title="Good X (units)")
-    fig.update_yaxes(range=[0, y_max_auto], title="Good Y (units)")
+    fig.update_xaxes(range=[0, x_max_auto], title=f"{x_label} (units)")
+    fig.update_yaxes(range=[0, y_max_auto], title=f"{y_label} (units)")
     fig.update_layout(
         height=520,
         margin=dict(l=10, r=10, t=10, b=10),

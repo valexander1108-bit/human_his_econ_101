@@ -3,19 +3,27 @@ import streamlit as st
 import plotly.graph_objects as go
 from apps.common import apply_grid
 
-def app():
+def app(scenario=None, **params):
     st.subheader("Comparative Advantage — Linear PPCs for Two Producers")
+    params = {**st.session_state.get("selected_model_params", {}), **params}
+    note = params.get("worksheet_note")
+    producer_a = params.get("producer_a", "A")
+    producer_b = params.get("producer_b", "B")
+    x_label = params.get("x_label", "Good X")
+    y_label = params.get("y_label", "Good Y")
+    if note:
+        st.info(note)
 
-    with st.sidebar.expander("Producer A ", False):
-        Ax = st.number_input("A: Max X (a_x)", 10.0, 10_000.0, 100.0, 5.0)
-        Ay = st.number_input("A: Max Y (a_y)", 10.0, 10_000.0, 100.0, 5.0)
+    with st.sidebar.expander(f"Producer {producer_a} ", False):
+        Ax = st.number_input(f"{producer_a}: Max {x_label} (a_x)", 1.0, 10_000.0, float(params.get("a_x", 100.0)), 5.0)
+        Ay = st.number_input(f"{producer_a}: Max {y_label} (a_y)", 1.0, 10_000.0, float(params.get("a_y", 100.0)), 5.0)
 
-    with st.sidebar.expander("Producer B ", False):
-        Bx = st.number_input("B: Max X (b_x)", 10.0, 10_000.0, 60.0, 5.0)
-        By = st.number_input("B: Max Y (b_y)", 10.0, 10_000.0, 140.0, 5.0)
+    with st.sidebar.expander(f"Producer {producer_b} ", False):
+        Bx = st.number_input(f"{producer_b}: Max {x_label} (b_x)", 1.0, 10_000.0, float(params.get("b_x", 60.0)), 5.0)
+        By = st.number_input(f"{producer_b}: Max {y_label} (b_y)", 1.0, 10_000.0, float(params.get("b_y", 140.0)), 5.0)
 
     with st.sidebar.expander("Analyze Trade & World Price", False):
-        px_over_py = st.number_input("World relative price Px/Py (slope = -Px/Py)", 0.01, 100.0, 0.8, 0.05)
+        px_over_py = st.number_input("World relative price Px/Py (slope = -Px/Py)", 0.01, 100.0, float(params.get("relative_price", 0.8)), 0.05)
         show_trade = st.checkbox("Show trade lines through production points", value=False)
 
     # Linear PPCs:  y = Ymax - (Ymax/Xmax) * x
@@ -32,20 +40,20 @@ def app():
     OCx_B = By / Bx     # Y per X in B
 
     # Who has CA in X? (lower OCx)
-    ca_X = "A" if OCx_A < OCx_B else "B"
-    ca_Y = "B" if ca_X == "A" else "A"
+    ca_X = producer_a if OCx_A < OCx_B else producer_b
+    ca_Y = producer_b if ca_X == producer_a else producer_a
 
     # Specialization sliders (0..1 of the CA good)
     st.markdown("### Specialization Level:")
     col1, col2 = st.columns(2)
     with col1:
-        sA = st.slider("Producer A", 0.0, 1.0, 1.0, 0.05)
+        sA = st.slider(f"Producer {producer_a}", 0.0, 1.0, 1.0, 0.05)
     with col2:
-        sB = st.slider("Producer B", 0.0, 1.0, 1.0, 0.05)
+        sB = st.slider(f"Producer {producer_b}", 0.0, 1.0, 1.0, 0.05)
         
 
     # Production points (on intercept of the CA good)
-    if ca_X == "A":
+    if ca_X == producer_a:
         A_prod = (sA*Ax, 0.0)
         B_prod = (0.0, sB*By)
     else:
@@ -63,10 +71,10 @@ def app():
     Ymax_all = max(Ay, By) * 1.1
 
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=xsA, y=ysA, mode="lines", name="A: PPC"))
-    fig.add_trace(go.Scatter(x=xsB, y=ysB, mode="lines", name="B: PPC"))
-    fig.add_trace(go.Scatter(x=[A_prod[0]], y=[A_prod[1]], mode="markers+text", text=["A prod"], textposition="top center"))
-    fig.add_trace(go.Scatter(x=[B_prod[0]], y=[B_prod[1]], mode="markers+text", text=["B prod"], textposition="top center"))
+    fig.add_trace(go.Scatter(x=xsA, y=ysA, mode="lines", name=f"{producer_a}: PPC"))
+    fig.add_trace(go.Scatter(x=xsB, y=ysB, mode="lines", name=f"{producer_b}: PPC"))
+    fig.add_trace(go.Scatter(x=[A_prod[0]], y=[A_prod[1]], mode="markers+text", text=[f"{producer_a} prod"], textposition="top center"))
+    fig.add_trace(go.Scatter(x=[B_prod[0]], y=[B_prod[1]], mode="markers+text", text=[f"{producer_b} prod"], textposition="top center"))
     if show_trade:
         xs, ys = trade_line_through(A_prod, Xmax_all, Ymax_all, px_over_py)
         fig.add_trace(go.Scatter(x=xs, y=ys, mode="lines", name="A trade line", line=dict(dash="dot")))
@@ -74,7 +82,7 @@ def app():
         fig.add_trace(go.Scatter(x=xs, y=ys, mode="lines", name="B trade line", line=dict(dash="dot")))
 
     fig.update_layout(
-        xaxis_title="Good X", yaxis_title="Good Y",
+        xaxis_title=x_label, yaxis_title=y_label,
         xaxis=dict(range=[0, Xmax_all], zeroline=False),
         yaxis=dict(range=[0, Ymax_all], zeroline=False),
         height=520, margin=dict(l=40, r=20, t=20, b=40)
@@ -85,7 +93,7 @@ def app():
     st.markdown(
         f"""
 **Opportunity costs (Y per 1 X):** A = {OCx_A:.2f}, B = {OCx_B:.2f}  
-**Comparative advantage:** {('A in X, B in Y' if ca_X=='A' else 'B in X, A in Y')}  
+**Comparative advantage:** {ca_X} in {x_label}, {ca_Y} in {y_label}  
 **Trade-line slope:** \(-P_x/P_y = -{px_over_py:.2f}\)  (a steeper line means X is relatively pricier).
         """
     )

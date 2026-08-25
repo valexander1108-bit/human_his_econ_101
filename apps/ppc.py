@@ -3,14 +3,20 @@ import streamlit as st
 import plotly.graph_objects as go
 from apps.common import apply_grid
 
-def app():
+def app(scenario=None, **params):
     st.subheader("Production Possibilities Curve (PPC)")
+    params = {**st.session_state.get("selected_model_params", {}), **params}
+    note = params.get("worksheet_note")
+    x_label = params.get("x_label", "Good X")
+    y_label = params.get("y_label", "Good Y")
+    if note:
+        st.info(note)
 
     # --- Sidebar controls ---
     with st.sidebar.expander("Frontier Settings", True):
-        x_max = st.number_input("Max output of Good X (intercept a)", 10.0, 10_000.0, 100.0, 5.0)
-        y_max = st.number_input("Max output of Good Y (intercept b)", 10.0, 10_000.0, 100.0, 5.0)
-        k = st.slider("Curvature (k)", 1.0, 6.0, 2.5, 0.1)  # k=1 linear; k>1 bowed out
+        x_max = st.number_input(f"Max output of {x_label} (intercept a)", 1.0, 10_000.0, float(params.get("x_max", 100.0)), 5.0)
+        y_max = st.number_input(f"Max output of {y_label} (intercept b)", 1.0, 10_000.0, float(params.get("y_max", 100.0)), 5.0)
+        k = st.slider("Curvature (k)", 1.0, 6.0, float(params.get("k", 2.5)), 0.1)  # k=1 linear; k>1 bowed out
         shift_pct = st.slider("Tech/Labor shift (%)", -50, 200, 0, 5)
         show_baseline = st.checkbox("Show baseline frontier", value=True)
 
@@ -43,10 +49,20 @@ def app():
         xsb = np.linspace(0, a, 400)
         fig.add_trace(go.Scatter(x=xsb, y=ys_base, mode="lines", name="PPF (baseline)", line=dict(dash="dash")))
     fig.add_trace(go.Scatter(x=xs, y=ys_shift, mode="lines", name="PPF"))
+    worksheet_points = params.get("points", [])
+    if worksheet_points:
+        fig.add_trace(go.Scatter(
+            x=[p[0] for p in worksheet_points],
+            y=[p[1] for p in worksheet_points],
+            mode="markers+text",
+            text=[chr(65 + i) for i in range(len(worksheet_points))],
+            textposition="top center",
+            name="Worksheet points",
+        ))
     fig.add_trace(go.Scatter(x=[qx], y=[y1], mode="markers+text", text=["•"], textposition="top center", name="Point"))
 
     fig.update_layout(
-        xaxis_title="Good X (quantity)", yaxis_title="Good Y (quantity)",
+        xaxis_title=f"{x_label} (quantity)", yaxis_title=f"{y_label} (quantity)",
         xaxis=dict(range=[0, max(a, a_shift)], zeroline=False),
         yaxis=dict(range=[0, max(b, b_shift)], zeroline=False),
         height=520, margin=dict(l=40, r=20, t=20, b=40)

@@ -99,15 +99,16 @@ def add_dwl(fig, demand, supply, q_traded, q_eq):
 
 def market_inputs(prefix, default_ymax=80):
     import streamlit as st
+    params = st.session_state.get("selected_model_params", {})
 
-    xmax = st.sidebar.number_input("Max Q", 10, 1000, 160, 10, key=f"{prefix}_xmax")
-    ymax = st.sidebar.number_input("Max P", 10, 1000, default_ymax, 5, key=f"{prefix}_ymax")
+    xmax = st.sidebar.number_input("Max Q", 10, 1000, int(params.get("xmax", 160)), 10, key=f"{prefix}_xmax")
+    ymax = st.sidebar.number_input("Max P", 10, 1000, int(params.get("ymax", default_ymax)), 5, key=f"{prefix}_ymax")
     st.sidebar.markdown("**Demand**")
-    ad = st.sidebar.number_input("Demand intercept", value=70.0, step=1.0, key=f"{prefix}_ad")
-    bd = -abs(st.sidebar.number_input("Demand slope magnitude", value=0.35, step=0.05, format="%.3f", key=f"{prefix}_bd"))
+    ad = st.sidebar.number_input("Demand intercept", value=float(params.get("demand_intercept", 70.0)), step=1.0, key=f"{prefix}_ad")
+    bd = -abs(st.sidebar.number_input("Demand slope magnitude", value=abs(float(params.get("demand_slope", -0.35))), step=0.05, format="%.3f", key=f"{prefix}_bd"))
     st.sidebar.markdown("**Supply**")
-    as_ = st.sidebar.number_input("Supply intercept", value=10.0, step=1.0, key=f"{prefix}_as")
-    bs = abs(st.sidebar.number_input("Supply slope", value=0.25, step=0.05, format="%.3f", key=f"{prefix}_bs"))
+    as_ = st.sidebar.number_input("Supply intercept", value=float(params.get("supply_intercept", 10.0)), step=1.0, key=f"{prefix}_as")
+    bs = abs(st.sidebar.number_input("Supply slope", value=abs(float(params.get("supply_slope", 0.25))), step=0.05, format="%.3f", key=f"{prefix}_bs"))
     return xmax, ymax, Line(ad, bd), Line(as_, bs)
 
 

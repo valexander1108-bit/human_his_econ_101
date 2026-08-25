@@ -1,0 +1,1682 @@
+[
+  {
+    "scenario": 1,
+    "id": "final-m1-1",
+    "title": "The Farmers of Ur",
+    "year": -3000,
+    "date": "-3000",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 1: Economic Thought & Modeling",
+    "concept": "Scarcity, Opportunity Cost, PPC, Comparative Advantage",
+    "description": "You are a farmer in Mesopotamia around 3000 BCE. You receive 30 shekels of silver each month from selling dates at the market. You can spend this income on two main goods: Barley (food & seed):",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 01_Economic_Thought_and_Modeling_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-1"
+    ],
+    "source_file": "01_Economic_Thought_and_Modeling_Worksheet.docx"
+  },
+  {
+    "scenario": 2,
+    "id": "final-m1-2",
+    "title": "Farmer of Anyang",
+    "year": -1200,
+    "date": "-1200",
+    "lat": 36.1,
+    "lon": 114.35,
+    "module": "Module 1: Economic Thought & Modeling",
+    "concept": "Scarcity, Opportunity Cost, PPC, Comparative Advantage",
+    "description": "A peasant farmer in Anyang during the late Shang Dynasty in 1200 BCE has 20 cowrie shells. At market, he can buy grain for winter storage or bronze for repairing sickle blades. 1 cowrie shell = 5 units of grain",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 01_Economic_Thought_and_Modeling_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-1"
+    ],
+    "source_file": "01_Economic_Thought_and_Modeling_Worksheet.docx"
+  },
+  {
+    "scenario": 3,
+    "id": "final-m1-3",
+    "title": "Herder of the Upper Niger",
+    "year": -1000,
+    "date": "-1000",
+    "lat": 13.45,
+    "lon": -6.27,
+    "module": "Module 1: Economic Thought & Modeling",
+    "concept": "Scarcity, Opportunity Cost, PPC, Comparative Advantage",
+    "description": "In Upper Niger around 1000 BCE, a herder named Faro arrives at a bustling market. He carries 10 gold-dust rings tied in a goatskin pouch, the product of trading calves and milk. For Faro, millet is life: 1 ring will buy 4 sacks, enough to feed his household and store in the village granary for the dry season.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 01_Economic_Thought_and_Modeling_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-1"
+    ],
+    "source_file": "01_Economic_Thought_and_Modeling_Worksheet.docx"
+  },
+  {
+    "scenario": 4,
+    "id": "final-m1-4",
+    "title": "The People of Olmec",
+    "year": -800,
+    "date": "-800",
+    "lat": 17.48,
+    "lon": -92.05,
+    "module": "Module 1: Economic Thought & Modeling",
+    "concept": "Scarcity, Opportunity Cost, PPC, Comparative Advantage",
+    "description": "The Olmecs of Mesoamerica (800 BCE) made strategic production decisions between agriculture (food) and obsidian (a volcanic glass used for tools and trade). With fixed land, labor, and technology, each unit of obsidian produced required diverting resources from agriculture.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 01_Economic_Thought_and_Modeling_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-1"
+    ],
+    "source_file": "01_Economic_Thought_and_Modeling_Worksheet.docx"
+  },
+  {
+    "scenario": 5,
+    "id": "final-m1-5",
+    "title": "Early Saladoid Settlements",
+    "year": -350,
+    "date": "-350",
+    "lat": 14.64,
+    "lon": -61.02,
+    "module": "Module 1: Economic Thought & Modeling",
+    "concept": "Scarcity, Opportunity Cost, PPC, Comparative Advantage",
+    "description": "The early Saladoid culture of the Caribbean (350 BCE) made production decisions between agriculture (food crops) and ceramics (pottery for trade and storage). Their ceramic tradition was remarkable for its quality, but every hour spent on pottery was an hour away from farming.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 01_Economic_Thought_and_Modeling_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-1"
+    ],
+    "source_file": "01_Economic_Thought_and_Modeling_Worksheet.docx"
+  },
+  {
+    "scenario": 6,
+    "id": "final-m1-6",
+    "title": "Maurya India & Hellenistic Greece",
+    "year": -200,
+    "date": "-200",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 1: Economic Thought & Modeling",
+    "concept": "Scarcity, Opportunity Cost, PPC, Comparative Advantage",
+    "description": "Merchants in Hellenistic Greece craved spices and textiles, while the courts of Maurya India prized silver and luxury goods. Both civilizations had workers who could produce either category of good, but their productivity differed. In one day, a Greek worker can produce either 6 units of silver goods OR 3 units of spices. An Indian worker can produce either 4 units of silver goods OR 8 units of spices.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 01_Economic_Thought_and_Modeling_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-1"
+    ],
+    "source_file": "01_Economic_Thought_and_Modeling_Worksheet.docx"
+  },
+  {
+    "scenario": 7,
+    "id": "final-m1-7",
+    "title": "Egypt & Rome under Cleopatra VII",
+    "year": -30,
+    "date": "-30",
+    "lat": 31.2,
+    "lon": 29.92,
+    "module": "Module 1: Economic Thought & Modeling",
+    "concept": "Scarcity, Opportunity Cost, PPC, Comparative Advantage",
+    "description": "Cleopatra VII of Egypt commanded a civilization rich in grain and papyrus, entangled politically and economically with Rome, which was rich in military power and wine. Consider trade between these two civilizations: In one day, an Egyptian worker can produce either 10 units of grain OR 2 units of wine. A Roman worker can produce either 3 units of grain OR 6 units of wine.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 01_Economic_Thought_and_Modeling_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-1"
+    ],
+    "source_file": "01_Economic_Thought_and_Modeling_Worksheet.docx"
+  },
+  {
+    "scenario": 8,
+    "id": "final-m2-8",
+    "title": "The Farmers of Ur",
+    "year": -3000,
+    "date": "-3000",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 2: Choice",
+    "concept": "Utility, Labor-Leisure, Intertemporal Choice, Behavioral Economics",
+    "description": "In 3000 BCE, Mesopotamia's farmers in Ur held a limited number of shekels and faced a choice between barley (for sustenance) and wool (for trade). As more work hours are put towards wool, more is produced, but at a decreasing rate. The same is true for barley. Draw a graph that shows this general trend for each good.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 02_Constrained_Choice_Over_Time_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-2"
+    ],
+    "source_file": "02_Constrained_Choice_Over_Time_Worksheet.docx"
+  },
+  {
+    "scenario": 9,
+    "id": "final-m2-9",
+    "title": "Marcus at Ray's Warehouse",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 2: Choice",
+    "concept": "Utility, Labor-Leisure, Intertemporal Choice, Behavioral Economics",
+    "description": "Marcus can work up to 60 hours per week at Ray's warehouse, earning $15 per hour. Each hour of work yields $15 in income; each hour of leisure costs $15 in forgone earnings. Construct his Feasible Frontier.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 02_Constrained_Choice_Over_Time_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-2"
+    ],
+    "source_file": "02_Constrained_Choice_Over_Time_Worksheet.docx"
+  },
+  {
+    "scenario": 10,
+    "id": "final-m2-10",
+    "title": "Mesopotamian Farmer",
+    "year": -2000,
+    "date": "-2000",
+    "lat": 20.0,
+    "lon": 0.0,
+    "module": "Module 2: Choice",
+    "concept": "Utility, Labor-Leisure, Intertemporal Choice, Behavioral Economics",
+    "description": "A farmer allocates 30 shekels between barley (B, price = 2 shekels) and wool (W, price = 3 shekels). His utility schedule is recorded below. Identify where he maximizes utility subject to his budget.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 02_Constrained_Choice_Over_Time_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-2"
+    ],
+    "source_file": "02_Constrained_Choice_Over_Time_Worksheet.docx"
+  },
+  {
+    "scenario": 11,
+    "id": "final-m2-11",
+    "title": "Julia (Borrower) & Marco (Lender)",
+    "year": 2024,
+    "date": "2024",
+    "lat": 20.0,
+    "lon": 0.0,
+    "module": "Module 2: Choice",
+    "concept": "Utility, Labor-Leisure, Intertemporal Choice, Behavioral Economics",
+    "description": "Given: Y₁ = $40,000; Y₂ = $50,000; r = 10%. Julia chooses C₁ = $50,000 (borrows); Marco chooses C₁ = $30,000 (saves). Compute C₂ for each, then analyze the effect of a rate increase to 15%.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 02_Constrained_Choice_Over_Time_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-2"
+    ],
+    "source_file": "02_Constrained_Choice_Over_Time_Worksheet.docx"
+  },
+  {
+    "scenario": 12,
+    "id": "final-m2-12",
+    "title": "Hana in Seoul",
+    "year": 1968,
+    "date": "1968",
+    "lat": 37.57,
+    "lon": 126.98,
+    "module": "Module 2: Choice",
+    "concept": "Utility, Labor-Leisure, Intertemporal Choice, Behavioral Economics",
+    "description": "Hana works in a textile factory, earning $8 per week. She aspires to purchase a $100 sewing machine to establish her own enterprise. The only available credit carries an interest rate of 60% per annum.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 02_Constrained_Choice_Over_Time_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-2"
+    ],
+    "source_file": "02_Constrained_Choice_Over_Time_Worksheet.docx"
+  },
+  {
+    "scenario": 13,
+    "id": "final-m2-13",
+    "title": "Inuit Hunter",
+    "year": 1200,
+    "date": "1200",
+    "lat": 64.2,
+    "lon": -51.7,
+    "module": "Module 2: Choice",
+    "concept": "Utility, Labor-Leisure, Intertemporal Choice, Behavioral Economics",
+    "description": "A hunter takes 30 salmon in a single morning. After 10 meals, each additional salmon meal yields diminishing marginal utility. This surplus creates a structural incentive for trade — but behavioral constraints complicate the decision.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 02_Constrained_Choice_Over_Time_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-2"
+    ],
+    "source_file": "02_Constrained_Choice_Over_Time_Worksheet.docx"
+  },
+  {
+    "scenario": 14,
+    "id": "final-m3-14",
+    "title": "Sogdian Silk Traders",
+    "year": 435,
+    "date": "435",
+    "lat": 39.65,
+    "lon": 66.96,
+    "module": "Module 3: Supply and Demand",
+    "concept": "Demand, Supply, Equilibrium, Market Shifts",
+    "description": "The Silk Road served as a vast network of trade routes connecting the peoples of Eurasia for centuries. In 435 CE, the Sogdian merchant Nanai-dhat recorded silk transaction data traveling between Samarkand and Constantinople. Sogdian traders were the trusted neutral parties between the Byzantine and Sassanid Empires. Imagine Nanai-dhat recording the following demand data for silk, measured in gold solidi, while journ",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 03_Market_Equilibrium_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-3"
+    ],
+    "source_file": "03_Market_Equilibrium_Worksheet.docx"
+  },
+  {
+    "scenario": 15,
+    "id": "final-m3-15",
+    "title": "Frankish Blacksmith",
+    "year": 800,
+    "date": "800",
+    "lat": 50.11,
+    "lon": 8.68,
+    "module": "Module 3: Supply and Demand",
+    "concept": "Demand, Supply, Equilibrium, Market Shifts",
+    "description": "When Charlemagne was crowned emperor on Christmas Day 800 CE, his military campaigns created massive demand for iron spearheads. Carolingian blacksmiths recorded their willingness to supply at different prices. Imagine a blacksmith in the imperial workshops recording the following supply data for spearheads, measured in silver denarii. The data has been 'teleported' forward to us",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 03_Market_Equilibrium_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-3"
+    ],
+    "source_file": "03_Market_Equilibrium_Worksheet.docx"
+  },
+  {
+    "scenario": 16,
+    "id": "final-m3-16",
+    "title": "Farmer of Basra",
+    "year": 800,
+    "date": "800",
+    "lat": 30.51,
+    "lon": 47.78,
+    "module": "Module 3: Supply and Demand",
+    "concept": "Demand, Supply, Equilibrium, Market Shifts",
+    "description": "In 800 CE, the Abbasid Caliphate governed the fertile lands around Basra, a thriving port city at the mouth of the Tigris and Euphrates. Farmers tracked wheat production carefully, and Abbasid scholars introduced algebraic methods to solve market problems. A farmer from Basra records the following supply and demand data for wheat at the city market.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 03_Market_Equilibrium_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-3"
+    ],
+    "source_file": "03_Market_Equilibrium_Worksheet.docx"
+  },
+  {
+    "scenario": 17,
+    "id": "final-m3-17",
+    "title": "The Merchant of Kilwa",
+    "year": 800,
+    "date": "800",
+    "lat": -8.96,
+    "lon": 39.5,
+    "module": "Module 3: Supply and Demand",
+    "concept": "Demand, Supply, Equilibrium, Market Shifts",
+    "description": "By 800 CE, Kilwa Kisiwani (modern Tanzania) had emerged as a key Swahili trading port on the East African coast. Gujarati textile traders and Abbasid spice merchants competed to determine ivory quantities and prices. As Indian Ocean trade networks expanded, demand from the Persian Gulf, India, and China for East African IVORY surged dramatically. This was an INCREASE IN DEMAND — entirely new groups of buyers entered ",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 03_Market_Equilibrium_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-3"
+    ],
+    "source_file": "03_Market_Equilibrium_Worksheet.docx"
+  },
+  {
+    "scenario": 18,
+    "id": "final-m3-18",
+    "title": "The Black Death",
+    "year": 1348,
+    "date": "1348",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 3: Supply and Demand",
+    "concept": "Demand, Supply, Equilibrium, Market Shifts",
+    "description": "Bubonic plague killed one-third of Europe's population — simultaneously collapsing demand for grain (fewer buyers) and collapsing supply (fewer farmers). Analyze the double shift and identify which effects are determinate vs. ambiguous.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 03_Market_Equilibrium_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-3"
+    ],
+    "source_file": "03_Market_Equilibrium_Worksheet.docx"
+  },
+  {
+    "scenario": 19,
+    "id": "final-m3-19",
+    "title": "COVID-19 Supply Chain Disruptions",
+    "year": 2020,
+    "date": "2020",
+    "lat": 38.9,
+    "lon": -77.04,
+    "module": "Module 3: Supply and Demand",
+    "concept": "Demand, Supply, Equilibrium, Market Shifts",
+    "description": "Factory closures and semiconductor shortages shifted supply sharply leftward. Simultaneously, fiscal stimulus and goods substitution (away from services) shifted demand rightward. The result: sustained 7–9% inflation.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 03_Market_Equilibrium_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-3"
+    ],
+    "source_file": "03_Market_Equilibrium_Worksheet.docx"
+  },
+  {
+    "scenario": 20,
+    "id": "final-m3-20",
+    "title": "1973 OPEC Oil Embargo",
+    "year": 1973,
+    "date": "1973",
+    "lat": 24.71,
+    "lon": 46.67,
+    "module": "Module 3: Supply and Demand",
+    "concept": "Demand, Supply, Equilibrium, Market Shifts",
+    "description": "OPEC imposed an oil production embargo, shifting the supply of petroleum — and of all goods produced using petroleum — sharply leftward. Demand in the short run was highly inelastic, as consumers had few immediate substitutes.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 03_Market_Equilibrium_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-3"
+    ],
+    "source_file": "03_Market_Equilibrium_Worksheet.docx"
+  },
+  {
+    "scenario": 21,
+    "id": "final-m4-21",
+    "title": "Nutmeg from Banda Islands",
+    "year": 1460,
+    "date": "1460",
+    "lat": -4.52,
+    "lon": 129.9,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "The Banda Islands were the world's sole source of nutmeg. When the Melaka Sultanate imposed a tariff, price rose 50% and quantity demanded fell 75%. Compute the elasticity and interpret the result in terms of total revenue.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 22,
+    "id": "final-m4-22",
+    "title": "Portuguese Sea Route to the Indies",
+    "year": 1505,
+    "date": "1505",
+    "lat": 45.44,
+    "lon": 12.32,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "Vasco da Gama's direct sea route undermined Venetian control of the spice trade, lowering the price of pepper from 80 to 60 gold coins. Venetian merchants recorded: Qd rose from 100 to 140 units.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 23,
+    "id": "final-m4-23",
+    "title": "An Isfahan Merchant's Household Accounts",
+    "year": 1685,
+    "date": "1685",
+    "lat": 32.65,
+    "lon": 51.67,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "In 1685 CE, Istanbul's coffeehouses were the social centers of the Ottoman Empire. Sugar and coffee were consumed together as complements, while Indian cottons and European linens competed as substitutes in the textile market. An Isfahan craftsman household recorded the following income and trade data across two decades:",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 24,
+    "id": "final-m4-24",
+    "title": "Bengali Weavers",
+    "year": 1725,
+    "date": "1725",
+    "lat": 23.81,
+    "lon": 90.41,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "In the short run, looms are fixed — supply is highly inelastic (PES ≈ 0.2). Over the long run, new looms can be acquired and trained weavers recruited — supply becomes substantially more elastic (PES ≈ 1.4). Interpret both figures.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 25,
+    "id": "final-m4-25",
+    "title": "Kano Caravan Market",
+    "year": 1750,
+    "date": "1750",
+    "lat": 12.0,
+    "lon": 8.52,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "A salt market operating under Islamic commercial law. Demand: P = 20 − 0.4Q. Supply: P=4+0.4Q Compute the equilibrium, derive CS and PS, and evaluate the market's efficiency claim. Set Qd = Qs → Q* = __________",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 26,
+    "id": "final-m4-26",
+    "title": "Philadelphia Grain Market",
+    "year": 1794,
+    "date": "1794",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "During Whiskey Rebellion political pressures, the government imposed a price floor of $4 per bushel on grain. Competitive equilibrium: P* = $2, Q* = 6M bushels. At the floor: Qs = 10M, Qd = 4M.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 27,
+    "id": "final-m4-27",
+    "title": "Paris Bread Market",
+    "year": 1791,
+    "date": "1791",
+    "lat": 48.86,
+    "lon": 2.35,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "The National Assembly imposed a price ceiling (maximum de prix) on bread at 9 sous per loaf; the competitive equilibrium price was 15 sous. At the ceiling: Qd = 8M loaves, Qs = 3M loaves.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 28,
+    "id": "final-m4-28",
+    "title": "Fiji Copra Market",
+    "year": 1875,
+    "date": "1875",
+    "lat": -17.71,
+    "lon": 178.07,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "European traders colluded to keep copra purchase prices artificially low at Pc = 6 gold coins, below equilibrium. The equations are: Demand: Qd = 120 – 5P     Supply: Qs = 20 + 5P Set Qd = Qs:  120 – 5P = 20 + 5P  →  P* = _______      Q* = _______",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 29,
+    "id": "final-m4-29",
+    "title": "Ottoman Tax on Spice Merchants",
+    "year": 1550,
+    "date": "1550",
+    "lat": 41.01,
+    "lon": 28.97,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "A per-unit tax of 4 gold coins is imposed on the spice market. Demand PED = −0.5 (inelastic); Supply PES = 1.5 (elastic). Pre-tax equilibrium: P* = 20; Q* = 100 units. Post-tax price paid by buyers (Pb) rises to approximately: __________",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 30,
+    "id": "final-m4-30",
+    "title": "Marcus & Ray — Payroll Tax",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "concept": "Elasticity, Surplus, Price Controls, Tax Incidence",
+    "description": "The city imposes a $2/hour payroll tax on employers in Marcus's industry. Labor demand is relatively inelastic (firms need workers regardless of wage)); labor supply is relatively elastic (workers can relocate).",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-4"
+    ],
+    "source_file": "04_Market_Analysis_Elasticity_and_Efficiency_Worksheet.docx"
+  },
+  {
+    "scenario": 31,
+    "id": "final-m5-31",
+    "title": "Florentine Cloth Merchant",
+    "year": 2024,
+    "date": "2024",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 5: Factor Markets",
+    "concept": "Factor Markets, VMP, Land, Labor, Loanable Funds",
+    "description": "A cloth merchant hires weavers at a wage of 24 florins per week. Each bolt of cloth sells at 8 florins. Use the marginal product schedule to derive VMP and identify how many workers to hire.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 05_Factor_Markets_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-5"
+    ],
+    "source_file": "05_Factor_Markets_Worksheet.docx"
+  },
+  {
+    "scenario": 32,
+    "id": "final-m5-32",
+    "title": "The Industrial Revolution — A Global Ripple",
+    "year": 1780,
+    "date": "1780",
+    "lat": 23.81,
+    "lon": 90.41,
+    "module": "Module 5: Factor Markets",
+    "concept": "Factor Markets, VMP, Land, Labor, Loanable Funds",
+    "description": "Capital deepening (power looms) raised labor's marginal product in British mills — elevating wages. The same technological shock rendered the marginal product of Indian artisan weavers effectively obsolete — eroding their earnings.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 05_Factor_Markets_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-5"
+    ],
+    "source_file": "05_Factor_Markets_Worksheet.docx"
+  },
+  {
+    "scenario": 33,
+    "id": "final-m5-33",
+    "title": "The English Enclosure Movement",
+    "year": 2024,
+    "date": "2024",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 5: Factor Markets",
+    "concept": "Factor Markets, VMP, Land, Labor, Loanable Funds",
+    "description": "Acts of Parliament converted communal agricultural land (the commons) into private property. Supply of tillable land became perfectly inelastic — legally fixed. Rents rose; smallholders were dispossessed and pushed into wage labor.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 05_Factor_Markets_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-5"
+    ],
+    "source_file": "05_Factor_Markets_Worksheet.docx"
+  },
+  {
+    "scenario": 34,
+    "id": "final-m5-34",
+    "title": "U.S. Mortgage Boom & Collapse",
+    "year": 2004,
+    "date": "2004",
+    "lat": 40.71,
+    "lon": -74.01,
+    "module": "Module 5: Factor Markets",
+    "concept": "Factor Markets, VMP, Land, Labor, Loanable Funds",
+    "description": "Federal Reserve rate cuts stimulated mortgage refinancing and housing investment. Both demand and supply of loanable funds shifted in ways that obscured underlying credit risk — a behavioral failure previewed in Module 2, analyzed fully in Module 12.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 05_Factor_Markets_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-5"
+    ],
+    "source_file": "05_Factor_Markets_Worksheet.docx"
+  },
+  {
+    "scenario": 35,
+    "id": "final-m6-35",
+    "title": "Malthusian England & Sub-Saharan Africa",
+    "year": 1800,
+    "date": "1800",
+    "lat": 52.36,
+    "lon": -1.17,
+    "module": "Module 6: Bridge: Markets, History & Global Economy",
+    "concept": "Growth, Global Economy, Great Divergence, Climate Externality",
+    "description": "Malthus's 1798 prediction: population grows geometrically; food supply grows arithmetically → living standards will never permanently rise. England escaped the trap. Evaluate the prediction and the escape mechanism.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 06_Bridge_Markets_History_Global_Economy_Worksheet_v5.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-6"
+    ],
+    "source_file": "06_Bridge_Markets_History_Global_Economy_Worksheet_v5.docx"
+  },
+  {
+    "scenario": 36,
+    "id": "final-m6-36",
+    "title": "British Industrial Revolution",
+    "year": 1780,
+    "date": "1780",
+    "lat": 52.36,
+    "lon": -1.17,
+    "module": "Module 6: Bridge: Markets, History & Global Economy",
+    "concept": "Growth, Global Economy, Great Divergence, Climate Externality",
+    "description": "Steam power (technology) enabled large-scale capital accumulation (factories). This doubled and redoubled labor productivity — launching the hockey stick in real wages. Analyze the causal chain.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 06_Bridge_Markets_History_Global_Economy_Worksheet_v5.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-6"
+    ],
+    "source_file": "06_Bridge_Markets_History_Global_Economy_Worksheet_v5.docx"
+  },
+  {
+    "scenario": 37,
+    "id": "final-m6-37",
+    "title": "The Industrial Coal Economy",
+    "year": 1850,
+    "date": "1850",
+    "lat": 53.48,
+    "lon": -2.24,
+    "module": "Module 6: Bridge: Markets, History & Global Economy",
+    "concept": "Growth, Global Economy, Great Divergence, Climate Externality",
+    "description": "Coal combustion generates economic output — and carbon dioxide. The social cost of carbon dioxide (climate damage) is not reflected in the private market price of coal. This gap between private cost and social cost defines a negative externality.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 06_Bridge_Markets_History_Global_Economy_Worksheet_v5.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-6"
+    ],
+    "source_file": "06_Bridge_Markets_History_Global_Economy_Worksheet_v5.docx"
+  },
+  {
+    "scenario": 38,
+    "id": "final-m7-38",
+    "title": "Marcus's Neighborhood",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 7: Structural Inequality: Core + Game Theory Preview",
+    "concept": "Structural Inequality, Poverty Traps, Monopsony, Game Theory Preview",
+    "description": "Marcus earns $15/hr in a monopsonistic labor market. His neighborhood has: underfunded schools, few bank branches (credit desert), high-cost payday lenders, and food deserts. Each constraint reinforces the others.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 07_Structural_Inequality_Core_Game_Theory_Preview_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-7"
+    ],
+    "source_file": "07_Structural_Inequality_Core_Game_Theory_Preview_Worksheet.docx"
+  },
+  {
+    "scenario": 39,
+    "id": "final-m7-39",
+    "title": "Ray as Monopsonist",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 7: Structural Inequality: Core + Game Theory Preview",
+    "concept": "Structural Inequality, Poverty Traps, Monopsony, Game Theory Preview",
+    "description": "Ray is the dominant employer in Marcus's neighborhood. As a monopsonist, Ray faces an upward-sloping labor supply curve — to hire one more worker, he must raise the wage for all workers. This creates a Marginal Factor Cost (MFC) above the supply curve.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 07_Structural_Inequality_Core_Game_Theory_Preview_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-7"
+    ],
+    "source_file": "07_Structural_Inequality_Core_Game_Theory_Preview_Worksheet.docx"
+  },
+  {
+    "scenario": 40,
+    "id": "final-m7-40",
+    "title": "The Neighborhood Upgrading Game",
+    "year": 2024,
+    "date": "2024",
+    "lat": 20.0,
+    "lon": 0.0,
+    "module": "Module 7: Structural Inequality: Core + Game Theory Preview",
+    "concept": "Structural Inequality, Poverty Traps, Monopsony, Game Theory Preview",
+    "description": "Marcus and his neighbor can each choose to Maintain or Neglect their property. The payoff structure creates a Prisoner's Dilemma: individual rationality leads to collective deterioration.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 07_Structural_Inequality_Core_Game_Theory_Preview_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-7"
+    ],
+    "source_file": "07_Structural_Inequality_Core_Game_Theory_Preview_Worksheet.docx"
+  },
+  {
+    "scenario": 41,
+    "id": "final-m8-41",
+    "title": "Marcus in the Gig Economy",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 8: Structural Inequality: Extensions",
+    "concept": "Digital Divide, Algorithmic Bias, Climate Justice",
+    "description": "Marcus lacks reliable broadband at home. His phone plan data cap limits his ability to use delivery platforms, job boards, and digital financial services. Meanwhile, Ray earns platform revenue from his property on Airbnb.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 08_Structural_Inequality_Extensions_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-8"
+    ],
+    "source_file": "08_Structural_Inequality_Extensions_Worksheet.docx"
+  },
+  {
+    "scenario": 42,
+    "id": "final-m8-42",
+    "title": "Credit Scoring in Marcus's Neighborhood",
+    "year": 2024,
+    "date": "2024",
+    "lat": 20.0,
+    "lon": 0.0,
+    "module": "Module 8: Structural Inequality: Extensions",
+    "concept": "Digital Divide, Algorithmic Bias, Climate Justice",
+    "description": "A fintech lender deploys an algorithm trained on historical loan performance data. Because historical data reflects decades of redlining and discriminatory lending, the algorithm assigns lower credit scores to residents of majority-Black neighborhoods — independently of individual creditworthiness.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 08_Structural_Inequality_Extensions_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-8"
+    ],
+    "source_file": "08_Structural_Inequality_Extensions_Worksheet.docx"
+  },
+  {
+    "scenario": 43,
+    "id": "final-m8-43",
+    "title": "Marcus's Neighborhood & the Refinery",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 8: Structural Inequality: Extensions",
+    "concept": "Digital Divide, Algorithmic Bias, Climate Justice",
+    "description": "Marcus's neighborhood is located adjacent to an industrial facility. Residents experience higher rates of asthma, lead exposure, and heat island effects. Simultaneously, Pacific Island communities facing existential sea-level rise have contributed a negligible fraction of cumulative global carbon emissions.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 08_Structural_Inequality_Extensions_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-8"
+    ],
+    "source_file": "08_Structural_Inequality_Extensions_Worksheet.docx"
+  },
+  {
+    "scenario": 44,
+    "id": "final-m9-44",
+    "title": "Detroit GM Foreman's Decision",
+    "year": 1965,
+    "date": "1965",
+    "lat": 42.33,
+    "lon": -83.05,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "A GM assembly line foreman earns $12,000/year. He has $20,000 in savings and is considering opening his own auto parts shop. Projected annual revenue: $35,000. Shop rent: $8,000/year. Parts inventory: $10,000/year. His savings, if left in the bank, would earn 5% interest ($1,000/year).",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 45,
+    "id": "final-m9-45",
+    "title": "GM Plant Manager, Flint",
+    "year": 1978,
+    "date": "1978",
+    "lat": 43.01,
+    "lon": -83.69,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "After the 1973 OPEC oil shock, demand for large American cars collapsed. A GM plant manager earns $45,000/year. Running a GM division loses $2M in accounting profit (TR $18M, explicit costs $20M).",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 46,
+    "id": "final-m9-46",
+    "title": "GM vs. Toyota Management Layers",
+    "year": 1985,
+    "date": "1985",
+    "lat": 39.83,
+    "lon": -98.58,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "GM had 13 management layers; Toyota had 6. GM's defect information was filtered/delayed. Toyota's Andon cord let workers stop the line directly — eliminating the principal-agent bottleneck.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 47,
+    "id": "final-m9-47",
+    "title": "Pittsburgh Steel Mill",
+    "year": 1974,
+    "date": "1974",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "U.S. Steel's Gary Works has one open-hearth furnace (fixed capital). The plant manager records the following production data: 0 workers → 0 tons/day; 1 worker → 12 tons; 2 workers → 28 tons;",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 48,
+    "id": "final-m9-48",
+    "title": "Ray's Warehouse Operations",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "Ray hires workers at his warehouse. Capital (space, equipment) is fixed in the short run. As he adds workers, output initially rises rapidly — then the rate of increase slows as the fixed factor becomes congested.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 49,
+    "id": "final-m9-49",
+    "title": "Marcus's Food Cart Cost Structure",
+    "year": 2024,
+    "date": "2024",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "Marcus is planning his food cart launch. FC = $800/month (cart rental, permits, insurance). VC = $4 per meal served (ingredients, packaging, gas). Construct his monthly cost schedule.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 50,
+    "id": "final-m9-50",
+    "title": "Flint Auto Parts Supplier",
+    "year": 1982,
+    "date": "1982",
+    "lat": 43.01,
+    "lon": -83.69,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "A GM supplier stamping plant has fixed costs of $1,200/day. Variable costs: 0 units→$0; 1→$400; 2→$700; 3→$960; 4→$1,260; 5→$1,700; 6→$2,400. Market price for stamped auto parts = $600/unit.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 51,
+    "id": "final-m9-51",
+    "title": "NAFTA",
+    "year": 1994,
+    "date": "1994",
+    "lat": 19.43,
+    "lon": -99.13,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "After NAFTA passes, Ford must decide where to build an engine plant. Option A: Michigan (500 engines/day, ATC = $210). Option B: Mexico (2,000 engines/day at scale, ATC = $145). Michigan plant fixed costs: $60M. Mexico plant fixed costs: $150M. Current U.S. demand: 1,000 engines/day. NAFTA projected demand: 3,500/day.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 52,
+    "id": "final-m9-52",
+    "title": "Ray Expands the Warehouse",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "Ray is considering doubling warehouse capacity. His consultant presents two scenarios: (A) specialization and shared equipment lower per-unit costs as output doubles; (B) management complexity grows faster than output.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 53,
+    "id": "final-m9-53",
+    "title": "Marcus's Food Cart — Month 1",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 9: Firms & Cost of Production",
+    "concept": "Economic Profit, Production, Costs, Scale",
+    "description": "Marcus invests $2,400 in equipment (sunk cost after purchase). Monthly fixed costs: $800. Variable cost: $4/meal. He sets price at $12/meal. His market research suggests demand of 150 meals/month.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 09_Firms_and_Cost_of_Production_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-9"
+    ],
+    "source_file": "09_Firms_and_Cost_of_Production_Worksheet.docx"
+  },
+  {
+    "scenario": 54,
+    "id": "final-m10-54",
+    "title": "Marcus's Food Cart — Perfectly Competitive Market",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 10: Profit Maximization",
+    "concept": "Profit Maximization, Shutdown, Monopoly",
+    "description": "Suppose Marcus operates in a perfectly competitive street food market. The market price for his lunch special is $10. Construct his total and marginal revenue schedule. Meals (Q) Price (P)",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 10_Profit_Maximization_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-10"
+    ],
+    "source_file": "10_Profit_Maximization_Worksheet.docx"
+  },
+  {
+    "scenario": 55,
+    "id": "final-m10-55",
+    "title": "Iowa Corn Farm",
+    "year": 1973,
+    "date": "1973",
+    "lat": 42.03,
+    "lon": -93.63,
+    "module": "Module 10: Profit Maximization",
+    "concept": "Profit Maximization, Shutdown, Monopoly",
+    "description": "Problem 1 — Iowa Corn Farm, 1973: Find Profit-Maximizing Output A corn farmer faces market price P = $2.80/bu (OPEC food price surge). Cost data at various output levels: Q=1,000: MC=$1.80;",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 10_Profit_Maximization_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-10"
+    ],
+    "source_file": "10_Profit_Maximization_Worksheet.docx"
+  },
+  {
+    "scenario": 56,
+    "id": "final-m10-56",
+    "title": "Ray's Warehouse — Cost and Revenue Schedule",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 10: Profit Maximization",
+    "concept": "Profit Maximization, Shutdown, Monopoly",
+    "description": "Market price: P = $80 per unit. Cost schedule given below. Apply MR = MC to find the profit-maximizing output level. Calculate total economic profit. Q TR TC MR MC Profit = TR − TC",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 10_Profit_Maximization_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-10"
+    ],
+    "source_file": "10_Profit_Maximization_Worksheet.docx"
+  },
+  {
+    "scenario": 57,
+    "id": "final-m10-57",
+    "title": "Marcus — Month 3 Business Review",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 10: Profit Maximization",
+    "concept": "Profit Maximization, Shutdown, Monopoly",
+    "description": "Marcus reviews Month 3: TR = $1,800; explicit costs (VC + FC) = $1,400; implicit cost (forgone wage at Ray's warehouse) = $600/month. Accounting profit = TR − explicit costs = __________",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 10_Profit_Maximization_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-10"
+    ],
+    "source_file": "10_Profit_Maximization_Worksheet.docx"
+  },
+  {
+    "scenario": 58,
+    "id": "final-m10-58",
+    "title": "Marcus — Shutdown Decision",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 10: Profit Maximization",
+    "concept": "Profit Maximization, Shutdown, Monopoly",
+    "description": "In a difficult month, market price for Marcus's meals falls to $3.50. His AVC = $4.00; ATC = $9.33. Evaluate the shutdown decision. Is P > AVC? P = 3.50; AVC = 4.00 → __________ Decision: Marcus should (operate / shut down) in the short run because: ____________________",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 10_Profit_Maximization_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-10"
+    ],
+    "source_file": "10_Profit_Maximization_Worksheet.docx"
+  },
+  {
+    "scenario": 59,
+    "id": "final-m10-59",
+    "title": "AT&T Long Distance Monopoly",
+    "year": 1977,
+    "date": "1977",
+    "lat": 39.83,
+    "lon": -98.58,
+    "module": "Module 10: Profit Maximization",
+    "concept": "Profit Maximization, Shutdown, Monopoly",
+    "description": "AT&T is the only long distance provider. Demand: P = 2.50 − 0.0002Q. MC = $0.70 (constant). MR = 2.50 − 0.0004Q. Competitive Q = 6,000 calls/day. Find Monopoly Q*: Set MR = MC → 2.50 − 0.0004Q = 0.70 → Q* = ________",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 10_Profit_Maximization_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-10"
+    ],
+    "source_file": "10_Profit_Maximization_Worksheet.docx"
+  },
+  {
+    "scenario": 60,
+    "id": "final-m10-60",
+    "title": "Ray's Monopoly on Cold Storage",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 10: Profit Maximization",
+    "concept": "Profit Maximization, Shutdown, Monopoly",
+    "description": "Ray owns the only functioning cold storage facility in a district. This gives him monopoly pricing power. Demand: P = 200 − 10Q. TC = 600 + 20Q. Derive TR, MR, and solve for the profit-maximizing outcome.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 10_Profit_Maximization_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-10"
+    ],
+    "source_file": "10_Profit_Maximization_Worksheet.docx"
+  },
+  {
+    "scenario": 61,
+    "id": "final-m10-61",
+    "title": "Marcus & Ray — A Comparative Profit Analysis",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 10: Profit Maximization",
+    "concept": "Profit Maximization, Shutdown, Monopoly",
+    "description": "Marcus (food cart): P = $10, ATC = $8, AVC = $4, Q* = 200 meals/month. Ray (warehouse, imperfect competitor): P = $80, ATC = $60 at Q* = 50 units/month. Analyze both. Marcus's economic profit per unit = P − ATC = _____",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 10_Profit_Maximization_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-10"
+    ],
+    "source_file": "10_Profit_Maximization_Worksheet.docx"
+  },
+  {
+    "scenario": 62,
+    "id": "final-m11-62",
+    "title": "U.S. Airline Concentration",
+    "year": 2018,
+    "date": "2018",
+    "lat": 39.83,
+    "lon": -98.58,
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "concept": "Market Power, HHI, Oligopoly, Game Theory",
+    "description": "American 17%, Delta 17%, United 15%, Southwest 17%, Spirit 5%, Alaska 5%, JetBlue 5%, Frontier 3%, Other 16%. HHI = (17² + 17² + 15² + 17²) + smaller shares² ≈ __________ Market concentration category (DOJ threshold): _______________",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 11_Imperfect_Competition_and_Game_Theory_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-11"
+    ],
+    "source_file": "11_Imperfect_Competition_and_Game_Theory_Worksheet.docx"
+  },
+  {
+    "scenario": 63,
+    "id": "final-m11-63",
+    "title": "U.S. v. Google (2023–2024)",
+    "year": 2023,
+    "date": "2023",
+    "lat": 39.83,
+    "lon": -98.58,
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "concept": "Market Power, HHI, Oligopoly, Game Theory",
+    "description": "2023 The DOJ sued Google, arguing it illegally maintained its search monopoly by paying Apple $10B/year (and other device makers) to be the default search engine. This is an EXCLUSIONARY CONTRACT — a practice that blocks rivals from gaining distribution. Google's defense: consumers CHOOSE Google because it is better. DOJ response: consumers never get to make that choice on new devices.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 11_Imperfect_Competition_and_Game_Theory_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-11"
+    ],
+    "source_file": "11_Imperfect_Competition_and_Game_Theory_Worksheet.docx"
+  },
+  {
+    "scenario": 64,
+    "id": "final-m11-64",
+    "title": "Philadelphia Food Truck Market",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "concept": "Market Power, HHI, Oligopoly, Game Theory",
+    "description": "Marcus enters a monopolistically competitive food truck market. Initially he earns economic profit (P > ATC). Over time, new food trucks enter with differentiated offerings — reducing his demand until P = ATC.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 11_Imperfect_Competition_and_Game_Theory_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-11"
+    ],
+    "source_file": "11_Imperfect_Competition_and_Game_Theory_Worksheet.docx"
+  },
+  {
+    "scenario": 65,
+    "id": "final-m11-65",
+    "title": "Marcus & Ray Pricing Game",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "concept": "Market Power, HHI, Oligopoly, Game Theory",
+    "description": "Marcus (food cart) and Ray (sandwich chain) each set prices. Competitive pricing = $8 lunch; Accommodating pricing = $12 lunch. Higher prices benefit both if both accommodate. Complete the payoff matrix (Marcus's profit, Ray's profit):",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 11_Imperfect_Competition_and_Game_Theory_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-11"
+    ],
+    "source_file": "11_Imperfect_Competition_and_Game_Theory_Worksheet.docx"
+  },
+  {
+    "scenario": 66,
+    "id": "final-m11-66",
+    "title": "OPEC Oil Cartel Game",
+    "year": 1973,
+    "date": "1973",
+    "lat": 24.71,
+    "lon": 46.67,
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "concept": "Market Power, HHI, Oligopoly, Game Theory",
+    "description": "OPEC members agree to collectively reduce oil production to raise prices. But each member faces individual incentive to secretly overproduce (sell more at the high cartel price). Saudi Arabia: \"Should we cheat on our quota?\" Iran: \"Should we cheat on our quota?\"",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 11_Imperfect_Competition_and_Game_Theory_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-11"
+    ],
+    "source_file": "11_Imperfect_Competition_and_Game_Theory_Worksheet.docx"
+  },
+  {
+    "scenario": 67,
+    "id": "final-m11-67",
+    "title": "Boeing vs. Airbus",
+    "year": 1990,
+    "date": "1990",
+    "lat": 20.0,
+    "lon": 0.0,
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "concept": "Market Power, HHI, Oligopoly, Game Theory",
+    "description": "Boeing and Airbus each decide whether to invest in a new wide-body aircraft. Payoffs depend on what the other does. Airbus: Invest Airbus: Don't Invest Boeing: Invest $2B, $1B $4B, $0",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 11_Imperfect_Competition_and_Game_Theory_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-11"
+    ],
+    "source_file": "11_Imperfect_Competition_and_Game_Theory_Worksheet.docx"
+  },
+  {
+    "scenario": 68,
+    "id": "final-m11-68",
+    "title": "OPEC Cartel Stability",
+    "year": 1973,
+    "date": "1973",
+    "lat": 24.71,
+    "lon": 46.67,
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "concept": "Market Power, HHI, Oligopoly, Game Theory",
+    "description": "OPEC member states agree to restrict production, raising the world oil price above the competitive level. Each member faces a temptation to cheat by producing above its quota — benefiting at others' expense. Analyze the cartel as a repeated Prisoner's Dilemma.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 11_Imperfect_Competition_and_Game_Theory_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-11"
+    ],
+    "source_file": "11_Imperfect_Competition_and_Game_Theory_Worksheet.docx"
+  },
+  {
+    "scenario": 69,
+    "id": "final-m11-69",
+    "title": "Marcus & Ray — A Repeated Strategic Game",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.95,
+    "lon": -75.17,
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "concept": "Market Power, HHI, Oligopoly, Game Theory",
+    "description": "Marcus works for Ray (employer-worker relationship, repeated interaction). Each month, Marcus can Exert High Effort or Shirk; Ray can Honor the implicit wage agreement or Exploit (cut hours without notice). Analyze the equilibrium.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 11_Imperfect_Competition_and_Game_Theory_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-11"
+    ],
+    "source_file": "11_Imperfect_Competition_and_Game_Theory_Worksheet.docx"
+  },
+  {
+    "scenario": 70,
+    "id": "final-m12-70",
+    "title": "Free-Rider Problem — Neighborhood Security",
+    "year": 2024,
+    "date": "2024",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "Neighborhood security is non-excludable, non-rival. Each resident can contribute or free-ride. If all free-ride, no security is provided. Marcus's dominant strategy analysis: Marcus's payoff if he contributes AND others contribute: _______________",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 71,
+    "id": "final-m12-71",
+    "title": "Chemical Plant Pollution",
+    "year": 1975,
+    "date": "1975",
+    "lat": 41.88,
+    "lon": -87.63,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "Chemical plant: Market price = $80/ton. PMC = $60/ton. External damage per ton = $20 (river pollution). Without regulation: Q_market = 1,000 tons. Social optimum: Q* = 500 tons. SMC = PMC + External Cost = $60 + $20 = $ _____",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 72,
+    "id": "final-m12-72",
+    "title": "The Social Cost of Carbon",
+    "year": 2024,
+    "date": "2024",
+    "lat": 20.0,
+    "lon": 0.0,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "The U.S. government's central estimate of the social cost of carbon is approximately $51 per metric ton (as of recent revisions). A Pigouvian carbon tax would be set at this level. Evaluate the instrument and its distributional implications.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 73,
+    "id": "final-m12-73",
+    "title": "Minimum Wage Case Study",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.83,
+    "lon": -98.58,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "1938–PRESENT Neoclassical prediction: A minimum wage ABOVE equilibrium wage creates unemployment (labor surplus). Empirical evidence (Card & Krueger, 1994; Dube, 2019): moderate minimum wage increases often show little to no employment effect, especially in local monopsony labor markets. The debate hinges on time horizon, market structure, and adjustment mechanisms.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 74,
+    "id": "final-m12-74",
+    "title": "Coal Tax",
+    "year": 2024,
+    "date": "2024",
+    "lat": 39.83,
+    "lon": -98.58,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "Congress proposes a $50/ton carbon tax on coal and gas. Coal's price elasticity of demand (short-run) = –0.1 (very inelastic). Short-run price elasticity of supply = 0.5. Long-run demand elasticity = –0.6. Tax raises coal price from $40/ton to $50/ton.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 75,
+    "id": "final-m12-75",
+    "title": "The International Climate Game",
+    "year": 2024,
+    "date": "2024",
+    "lat": 20.0,
+    "lon": 0.0,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "Two nations (Nation A = high-income, Nation B = developing) must decide whether to invest in costly emissions reductions (Cooperate) or continue emitting freely (Defect). The payoff structure mirrors a Prisoner's Dilemma.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 76,
+    "id": "final-m12-76",
+    "title": "Mortgage Crisis: Behavioral Failures",
+    "year": 2008,
+    "date": "2008",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "Behavioral failures contributed to the 2008 crisis: (A) Buyers signed adjustable-rate mortgages (ARMs) with teaser rates starting at 1%, jumping to 8% in year 3. (B) Ratings agencies gave 'AAA' ratings to mortgage-backed securities that later lost 90% of their value. (C) Banks paid traders large bonuses for short-term profits with no clawback if investments later failed.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 77,
+    "id": "final-m12-77",
+    "title": "Nudge Architecture in Practice",
+    "year": 2009,
+    "date": "2009",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "A \"nudge\" changes the DEFAULT OPTION or presentation of choices to improve decision-making WITHOUT restricting freedom of choice. Examples: (A) 401(k) auto-enrollment — employees automatically enrolled unless they opt out (vs. opt-in). (B) Cafeteria design — healthy foods placed at eye level. (C) Energy bill \"neighbor comparison\" — shows your usage vs. neighbors.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 78,
+    "id": "final-m12-78",
+    "title": "Marcus, Ray & the Surveillance Cameras",
+    "year": 2024,
+    "date": "2024",
+    "lat": 30.96,
+    "lon": 46.1,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "The neighborhood is considering installing surveillance cameras financed by a local assessment. Marcus (renter, low-income) would pay $200/year. Ray (business owner, higher income) would pay $200/year. Benefits: Marcus gets $300 in security value; Ray gets $600 in property value protection. A public goods game determines whether the cameras get funded.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 79,
+    "id": "final-m12-79",
+    "title": "The Limits of the Market — and Economics",
+    "year": 2024,
+    "date": "2024",
+    "lat": 20.0,
+    "lon": 0.0,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "We have spent this course applying economic models to 5,000 years of human history. The models have been powerful: supply and demand explained price spikes, the VMP model explained wages, the surplus framework measured policy effects, behavioral economics explained irrational patterns. But the paradoxes above suggest that economics has hard limits: it cannot determine what a society should value, it cannot predict co",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  },
+  {
+    "scenario": 80,
+    "id": "final-m12-80",
+    "title": "The Human Development Index vs. GDP per Capita",
+    "year": 2024,
+    "date": "2024",
+    "lat": 20.0,
+    "lon": 0.0,
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "concept": "Market Failure, Pigouvian Policy, Carbon Pricing, Behavioral Policy",
+    "description": "Sen's capabilities approach and the HDI measure wellbeing as a composite of income, health (life expectancy), and education (literacy, schooling). Countries with similar GDP per capita can differ dramatically on the HDI.",
+    "historical_artifact": {
+      "name": "Final Build worksheet source: 12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx",
+      "note": "Scenario imported from the Final Build worksheet set."
+    },
+    "tags": [
+      "final-build",
+      "module-12"
+    ],
+    "source_file": "12_Policy_Paradox_and_Human_Perspectives_Worksheet.docx"
+  }
+]

@@ -87,11 +87,11 @@ def add_inline_label(fig, alpha, beta, *, text, xmax, ymin, ymax, pad=0.96, side
 # ──────────────────────────────────────────────────────────────────────────────
 # One pane (either Demand-shift or Supply-shift)
 # ──────────────────────────────────────────────────────────────────────────────
-def make_pane(title, D0, S0, xmax, ymax, which, *, hide_d, hide_s, show_baseline, show_grid):
+def make_pane(title, D0, S0, xmax, ymax, which, *, hide_d, hide_s, show_baseline, show_grid, default_delta=0.0):
     st.markdown(f"### {title}")
 
     # Parallel (vertical) shift only
-    d_alpha = st.slider(f"{which} Δα (parallel shift)", -20.0, 20.0, 0.0, 0.5, key=f"{title}_a")
+    d_alpha = st.slider(f"{which} Δα (parallel shift)", -20.0, 20.0, float(default_delta), 0.5, key=f"{title}_a")
 
     # Build shifted lines
     if which == "Demand":
@@ -197,19 +197,22 @@ def make_pane(title, D0, S0, xmax, ymax, which, *, hide_d, hide_s, show_baseline
 # ──────────────────────────────────────────────────────────────────────────────
 # App
 # ──────────────────────────────────────────────────────────────────────────────
-def app():
+def app(scenario=None, **params):
     st.subheader("Double Shifts — Demand vs Supply (side-by-side)")
+    params = {**st.session_state.get("selected_model_params", {}), **params}
+    if params.get("worksheet_note"):
+        st.info(params["worksheet_note"])
 
     # Global axes (visible box for both panes)
-    xmax = st.sidebar.number_input("Max Q", 10, 1000, 200, 10)
-    ymax = st.sidebar.number_input("Max P", 10, 1000, 50, 5)
+    xmax = st.sidebar.number_input("Max Q", 10, 1000, int(params.get("xmax", 200)), 10)
+    ymax = st.sidebar.number_input("Max P", 10, 1000, int(params.get("ymax", 50)), 5)
 
     # Baseline curves: P = α + βQ
     st.sidebar.markdown("**Baseline curves** *(P = α + βQ)*")
-    ad = st.sidebar.number_input("Demand α ", value=30.0, step=1.0)
-    bd = st.sidebar.number_input("Demand β", value=-0.2, step=0.05, format="%.3f")
-    as_ = st.sidebar.number_input("Supply α", value=5.0, step=1.0)
-    bs  = st.sidebar.number_input("Supply β", value=0.1, step=0.05, format="%.3f")
+    ad = st.sidebar.number_input("Demand α ", value=float(params.get("demand_intercept", 30.0)), step=1.0)
+    bd = st.sidebar.number_input("Demand β", value=float(params.get("demand_slope", -0.2)), step=0.05, format="%.3f")
+    as_ = st.sidebar.number_input("Supply α", value=float(params.get("supply_intercept", 5.0)), step=1.0)
+    bs  = st.sidebar.number_input("Supply β", value=float(params.get("supply_slope", 0.1)), step=0.05, format="%.3f")
 
     D0, S0 = Line(ad, bd), Line(as_, bs)
 
@@ -228,10 +231,12 @@ def app():
     col1, col2 = st.columns(2)
     with col1:
         make_pane("Demand shift", D0, S0, xmax, ymax, "Demand",
-                  hide_d=hide_d, hide_s=hide_s, show_baseline=show_baseline, show_grid=show_grid)
+                  hide_d=hide_d, hide_s=hide_s, show_baseline=show_baseline, show_grid=show_grid,
+                  default_delta=params.get("demand_shift_delta", 0.0))
     with col2:
         make_pane("Supply shift", D0, S0, xmax, ymax, "Supply",
-                  hide_d=hide_d, hide_s=hide_s, show_baseline=show_baseline, show_grid=show_grid)
+                  hide_d=hide_d, hide_s=hide_s, show_baseline=show_baseline, show_grid=show_grid,
+                  default_delta=params.get("supply_shift_delta", 0.0))
 
     # Advanced toggle
     show_adv = st.toggle("Advanced (show equations)", value=False, key="shifts_double_adv")

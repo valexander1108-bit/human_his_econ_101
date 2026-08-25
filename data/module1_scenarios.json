@@ -1,40 +1,3383 @@
 [
-{
-  "id": "ur-3000-bce",
-  "source": "Unknown (2020)",
-  "rr":"https://www.runningreality.org/#12/01/3000BC&36.90252,38.21229&zoom=4",
-  "scenario": 1,
-  "title": "The Farmers of Ur",
-  "year": "-3000",
-  "concept": "Budget Constraint",
-  "module": "Module 1: Economic Thought and Modeling",
-  "period": "The Bronze Age",
-  "region": "Mesopotamia",
-  "actors": "Households",
-  "description": "We know from early clay tablets that temples in Mesopotamia distributed rations of grain to families for their field work. While the tablets only record genarlized quantities, we can imagine these families weighing their rations using shekels at the city market, deciding how to stretch their limited resources between barley — the staple grain on which they depended — and wool, needed to prepare clothing for the coming winter.",
-  "lat": 31.56236,
-  "lon": 46.1789,
-  "tradeoffs": "How did ancient mesopatamia's view consumption? Was it really this or that?",
-  "links":"https://www.worldhistory.org/image/4853/distribution-of-barley-rations-tablet-from-girsu/?utm_source=chatgpt.com",
-  "linked_model":"budget_line"
+  {
+    "id": "ur-3000",
+    "scenario": 1,
+    "title": "The Farmer of Ur",
+    "year": "-3000",
+    "concept": "Budget Constraint",
+    "module": "Module 1: Economic Thought & Modeling",
+    "region": "Mesopotamia",
+    "description": "In 3000 BCE, a Mesopotamia farmer makes a choice between barley and wool using a limited amount of shekels. Historians could approach this scenario through a barley ration tablet from Ur, which turns the setting into evidence for practicing Budget Constraint. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 31.56236,
+    "lon": 46.1789,
+    "coordinate_note": "provided",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "africa-middle-east",
+      "provided-coordinates",
+      "budget-constraint",
+      "mesopotamia",
+      "module-1"
+    ],
+    "linked_model": "budget_line",
+    "historical_artifact": {
+      "name": "barley ration tablet from Ur",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
   },
-{
-  "id": "anyang-1200-bce",
-  "source": "unknown",
-  "rr":"https://www.runningreality.org/#12/01/1200BC&37.09708,116.24560&zoom=4",
-  "scenario": 2,
-  "title": "The Farmer of Anyang",
-  "year": "-1200",
-  "concept": "Budget Constraint",
-  "module": "Module 1: Economic Thought and Modeling",
-  "period": "The Bronze Age",
-  "region": "China (Shang Dynasty)",
-  "actors": "[Peasent Farmers]",
-  "description": "We know from artifacts that temples in Mesopotamia distributed rations of grain to families for their field work. While the tablets only record genarlized quantities, we can imagine these families weighing their rations using shekels at the city market, deciding how to stretch their limited resources between barley — the staple grain on which they depended — and wool, needed to prepare clothing for the coming winter.",
-  "lat": 36.1000,
-  "lon": 114.3000,
-  "tradeoffs":"Coming Soon",
-  "links": "https://www.worldhistory.org/image/4853/distribution-of-barley-rations-tablet-from-girsu/?utm_source=chatgpt.com",
-  "linked_model":"budget_line"
+  {
+    "id": "anyang-1200",
+    "scenario": 2,
+    "title": "The Farmer of Anyang",
+    "year": "-1200",
+    "concept": "Budget Constraint",
+    "module": "Module 1: Economic Thought & Modeling",
+    "region": "China (Shang)",
+    "description": "In 1200 BCE, a peasant farmer receives 20 cowrie shells and must choose at market between grain for winter storage and bronze for sickle blade repair in Anyang during the late Shang Dynasty. Historians could approach this scenario through a Shang oracle-bone and cowrie-shell record, which turns the setting into evidence for practicing Budget Constraint. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 36.1,
+    "lon": 114.3,
+    "coordinate_note": "provided",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "provided-coordinates",
+      "budget-constraint",
+      "china-shang",
+      "module-1"
+    ],
+    "linked_model": "budget_line",
+    "historical_artifact": {
+      "name": "Shang oracle-bone and cowrie-shell record",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "niger-100",
+    "scenario": 3,
+    "title": "The Herder of the Upper Niger",
+    "year": "-1000",
+    "concept": "Budget Constraint",
+    "module": "Module 1: Economic Thought & Modeling",
+    "region": "West Africa (Upper Niger)",
+    "description": "In 1000 BCE, a Malian herder receives 10 gold\u2011dust rings and must choose between millet for his village granary or iron tools for repairing cattle pens in the Upper Niger region. Historians could approach this scenario through a gold-dust ring and iron-tool trade record from the Upper Niger, which turns the setting into evidence for practicing Budget Constraint. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 13.9,
+    "lon": -4.55,
+    "coordinate_note": "estimated: Upper Niger / Mali inland delta",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "budget-constraint",
+      "west-africa-upper-niger",
+      "module-1"
+    ],
+    "linked_model": "budget_line",
+    "historical_artifact": {
+      "name": "gold-dust ring and iron-tool trade record from the Upper Niger",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "olmec-800",
+    "scenario": 4,
+    "title": "The Obsidian Makers of the Olmec Heartland",
+    "year": "-800",
+    "concept": "PPC",
+    "module": "Module 1: Economic Thought & Modeling",
+    "region": "Mesoamerica (Olmec)",
+    "description": "In 800 BCE, the Olmecs make production decisions between agriculture and obsidian. Historians could approach this scenario through a Olmec obsidian blade and agricultural field schedule, which turns the setting into evidence for practicing PPC. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 17.65,
+    "lon": -94.05,
+    "coordinate_note": "estimated: Olmec heartland near San Lorenzo",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "transregional",
+      "estimated-coordinates",
+      "ppc",
+      "mesoamerica-olmec",
+      "module-1"
+    ],
+    "linked_model": "ppc",
+    "historical_artifact": {
+      "name": "Olmec obsidian blade and agricultural field schedule",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "saladoid-350",
+    "scenario": 5,
+    "title": "The Potters of the Saladoid Caribbean",
+    "year": "-350",
+    "concept": "PPC",
+    "module": "Module 1: Economic Thought & Modeling",
+    "region": "Caribbean (Saladoid)",
+    "description": "In 350 BCE, early Saladoid culture make productions decisions between agriculture and ceramics. Historians could approach this scenario through a Saladoid ceramic vessel, which turns the setting into evidence for practicing PPC. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 18.2,
+    "lon": -66.5,
+    "coordinate_note": "estimated: Saladoid Caribbean near Puerto Rico",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "latin-america-caribbean",
+      "estimated-coordinates",
+      "ppc",
+      "caribbean-saladoid",
+      "module-1"
+    ],
+    "linked_model": "ppc",
+    "historical_artifact": {
+      "name": "Saladoid ceramic vessel",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "india-greece-350",
+    "scenario": 6,
+    "title": "The Spice Merchant Between Maurya India and Hellenistic Greece",
+    "year": "-200",
+    "concept": "Comparative Advantage",
+    "module": "Module 1: Economic Thought & Modeling",
+    "region": "Greece & India",
+    "description": "In 200 BCE, merchants in Hellenistic Greece crave spices and textiles, while the courts of Maurya India prize silver and luxury goods. Historians could approach this scenario through a Mauryan punch-marked coin and Hellenistic trade itinerary, which turns the setting into evidence for practicing Comparative Advantage. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 32.5,
+    "lon": 64.0,
+    "coordinate_note": "estimated: Indo-Hellenistic trade corridor midpoint",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "comparative-advantage",
+      "greece-and-india",
+      "module-1"
+    ],
+    "linked_model": "comparative_advantage",
+    "historical_artifact": {
+      "name": "Mauryan punch-marked coin and Hellenistic trade itinerary",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "egypt-rome-30",
+    "scenario": 7,
+    "title": "The Grain Trader Between Egypt and Rome",
+    "year": "-30",
+    "concept": "Comparative Advantage",
+    "module": "Module 1: Economic Thought & Modeling",
+    "region": "Egypt & Rome",
+    "description": "In 30 BCE, cleopatra VII of Egypt is rich in grain and entangled with Rome; consider trade with a civilization rich in military power and wine. Historians could approach this scenario through a Alexandrian grain shipment record for Rome, which turns the setting into evidence for practicing Comparative Advantage. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 31.2,
+    "lon": 29.92,
+    "coordinate_note": "estimated: Alexandria, Egypt-Rome grain route",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "comparative-advantage",
+      "egypt-and-rome",
+      "module-1"
+    ],
+    "linked_model": "comparative_advantage",
+    "historical_artifact": {
+      "name": "Alexandrian grain shipment record for Rome",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "silk-road-435",
+    "scenario": 8,
+    "title": "The Sogdian Trader of the Silk Road",
+    "year": "435",
+    "concept": "Demand",
+    "module": "Module 3: Supply and Demand",
+    "region": "Silk Road (Rome/Byzantium)",
+    "description": "In 435 CE, a Sogdian Trader after the fall of Rome anticipates Roman elite vs Byzantine demand and willingness to pay. Historians could approach this scenario through a Sogdian merchant letter and silk-price schedule, which turns the setting into evidence for practicing Demand. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 39.65,
+    "lon": 66.97,
+    "coordinate_note": "estimated: Samarkand/Sogdian Silk Road",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "demand",
+      "silk-road-rome-byzantium",
+      "module-3"
+    ],
+    "links": "\"https://www.cambridge.org/core/books/abs/empires-and-exchanges-in-eurasian-late-antiquity/sogdian-merchants-and-sogdian-culture-on-the-silk-road/F9A2001E2D562C95CEB1D581114DF5CE?utm_source=chatgpt.com\",\"https://www.cambridge.org/core/journals/journal-of-asian-studies/article/abs/sogdian-traders-a-history-by-etienne-de-la-vaissiere-translated-by-james-ward-leiden-brill-2005-xiv-410-pp-19900-cloth/08632E403964E0161A0286E73C90540F\"",
+    "linked_model": "demand_schedule",
+    "historical_artifact": {
+      "name": "Sogdian merchant letter and silk-price schedule",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "carolingian-800",
+    "scenario": 9,
+    "title": "The Blacksmith of Carolingian Europe",
+    "year": "800",
+    "concept": "Supply",
+    "module": "Module 3: Supply and Demand",
+    "region": "Carolingian Europe",
+    "description": "In 800 CE, decide whether to scale up spearheads or ox yokes as wars drive requisitions and disrupt farm labor. Historians could approach this scenario through a Carolingian capitulary on military supplies, which turns the setting into evidence for practicing Supply. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 50.85,
+    "lon": 4.35,
+    "coordinate_note": "estimated: Carolingian northwest Europe",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "supply",
+      "carolingian-europe",
+      "module-3"
+    ],
+    "linked_model": "supply_schedule",
+    "historical_artifact": {
+      "name": "Carolingian capitulary on military supplies",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "basra-800",
+    "scenario": 10,
+    "title": "The Wheat Farmer of Basra",
+    "year": "800",
+    "concept": "Market Price & Quantity",
+    "module": "Module 3: Supply and Demand",
+    "region": "Abbasid Caliphate (Basra)",
+    "description": "In 800 CE, track wheat production and introduce algebraic methods for market problems. Historians could approach this scenario through a Abbasid-era wheat market account from Basra, which turns the setting into evidence for practicing Market Price & Quantity. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 30.5,
+    "lon": 47.8,
+    "coordinate_note": "estimated: Basra",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "market-price-and-quantity",
+      "abbasid-caliphate-basra",
+      "module-3"
+    ],
+    "linked_model": "supply_demand",
+    "historical_artifact": {
+      "name": "Abbasid-era wheat market account from Basra",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "kilwa-800",
+    "scenario": 11,
+    "title": "The Ivory Merchant of Kilwa",
+    "year": "800",
+    "concept": "Market Price & Quantity",
+    "module": "Module 3: Supply and Demand",
+    "region": "East Africa (Kilwa)",
+    "description": "In 800 CE, determine ivory quantities and price given Gujarati textile traders and Abbasid spice merchants. Historians could approach this scenario through a Kilwa coin and Indian Ocean trade bead assemblage, which turns the setting into evidence for practicing Market Price & Quantity. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -8.95,
+    "lon": 39.5,
+    "coordinate_note": "estimated: Kilwa coast",
+    "tags": [
+      "southern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "market-price-and-quantity",
+      "east-africa-kilwa",
+      "module-3"
+    ],
+    "linked_model": "supply_demand",
+    "historical_artifact": {
+      "name": "Kilwa coin and Indian Ocean trade bead assemblage",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "acre-trader-crusader-luxury-demand-1099",
+    "scenario": 12,
+    "title": "The Luxury Trader of Acre",
+    "year": "1099",
+    "concept": "Shifts in Demand",
+    "module": "Module 3: Supply and Demand",
+    "region": "Levant (Acre)",
+    "description": "In 1099 CE, luxury demand rises with crusaders and pilgrims; staple demand declines as sieges end. Historians could approach this scenario through a Acre customs record for crusader luxury goods, which turns the setting into evidence for practicing Shifts in Demand. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 32.92,
+    "lon": 35.08,
+    "coordinate_note": "estimated: Acre",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "shifts-in-demand",
+      "levant-acre",
+      "module-3"
+    ],
+    "linked_model": "shifts_single",
+    "historical_artifact": {
+      "name": "Acre customs record for crusader luxury goods",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "hangzhou-tea-bumper-harvest-levies-1200",
+    "scenario": 13,
+    "title": "The Tea Seller of Hangzhou",
+    "year": "1200",
+    "concept": "Shifts in Supply",
+    "module": "Module 3: Supply and Demand",
+    "region": "China (Hangzhou)",
+    "description": "In 1200 CE, supply shifts right (harvest) then left (transport levies). Historians could approach this scenario through a Song-era tea tax and transport levy record, which turns the setting into evidence for practicing Shifts in Supply. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 30.27,
+    "lon": 120.16,
+    "coordinate_note": "estimated: Hangzhou",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "shifts-in-supply",
+      "china-hangzhou",
+      "module-3"
+    ],
+    "linked_model": "shifts_single",
+    "historical_artifact": {
+      "name": "Song-era tea tax and transport levy record",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "aztec-cacao-festival-demand-poor-harvest-supply-1300",
+    "scenario": 14,
+    "title": "The Cacao Broker of Tenochtitlan",
+    "year": "1300",
+    "concept": "Shifts in Both",
+    "module": "Module 3: Supply and Demand",
+    "region": "Mesoamerica (Tenochtitl\u00e1n)",
+    "description": "In 1300 CE, demand up among nobility while harvest failure reduces supply. Historians could approach this scenario through a Aztec cacao tribute codex entry, which turns the setting into evidence for practicing Shifts in Both. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 19.43,
+    "lon": -99.13,
+    "coordinate_note": "estimated: Tenochtitlan",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "transregional",
+      "estimated-coordinates",
+      "shifts-in-both",
+      "mesoamerica-tenochtitl-n",
+      "module-3"
+    ],
+    "linked_model": "shifts_single",
+    "historical_artifact": {
+      "name": "Aztec cacao tribute codex entry",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "florence-cloth-plague-shock-1348",
+    "scenario": 15,
+    "title": "The Cloth Weaver of Florence",
+    "year": "1348",
+    "concept": "Shifts in Both",
+    "module": "Module 3: Supply and Demand",
+    "region": "Italy (Florence)",
+    "description": "In 1348 CE, weavers decimated (supply \u2193) and luxury demand falls (demand \u2193). Historians could approach this scenario through a Florentine guild ledger from the plague years, which turns the setting into evidence for practicing Shifts in Both. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 43.77,
+    "lon": 11.26,
+    "coordinate_note": "estimated: Florence",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "shifts-in-both",
+      "italy-florence",
+      "module-3"
+    ],
+    "linked_model": "shifts_single",
+    "historical_artifact": {
+      "name": "Florentine guild ledger from the plague years",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "bruges-flemish-cloth-standardized-many-sellers-Early 1400s",
+    "scenario": 17,
+    "title": "The Cloth Seller of Bruges",
+    "year": "Early 1400s",
+    "concept": "Perfectly Elastic",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Low Countries (Bruges)",
+    "description": "In Early 1400s, horizontal demand at market price; standardized goods enable perfect substitution. Historians could approach this scenario through a Flemish cloth guild seal and Bruges market ordinance, which turns the setting into evidence for practicing Perfectly Elastic. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 51.21,
+    "lon": 3.22,
+    "coordinate_note": "estimated: Bruges",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "perfectly-elastic",
+      "low-countries-bruges",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Flemish cloth guild seal and Bruges market ordinance",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "west-african-salt-necessity-Late 1400s",
+    "scenario": 16,
+    "title": "The Salt Caravaner of Taghaza",
+    "year": "Late 1400s",
+    "concept": "Perfectly Inelastic",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "West Africa (Taghaza/Mali/Songhai)",
+    "description": "In Late 1400s, essential good with no substitutes \u2192 vertical demand curve. Historians could approach this scenario through a Saharan salt caravan account from Taghaza, which turns the setting into evidence for practicing Perfectly Inelastic. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 23.45,
+    "lon": -5.75,
+    "coordinate_note": "estimated: Taghaza salt route",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "perfectly-inelastic",
+      "west-africa-taghaza-mali-songhai",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Saharan salt caravan account from Taghaza",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "banda-nutmeg-after-melaka-tariff-1460",
+    "scenario": 18,
+    "title": "The Nutmeg Trader of the Banda Islands",
+    "year": "1460",
+    "concept": "Elastic",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Indonesia (Banda/Melaka)",
+    "description": "In 1460 CE, price increase \u2192 buyers reduce purchases sharply. Historians could approach this scenario through a Banda nutmeg cargo manifest, which turns the setting into evidence for practicing Elastic. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -4.55,
+    "lon": 129.9,
+    "coordinate_note": "estimated: Banda Islands",
+    "tags": [
+      "southern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "asia",
+      "estimated-coordinates",
+      "elastic",
+      "indonesia-banda-melaka",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Banda nutmeg cargo manifest",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "florentine-silk-during-war-1467",
+    "scenario": 19,
+    "title": "The Silk Merchant of Florence",
+    "year": "1467",
+    "concept": "Elastic",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Italy (Florence)",
+    "description": "In 1467 CE, luxury demand highly elastic; raising price cuts Q sharply. Historians could approach this scenario through a Florentine silk guild price record, which turns the setting into evidence for practicing Elastic. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 43.77,
+    "lon": 11.26,
+    "coordinate_note": "estimated: Florence",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "elastic",
+      "italy-florence",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Florentine silk guild price record",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "gao-salt-demand-steady-despite-shocks-1475",
+    "scenario": 20,
+    "title": "The Salt Merchant of Gao",
+    "year": "1475",
+    "concept": "Inelastic",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "West Africa (Gao/Taghaza route)",
+    "description": "In 1475 CE, caravan attacks reduce supply; demand remains steady (inelastic). Historians could approach this scenario through a Gao caravan toll and salt-market account, which turns the setting into evidence for practicing Inelastic. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 16.27,
+    "lon": -0.04,
+    "coordinate_note": "estimated: Gao",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "inelastic",
+      "west-africa-gao-taghaza-route",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Gao caravan toll and salt-market account",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "ta-no-barter-moves-to-1-1-1493",
+    "scenario": 21,
+    "title": "The Barter Trader of Hispaniola",
+    "year": "1493",
+    "concept": "Unit Elastic",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Caribbean (Hispaniola)",
+    "description": "In 1493 CE, trade ratios converge to 1\u2011to\u20111, illustrating unit elasticity. Historians could approach this scenario through a Taino exchange object from Hispaniola, which turns the setting into evidence for practicing Unit Elastic. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 19.0,
+    "lon": -70.67,
+    "coordinate_note": "estimated: Hispaniola",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "latin-america-caribbean",
+      "estimated-coordinates",
+      "unit-elastic",
+      "caribbean-hispaniola",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Taino exchange object from Hispaniola",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "venetian-pepper-after-portuguese-route-1505",
+    "scenario": 22,
+    "title": "The Pepper Merchant of Venice",
+    "year": "1505",
+    "concept": "Total Revenue",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Europe (Venice/Lisbon)",
+    "description": "In 1505 CE, lower prices but total revenue falls \u2192 elastic demand. Historians could approach this scenario through a Venetian pepper price ledger after the Portuguese route, which turns the setting into evidence for practicing Total Revenue. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 45.44,
+    "lon": 12.33,
+    "coordinate_note": "estimated: Venice",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "total-revenue",
+      "europe-venice-lisbon",
+      "module-4"
+    ],
+    "linked_model": "elasticity_tr",
+    "historical_artifact": {
+      "name": "Venetian pepper price ledger after the Portuguese route",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "ming-suzhou-rice-10-p-10-qd-1506",
+    "scenario": 23,
+    "title": "The Rice Buyer of Suzhou",
+    "year": "1506",
+    "concept": "Unit Elastic",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "China (Ming, Suzhou)",
+    "description": "In 1506 CE, state granary releases induce ~unit\u2011elastic demand response. Historians could approach this scenario through a Ming granary release record from Suzhou, which turns the setting into evidence for practicing Unit Elastic. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 31.3,
+    "lon": 120.6,
+    "coordinate_note": "estimated: Suzhou",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "unit-elastic",
+      "china-ming-suzhou",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Ming granary release record from Suzhou",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "potos-mita-labor-demand-1580",
+    "scenario": 24,
+    "title": "The Mine Labor Contractor of Potosi",
+    "year": "1580",
+    "concept": "Inelastic",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Andes (Potos\u00ed)",
+    "description": "In 1580 CE, forced mining labor demand remains high despite rising costs. Historians could approach this scenario through a Potosi mita labor draft register, which turns the setting into evidence for practicing Inelastic. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -19.59,
+    "lon": -65.75,
+    "coordinate_note": "estimated: Potosi",
+    "tags": [
+      "southern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "latin-america-caribbean",
+      "estimated-coordinates",
+      "inelastic",
+      "andes-potos",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Potosi mita labor draft register",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "dutch-tulip-panic-1637",
+    "scenario": 25,
+    "title": "The Tulip Seller of Haarlem",
+    "year": "1637",
+    "concept": "Total Revenue",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Netherlands (Haarlem)",
+    "description": "In 1637 CE, small price increases collapse sales; TR plummets. Historians could approach this scenario through a Dutch tulip contract from Haarlem, which turns the setting into evidence for practicing Total Revenue. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 52.39,
+    "lon": 4.64,
+    "coordinate_note": "estimated: Haarlem",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "total-revenue",
+      "netherlands-haarlem",
+      "module-4"
+    ],
+    "linked_model": "elasticity_tr",
+    "historical_artifact": {
+      "name": "Dutch tulip contract from Haarlem",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "istanbul-coffee-and-sugar-1685",
+    "scenario": 26,
+    "title": "The Coffeehouse Keeper of Istanbul",
+    "year": "1685",
+    "concept": "Cross-Price Elasticity \u2014 Complements",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Ottoman Empire (Istanbul)",
+    "description": "In 1685 CE, sugar price drop raises coffee demand (complements). Historians could approach this scenario through a Ottoman coffeehouse and sugar-price record, which turns the setting into evidence for practicing Cross-Price Elasticity \u2014 Complements. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 41.01,
+    "lon": 28.97,
+    "coordinate_note": "estimated: Istanbul",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "cross-price-elasticity-complements",
+      "ottoman-empire-istanbul",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Ottoman coffeehouse and sugar-price record",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "great-frost-constrains-grain-1709",
+    "scenario": 27,
+    "title": "The Grain Farmer of Northern France",
+    "year": "1709",
+    "concept": "c",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "France (Northern)",
+    "description": "In 1709 CE, severe weather limits output despite high prices (inelastic supply). Historians could approach this scenario through a French parish grain-price register from the Great Frost, which turns the setting into evidence for practicing c. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 49.0,
+    "lon": 2.5,
+    "coordinate_note": "estimated: northern France",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "c",
+      "france-northern",
+      "module-4"
+    ],
+    "linked_model": "elasticity_supply",
+    "historical_artifact": {
+      "name": "French parish grain-price register from the Great Frost",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "luanda-textiles-indian-vs-european-cottons-1710",
+    "scenario": 28,
+    "title": "The Cotton Trader of Luanda",
+    "year": "1710",
+    "concept": "Cross-Price Elasticity \u2014 Substitutes",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "West/Central Africa & Europe",
+    "description": "In 1710 CE, price up in one good shifts demand to the substitute. Historians could approach this scenario through a Luanda textile trade ledger, which turns the setting into evidence for practicing Cross-Price Elasticity \u2014 Substitutes. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -8.84,
+    "lon": 13.23,
+    "coordinate_note": "estimated: Luanda",
+    "tags": [
+      "southern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "cross-price-elasticity-substitutes",
+      "west-central-africa-and-europe",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Luanda textile trade ledger",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "isfahan-craftsman-household-staples-and-modest-luxuries-1720",
+    "scenario": 29,
+    "title": "The Craftsman Household of Isfahan",
+    "year": "1720",
+    "concept": "Income Elasticity \u2014 Normal Goods",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Persia (Isfahan)",
+    "description": "In 1720 CE, income growth \u2192 higher demand for normal goods. Historians could approach this scenario through a Isfahan household goods inventory, which turns the setting into evidence for practicing Income Elasticity \u2014 Normal Goods. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 32.65,
+    "lon": 51.67,
+    "coordinate_note": "estimated: Isfahan",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "income-elasticity-normal-goods",
+      "persia-isfahan",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Isfahan household goods inventory",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "bengal-weavers-scale-quickly-1725",
+    "scenario": 30,
+    "title": "The Weaver of Bengal",
+    "year": "1725",
+    "concept": "Elastic Supply",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Bengal",
+    "description": "In 1725 CE, higher bids \u2192 rapid output expansion (elastic supply). Historians could approach this scenario through a Bengal weaving contract, which turns the setting into evidence for practicing Elastic Supply. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 23.7,
+    "lon": 90.4,
+    "coordinate_note": "estimated: Bengal / Dhaka region",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "elastic-supply",
+      "bengal",
+      "module-4"
+    ],
+    "linked_model": "elasticity_supply",
+    "historical_artifact": {
+      "name": "Bengal weaving contract",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "tokugawa-peasant-millet-polished-rice-1750",
+    "scenario": 31,
+    "title": "The Peasant Household of Tokugawa Japan",
+    "year": "1750",
+    "concept": "Income Elasticity \u2014 Inferior Goods",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Japan",
+    "description": "In 1750 CE, income rises \u2192 demand for inferior millet falls. Historians could approach this scenario through a Tokugawa village rice and millet account book, which turns the setting into evidence for practicing Income Elasticity \u2014 Inferior Goods. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 35.68,
+    "lon": 139.76,
+    "coordinate_note": "estimated: Tokugawa Japan / Edo",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "income-elasticity-inferior-goods",
+      "japan",
+      "module-4"
+    ],
+    "linked_model": "elasticity_demand",
+    "historical_artifact": {
+      "name": "Tokugawa village rice and millet account book",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "kano-caravan-market-rate-1750",
+    "scenario": 32,
+    "title": "The Caravan Merchant of Kano",
+    "year": "1750",
+    "concept": "Equilibrium",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "West Africa (Kano)",
+    "description": "In 1750 CE, haggling converges on a going rate; Qs = Qd by day\u2019s end. Historians could approach this scenario through a Kano caravan market tally, which turns the setting into evidence for practicing Equilibrium. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 12.0,
+    "lon": 8.52,
+    "coordinate_note": "estimated: Kano",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "equilibrium",
+      "west-africa-kano",
+      "module-4"
+    ],
+    "linked_model": "supply_demand",
+    "historical_artifact": {
+      "name": "Kano caravan market tally",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "canton-tea-under-qing-monopoly-canton-system-1760",
+    "scenario": 33,
+    "title": "The Tea Merchant of Canton",
+    "year": "1760",
+    "concept": "Complete Market Model",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "China (Qing, Canton)",
+    "description": "In 1760 CE, guild licensing, information flows, and enforcement stabilize prices, limit competition. Historians could approach this scenario through a Canton Cohong tea trade license, which turns the setting into evidence for practicing Complete Market Model. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 23.13,
+    "lon": 113.26,
+    "coordinate_note": "estimated: Canton / Guangzhou",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "asia",
+      "estimated-coordinates",
+      "complete-market-model",
+      "china-qing-canton",
+      "module-4"
+    ],
+    "linked_model": "supply_demand",
+    "historical_artifact": {
+      "name": "Canton Cohong tea trade license",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "yunnan-salt-clearing-price-1770",
+    "scenario": 34,
+    "title": "The Salt Official of Yunnan",
+    "year": "1770",
+    "concept": "Equilibrium",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "China (Yunnan)",
+    "description": "In 1770 CE, prices adjust until supply and demand align; market clears. Historians could approach this scenario through a Yunnan salt monopoly account, which turns the setting into evidence for practicing Equilibrium. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 25.04,
+    "lon": 102.71,
+    "coordinate_note": "estimated: Yunnan / Kunming",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "equilibrium",
+      "china-yunnan",
+      "module-4"
+    ],
+    "linked_model": "supply_demand",
+    "historical_artifact": {
+      "name": "Yunnan salt monopoly account",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "boston-tea-after-tea-act-1773",
+    "scenario": 35,
+    "title": "The Tea Buyer of Boston",
+    "year": "1773",
+    "concept": "Consumer Surplus",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Colonial North America (Boston)",
+    "description": "In 1773 CE, lower prices expand consumer surplus (amid political boycott). Historians could approach this scenario through a Boston Tea Act broadside and tea-price notice, which turns the setting into evidence for practicing Consumer Surplus. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 42.36,
+    "lon": -71.06,
+    "coordinate_note": "estimated: Boston",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "consumer-surplus",
+      "colonial-north-america-boston",
+      "module-4"
+    ],
+    "linked_model": "surplus",
+    "historical_artifact": {
+      "name": "Boston Tea Act broadside and tea-price notice",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "calcutta-cotton-cloth-flood-1785",
+    "scenario": 36,
+    "title": "The Cloth Buyer of Calcutta",
+    "year": "1785",
+    "concept": "Consumer Surplus",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "India (Calcutta)",
+    "description": "In 1785 CE, lower prices increase consumer surplus; pressure on weavers. Historians could approach this scenario through a Calcutta cotton cloth import ledger, which turns the setting into evidence for practicing Consumer Surplus. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 22.57,
+    "lon": 88.36,
+    "coordinate_note": "estimated: Calcutta",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "asia",
+      "estimated-coordinates",
+      "consumer-surplus",
+      "india-calcutta",
+      "module-4"
+    ],
+    "linked_model": "surplus",
+    "historical_artifact": {
+      "name": "Calcutta cotton cloth import ledger",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "eden-treaty-lowers-tariffs-1787",
+    "scenario": 37,
+    "title": "The Tariff Negotiator of the Eden Treaty",
+    "year": "1787",
+    "concept": "Total Surplus",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "UK \u2194 France",
+    "description": "In 1787 CE, lower trade barriers boost total surplus on both sides. Historians could approach this scenario through a Eden Treaty tariff schedule, which turns the setting into evidence for practicing Total Surplus. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 50.5,
+    "lon": 0.0,
+    "coordinate_note": "estimated: UK-France Channel midpoint",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "total-surplus",
+      "uk-france",
+      "module-4"
+    ],
+    "linked_model": "surplus",
+    "historical_artifact": {
+      "name": "Eden Treaty tariff schedule",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "saint-domingue-sugar-peak-demand-1788",
+    "scenario": 38,
+    "title": "The Sugar Planter of Saint-Domingue",
+    "year": "1788",
+    "concept": "Producer Surplus",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Caribbean (Saint\u2011Domingue)",
+    "description": "In 1788 CE, tight supply raises price well above unit cost; surplus accrues to planters. Historians could approach this scenario through a Saint-Domingue sugar plantation account, which turns the setting into evidence for practicing Producer Surplus. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 19.0,
+    "lon": -72.3,
+    "coordinate_note": "estimated: Saint-Domingue / Haiti",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "latin-america-caribbean",
+      "estimated-coordinates",
+      "producer-surplus",
+      "caribbean-saint-domingue",
+      "module-4"
+    ],
+    "linked_model": "surplus",
+    "historical_artifact": {
+      "name": "Saint-Domingue sugar plantation account",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "paris-bread-price-cap-1791",
+    "scenario": 39,
+    "title": "The Baker of Paris",
+    "year": "1791",
+    "concept": "Price Ceilings",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "France (Paris)",
+    "description": "In 1791 CE, ceiling keeps bread cheap but causes shortages. Historians could approach this scenario through a Paris bread price ordinance, which turns the setting into evidence for practicing Price Ceilings. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 48.86,
+    "lon": 2.35,
+    "coordinate_note": "estimated: Paris",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "price-ceilings",
+      "france-paris",
+      "module-4"
+    ],
+    "linked_model": "gov_int_p_ceiling",
+    "historical_artifact": {
+      "name": "Paris bread price ordinance",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "saint-domingue-upheaval-sugar-shortage-1793",
+    "scenario": 40,
+    "title": "The Sugar Broker of the Atlantic",
+    "year": "1793",
+    "concept": "Total Surplus",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Caribbean / Atlantic",
+    "description": "In 1793 CE, output down, price up \u2192 both consumer & producer surplus shrink. Historians could approach this scenario through a Atlantic sugar-price notice during the Saint-Domingue upheaval, which turns the setting into evidence for practicing Total Surplus. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 22.0,
+    "lon": -55.0,
+    "coordinate_note": "estimated: Caribbean-Atlantic trade space",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "north-america",
+      "estimated-coordinates",
+      "total-surplus",
+      "caribbean-atlantic",
+      "module-4"
+    ],
+    "linked_model": "surplus",
+    "historical_artifact": {
+      "name": "Atlantic sugar-price notice during the Saint-Domingue upheaval",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "philadelphia-minimum-wheat-price-1794",
+    "scenario": 41,
+    "title": "The Wheat Farmer of Philadelphia",
+    "year": "1794",
+    "concept": "Price Floors",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "USA (Philadelphia)",
+    "description": "In 1794 CE, floor supports farm income; warehouses fill with surplus. Historians could approach this scenario through a Philadelphia wheat price-floor notice, which turns the setting into evidence for practicing Price Floors. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 39.95,
+    "lon": -75.16,
+    "coordinate_note": "estimated: Philadelphia",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "price-floors",
+      "usa-philadelphia",
+      "module-4"
+    ],
+    "linked_model": "gov_int_p_floor",
+    "historical_artifact": {
+      "name": "Philadelphia wheat price-floor notice",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "savannah-cotton-under-industrial-demand-1795",
+    "scenario": 42,
+    "title": "The Cotton Planter of Savannah",
+    "year": "1795",
+    "concept": "Producer Surplus",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "USA (Savannah)",
+    "description": "In 1795 CE, higher prices/assured offtake raise producer surplus. Historians could approach this scenario through a Savannah cotton offtake contract, which turns the setting into evidence for practicing Producer Surplus. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 32.08,
+    "lon": -81.09,
+    "coordinate_note": "estimated: Savannah",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "producer-surplus",
+      "usa-savannah",
+      "module-4"
+    ],
+    "linked_model": "surplus",
+    "historical_artifact": {
+      "name": "Savannah cotton offtake contract",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "fiji-copra-under-collusive-low-prices-1875",
+    "scenario": 43,
+    "title": "The Copra Seller of Fiji",
+    "year": "1875",
+    "concept": "Deadweight Loss",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Fiji",
+    "description": "In 1875 CE, restrictive colonial practices shrink gains from trade (DWL). Historians could approach this scenario through a Fiji copra purchasing agreement, which turns the setting into evidence for practicing Deadweight Loss. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -17.71,
+    "lon": 178.07,
+    "coordinate_note": "estimated: Fiji",
+    "tags": [
+      "southern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "oceania-pacific",
+      "estimated-coordinates",
+      "deadweight-loss",
+      "fiji",
+      "module-4"
+    ],
+    "linked_model": "deadweight_loss",
+    "historical_artifact": {
+      "name": "Fiji copra purchasing agreement",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "milk-to-manhattan-via-rail-depots-1890",
+    "scenario": 44,
+    "title": "The Milk Wholesaler of Manhattan",
+    "year": "1890",
+    "concept": "Complete Market Model",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "USA (NY state \u2192 NYC)",
+    "description": "In 1890 CE, wholesaler control, health inspection, and logistics determine price, quantity, margins. Historians could approach this scenario through a New York milk depot inspection and rail shipment record, which turns the setting into evidence for practicing Complete Market Model. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 40.75,
+    "lon": -73.99,
+    "coordinate_note": "estimated: Manhattan / NYC milk market",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "complete-market-model",
+      "usa-ny-state-nyc",
+      "module-4"
+    ],
+    "linked_model": "deadweight_loss",
+    "historical_artifact": {
+      "name": "New York milk depot inspection and rail shipment record",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "english-enclosure-rising-rents-1810",
+    "scenario": 45,
+    "title": "The Tenant Farmer of Norfolk",
+    "year": "1810",
+    "concept": "Land + Rent",
+    "module": "Module 5: Factor Markets",
+    "region": "England (Norfolk)",
+    "description": "In 1810 CE, commons enclosed; poor migrate; ownership concentrates. Historians could approach this scenario through a Norfolk enclosure map and rent roll, which turns the setting into evidence for practicing Land + Rent. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 52.63,
+    "lon": 1.3,
+    "coordinate_note": "estimated: Norfolk",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "land-rent",
+      "england-norfolk",
+      "module-5"
+    ],
+    "linked_model": "land",
+    "historical_artifact": {
+      "name": "Norfolk enclosure map and rent roll",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "egyptian-corv-e-for-cotton-canals-1835",
+    "scenario": 46,
+    "title": "The Canal Laborer of Egypt",
+    "year": "1835",
+    "concept": "Markets for the Factors of Production",
+    "module": "Module 5: Factor Markets",
+    "region": "Egypt",
+    "description": "In 1835 CE, land centralization, rising rents, and forced labor. Historians could approach this scenario through a Egyptian corvee labor order for canal work, which turns the setting into evidence for practicing Markets for the Factors of Production. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 30.04,
+    "lon": 31.24,
+    "coordinate_note": "estimated: Egypt / Cairo Nile works",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "markets-for-the-factors-of-production",
+      "egypt",
+      "module-5"
+    ],
+    "linked_model": "all_factors",
+    "historical_artifact": {
+      "name": "Egyptian corvee labor order for canal work",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "javanese-cultivation-system-quotas-1845",
+    "scenario": 47,
+    "title": "The Cultivation Worker of Java",
+    "year": "1845",
+    "concept": "Markets for the Factors of Production",
+    "module": "Module 5: Factor Markets",
+    "region": "Java (Dutch East Indies)",
+    "description": "In 1845 CE, state quotas divert labor from subsistence; revenues to Amsterdam. Historians could approach this scenario through a Dutch East Indies cultivation quota order, which turns the setting into evidence for practicing Markets for the Factors of Production. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -7.25,
+    "lon": 112.75,
+    "coordinate_note": "estimated: Java",
+    "tags": [
+      "southern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "asia",
+      "estimated-coordinates",
+      "markets-for-the-factors-of-production",
+      "java-dutch-east-indies",
+      "module-5"
+    ],
+    "linked_model": "all_factors",
+    "historical_artifact": {
+      "name": "Dutch East Indies cultivation quota order",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "mexican-hacienda-peonage-land-debt-1855",
+    "scenario": 48,
+    "title": "The Peon of the Mexican Hacienda",
+    "year": "1855",
+    "concept": "Markets for the Factors of Production",
+    "module": "Module 5: Factor Markets",
+    "region": "Mexico",
+    "description": "In 1855 CE, wages in store credit, land concentration, coercive contracts. Historians could approach this scenario through a Mexican hacienda debt peonage contract, which turns the setting into evidence for practicing Markets for the Factors of Production. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 19.43,
+    "lon": -99.13,
+    "coordinate_note": "estimated: Mexico central hacienda region",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "transregional",
+      "estimated-coordinates",
+      "markets-for-the-factors-of-production",
+      "mexico",
+      "module-5"
+    ],
+    "linked_model": "all_factors",
+    "historical_artifact": {
+      "name": "Mexican hacienda debt peonage contract",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "us-railroads-land-grants-private-capital-exploited-labor-1880",
+    "scenario": 49,
+    "title": "The Railroad Worker of the American West",
+    "year": "1880",
+    "concept": "Markets for the Factors of Production",
+    "module": "Module 5: Factor Markets",
+    "region": "USA",
+    "description": "In 1880 CE, public land supports private accumulation; immigrant/prison labor builds lines. Historians could approach this scenario through a railroad land-grant map and labor payroll, which turns the setting into evidence for practicing Markets for the Factors of Production. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 41.88,
+    "lon": -87.63,
+    "coordinate_note": "estimated: US rail network / Chicago hub",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "markets-for-the-factors-of-production",
+      "usa",
+      "module-5"
+    ],
+    "linked_model": "all_factors",
+    "historical_artifact": {
+      "name": "railroad land-grant map and labor payroll",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "brazilian-coffee-slavery-indenture-wage-1890",
+    "scenario": 50,
+    "title": "The Coffee Worker of Brazil",
+    "year": "1890",
+    "concept": "Markets for the Factors of Production",
+    "module": "Module 5: Factor Markets",
+    "region": "Brazil",
+    "description": "In 1890 CE, transition in labor regimes; autonomy vs coercion. Historians could approach this scenario through a Brazilian coffee labor contract after abolition, which turns the setting into evidence for practicing Markets for the Factors of Production. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -23.55,
+    "lon": -46.63,
+    "coordinate_note": "estimated: Brazilian coffee region / Sao Paulo",
+    "tags": [
+      "southern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "latin-america-caribbean",
+      "estimated-coordinates",
+      "markets-for-the-factors-of-production",
+      "brazil",
+      "module-5"
+    ],
+    "linked_model": "all_factors",
+    "historical_artifact": {
+      "name": "Brazilian coffee labor contract after abolition",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "incheon-textile-mill-under-japanese-investors-1895",
+    "scenario": 51,
+    "title": "The Textile Worker of Incheon",
+    "year": "1895",
+    "concept": "Labor + Wages",
+    "module": "Module 5: Factor Markets",
+    "region": "Korea (Incheon)",
+    "description": "In 1895 CE, rural\u2011urban migration; colonial wage structures limit pay. Historians could approach this scenario through a Incheon textile mill wage record, which turns the setting into evidence for practicing Labor + Wages. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 37.46,
+    "lon": 126.71,
+    "coordinate_note": "estimated: Incheon",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "labor-wages",
+      "korea-incheon",
+      "module-5"
+    ],
+    "linked_model": "labor",
+    "historical_artifact": {
+      "name": "Incheon textile mill wage record",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "ashanti-cocoa-smallholders-and-co-ops-1915",
+    "scenario": 52,
+    "title": "The Cocoa Smallholder of Ashanti",
+    "year": "1915",
+    "concept": "Markets for the Factors of Production",
+    "module": "Module 5: Factor Markets",
+    "region": "Gold Coast (Ghana)",
+    "description": "In 1915 CE, smallholders pool capital, hire labor; export market shaped from below. Historians could approach this scenario through a Gold Coast cocoa cooperative ledger, which turns the setting into evidence for practicing Markets for the Factors of Production. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 6.69,
+    "lon": -1.62,
+    "coordinate_note": "estimated: Ashanti / Kumasi",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "markets-for-the-factors-of-production",
+      "gold-coast-ghana",
+      "module-5"
+    ],
+    "linked_model": "all_factors",
+    "historical_artifact": {
+      "name": "Gold Coast cocoa cooperative ledger",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "sheffield-munitions-women-and-migrants-1916",
+    "scenario": 53,
+    "title": "The Munitions Worker of Sheffield",
+    "year": "1916",
+    "concept": "Labor + Wages",
+    "module": "Module 5: Factor Markets",
+    "region": "UK (Sheffield)",
+    "description": "In 1916 CE, war mobilization raises wages; reshapes roles & bargaining power. Historians could approach this scenario through a Sheffield munitions wage card, which turns the setting into evidence for practicing Labor + Wages. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 53.38,
+    "lon": -1.47,
+    "coordinate_note": "estimated: Sheffield",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "labor-wages",
+      "uk-sheffield",
+      "module-5"
+    ],
+    "linked_model": "labor",
+    "historical_artifact": {
+      "name": "Sheffield munitions wage card",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "chicago-credit-freeze-great-depression-1932",
+    "scenario": 54,
+    "title": "The Borrower of Chicago",
+    "year": "1932",
+    "concept": "Capital + Interest",
+    "module": "Module 5: Factor Markets",
+    "region": "USA (Chicago)",
+    "description": "In 1932 CE, bank collapses and soaring rates shrink investment and spending. Historians could approach this scenario through a Chicago bank failure notice and loan ledger, which turns the setting into evidence for practicing Capital + Interest. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 41.88,
+    "lon": -87.63,
+    "coordinate_note": "estimated: Chicago",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "capital-interest",
+      "usa-chicago",
+      "module-5"
+    ],
+    "linked_model": "capital",
+    "historical_artifact": {
+      "name": "Chicago bank failure notice and loan ledger",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "west-german-industry-and-marshall-plan-credit-1950",
+    "scenario": 55,
+    "title": "The Industrial Borrower of West Germany",
+    "year": "1950",
+    "concept": "Capital + Interest",
+    "module": "Module 5: Factor Markets",
+    "region": "West Germany",
+    "description": "In 1950 CE, low\u2011interest financing enables rapid rebuilding and growth. Historians could approach this scenario through a Marshall Plan credit agreement for West German industry, which turns the setting into evidence for practicing Capital + Interest. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 50.94,
+    "lon": 6.96,
+    "coordinate_note": "estimated: West German Ruhr/Rhine industry",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "capital-interest",
+      "west-germany",
+      "module-5"
+    ],
+    "linked_model": "capital",
+    "historical_artifact": {
+      "name": "Marshall Plan credit agreement for West German industry",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "us-mortgage-refinance-during-gfc-2008",
+    "scenario": 56,
+    "title": "The Homeowner of the Midwest",
+    "year": "2008",
+    "concept": "Capital + Interest",
+    "module": "Module 5: Factor Markets",
+    "region": "USA (Midwest)",
+    "description": "In 2008 CE, tightened lending and risk premiums raise borrowing costs/denials. Historians could approach this scenario through a mortgage refinance disclosure from the global financial crisis, which turns the setting into evidence for practicing Capital + Interest. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 41.5,
+    "lon": -93.5,
+    "coordinate_note": "estimated: US Midwest",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "capital-interest",
+      "usa-midwest",
+      "module-5"
+    ],
+    "linked_model": "capital",
+    "historical_artifact": {
+      "name": "mortgage refinance disclosure from the global financial crisis",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "hana-in-seoul-consumption-work-and-saving-1968",
+    "scenario": 57,
+    "title": "The Factory Worker of Seoul",
+    "year": "1968",
+    "concept": "Integrated Consumer Choice",
+    "module": "Module 2: Choice",
+    "region": "Korea (Seoul)",
+    "description": "In 1968 CE, a Seoul worker balances consumption, leisure, savings, and behavioral limits in a changing industrial economy. Historians could approach this scenario through a Seoul household budget and factory wage schedule, which turns the setting into evidence for practicing Integrated Consumer Choice. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 37.5665,
+    "lon": 126.978,
+    "coordinate_note": "estimated: Korea (Seoul)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "integrated-consumer-choice",
+      "korea-seoul",
+      "module-2"
+    ],
+    "linked_model": "optimal_choice",
+    "historical_artifact": {
+      "name": "Seoul household budget and factory wage schedule",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "hana-labor-leisure-tradeoff-1968",
+    "scenario": 58,
+    "title": "The Working Student of Seoul",
+    "year": "1968",
+    "concept": "Labor-Leisure Choice",
+    "module": "Module 2: Choice",
+    "region": "Korea (Seoul)",
+    "description": "In 1968 CE, hana chooses hours of work versus leisure as wages and constraints shape her feasible frontier. Historians could approach this scenario through a Seoul work-hours schedule and school-fee record, which turns the setting into evidence for practicing Labor-Leisure Choice. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 37.5665,
+    "lon": 126.978,
+    "coordinate_note": "estimated: Korea (Seoul)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "labor-leisure-choice",
+      "korea-seoul",
+      "module-2"
+    ],
+    "linked_model": "labor_leisure",
+    "historical_artifact": {
+      "name": "Seoul work-hours schedule and school-fee record",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "julia-and-marco-savings-choice-2020",
+    "scenario": 59,
+    "title": "The Saver and Borrower of Europe",
+    "year": "2020",
+    "concept": "Intertemporal Choice",
+    "module": "Module 2: Choice",
+    "region": "Europe",
+    "description": "In 2020 CE, two households face different access to saving, borrowing, risk, and returns across time. Historians could approach this scenario through a household savings account and consumer-credit contract, which turns the setting into evidence for practicing Intertemporal Choice. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 45.4642,
+    "lon": 9.19,
+    "coordinate_note": "estimated: Europe",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "intertemporal-choice",
+      "module-2"
+    ],
+    "linked_model": "intertemporal_choice",
+    "historical_artifact": {
+      "name": "household savings account and consumer-credit contract",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "black-death-and-the-malthusian-model-1350",
+    "scenario": 60,
+    "title": "The Survivor of the Black Death",
+    "year": "1350",
+    "concept": "Malthus and Growth",
+    "module": "Module 6: Bridge: Markets, History & Global Economy",
+    "region": "Europe",
+    "description": "In 1350 CE, a population shock raises income per person temporarily, illustrating Malthusian pressure before sustained growth. Historians could approach this scenario through a manorial wage and population record after the Black Death, which turns the setting into evidence for practicing Malthus and Growth. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 51.5074,
+    "lon": -0.1278,
+    "coordinate_note": "estimated: Europe",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "malthus-and-growth",
+      "markets-history-global-economy",
+      "bridge-module",
+      "module-6"
+    ],
+    "linked_model": "malthus_growth",
+    "historical_artifact": {
+      "name": "manorial wage and population record after the Black Death",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "indonesia-gdp-and-wellbeing-case-1998",
+    "scenario": 61,
+    "title": "The Household of Jakarta",
+    "year": "1998",
+    "concept": "GDP and Wellbeing Limits",
+    "module": "Module 6: Bridge: Markets, History & Global Economy",
+    "region": "Indonesia",
+    "description": "In 1998 CE, average income can hide inequality, unpaid work, environmental costs, and capability gaps. Historians could approach this scenario through a Indonesian household survey and GDP table, which turns the setting into evidence for practicing GDP and Wellbeing Limits. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -6.2088,
+    "lon": 106.8456,
+    "coordinate_note": "estimated: Indonesia",
+    "tags": [
+      "southern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "asia",
+      "estimated-coordinates",
+      "gdp-and-wellbeing-limits",
+      "indonesia",
+      "markets-history-global-economy",
+      "bridge-module",
+      "module-6"
+    ],
+    "linked_model": "gdp_wellbeing",
+    "historical_artifact": {
+      "name": "Indonesian household survey and GDP table",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "detroit-gm-foreman-decision-1965",
+    "scenario": 62,
+    "title": "The Foreman of Detroit",
+    "year": "1965",
+    "concept": "Economic vs Accounting Profit",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "USA (Detroit)",
+    "description": "In 1965 CE, a firm decision separates explicit accounting costs from implicit opportunity costs. Historians could approach this scenario through a GM foreman production-cost worksheet, which turns the setting into evidence for practicing Economic vs Accounting Profit. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 42.3314,
+    "lon": -83.0458,
+    "coordinate_note": "estimated: USA (Detroit)",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "economic-vs-accounting-profit",
+      "usa-detroit",
+      "module-9"
+    ],
+    "linked_model": "cost_production",
+    "historical_artifact": {
+      "name": "GM foreman production-cost worksheet",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "flint-hidden-costs-turn-profit-negative-1978",
+    "scenario": 63,
+    "title": "The Auto Worker of Flint",
+    "year": "1978",
+    "concept": "Economic Profit",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "USA (Flint)",
+    "description": "In 1978 CE, implicit costs reveal why positive accounting profit can still be negative economic profit. Historians could approach this scenario through a Flint auto worker opportunity-cost memo, which turns the setting into evidence for practicing Economic Profit. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 43.0125,
+    "lon": -83.6875,
+    "coordinate_note": "estimated: USA (Flint)",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "economic-profit",
+      "usa-flint",
+      "module-9"
+    ],
+    "linked_model": "cost_production",
+    "historical_artifact": {
+      "name": "Flint auto worker opportunity-cost memo",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "pittsburgh-steel-production-table-1974",
+    "scenario": 64,
+    "title": "The Steel Manager of Pittsburgh",
+    "year": "1974",
+    "concept": "Production Function",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "USA (Pittsburgh)",
+    "description": "In 1974 CE, a steel mill builds total, average, and marginal product schedules under diminishing returns. Historians could approach this scenario through a Pittsburgh steel mill production table, which turns the setting into evidence for practicing Production Function. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 40.4406,
+    "lon": -79.9959,
+    "coordinate_note": "estimated: USA (Pittsburgh)",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "production-function",
+      "usa-pittsburgh",
+      "module-9"
+    ],
+    "linked_model": "cost_production",
+    "historical_artifact": {
+      "name": "Pittsburgh steel mill production table",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "flint-auto-parts-shutdown-rule-1982",
+    "scenario": 65,
+    "title": "The Parts Supplier of Flint",
+    "year": "1982",
+    "concept": "Shutdown Rule",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "USA (Flint)",
+    "description": "In 1982 CE, a parts supplier compares price to AVC and ATC during recession conditions. Historians could approach this scenario through a Flint auto parts AVC shutdown worksheet, which turns the setting into evidence for practicing Shutdown Rule. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 43.0125,
+    "lon": -83.6875,
+    "coordinate_note": "estimated: USA (Flint)",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "shutdown-rule",
+      "usa-flint",
+      "module-9"
+    ],
+    "linked_model": "shutdown_point",
+    "historical_artifact": {
+      "name": "Flint auto parts AVC shutdown worksheet",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "nafta-plant-scale-decision-1994",
+    "scenario": 66,
+    "title": "The Plant Planner of North America",
+    "year": "1994",
+    "concept": "Economies of Scale",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "North America",
+    "description": "In 1994 CE, a firm compares long-run plant sizes and scale economies after trade integration. Historians could approach this scenario through a NAFTA plant-location cost comparison, which turns the setting into evidence for practicing Economies of Scale. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 25.6866,
+    "lon": -100.3161,
+    "coordinate_note": "estimated: North America",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "economies-of-scale",
+      "module-9"
+    ],
+    "linked_model": "economies_scale",
+    "historical_artifact": {
+      "name": "NAFTA plant-location cost comparison",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "iowa-corn-farm-mr-equals-mc-1973",
+    "scenario": 67,
+    "title": "The Corn Farmer of Iowa",
+    "year": "1973",
+    "concept": "Perfect Competition Profit Maximization",
+    "module": "Module 10: Profit Maximization",
+    "region": "USA (Iowa)",
+    "description": "In 1973 CE, a competitive corn farmer chooses output where market price equals marginal cost. Historians could approach this scenario through a Iowa corn farm price and marginal-cost table, which turns the setting into evidence for practicing Perfect Competition Profit Maximization. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 42.0308,
+    "lon": -93.6319,
+    "coordinate_note": "estimated: USA (Iowa)",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "perfect-competition-profit-maximization",
+      "usa-iowa",
+      "module-10"
+    ],
+    "linked_model": "pc_profit",
+    "historical_artifact": {
+      "name": "Iowa corn farm price and marginal-cost table",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "at-t-long-distance-monopoly-1977",
+    "scenario": 68,
+    "title": "The Telephone Subscriber of AT&T",
+    "year": "1977",
+    "concept": "Monopoly Profit Maximization",
+    "module": "Module 10: Profit Maximization",
+    "region": "USA",
+    "description": "In 1977 CE, a regulated monopoly faces downward-sloping demand and chooses output where MR equals MC. Historians could approach this scenario through a AT&T long-distance tariff filing, which turns the setting into evidence for practicing Monopoly Profit Maximization. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 40.7128,
+    "lon": -74.006,
+    "coordinate_note": "estimated: USA",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "monopoly-profit-maximization",
+      "usa",
+      "module-10"
+    ],
+    "linked_model": "imperfect_competition",
+    "historical_artifact": {
+      "name": "AT&T long-distance tariff filing",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "at-t-price-discrimination-and-surplus-1977",
+    "scenario": 69,
+    "title": "The Long-Distance Customer of AT&T",
+    "year": "1977",
+    "concept": "Price Discrimination",
+    "module": "Module 10: Profit Maximization",
+    "region": "USA",
+    "description": "In 1977 CE, different pricing rules shift surplus between consumers and the monopolist. Historians could approach this scenario through a AT&T rate schedule by customer class, which turns the setting into evidence for practicing Price Discrimination. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 40.7128,
+    "lon": -74.006,
+    "coordinate_note": "estimated: USA",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "price-discrimination",
+      "usa",
+      "module-10"
+    ],
+    "linked_model": "price_discrimination",
+    "historical_artifact": {
+      "name": "AT&T rate schedule by customer class",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "opec-prisoner-dilemma-1973",
+    "scenario": 70,
+    "title": "The Oil Minister of OPEC",
+    "year": "1973",
+    "concept": "Game Theory",
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "region": "Middle East / Global Oil",
+    "description": "In 1973 CE, oil producers face incentives to cooperate on quotas or cheat for higher individual gains. Historians could approach this scenario through a OPEC production quota table, which turns the setting into evidence for practicing Game Theory. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 24.7136,
+    "lon": 46.6753,
+    "coordinate_note": "estimated: Middle East / Global Oil",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "game-theory",
+      "middle-east-global-oil",
+      "module-11"
+    ],
+    "linked_model": "game_theory",
+    "historical_artifact": {
+      "name": "OPEC production quota table",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "boeing-vs-airbus-investment-game-1990",
+    "scenario": 71,
+    "title": "The Aircraft Planner of Boeing and Airbus",
+    "year": "1990",
+    "concept": "Oligopoly Game",
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "region": "USA / Europe",
+    "description": "In 1990 CE, two aircraft producers choose whether to invest in a new wide-body plane under strategic interdependence. Historians could approach this scenario through a Boeing-Airbus wide-body investment payoff matrix, which turns the setting into evidence for practicing Oligopoly Game. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 47.6062,
+    "lon": -122.3321,
+    "coordinate_note": "estimated: USA / Europe",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "high-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "oligopoly-game",
+      "usa-europe",
+      "module-11"
+    ],
+    "linked_model": "game_theory",
+    "historical_artifact": {
+      "name": "Boeing-Airbus wide-body investment payoff matrix",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "airline-concentration-and-hhi-2018",
+    "scenario": 72,
+    "title": "The Airline Regulator of Washington",
+    "year": "2018",
+    "concept": "Antitrust HHI",
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "region": "USA",
+    "description": "In 2018 CE, airline market shares are squared and summed to evaluate merger concentration risk. Historians could approach this scenario through a airline market-share table used for HHI analysis, which turns the setting into evidence for practicing Antitrust HHI. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 38.9072,
+    "lon": -77.0369,
+    "coordinate_note": "estimated: USA",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "antitrust-hhi",
+      "usa",
+      "module-11"
+    ],
+    "linked_model": "hhi_antitrust",
+    "historical_artifact": {
+      "name": "airline market-share table used for HHI analysis",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "midwest-chemical-plant-pigouvian-tax-1975",
+    "scenario": 73,
+    "title": "The Chemical Plant Manager of the Midwest",
+    "year": "1975",
+    "concept": "Negative Externality",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "USA (Midwest)",
+    "description": "In 1975 CE, river pollution creates external damage and motivates a Pigouvian tax equal to marginal external cost. Historians could approach this scenario through a chemical plant pollution-cost worksheet, which turns the setting into evidence for practicing Negative Externality. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 41.8781,
+    "lon": -87.6298,
+    "coordinate_note": "estimated: USA (Midwest)",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "negative-externality",
+      "usa-midwest",
+      "module-12"
+    ],
+    "linked_model": "externality_tax",
+    "historical_artifact": {
+      "name": "chemical plant pollution-cost worksheet",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "luxury-and-gas-tax-incidence-cases-1990",
+    "scenario": 74,
+    "title": "The Taxpayer in the Luxury Market",
+    "year": "1990",
+    "concept": "Tax Incidence",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "USA",
+    "description": "In 1990 CE, elasticity determines whether consumers or producers bear more of a tax burden. Historians could approach this scenario through a luxury-tax and gasoline-tax incidence table, which turns the setting into evidence for practicing Tax Incidence. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 38.9072,
+    "lon": -77.0369,
+    "coordinate_note": "estimated: USA",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "tax-incidence",
+      "usa",
+      "module-12"
+    ],
+    "linked_model": "tax_incidence",
+    "historical_artifact": {
+      "name": "luxury-tax and gasoline-tax incidence table",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "mortgage-crisis-behavioral-failures-2008",
+    "scenario": 75,
+    "title": "The Mortgage Borrower of 2008",
+    "year": "2008",
+    "concept": "Behavioral Policy",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "USA",
+    "description": "In 2008 CE, present bias, overconfidence, and incentive problems shape mortgage and financial decisions. Historians could approach this scenario through a adjustable-rate mortgage disclosure and AAA securities rating, which turns the setting into evidence for practicing Behavioral Policy. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 40.7128,
+    "lon": -74.006,
+    "coordinate_note": "estimated: USA",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "behavioral-policy",
+      "usa",
+      "module-12"
+    ],
+    "linked_model": "behavioral_policy",
+    "historical_artifact": {
+      "name": "adjustable-rate mortgage disclosure and AAA securities rating",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "carbon-tax-incidence-and-response-2024",
+    "scenario": 76,
+    "title": "The Coal Consumer under a Carbon Tax",
+    "year": "2024",
+    "concept": "Climate Policy",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "USA",
+    "description": "In 2024 CE, short-run inelastic demand changes who bears a carbon tax, while long-run adaptation shifts incidence. Historians could approach this scenario through a carbon tax incidence worksheet for coal and gas, which turns the setting into evidence for practicing Climate Policy. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 38.9072,
+    "lon": -77.0369,
+    "coordinate_note": "estimated: USA",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "climate-policy",
+      "usa",
+      "module-12"
+    ],
+    "linked_model": "tax_incidence",
+    "historical_artifact": {
+      "name": "carbon tax incidence worksheet for coal and gas",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "neighborhood-security-free-rider-problem-2024",
+    "scenario": 77,
+    "title": "The Neighbor in the Security Patrol",
+    "year": "2024",
+    "concept": "Public Goods and Free Riding",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "Local Community",
+    "description": "In 2024 CE, neighbors benefit from security whether or not they contribute, creating a public-good/free-rider problem. Historians could approach this scenario through a neighborhood patrol contribution sheet, which turns the setting into evidence for practicing Public Goods and Free Riding. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 39.9526,
+    "lon": -75.1652,
+    "coordinate_note": "estimated: Local Community",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "north-america",
+      "estimated-coordinates",
+      "public-goods-and-free-riding",
+      "local-community",
+      "module-12"
+    ],
+    "linked_model": "public_goods_common_resources",
+    "historical_artifact": {
+      "name": "neighborhood patrol contribution sheet",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "toyota-lean-production-in-japan-1985",
+    "scenario": 78,
+    "title": "The Line Worker of Toyota City",
+    "year": "1985",
+    "concept": "Production Function and Diminishing Returns",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "Japan (Toyota City)",
+    "description": "In 1985 CE, toyota production methods show how organization, quality control, and worker knowledge shift productivity and lower unit costs. Historians could approach this scenario through a Toyota production-system kanban card, which turns the setting into evidence for practicing Production Function and Diminishing Returns. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 35.0824,
+    "lon": 137.1563,
+    "coordinate_note": "estimated: Japan (Toyota City)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "production-function-and-diminishing-returns",
+      "japan-toyota-city",
+      "global-perspective",
+      "lean-production",
+      "module-9"
+    ],
+    "linked_model": "cost_production",
+    "historical_artifact": {
+      "name": "Toyota production-system kanban card",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "south-korean-semiconductor-scale-economies-1993",
+    "scenario": 79,
+    "title": "The Chip Maker of Gyeonggi",
+    "year": "1993",
+    "concept": "Economies of Scale",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "South Korea (Gyeonggi)",
+    "description": "In 1993 CE, large fixed costs in semiconductor fabs make average costs fall sharply as output expands. Historians could approach this scenario through a semiconductor fabrication cost report from Gyeonggi, which turns the setting into evidence for practicing Economies of Scale. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 37.2636,
+    "lon": 127.0286,
+    "coordinate_note": "estimated: South Korea (Gyeonggi)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "economies-of-scale",
+      "south-korea-gyeonggi",
+      "global-perspective",
+      "semiconductors",
+      "module-9"
+    ],
+    "linked_model": "economies_scale",
+    "historical_artifact": {
+      "name": "semiconductor fabrication cost report from Gyeonggi",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "shenzhen-electronics-assembly-and-variable-cost-2005",
+    "scenario": 80,
+    "title": "The Electronics Assembler of Shenzhen",
+    "year": "2005",
+    "concept": "Short-Run Costs",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "China (Shenzhen)",
+    "description": "In 2005 CE, contract electronics manufacturing illustrates high fixed coordination costs, variable labor costs, and scale-driven cost curves. Historians could approach this scenario through a Shenzhen electronics bill of materials and labor roster, which turns the setting into evidence for practicing Short-Run Costs. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 22.5431,
+    "lon": 114.0579,
+    "coordinate_note": "estimated: China (Shenzhen)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "asia",
+      "estimated-coordinates",
+      "short-run-costs",
+      "china-shenzhen",
+      "global-perspective",
+      "manufacturing",
+      "module-9"
+    ],
+    "linked_model": "cost_production",
+    "historical_artifact": {
+      "name": "Shenzhen electronics bill of materials and labor roster",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "bangladesh-garment-factory-shutdown-decision-2013",
+    "scenario": 81,
+    "title": "The Garment Producer of Dhaka",
+    "year": "2013",
+    "concept": "Shutdown Rule",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "Bangladesh (Dhaka)",
+    "description": "In 2013 CE, garment producers facing safety costs and buyer pressure illustrate short-run shutdown versus long-run exit decisions. Historians could approach this scenario through a Dhaka garment buyer compliance and shutdown notice, which turns the setting into evidence for practicing Shutdown Rule. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 23.8103,
+    "lon": 90.4125,
+    "coordinate_note": "estimated: Bangladesh (Dhaka)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "shutdown-rule",
+      "bangladesh-dhaka",
+      "global-perspective",
+      "garments",
+      "module-9"
+    ],
+    "linked_model": "shutdown_point",
+    "historical_artifact": {
+      "name": "Dhaka garment buyer compliance and shutdown notice",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "mexican-auto-plants-after-nafta-1998",
+    "scenario": 82,
+    "title": "The Auto Planner of Puebla",
+    "year": "1998",
+    "concept": "Long-Run Cost and Scale",
+    "module": "Module 9: Firms & Cost of Production",
+    "region": "Mexico (Puebla)",
+    "description": "In 1998 CE, auto producers compare plant size, transport costs, and scale economies in cross-border supply chains. Historians could approach this scenario through a Puebla auto plant capacity-cost plan, which turns the setting into evidence for practicing Long-Run Cost and Scale. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 19.0414,
+    "lon": -98.2063,
+    "coordinate_note": "estimated: Mexico (Puebla)",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "transregional",
+      "estimated-coordinates",
+      "long-run-cost-and-scale",
+      "mexico-puebla",
+      "global-perspective",
+      "latin-america",
+      "trade",
+      "module-9"
+    ],
+    "linked_model": "economies_scale",
+    "historical_artifact": {
+      "name": "Puebla auto plant capacity-cost plan",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "kenyan-cut-flower-farms-in-global-markets-2004",
+    "scenario": 83,
+    "title": "The Flower Farmer of Naivasha",
+    "year": "2004",
+    "concept": "Perfect Competition Profit Maximization",
+    "module": "Module 10: Profit Maximization",
+    "region": "Kenya (Naivasha)",
+    "description": "In 2004 CE, many flower exporters sell into global auction markets, making price-taking and MR = MC a useful approximation. Historians could approach this scenario through a Naivasha flower auction sales sheet, which turns the setting into evidence for practicing Perfect Competition Profit Maximization. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -0.7167,
+    "lon": 36.4333,
+    "coordinate_note": "estimated: Kenya (Naivasha)",
+    "tags": [
+      "southern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "perfect-competition-profit-maximization",
+      "kenya-naivasha",
+      "global-perspective",
+      "africa",
+      "agriculture",
+      "module-10"
+    ],
+    "linked_model": "pc_profit",
+    "historical_artifact": {
+      "name": "Naivasha flower auction sales sheet",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "de-beers-diamond-market-power-1980",
+    "scenario": 84,
+    "title": "The Diamond Seller of Southern Africa",
+    "year": "1980",
+    "concept": "Monopoly Profit Maximization",
+    "module": "Module 10: Profit Maximization",
+    "region": "Southern Africa (Botswana/South Africa)",
+    "description": "In 1980 CE, control over diamond supply illustrates monopoly-style output restriction, price setting, and surplus transfer. Historians could approach this scenario through a De Beers diamond sight-holder allocation record, which turns the setting into evidence for practicing Monopoly Profit Maximization. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -24.6282,
+    "lon": 25.9231,
+    "coordinate_note": "estimated: Southern Africa (Botswana/South Africa)",
+    "tags": [
+      "southern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "monopoly-profit-maximization",
+      "southern-africa-botswana-south-africa",
+      "global-perspective",
+      "africa",
+      "market-power",
+      "module-10"
+    ],
+    "linked_model": "imperfect_competition",
+    "historical_artifact": {
+      "name": "De Beers diamond sight-holder allocation record",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "mexico-telecom-monopoly-and-entry-pressure-2000",
+    "scenario": 85,
+    "title": "The Phone Customer of Mexico City",
+    "year": "2000",
+    "concept": "Monopoly and Entry Barriers",
+    "module": "Module 10: Profit Maximization",
+    "region": "Mexico (Mexico City)",
+    "description": "In 2000 CE, telecom market power and later entry pressure show how barriers shape price, quantity, and long-run competition. Historians could approach this scenario through a Mexico telecom tariff and interconnection ruling, which turns the setting into evidence for practicing Monopoly and Entry Barriers. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 19.4326,
+    "lon": -99.1332,
+    "coordinate_note": "estimated: Mexico (Mexico City)",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "transregional",
+      "estimated-coordinates",
+      "monopoly-and-entry-barriers",
+      "mexico-mexico-city",
+      "global-perspective",
+      "latin-america",
+      "telecommunications",
+      "module-10"
+    ],
+    "linked_model": "imperfect_competition",
+    "historical_artifact": {
+      "name": "Mexico telecom tariff and interconnection ruling",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "indian-railways-fare-classes-2010",
+    "scenario": 86,
+    "title": "The Rail Passenger of New Delhi",
+    "year": "2010",
+    "concept": "Price Discrimination",
+    "module": "Module 10: Profit Maximization",
+    "region": "India (New Delhi)",
+    "description": "In 2010 CE, tiered rail fares illustrate price discrimination by service class and willingness to pay. Historians could approach this scenario through a Indian Railways fare-class timetable, which turns the setting into evidence for practicing Price Discrimination. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 28.6139,
+    "lon": 77.209,
+    "coordinate_note": "estimated: India (New Delhi)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "price-discrimination",
+      "india-new-delhi",
+      "global-perspective",
+      "transportation",
+      "module-10"
+    ],
+    "linked_model": "price_discrimination",
+    "historical_artifact": {
+      "name": "Indian Railways fare-class timetable",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "european-commission-microsoft-antitrust-case-2004",
+    "scenario": 87,
+    "title": "The Software Regulator of Brussels",
+    "year": "2004",
+    "concept": "Antitrust and Market Power",
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "region": "European Union (Brussels)",
+    "description": "In 2004 CE, the Microsoft case illustrates market power, interoperability, tying, and competition policy outside the United States. Historians could approach this scenario through a European Commission Microsoft competition decision, which turns the setting into evidence for practicing Antitrust and Market Power. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 50.8503,
+    "lon": 4.3517,
+    "coordinate_note": "estimated: European Union (Brussels)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "antitrust-and-market-power",
+      "european-union-brussels",
+      "global-perspective",
+      "antitrust",
+      "module-11"
+    ],
+    "linked_model": "hhi_antitrust",
+    "historical_artifact": {
+      "name": "European Commission Microsoft competition decision",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "eu-airline-merger-review-2013",
+    "scenario": 88,
+    "title": "The Airline Merger Analyst of Brussels",
+    "year": "2013",
+    "concept": "HHI and Merger Analysis",
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "region": "European Union (Brussels)",
+    "description": "In 2013 CE, european airline merger reviews apply concentration and consumer-harm analysis to network industries. Historians could approach this scenario through a European airline merger market-share filing, which turns the setting into evidence for practicing HHI and Merger Analysis. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 50.8503,
+    "lon": 4.3517,
+    "coordinate_note": "estimated: European Union (Brussels)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "hhi-and-merger-analysis",
+      "european-union-brussels",
+      "global-perspective",
+      "airlines",
+      "module-11"
+    ],
+    "linked_model": "hhi_antitrust",
+    "historical_artifact": {
+      "name": "European airline merger market-share filing",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "chinese-platform-competition-and-network-effects-2018",
+    "scenario": 89,
+    "title": "The Platform Seller of Hangzhou",
+    "year": "2018",
+    "concept": "Competition and Information",
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "region": "China (Hangzhou)",
+    "description": "In 2018 CE, digital platforms show network effects, data advantages, switching costs, and competition fairness concerns. Historians could approach this scenario through a Chinese platform merchant terms-of-service record, which turns the setting into evidence for practicing Competition and Information. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 30.2741,
+    "lon": 120.1551,
+    "coordinate_note": "estimated: China (Hangzhou)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "mid-latitudes",
+      "asia",
+      "estimated-coordinates",
+      "competition-and-information",
+      "china-hangzhou",
+      "global-perspective",
+      "platforms",
+      "module-11"
+    ],
+    "linked_model": "competition_fairness",
+    "historical_artifact": {
+      "name": "Chinese platform merchant terms-of-service record",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "brazilian-ride-hailing-platform-entry-2016",
+    "scenario": 90,
+    "title": "The Ride-Hailing Driver of Sao Paulo",
+    "year": "2016",
+    "concept": "Monopolistic Competition and Platforms",
+    "module": "Module 11: Imperfect Competition & Game Theory",
+    "region": "Brazil (S\u00e3o Paulo)",
+    "description": "In 2016 CE, platform entry changes local transport competition, information, prices, and worker bargaining power. Historians could approach this scenario through a Sao Paulo ride-hailing driver payout statement, which turns the setting into evidence for practicing Monopolistic Competition and Platforms. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -23.5505,
+    "lon": -46.6333,
+    "coordinate_note": "estimated: Brazil (S\u00e3o Paulo)",
+    "tags": [
+      "southern-hemisphere",
+      "western-hemisphere",
+      "mid-latitudes",
+      "latin-america-caribbean",
+      "estimated-coordinates",
+      "monopolistic-competition-and-platforms",
+      "brazil-s-o-paulo",
+      "global-perspective",
+      "latin-america",
+      "platforms",
+      "module-11"
+    ],
+    "linked_model": "competition_fairness",
+    "historical_artifact": {
+      "name": "Sao Paulo ride-hailing driver payout statement",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "eu-emissions-trading-system-2005",
+    "scenario": 91,
+    "title": "The Carbon Permit Trader of Brussels",
+    "year": "2005",
+    "concept": "Carbon Pricing and Externalities",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "European Union (Brussels)",
+    "description": "In 2005 CE, the EU ETS uses tradable permits to price carbon emissions and move private incentives toward social costs. Historians could approach this scenario through a EU ETS allowance certificate, which turns the setting into evidence for practicing Carbon Pricing and Externalities. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 50.8503,
+    "lon": 4.3517,
+    "coordinate_note": "estimated: European Union (Brussels)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "carbon-pricing-and-externalities",
+      "european-union-brussels",
+      "global-perspective",
+      "climate-policy",
+      "module-12"
+    ],
+    "linked_model": "tax_incidence",
+    "historical_artifact": {
+      "name": "EU ETS allowance certificate",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "costa-rica-payments-for-ecosystem-services-1997",
+    "scenario": 92,
+    "title": "The Forest Landowner of Costa Rica",
+    "year": "1997",
+    "concept": "Positive Externality",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "Costa Rica",
+    "description": "In 1997 CE, forest conservation payments reward landowners for biodiversity, watershed, and carbon benefits not fully captured privately. Historians could approach this scenario through a Costa Rica payment for ecosystem services contract, which turns the setting into evidence for practicing Positive Externality. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 9.9281,
+    "lon": -84.0907,
+    "coordinate_note": "estimated: Costa Rica",
+    "tags": [
+      "northern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "latin-america-caribbean",
+      "estimated-coordinates",
+      "positive-externality",
+      "costa-rica",
+      "global-perspective",
+      "latin-america",
+      "ecosystem-services",
+      "module-12"
+    ],
+    "linked_model": "externality_subsidy",
+    "historical_artifact": {
+      "name": "Costa Rica payment for ecosystem services contract",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "bangladesh-cyclone-shelters-as-public-goods-1991",
+    "scenario": 93,
+    "title": "The Cyclone Shelter Planner of Bangladesh",
+    "year": "1991",
+    "concept": "Public Goods",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "Bangladesh (Coastal)",
+    "description": "In 1991 CE, cyclone shelters and warning systems create nonexcludable safety benefits that markets tend to underprovide. Historians could approach this scenario through a Bangladesh cyclone shelter construction plan, which turns the setting into evidence for practicing Public Goods. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 22.3569,
+    "lon": 91.7832,
+    "coordinate_note": "estimated: Bangladesh (Coastal)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "asia",
+      "estimated-coordinates",
+      "public-goods",
+      "bangladesh-coastal",
+      "global-perspective",
+      "module-12"
+    ],
+    "linked_model": "public_goods_common_resources",
+    "historical_artifact": {
+      "name": "Bangladesh cyclone shelter construction plan",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "norway-electric-vehicle-subsidies-2015",
+    "scenario": 94,
+    "title": "The Electric Vehicle Buyer of Oslo",
+    "year": "2015",
+    "concept": "Pigouvian Subsidy and Path Dependence",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "Norway (Oslo)",
+    "description": "In 2015 CE, eV tax exemptions and charging infrastructure show policy correcting emissions externalities and transportation path dependence. Historians could approach this scenario through a Norway EV tax exemption and charging map, which turns the setting into evidence for practicing Pigouvian Subsidy and Path Dependence. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": 59.9139,
+    "lon": 10.7522,
+    "coordinate_note": "estimated: Norway (Oslo)",
+    "tags": [
+      "northern-hemisphere",
+      "eastern-hemisphere",
+      "high-latitudes",
+      "europe",
+      "estimated-coordinates",
+      "pigouvian-subsidy-and-path-dependence",
+      "norway-oslo",
+      "global-perspective",
+      "ev-policy",
+      "module-12"
+    ],
+    "linked_model": "externality_subsidy",
+    "historical_artifact": {
+      "name": "Norway EV tax exemption and charging map",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "peru-anchoveta-fisheries-management-2009",
+    "scenario": 95,
+    "title": "The Fisher of the Peruvian Coast",
+    "year": "2009",
+    "concept": "Common Resource",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "Peru (Lima coast)",
+    "description": "In 2009 CE, anchoveta fisheries illustrate rivalry, nonexcludability pressures, quotas, and the tragedy of the commons. Historians could approach this scenario through a Peru anchoveta quota permit, which turns the setting into evidence for practicing Common Resource. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -12.0464,
+    "lon": -77.0428,
+    "coordinate_note": "estimated: Peru (Lima coast)",
+    "tags": [
+      "southern-hemisphere",
+      "western-hemisphere",
+      "tropics",
+      "latin-america-caribbean",
+      "estimated-coordinates",
+      "common-resource",
+      "peru-lima-coast",
+      "global-perspective",
+      "latin-america",
+      "fisheries",
+      "module-12"
+    ],
+    "linked_model": "public_goods_common_resources",
+    "historical_artifact": {
+      "name": "Peru anchoveta quota permit",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "rwanda-community-health-insurance-2010",
+    "scenario": 96,
+    "title": "The Health Insurance Member of Kigali",
+    "year": "2010",
+    "concept": "Behavioral Policy and Public Goods",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "Rwanda (Kigali)",
+    "description": "In 2010 CE, community-based health insurance illustrates trust, participation, adverse selection, and policy design in risk pooling. Historians could approach this scenario through a Rwanda community health insurance membership card, which turns the setting into evidence for practicing Behavioral Policy and Public Goods. The data has been 'teleported' forward so students can model the tradeoff, incentive, or market outcome while remembering that the artifact captures only part of the historical reality.",
+    "lat": -1.9441,
+    "lon": 30.0619,
+    "coordinate_note": "estimated: Rwanda (Kigali)",
+    "tags": [
+      "southern-hemisphere",
+      "eastern-hemisphere",
+      "tropics",
+      "africa-middle-east",
+      "estimated-coordinates",
+      "behavioral-policy-and-public-goods",
+      "rwanda-kigali",
+      "global-perspective",
+      "africa",
+      "health-policy",
+      "module-12"
+    ],
+    "linked_model": "behavioral_policy",
+    "historical_artifact": {
+      "name": "Rwanda community health insurance membership card",
+      "type": "historical artifact or documentary record",
+      "note": "Added to anchor the scenario in a concrete source students can inspect or imagine as evidence."
+    }
+  },
+  {
+    "id": "the-inuit-hunter-of-the-north-american-arctic-1200",
+    "scenario": 97,
+    "title": "The Inuit Hunter of the North American Arctic",
+    "year": "1200",
+    "concept": "Diminishing Marginal Utility",
+    "module": "Module 2: Choice",
+    "region": "North America",
+    "description": "An Inuit hunter compares additional salmon meals as marginal utility declines. The artifact anchors the model in subsistence choices where variety and trade become valuable as the marginal value of repeated consumption falls.",
+    "lat": 64.2,
+    "lon": -96.0,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-2",
+      "diminishing-marginal-utility",
+      "north-america"
+    ],
+    "linked_model": "utility",
+    "historical_artifact": {
+      "name": "archaeological food remains and hunting tools",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-mesopotamian-farmer-choosing-barley-and-wool-2000",
+    "scenario": 98,
+    "title": "The Mesopotamian Farmer Choosing Barley and Wool",
+    "year": "-2000",
+    "concept": "Optimal Bundle",
+    "module": "Module 2: Choice",
+    "region": "Mesopotamia",
+    "description": "A Mesopotamian farmer allocates shekels between barley and wool. Students use MRS and relative prices to locate the optimal bundle under a historically grounded commodity constraint.",
+    "lat": 31.8,
+    "lon": 45.9,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-2",
+      "optimal-bundle",
+      "africa-middle-east"
+    ],
+    "linked_model": "optimal_choice",
+    "historical_artifact": {
+      "name": "cuneiform ration and textile tablet",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-borrower-julia-and-the-lender-marco-2024",
+    "scenario": 99,
+    "title": "The Borrower Julia and the Lender Marco",
+    "year": "2024",
+    "concept": "Intertemporal Choice",
+    "module": "Module 2: Choice",
+    "region": "Two-period model",
+    "description": "Julia and Marco represent the two sides of a two-period model. A change in the interest rate expands the lender future-consumption opportunity while changing the borrower cost of present consumption.",
+    "lat": 41.9,
+    "lon": 12.5,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-2",
+      "intertemporal-choice",
+      "europe"
+    ],
+    "linked_model": "intertemporal_choice",
+    "historical_artifact": {
+      "name": "loan contract and savings ledger",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-grain-buyers-and-sellers-after-the-black-dea-1350",
+    "scenario": 100,
+    "title": "The Grain Buyers and Sellers after the Black Death",
+    "year": "1350",
+    "concept": "Double Shifts",
+    "module": "Module 3: Supply and Demand",
+    "region": "Europe",
+    "description": "After the Black Death, grain demand and supply both contracted. Students use the scenario to see why quantity falls clearly while the price effect is ambiguous.",
+    "lat": 48.9,
+    "lon": 2.4,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-3",
+      "double-shifts",
+      "europe"
+    ],
+    "linked_model": "shifts_double",
+    "historical_artifact": {
+      "name": "manorial grain account after plague mortality",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-oil-consumer-during-the-1973-opec-shock-1973",
+    "scenario": 101,
+    "title": "The Oil Consumer during the 1973 OPEC Shock",
+    "year": "1973",
+    "concept": "Supply Shock",
+    "module": "Module 3: Supply and Demand",
+    "region": "United States",
+    "description": "The OPEC oil shock shifted oil supply left and raised prices across energy-intensive markets. The scenario gives students a modern supply-shift case that connects later to elasticity and incidence.",
+    "lat": 38.9,
+    "lon": -77.0,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-3",
+      "supply-shock",
+      "north-america"
+    ],
+    "linked_model": "shifts_single",
+    "historical_artifact": {
+      "name": "gasoline price sign and newspaper account",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-household-during-the-covid-supply-chain-cris-2020",
+    "scenario": 102,
+    "title": "The Household during the COVID Supply Chain Crisis",
+    "year": "2020",
+    "concept": "Double Shifts",
+    "module": "Module 3: Supply and Demand",
+    "region": "Global",
+    "description": "Factory closures, chip shortages, stimulus, and goods substitution created simultaneous supply and demand shifts. Students analyze the resulting inflationary pressure using the market model.",
+    "lat": 34.0,
+    "lon": -118.2,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-3",
+      "double-shifts",
+      "global"
+    ],
+    "linked_model": "shifts_double",
+    "historical_artifact": {
+      "name": "container port backlog photograph and CPI release",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-ottoman-spice-merchant-facing-a-tax-1550",
+    "scenario": 103,
+    "title": "The Ottoman Spice Merchant Facing a Tax",
+    "year": "1550",
+    "concept": "Tax Incidence",
+    "module": "Module 4: Market Analysis: Elasticity & Efficiency",
+    "region": "Ottoman Empire",
+    "description": "A per-unit tax on spice merchants splits the burden between buyers and sellers. Students use elasticity and welfare analysis together to explain who bears more of the tax and where deadweight loss appears.",
+    "lat": 41.0,
+    "lon": 28.9,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-4",
+      "tax-incidence",
+      "asia"
+    ],
+    "linked_model": "tax_incidence",
+    "historical_artifact": {
+      "name": "Ottoman customs register for spice merchants",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-javanese-farmer-under-the-cultivation-system-1830",
+    "scenario": 104,
+    "title": "The Javanese Farmer under the Cultivation System",
+    "year": "1830",
+    "concept": "Externality and Colonial Power",
+    "module": "Module 6: Bridge: Markets, History & Global Economy",
+    "region": "Java, Dutch East Indies",
+    "description": "Dutch authorities forced farmers to grow export crops at fixed low prices. The scenario shows how market prices can omit coercion, third-party costs, and power asymmetries.",
+    "lat": -7.5,
+    "lon": 110.0,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-6",
+      "externality-and-colonial-power",
+      "asia"
+    ],
+    "linked_model": "capitalism_inequality",
+    "historical_artifact": {
+      "name": "Dutch colonial cultivation record",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-bengali-weaver-facing-british-textile-mills-1830",
+    "scenario": 105,
+    "title": "The Bengali Weaver Facing British Textile Mills",
+    "year": "1830",
+    "concept": "Great Divergence",
+    "module": "Module 6: Bridge: Markets, History & Global Economy",
+    "region": "Bengal and Britain",
+    "description": "British textile mills benefited from cheap cotton and mechanized production while Bengali handloom weavers lost markets. The case links the great divergence to factor ownership and costs falling outside the transaction.",
+    "lat": 23.7,
+    "lon": 90.4,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-6",
+      "great-divergence",
+      "asia"
+    ],
+    "linked_model": "capitalism_inequality",
+    "historical_artifact": {
+      "name": "handloom textile sample and mill production record",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-borrowers-marcus-and-elena-in-philadelphia-2024",
+    "scenario": 106,
+    "title": "The Borrowers Marcus and Elena in Philadelphia",
+    "year": "2024",
+    "concept": "Credit Exclusion",
+    "module": "Module 6: Bridge: Markets, History & Global Economy",
+    "region": "Philadelphia",
+    "description": "Marcus and Elena have the same monthly income and same emergency car repair but face radically different borrowing terms. The scenario shows how identical starting income can produce different feasible sets.",
+    "lat": 39.95,
+    "lon": -75.16,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-6",
+      "credit-exclusion",
+      "north-america"
+    ],
+    "linked_model": "intertemporal_choice",
+    "historical_artifact": {
+      "name": "credit union loan sheet and payday loan disclosure",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-credit-applicant-denied-a-food-cart-loan-2024",
+    "scenario": 107,
+    "title": "The Credit Applicant Denied a Food-Cart Loan",
+    "year": "2024",
+    "concept": "Poverty Trap",
+    "module": "Module 7: Structural Inequality: Core + Game Theory Preview",
+    "region": "Philadelphia",
+    "description": "Marcus wants to leave warehouse work and open a food cart but lacks collateral. Students connect intertemporal choice to poverty traps, adverse selection, and unequal access to credit.",
+    "lat": 39.95,
+    "lon": -75.16,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-7",
+      "poverty-trap",
+      "north-america"
+    ],
+    "linked_model": "capitalism_inequality",
+    "historical_artifact": {
+      "name": "small-business loan denial letter",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-american-household-in-the-income-distributio-2023",
+    "scenario": 108,
+    "title": "The American Household in the Income Distribution",
+    "year": "2023",
+    "concept": "Lorenz Curve",
+    "module": "Module 8: Structural Inequality: Extensions",
+    "region": "United States",
+    "description": "A household is located within the U.S. income distribution. Students use quintile shares to construct a Lorenz curve and interpret the Gini coefficient.",
+    "lat": 38.9,
+    "lon": -77.0,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-8",
+      "lorenz-curve",
+      "north-america"
+    ],
+    "linked_model": "capitalism_inequality",
+    "historical_artifact": {
+      "name": "Census income distribution table",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-four-countries-compared-by-gini-2022",
+    "scenario": 109,
+    "title": "The Four Countries Compared by Gini",
+    "year": "2022",
+    "concept": "Global Inequality",
+    "module": "Module 8: Structural Inequality: Extensions",
+    "region": "Global",
+    "description": "Sweden, Germany, the United States, and South Africa show very different Gini coefficients. Students connect institutions and history to measured inequality.",
+    "lat": 20.0,
+    "lon": 0.0,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-8",
+      "global-inequality",
+      "global"
+    ],
+    "linked_model": "capitalism_inequality",
+    "historical_artifact": {
+      "name": "cross-country income inequality table",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-worker-in-the-philadelphia-labor-market-2023",
+    "scenario": 110,
+    "title": "The Worker in the Philadelphia Labor Market",
+    "year": "2023",
+    "concept": "MRP Wage Gap",
+    "module": "Module 8: Structural Inequality: Extensions",
+    "region": "Philadelphia",
+    "description": "Two groups have similar estimated MRP but different wages. The scenario helps students quantify structural discrimination as a gap between predicted and actual pay.",
+    "lat": 39.95,
+    "lon": -75.16,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-8",
+      "mrp-wage-gap",
+      "north-america"
+    ],
+    "linked_model": "labor_policy",
+    "historical_artifact": {
+      "name": "metro labor market wage table",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-three-loan-applicants-at-a-community-bank-2024",
+    "scenario": 111,
+    "title": "The Three Loan Applicants at a Community Bank",
+    "year": "2024",
+    "concept": "Adverse Selection",
+    "module": "Module 8: Structural Inequality: Extensions",
+    "region": "Philadelphia",
+    "description": "Three applicants have identical income but different net worth. Collateral screening sorts by wealth rather than repayment ability and shows how adverse selection can become regressive.",
+    "lat": 39.95,
+    "lon": -75.16,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-8",
+      "adverse-selection",
+      "north-america"
+    ],
+    "linked_model": "competition_fairness",
+    "historical_artifact": {
+      "name": "community bank underwriting worksheet",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-broadband-household-in-america-2020",
+    "scenario": 112,
+    "title": "The Broadband Household in America",
+    "year": "2020",
+    "concept": "Technology Diffusion",
+    "module": "Module 8: Structural Inequality: Extensions",
+    "region": "United States",
+    "description": "Broadband adoption follows an S-curve where high-income households reach saturation earlier. Students see why access-only policy can narrow access gaps while leaving MRP gaps.",
+    "lat": 39.8,
+    "lon": -98.6,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-8",
+      "technology-diffusion",
+      "north-america"
+    ],
+    "linked_model": "competition_fairness",
+    "historical_artifact": {
+      "name": "broadband adoption S-curve dataset",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-mortgage-applicant-scored-by-an-algorithm-2021",
+    "scenario": 113,
+    "title": "The Mortgage Applicant Scored by an Algorithm",
+    "year": "2021",
+    "concept": "AI Bias",
+    "module": "Module 8: Structural Inequality: Extensions",
+    "region": "United States",
+    "description": "A mortgage algorithm uses zip code as a proxy that reproduces racialized approval gaps. Students analyze historical bias, proxy discrimination, and fairness tradeoffs.",
+    "lat": 38.9,
+    "lon": -77.0,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-8",
+      "ai-bias",
+      "north-america"
+    ],
+    "linked_model": "competition_fairness",
+    "historical_artifact": {
+      "name": "mortgage approval algorithm audit table",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-player-in-the-ultimatum-game-1982",
+    "scenario": 114,
+    "title": "The Player in the Ultimatum Game",
+    "year": "1982",
+    "concept": "Fairness and Social Preferences",
+    "module": "Module 12: Policy, Paradox & Human Perspectives",
+    "region": "Experimental economics lab",
+    "description": "Receivers often reject very low offers even when acceptance would raise material payoff. The scenario shows how fairness concerns can override the narrow rational-actor prediction.",
+    "lat": 40.7,
+    "lon": -74.0,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-12",
+      "fairness-and-social-preferences",
+      "north-america"
+    ],
+    "linked_model": "behavioral_policy",
+    "historical_artifact": {
+      "name": "experimental payoff sheet",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the scenario in concrete evidence."
+    }
+  },
+  {
+    "id": "the-colonial-farmer-in-the-javanese-cultivation--1830",
+    "scenario": 115,
+    "title": "The Colonial Farmer in the Javanese Cultivation System",
+    "year": "1830",
+    "concept": "Power Asymmetry",
+    "module": "Module 7: Structural Inequality: Core + Game Theory Preview",
+    "region": "Java, Dutch East Indies",
+    "description": "A farmer forced into export-crop production faces prices and obligations designed by colonial authorities. Students use the scenario to identify how power asymmetry can make a market outcome look voluntary when it is structurally constrained.",
+    "lat": -7.5,
+    "lon": 110.0,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-7",
+      "power-asymmetry",
+      "asia"
+    ],
+    "linked_model": "capitalism_inequality",
+    "historical_artifact": {
+      "name": "Dutch colonial cultivation record",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the structural inequality module in concrete evidence."
+    }
+  },
+  {
+    "id": "the-bengali-handloom-weaver-after-british-mechan-1830",
+    "scenario": 116,
+    "title": "The Bengali Handloom Weaver after British Mechanization",
+    "year": "1830",
+    "concept": "Structural Inequality Through Trade",
+    "module": "Module 7: Structural Inequality: Core + Game Theory Preview",
+    "region": "Bengal and Britain",
+    "description": "A Bengali weaver loses market access as British mechanized mills expand. The case shows how trade can create gains for one group while costs fall on workers outside the transaction.",
+    "lat": 23.7,
+    "lon": 90.4,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-7",
+      "structural-inequality-through-trade",
+      "asia"
+    ],
+    "linked_model": "capitalism_inequality",
+    "historical_artifact": {
+      "name": "handloom textile sample and British mill ledger",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the structural inequality module in concrete evidence."
+    }
+  },
+  {
+    "id": "the-laborer-after-the-black-death-wage-shock-1350",
+    "scenario": 117,
+    "title": "The Laborer after the Black Death Wage Shock",
+    "year": "1350",
+    "concept": "Poverty Trap Logic",
+    "module": "Module 7: Structural Inequality: Core + Game Theory Preview",
+    "region": "Europe",
+    "description": "Labor scarcity after the Black Death raised wages, but population recovery pushed workers back toward subsistence. Students connect factor markets to poverty-trap dynamics.",
+    "lat": 48.9,
+    "lon": 2.4,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-7",
+      "poverty-trap-logic",
+      "europe"
+    ],
+    "linked_model": "labor_policy",
+    "historical_artifact": {
+      "name": "manorial wage record after plague mortality",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the structural inequality module in concrete evidence."
+    }
+  },
+  {
+    "id": "the-payday-borrower-elena-in-philadelphia-2024",
+    "scenario": 118,
+    "title": "The Payday Borrower Elena in Philadelphia",
+    "year": "2024",
+    "concept": "Adverse Selection and Credit Exclusion",
+    "module": "Module 7: Structural Inequality: Core + Game Theory Preview",
+    "region": "Philadelphia",
+    "description": "Elena faces a 300 percent APR payday loan while Marcus can borrow at a credit union. The case turns the two-period model into a structural inequality model about screening, collateral, and feasible sets.",
+    "lat": 39.95,
+    "lon": -75.16,
+    "coordinate_note": "estimated from ECN101 Master Outline v6 scenario location",
+    "tags": [
+      "estimated-coordinates",
+      "module-7",
+      "adverse-selection-and-credit-exclusion",
+      "north-america"
+    ],
+    "linked_model": "intertemporal_choice",
+    "historical_artifact": {
+      "name": "payday loan disclosure form",
+      "type": "historical artifact or documentary record",
+      "note": "Added from ECN101 Master Outline v6 to anchor the structural inequality module in concrete evidence."
+    }
   }
 ]

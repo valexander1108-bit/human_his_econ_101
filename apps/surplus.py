@@ -16,6 +16,9 @@ from apps.market_common import (
 
 def app():
     st.subheader("Consumer Surplus and Producer Surplus")
+    params = st.session_state.get("selected_model_params", {})
+    if params.get("worksheet_note"):
+        st.info(params["worksheet_note"])
 
     xmax, ymax, demand, supply = market_inputs("surplus")
     q_eq, p_eq = equilibrium(demand, supply)

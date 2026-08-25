@@ -118,6 +118,9 @@ def render_selected_card(selected: Dict[str, Any]):
     actors = selected.get("actors")
     tradeoffs = (selected.get("tradeoffs") or selected.get("Trade-offs") or selected.get("econ_concept"))
     links = selected.get("links") or []
+    tags = selected.get("tags") or []
+    coordinate_note = selected.get("coordinate_note")
+    artifact = selected.get("historical_artifact") or selected.get("artifact")
 
     st.markdown(f"## {title}")
     chips = "".join([
@@ -125,13 +128,28 @@ def render_selected_card(selected: Dict[str, Any]):
         badge(concept, "concept"),
         badge(module, "module"),
     ])
+    if isinstance(tags, str):
+        tags = [t.strip() for t in tags.split(",") if t.strip()]
+    chips += "".join([badge(t, "neutral") for t in tags[:8]])
     st.markdown(chips, unsafe_allow_html=True)
     st.markdown("**Overview**")
     facts = ""
     facts += field("Region", region)
     facts += field("Period", period)
+    if lat is not None and lon is not None:
+        facts += field("Coordinates", f"{float(lat):.4f}, {float(lon):.4f}")
+    if coordinate_note:
+        facts += field("Coordinate note", coordinate_note)
+    if artifact:
+        if isinstance(artifact, dict):
+            artifact_value = artifact.get("name") or artifact.get("title") or artifact
+        else:
+            artifact_value = artifact
+        facts += field("Historical artifact", artifact_value)
     if source:
         facts += field("Source", source)
+    if model:
+        facts += field("Model", model)
     st.markdown(facts, unsafe_allow_html=True)
     if desc:
             st.write(desc)
@@ -175,7 +193,12 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
         pass
 
     # ---------- Load scenarios ----------
-    DATA_PATH = pathlib.Path(__file__).resolve().parents[1] / "data" / "module1_scenarios.json"
+    data_dir = pathlib.Path(__file__).resolve().parents[1] / "data"
+    DATA_PATH = data_dir / "historical_map_scenarios.json"
+    if not DATA_PATH.exists():
+        DATA_PATH = data_dir / "final_build_scenarios.json"
+    if not DATA_PATH.exists():
+        DATA_PATH = data_dir / "module1_scenarios.json"
     if not DATA_PATH.exists():
         st.error(f"Could not find scenarios file at: {DATA_PATH}")
         return
@@ -217,6 +240,11 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
     module_sel = st.sidebar.selectbox("Module", modules, index=0)
 
     st.sidebar.header("Map Layers")
+    cluster_pins = st.sidebar.checkbox(
+        "Cluster nearby pins",
+        value=False,
+        help="Turn on for dense views; leave off to see individual scenarios while zoomed out.",
+    )
     show_heat = st.sidebar.checkbox("Show heat/density", value=False)
     show_time = st.sidebar.checkbox(
         "Show time slider",
@@ -229,7 +257,6 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
         f = f[f["concept"] == concept_sel]
     if module_sel != "All" and "module" in f.columns:
         f = f[f["module"] == module_sel]
-
     # ---------- Layout ----------
     left, right = st.columns([2, 1])
 
@@ -258,7 +285,11 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
 
         bounds = []
         if not f.empty and {"lat", "lon"}.issubset(f.columns):
-            cluster = MarkerCluster(name="Scenarios", disableClusteringAtZoom=7)
+            marker_layer = (
+                MarkerCluster(name="Scenarios", disableClusteringAtZoom=7)
+                if cluster_pins
+                else folium.FeatureGroup(name="Scenarios")
+            )
             heat_points = []
             for _, row in f.iterrows():
                 if pd.isna(row.get("lat")) or pd.isna(row.get("lon")):
@@ -268,11 +299,17 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
                 desc_snip = (row.get("description") or row.get("Narrative") or "")
                 if len(desc_snip) > 140:
                     desc_snip = desc_snip[:140] + "..."
+                artifact = row.get("historical_artifact")
+                if isinstance(artifact, dict):
+                    artifact_name = artifact.get("name", "")
+                else:
+                    artifact_name = artifact or ""
                 popup_html = f"""
                 <div style="font-size:14px; line-height:1.4;">
                     <b>{row.get('title','Untitled')}</b><br>
                     <span style="color:#71bb94;">{pretty_year(int(row['year_num']))}</span><br>
                     <i>{row.get('concept','—')} • {row.get('module','—')}</i><br>
+                    <div style="margin-top:4px; font-size:12px;"><b>Artifact:</b> {artifact_name}</div>
                     <div style="margin-top:4px; font-size:12px;">{desc_snip}</div>
                 </div>
                 """
@@ -281,8 +318,8 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
                     tooltip=row.get("title", "Scenario"),
                     popup=folium.Popup(popup_html, max_width=300),
                     icon=folium.Icon(color="green", icon="book", prefix="fa")
-                ).add_to(cluster)
-            cluster.add_to(m)
+                ).add_to(marker_layer)
+            marker_layer.add_to(m)
 
             if show_heat and heat_points:
                 HeatMap(heat_points, radius=18, blur=24, min_opacity=0.3, name="Density").add_to(m)
@@ -296,15 +333,15 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
                         if pd.isna(row.get("lat")) or pd.isna(row.get("lon")):
                             continue
                         year_label = pretty_year(int(row["year_num"]))
-                    feat = {
-                        "type": "Feature",
-                        "geometry": {"type": "Point", "coordinates": [row["lon"], row["lat"]]},
-                        "properties": {
-                            "time": f"{int(row['year_num'])}",
-                            "popup": f"{row.get('title','Untitled')} — {year_label} — {row.get('concept','—')} • {row.get('module','—')}",
-                        },
-                    }
-                    features.append(feat)
+                        feat = {
+                            "type": "Feature",
+                            "geometry": {"type": "Point", "coordinates": [row["lon"], row["lat"]]},
+                            "properties": {
+                                "time": f"{int(row['year_num'])}",
+                                "popup": f"{row.get('title','Untitled')} — {year_label} — {row.get('concept','—')} • {row.get('module','—')}",
+                            },
+                        }
+                        features.append(feat)
                 if features:
                     TimestampedGeoJson(
                         {"type": "FeatureCollection", "features": features},
@@ -318,6 +355,7 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
 
             if bounds:
                 m.fit_bounds(bounds, padding=(20, 20))
+            folium.LayerControl(collapsed=True).add_to(m)
 
         map_state = st_folium(m, width=None, height=620)
 
@@ -344,17 +382,8 @@ def timeline_app(MODULES=None, ALL_PAGES=None):
             if not row.empty:
                 selected = row.iloc[0].to_dict()
 
-        # Show details + navigation button
+        # Show details
         if selected:
             render_selected_card(selected)
         else:
             st.info("Click a pin on the map, or choose from the list.")
-
-        open_clicked = st.button("Open model", type="primary", use_container_width=True, disabled=(selected is None))
-        if open_clicked and selected:
-            st.session_state["selected_scenario"] = selected
-            # Jump to the “Go to model” page (your 02_go_to_model.py)
-            try:
-                st.switch_page("pages/02_go_to_model.py")
-            except Exception:
-                st.success("Scenario stored. Use the sidebar to open ‘Go to model’.")

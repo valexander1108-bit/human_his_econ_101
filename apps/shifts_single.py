@@ -65,27 +65,32 @@ def add_full_span_line(fig, alpha, beta, *, name, xmin, xmax, ymin, ymax, width=
 # ──────────────────────────────────────────────────────────────────────────────
 # App
 # ──────────────────────────────────────────────────────────────────────────────
-def app():
+def app(scenario=None, **params):
     st.subheader("Shifts — Demand or Supply (single curve)")
+    params = {**st.session_state.get("selected_model_params", {}), **params}
+    if params.get("worksheet_note"):
+        st.info(params["worksheet_note"])
 
     # Visible axes box (students stay in the non-negative quadrant)
-    xmax = st.sidebar.number_input("Max Q", 10, 1000, 200, 10)
-    ymax = st.sidebar.number_input("Max P", 10, 1000, 50, 5)
+    xmax = st.sidebar.number_input("Max Q", 10, 1000, int(params.get("xmax", 200)), 10)
+    ymax = st.sidebar.number_input("Max P", 10, 1000, int(params.get("ymax", 50)), 5)
     xmin, ymin = 0.0, 0.0
 
     # Baseline coefficients: P = α + βQ
     st.sidebar.markdown("**Baseline Curves** *(P = α + βQ)*")
-    ad = st.sidebar.number_input("Demand α", value=30.0, step=1.0)
-    bd = st.sidebar.number_input("Demand β", value=-0.2, step=0.05, format="%.3f")
-    as_ = st.sidebar.number_input("Supply α", value=5.0, step=1.0)
-    bs  = st.sidebar.number_input("Supply β", value=0.1, step=0.05, format="%.3f")
+    ad = st.sidebar.number_input("Demand α", value=float(params.get("demand_intercept", 30.0)), step=1.0)
+    bd = st.sidebar.number_input("Demand β", value=float(params.get("demand_slope", -0.2)), step=0.05, format="%.3f")
+    as_ = st.sidebar.number_input("Supply α", value=float(params.get("supply_intercept", 5.0)), step=1.0)
+    bs  = st.sidebar.number_input("Supply β", value=float(params.get("supply_slope", 0.1)), step=0.05, format="%.3f")
 
     # Build baseline lines
     D0, S0 = Line(ad, bd), Line(as_, bs)
 
     # SINGLE SHIFT ONLY: remove pivot, keep vertical (parallel) shift Δα
-    which = st.radio("Shift which curve?", ["Demand", "Supply"], horizontal=True)
-    d_alpha = st.slider("Vertical shift Δα (parallel shift only)", -20.0, 20.0, 0.0, 0.5)
+    shift_options = ["Demand", "Supply"]
+    default_which = params.get("shift_curve", "Demand")
+    which = st.radio("Shift which curve?", shift_options, index=shift_options.index(default_which) if default_which in shift_options else 0, horizontal=True)
+    d_alpha = st.slider("Vertical shift Δα (parallel shift only)", -20.0, 20.0, float(params.get("shift_delta", 0.0)), 0.5)
 
     # Apply the shift (parallel only)
     if which == "Demand":

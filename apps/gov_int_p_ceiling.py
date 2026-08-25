@@ -16,11 +16,14 @@ from apps.market_common import (
 
 def app():
     st.subheader("Government Intervention: Price Ceiling")
+    params = st.session_state.get("selected_model_params", {})
+    if params.get("worksheet_note"):
+        st.info(params["worksheet_note"])
 
     xmax, ymax, demand, supply = market_inputs("ceiling")
     q_eq, p_eq = equilibrium(demand, supply)
     default_ceiling = max(p_eq - 8.0, 0.0) if is_valid_point(q_eq, p_eq) else 25.0
-    ceiling_price = st.sidebar.slider("Price ceiling", 0.0, float(ymax), float(min(default_ceiling, ymax)), 1.0)
+    ceiling_price = st.sidebar.slider("Price ceiling", 0.0, float(ymax), float(min(params.get("price_ceiling", default_ceiling), ymax)), 1.0)
 
     c1, c2, c3 = st.columns(3)
     show_surplus = c1.toggle("Show CS and PS", value=True, key="ceiling_surplus")

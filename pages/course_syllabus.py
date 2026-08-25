@@ -1,6 +1,22 @@
+import re
+from pathlib import Path
+
 import streamlit as st
 import streamlit.components.v1 as components
+
 from modules_data import MICRO_MODULES
+from data.module_summaries import MODULE_SUMMARIES
+
+
+def render_module_summary(module: dict):
+    summary = MODULE_SUMMARIES.get(module["id"])
+    if not summary:
+        return
+
+    st.markdown(f"### Module {module['id']} Overview")
+    st.markdown(summary["summary"])
+    st.markdown(f"**History and research connection:** {summary['history_research']}")
+    st.markdown("**Key vocabulary:** " + ", ".join(f"`{term}`" for term in summary["vocabulary"]))
 
 def render_course_header(): 
     st.title("ECON 101: Introduction to Microeconomics")
@@ -33,12 +49,12 @@ The course ends with an overview of how individual decision-making relates to br
     st.markdown("---")
     st.markdown("## Objectives")
     st.markdown("""_By the end of this course, students will be able to:_
-- **Explain** how core microeconomic thoeries and principles (scarcity, rational choice, marginal analysis, etc.) describe consumer and firm decision-making. 
-- **Represent and interpret** fundamental microeconomic models (e.g., budget constraint, PPC, supply and demand, perfectly competitive market model, and more). 
-- **Analyze** how markets coordinate choice through incentives and price signals.
-- **Identify** how economic outcomes vary when key neoclassical assumptions are altered. 
-- **Apply** microeconomic reasoning to historical and contemporary cases. 
-- **Evaluate** the limitations of standard models and **compare** these models to behavioral and institutional alternatives.
+- **Explain** core microeconomic principles such as scarcity, opportunity cost, marginal analysis, supply and demand, elasticity, costs, and market failure.
+- **Represent and interpret** economic models using tables, equations, graphs, and clearly labeled axes.
+- **Calculate and explain** market equilibrium, socially optimal outcomes, underprovision, deadweight loss, and corrective subsidies using the micro policy lab framework.
+- **Apply** economic reasoning to historical evidence, including archive-based examples of education policy and market development.
+- **Use economic research** to connect models to real policy questions, especially positive externalities in education.
+- **Write policy recommendations** that combine quantitative evidence, historical context, research sources, implementation limits, and clear next steps.
 """)
 
     st.markdown("---")
@@ -48,11 +64,11 @@ _This course uses a **tiered learning structure** to support a wide range of lea
 
 - **Baseline — _Intuition & Big Ideas_** — A conceptual introduction that builds economic intuition before formal tools.  
 
-- **Tier 1 — _Formal Definitions_** — Core  economic vocabulary and basic  theory.   
+- **Tier 1 — _Math Support & Core Definitions_** — Core economic vocabulary and basic theory for students who may have difficulty with mathematics coming into the course.   
                 
-- **Tier 2 — _Solid Understanding (Assessed at this Tier)_** — Graphical, numerical, and applied reasoning using standard economic models and real-world scenarios from global history. 
+- **Tier 2 — _General Education Standard (Assessed at this Tier)_** — Graphical, numerical, and applied reasoning for students taking the course as general education, using tables, formulas, linear equations, slopes, percentages, and area calculations. No coding, calculus, or linear algebra is required.
                 
-- **Tier 3 — _Extensions (Optional, for the \"econ-nerd\")_** — Deeper exploration of quantitative, historical, institutional, and behavioral topics  
+- **Tier 3 — _Quantitative Extension_** — Optional deeper work using advanced algebra, introductory calculus, coding, simulation, data analysis, and more formal model critique.
 """)
     
     with st.expander("Required Materials", expanded=False):
@@ -66,7 +82,7 @@ _This course uses a **tiered learning structure** to support a wide range of lea
 
 **Material Access**
 - Main "Knowledge Base": Streamlit app designed by Prof. Velazquez
-- Slides and Guided Notes: Canva
+- Slides and Guided Notes / Worksheets: linked Google Docs, Google Slides, and Canva resources
 - Interactive assignments: Notion 
 - Independent Practice: Khan Academy & Physical Notebook             
 - Assignments/submissions: Canvas
@@ -76,15 +92,29 @@ _This course uses a **tiered learning structure** to support a wide range of lea
 """)
     st.markdown("---")
 def render_module_block(module: dict):
-    title = f"Module {module['id']}: {module['title']}"
+    format_label = module.get("format")
+    format_suffix = ""
+    if format_label == "ASYNC":
+        format_suffix = " [ASYNC]"
+    elif format_label == "BRIDGE":
+        format_suffix = " [BRIDGE]"
+    title = f"Module {module['id']}: {module['title']}{format_suffix}"
     with st.expander(title, expanded=False):
         openstax_optional = module.get("openstax", {}).get("optional", [])
+        if format_label == "ASYNC":
+            st.info("ASYNC MODULE: recorded lecture, worksheet, and independent application task.")
+        elif format_label == "BRIDGE":
+            st.info("BRIDGE MODULE: synthesis of Modules 1-5 and transition into the second half of the course.")
         
         # Module 8 (and any future untiered modules)
         if module.get("is_untiered", False):
+            render_module_summary(module)
             st.markdown(module.get("untiered_markdown", "_Coming soon._"))
         else:
-            st.markdown(module.get("overview_intuition", "### Intuition\n_Coming soon._"))
+            render_module_summary(module)
+            big_questions = module.get("big_questions")
+            if big_questions:
+                st.markdown(big_questions)
             primary_texts = module.get("materials", {}).get("primary_texts", [])
             readings = module.get("materials", {}).get("readings", [])
             if readings:
@@ -92,9 +122,9 @@ def render_module_block(module: dict):
                     for rd in readings:
                         st.markdown(f"- [{rd['label']}]({rd['url']})")
             st.markdown("---")
-            st.markdown(module.get("tier1_definitions", "### Tier 1 – Formal Definitions\n_Coming soon._"))
-            st.markdown(module.get("tier2_solid", "### Tier 2 – Solid Understanding (Assessment Tier)\n_Coming soon._"))
-            st.markdown(module.get("tier3_extensions", "### Tier 3 – Extensions (Optional)\n_Coming soon._"))
+            st.markdown(module.get("tier1_definitions", "### Tier 1 – Math Support & Core Definitions\n_Coming soon._"))
+            st.markdown(module.get("tier2_solid", "### Tier 2 – General Education Standard (Assessment Tier)\n_Coming soon._"))
+            st.markdown(module.get("tier3_extensions", "### Tier 3 – Quantitative Extension\n_Coming soon._"))
             if primary_texts:
                 with st.expander("Primary Literature Readings", expanded=False):
                     st.markdown("_If you want the source texts behind these ideas, start here._")
@@ -117,6 +147,8 @@ def render_module_block(module: dict):
         extensions = materials.get("extensions", [])
         videos = materials.get("videos", [])
         audio = materials.get("audio", [])
+        slide_files = materials.get("slide_files", [])
+        worksheet_files = materials.get("worksheet_files", [])
 
         # Helper to generate embed-friendly Canva URLs
         def _embed_url(url: str) -> str:
@@ -136,35 +168,114 @@ def render_module_block(module: dict):
                 if "/edit" in clean:
                     return clean.replace("/edit", "/embed")
                 return clean
+            if "docs.google.com/document" in url:
+                clean = url.split("#", 1)[0].split("?", 1)[0]
+                if "/preview" in clean:
+                    return clean
+                if "/edit" in clean:
+                    return clean.replace("/edit", "/preview")
+                return clean
             return url
 
+        def _resource_items(value, default_label):
+            if not value:
+                return []
+            if isinstance(value, list):
+                return value
+            return [{"label": default_label, "url": value}]
+
+        def _google_file_id(url: str):
+            match = re.search(r"/d/([^/]+)", url or "")
+            return match.group(1) if match else None
+
+        def _google_doc_downloads(url: str):
+            if "docs.google.com/document" not in (url or ""):
+                return {}
+            doc_id = _google_file_id(url)
+            if not doc_id:
+                return {}
+            base = f"https://docs.google.com/document/d/{doc_id}/export"
+            return {
+                "PDF": f"{base}?format=pdf",
+                "Word": f"{base}?format=docx",
+            }
+
+        def _render_resource_actions(url: str, include_downloads: bool = False):
+            downloads = _google_doc_downloads(url) if include_downloads else {}
+            button_count = 1 + len(downloads)
+            cols = st.columns(button_count)
+            cols[0].link_button("Open", url, use_container_width=True)
+            for col, (label, download_url) in zip(cols[1:], downloads.items()):
+                col.link_button(f"Download {label}", download_url, use_container_width=True)
+
+        def _render_file_downloads(items, heading):
+            if not items:
+                return
+            st.markdown(f"#### {heading}")
+            for item in items:
+                path = Path(item["path"])
+                if not path.exists():
+                    st.warning(f"Missing file: {path.name}")
+                    continue
+                mime = (
+                    "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+                    if path.suffix.lower() == ".pptx"
+                    else "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                )
+                st.download_button(
+                    label=f"Download {item.get('label', path.stem)}",
+                    data=path.read_bytes(),
+                    file_name=path.name,
+                    mime=mime,
+                    use_container_width=True,
+                    key=f"download_{module['id']}_{path.name}",
+                )
+
+        if slide_files or worksheet_files:
+            st.markdown("#### Final Build Downloads")
+            download_left, download_right = st.columns(2)
+            with download_left:
+                _render_file_downloads(slide_files, "Slides")
+            with download_right:
+                _render_file_downloads(worksheet_files, "Worksheets")
+            st.markdown("---")
+
         # Embed slides when available
-        if slides:
+        slide_items = _resource_items(slides, "Lecture Slides")
+        if slide_items:
             st.markdown("#### Lecture Slides")
-            components.html(
-                f'<iframe src="{_embed_url(slides)}" width="100%" height="640" style="border:0; background:transparent;" allowfullscreen></iframe>',
-                height=660,
-            )
-            st.markdown(f"[Open in new tab]({slides})")
+            for idx, slide in enumerate(slide_items):
+                if len(slide_items) > 1:
+                    st.markdown(f"##### {slide.get('label', 'Lecture Slides')}")
+                components.html(
+                    f'<iframe src="{_embed_url(slide["url"])}" width="100%" height="640" style="border:0; background:transparent;" allowfullscreen></iframe>',
+                    height=660,
+                )
+                _render_resource_actions(slide["url"])
+                if idx < len(slide_items) - 1:
+                    st.markdown("---")
             st.markdown("---")
 
         # Consistent two-column layout for all modules
         col_left, col_right = st.columns(2)
 
         with col_left:
-            if notes:
-                st.markdown("#### Guided Notes")
-                components.html(
-                    f'<iframe src="{_embed_url(notes)}" width="100%" height="640" style="border:0; background:transparent;" allowfullscreen></iframe>',
-                    height=660,
-                )
-                st.markdown(f"[Open in new tab]({notes})")
+            note_items = _resource_items(notes, "Guided Notes")
+            if note_items:
+                st.markdown("#### Guided Notes / Worksheets")
+                for idx, note in enumerate(note_items):
+                    if len(note_items) > 1:
+                        st.markdown(f"##### {note.get('label', 'Guided Notes')}")
+                    _render_resource_actions(note["url"], include_downloads=True)
+                    components.html(
+                        f'<iframe src="{_embed_url(note["url"])}" width="100%" height="640" style="border:0; background:transparent;" allowfullscreen></iframe>',
+                        height=660,
+                    )
+                    if idx < len(note_items) - 1:
+                        st.markdown("---")
             else:
-                st.markdown("#### Guided Notes")
-                if notes:
-                    st.markdown(f"- [📝 Guided Notes]({notes})")
-                else:
-                    st.markdown("_No guided notes provided._")
+                st.markdown("#### Guided Notes / Worksheets")
+                st.markdown("_No guided notes or worksheets provided._")
 
         with col_right:
             if models:
@@ -212,27 +323,27 @@ def app():
         st.markdown("[**Content**](#content)")
         st.markdown("[**1 - Economic Thought & Modeling**](#module-1-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🧭 *explore content*](#module-1-course-materials)")
-        st.markdown("[**2 - Supply & Demand**](#module-2-learning)")
+        st.markdown("[**2 - Choice**](#module-2-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[❌ *explore content*](#module-2-course-materials)")
-        st.markdown("[**3 - Elasticity**](#module-3-learning)")
+        st.markdown("[**3 - Supply and Demand**](#module-3-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🧲 *explore content*](#module-3-course-materials)")
-        st.markdown("[**4 - Welfare & Intervention**](#module-4-learning)")
+        st.markdown("[**4 - Market Analysis: Elasticity & Efficiency**](#module-4-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[⚖️ *explore content*](#module-4-course-materials)")
-        st.markdown("[**5 - Factors of Production**](#module-5-learning)")
+        st.markdown("[**5 - Factor Markets**](#module-5-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🏭 *explore content*](#module-5-course-materials)")
-        st.markdown("[**6 - Choices & Constraints**](#module-6-learning)")
+        st.markdown("[**6 - Bridge: Markets, History & Global Economy**](#module-6-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🎯 *explore content*](#module-6-course-materials)")
-        st.markdown("[**7 - Capitalism**](#module-7-learning)")
+        st.markdown("[**7 - Structural Inequality: Core + Game Theory Preview**](#module-7-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🌍 *explore content*](#module-7-course-materials)")
-        st.markdown("[**8 - Inequality**](#module-8-learning)")
+        st.markdown("[**8 - Structural Inequality: Extensions**](#module-8-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[📊 *explore content*](#module-8-course-materials)")
-        st.markdown("[**9 - Cost of Production**](#module-9-learning)")
+        st.markdown("[**9 - Firms & Cost of Production**](#module-9-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🧮 *explore content*](#module-9-course-materials)")
         st.markdown("[**10 - Profit Maximization**](#module-10-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[💹 *explore content*](#module-10-course-materials)")
-        st.markdown("[**11 - Competition & Information**](#module-11-learning)")
+        st.markdown("[**11 - Imperfect Competition & Game Theory**](#module-11-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🎲 *explore content*](#module-11-course-materials)")
-        st.markdown("[**12- Policy, Paradox & Human Perspective**](#module-12-learning)")
+        st.markdown("[**12 - Policy, Paradox & Human Perspectives**](#module-12-learning)")
         st.markdown("&nbsp;&nbsp;&nbsp;[🛠️ *explore content*](#module-12-course-materials)")
         st.markdown("[**Grades**](#grades)")
         st.markdown("[**Policies**](#policies)")
@@ -252,15 +363,17 @@ Students engage directly with core microeconomic theory, primary economic texts,
 Economics leans on proportional reasoning, linear relationships on a quadrant plane, and marginal thinking. We build these skills in tiers so every student has a clear path into the math economists use.
 
 **Tiered objectives (choose your lane)**
-- **Tier 1 — Building comfort (not confident yet):** solidify ratios/percents/decimals/fractions; read the coordinate plane; connect slope to “rise over run”; use simple tables to see how small changes create marginal effects; explore straight-line growth to preview marginal analysis.
-- **Tier 2 — Solid footing (okay with math):** apply proportional and linear relationships to demand/supply/cost lines; use midpoint/percent change with graphs; visualize marginal analysis with common growth shapes (linear, concave, convex) and link slopes to “how fast” outcomes change.
-- **Tier 3 — Confident/strong:** bring algebra and intro calculus intuition to quantify marginal changes; compute slopes from data and simple derivatives; use visuals and computation to interpret real settings (cost curves, revenue, surplus, externalities); compare discrete vs. continuous marginal analysis.
+- **Tier 1 — Math support and core definitions:** focus on core vocabulary, ratios, percents, decimals, fractions, coordinate-plane reading, slope as rise over run, and simple tables that show marginal change. This is the focus for students who may have difficulty with mathematics coming into the course.
+- **Tier 2 — General education standard:** apply proportional reasoning, linear equations, slopes, intercepts, systems of equations, midpoint/percent change formulas, and triangle/rectangle areas to demand, supply, surplus, costs, revenue, elasticity, and policy models. This is the assessed general education target.
+- **Tier 3 — Quantitative Extension:** use advanced algebra, introductory calculus, linear algebra, coding, simulation, and data analysis to derive formulas, compare nonlinear models, automate graphing, and test sensitivity to assumptions.
 
 **Where it shows up**
 - Modules 1–4: slopes, intercepts, and 2×2 systems for equilibrium; triangle/rectangle areas for surplus and DWL; percent changes for shocks.
-- Modules 5–6: ratios and marginal-per-dollar in factor markets; optional intertemporal choice with simple growth/discounting.
-- Modules 9–11: turning tables into MC/ATC/AVC, MR = MC decisions, profit boxes.
-- Module 12: wedge diagrams for externalities, triangle areas for DWL, elasticity logic for tax incidence.
+- Modules 5–8: VMP tables, Lorenz curves, Gini estimates, simple payoff matrices, technology diffusion graphs, and algebraic examples of credit constraints.
+- Modules 9–11: turning tables into MC/ATC/AVC, MR = MC decisions, profit boxes, HHI calculations, and payoff matrices.
+- Module 12: wedge diagrams for externalities, triangle areas for DWL, elasticity logic for tax incidence, and public-goods payoff examples.
+
+Coding, calculus, linear algebra, simulations, proofs, and nonlinear derivations belong in Tier 3, the quantitative extension, unless an activity explicitly labels them as optional enrichment.
 """)
         st.caption("All practice materials and assessments align to these objectives. Recommended prerequisite: Algebra 1.")
 
@@ -279,19 +392,19 @@ Economics leans on proportional reasoning, linear relationships on a quadrant pl
 | --- | --- | --- | --- | --- |
 | 1 | Economics Pretest | Khan Academy Course Challenge | Khan Academy (keep scratch) | Participation |
 | 1 | Math Diagnostic | Khan Academy Middle/HS Math | Khan Academy (keep scratch) | Participation |
-| 2 | Independent Practice - Notebook 1 | Khan Academy Basic Concepts | Khan + upload to Canvas | 2% |
-| 2 | Formative 1 | Units 1 & 2 | In-class | ~3.33% |
+| 3 | Independent Practice - Notebook 1 | Khan Academy Basic Economic Concepts | Khan + upload to Canvas | 2% |
+| 4 | Formative 1 | Modules 1 & 2 | In-class | ~3.33% |
 | 5 | Independent Practice - Notebook 2 | Khan Academy Supply & Demand | Khan + upload to Canvas | 2% |
-| 6 | Formative 2 | Units 4,5,6,7 | In-class | ~3.33% |
-| 8 | Summative 1 (Midterm) | Units 1–7 | In-class | 20% |
+| 6 | Formative 2 | Modules 4, 5, 6 | In-class | ~3.33% |
+| 7 | Summative 1 (Midterm) | Modules 1–6 | In-class | 20% |
 | 8 | Participation (First Half) | Discussions/tutorials | Instructor entered | 2% |
 | 10 | Independent Practice - Notebook 3 | Khan Academy Cost/PC | Khan + upload to Canvas | 2% |
-| 10 | Formative 3 | Midterm 2 Study Guide | Hand-in | ~3.33% |
-| 11 | Independent Practice - Notebook 4 | Khan Academy Imperfect Comp | Khan + upload to Canvas | 2% |
-| 11 | Summative 2 (Midterm) | Units 9–12 | In-person | 20% |
-| 12 | Formative 4 | Public Policy Lab (group) | In/out of class | ~3.33% |
-| 12 | Economics Posttest | Khan Academy Course Challenge | In-person | Participation |
-| 12 | Independent Practice - Notebook 5 | Midterm Item Analysis | Online | 2% |
+| 10 | Formative 3 | Midterm 2 Study Guide covering Modules 7–10 | Hand-in | ~3.33% |
+| 12 | Independent Practice - Notebook 4 | Khan Academy Imperfect Competition | Khan + upload to Canvas | 2% |
+| 12 | Summative 2 (Midterm) | Modules 9–12 | In-person | 20% |
+| 13 | Formative 4 | Public Policy Lab (group) | In/out of class | ~3.33% |
+| 15 | Economics Posttest | Khan Academy Course Challenge | In-person | Participation |
+| 15 | Independent Practice - Notebook 5 | Midterm Item Analysis | Online | 2% |
 | — | Cumulative Final | All material | In-person | 30% |
 | — | Participation (Second Half) | — | Instructor entered | 2% |
 """)

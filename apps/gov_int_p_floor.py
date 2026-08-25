@@ -17,11 +17,14 @@ from apps.market_common import (
 
 def app():
     st.subheader("Government Intervention: Price Floor")
+    params = st.session_state.get("selected_model_params", {})
+    if params.get("worksheet_note"):
+        st.info(params["worksheet_note"])
 
     xmax, ymax, demand, supply = market_inputs("floor")
     q_eq, p_eq = equilibrium(demand, supply)
     default_floor = max(p_eq + 8.0, 1.0) if is_valid_point(q_eq, p_eq) else 45.0
-    floor_price = st.sidebar.slider("Price floor", 0.0, float(ymax), float(min(default_floor, ymax)), 1.0)
+    floor_price = st.sidebar.slider("Price floor", 0.0, float(ymax), float(min(params.get("price_floor", default_floor), ymax)), 1.0)
 
     c1, c2, c3 = st.columns(3)
     show_surplus = c1.toggle("Show CS and PS", value=True, key="floor_surplus")
