@@ -1,11 +1,11 @@
 MODULE_SUMMARIES = {
     1: {
         "summary": (
-            "Economics begins with a simple problem: people want more than the world can immediately provide. "
-            "This module introduces scarcity, opportunity cost, marginal thinking, and the habit of separating "
+            "Economics begins with a simple problem: the factors of production (land, labor, capital, and innovation) are scarce, but our desires to consume and produce with these resources are unlimited ."
+            "This module introduces scarcity, rational thought, marginal thinking, and the habit of separating "
             "testable claims from value judgments. Students learn how economists move between words, tables, "
-            "equations, and graphs, then use the budget constraint, the production possibilities model, and "
-            "comparative advantage to explain tradeoffs. The main lesson is that a model is a useful map: it "
+            "equations, and graphs. Students then use the budget constraint, the production possibilities model, and "
+            "comparative advantage to model tradeoffs. An important take away are that a model is a useful map: it "
             "simplifies reality so we can see one relationship clearly, but it also depends on assumptions."
         ),
         "history_research": (
@@ -44,17 +44,17 @@ MODULE_SUMMARIES = {
     },
     3: {
         "summary": (
-            "This module builds the supply and demand model step by step. Students begin with consumer and producer "
+            "Here, we build the supply and demand model step by step. Students begin with consumer and producer "
             "data, turn schedules into linear equations, graph the curves, and solve for equilibrium. The model shows "
             "how prices can coordinate many buyers and sellers without one person directing the whole market. Students "
             "also learn the difference between a movement along a curve and a shift of the curve, then practice cases "
             "where demand and supply move at the same time."
         ),
         "history_research": (
-            "The market model becomes easier to understand when it is attached to real trade. The course materials use "
+            "The market model becomes easier to understand when it is attached to real-world exchange. The course materials use "
             "examples such as Silk Road exchange, market records, supply shocks, and global logistics to show how prices "
-            "respond to changing tastes, costs, technology, policy, and disruption. The same diagram can organize many "
-            "historical stories, but the model still needs context."
+            "respond to changing tastes, costs, technology, policy, and disruption. The same diagram can help to illustrate many "
+            "historical narratives, but it is important to note that their are real-world limitations to the data used to quantify supply and demand."
         ),
         "vocabulary": [
             "law of demand", "law of supply", "quantity demanded", "quantity supplied",
@@ -64,12 +64,12 @@ MODULE_SUMMARIES = {
     },
     4: {
         "summary": (
-            "This module asks how strongly buyers and sellers respond when conditions change. Elasticity measures that "
-            "responsiveness with percentages, which lets students compare very different markets. Students use elasticity "
-            "to predict total revenue, understand the effects of price controls, and explain who bears more of a tax. "
-            "The module then introduces welfare economics: consumer surplus, producer surplus, total surplus, and "
-            "deadweight loss. These tools show when a market creates gains from exchange and when policy or market "
-            "conditions reduce those gains."
+            "This module asks how strongly buyers and sellers respond when conditions change. Elasticity measures price "
+            "responsiveness using percentages, which allows students to compare price elasticity across very different markets. Students apply elasticity "
+            "to predict total revenue, understand the effects of price controls, and explain who bears the burden of a tax. "
+            "This module also introduces welfare economics: consumer surplus, producer surplus, total surplus, and "
+            "deadweight loss. These tools help analyze the efficiency of markets  and how policy or market "
+            "conditions impact economic outcomes."
         ),
         "history_research": (
             "The slides and worksheets use historical markets such as nutmeg, grain, bread, textiles, and taxed trade to "
@@ -110,15 +110,15 @@ MODULE_SUMMARIES = {
             "This bridge module pauses to connect the first half of the course. Students bring together scarcity, choice, "
             "supply and demand, elasticity, surplus, and factor markets, then use them to think about long-run economic "
             "history. The module asks why living standards stayed low for most of human history, why growth accelerated "
-            "in the last two centuries, and why that growth was uneven across the world. Students study the Malthusian "
-            "trap, demographic transition, capital deepening, technological change, GDP, poverty, wellbeing, and climate "
+            "in the last two centuries, and why that growth was uneven across the world. Students gain exposure to the Malthusian "
+            "trap, demographic transition, capital deepening, technological change, GDP growth, poverty, wellbeing, and climate "
             "externalities."
         ),
         "history_research": (
             "The course materials frame markets as social institutions: powerful tools for coordination and allocation, "
             "but incomplete when costs, benefits, people, or future damages fall outside the transaction. Malthus, the "
             "Industrial Revolution, the Great Divergence, poverty measurement, the Kuznets curve, and the social cost of "
-            "carbon all serve as tests of what the microeconomic toolkit can and cannot explain."
+            "carbon all serve as tests of what the first part of the microeconomic toolkit can and cannot explain."
         ),
         "vocabulary": [
             "Malthusian trap", "demographic transition", "economic growth", "technology",
@@ -128,9 +128,9 @@ MODULE_SUMMARIES = {
     },
     7: {
         "summary": (
-            "This module studies inequality as a system of constraints, not simply as a set of individual outcomes. "
+            "This module studies inequality as a network of constrained choices, not simply as a set of individual outcomes or institutional pitfalls. "
             "Students use poverty traps, Lorenz curves, Gini coefficients, wage gaps, monopsony, discrimination, and "
-            "principal-agent problems to explain why unequal outcomes can persist over time. The module also introduces "
+            "principal-agent problems to explain why unequal outcomes can persist over time. For more advanced students, the module also introduces "
             "game theory with payoff matrices, dominant strategies, Nash equilibrium, and collective action problems. "
             "The main question is how markets behave when people enter them with unequal credit, education, information, "
             "mobility, and bargaining power."
